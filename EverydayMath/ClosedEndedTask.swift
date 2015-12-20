@@ -8,6 +8,22 @@
 
 import Foundation
 
+class ClosedEndedTask: Task {
+    var delegate: TaskDelegate?
+    let configuration: ClosedEndedTaskConfiguration
+    
+    init(config: ClosedEndedTaskConfiguration) {
+        configuration = config
+    }
+    
+    func getView() -> UIView {
+        let view = NumericTaskView.loadFromNibNamed("ClosedEndedTaskView") as! ClosedEndedTaskView
+        view.task = self
+        view.delegate = self.delegate
+        return view
+    }
+}
+
 struct ClosedEndedTaskAnswerConfiguration: Equatable {
     let answer: String
     let explanation: String?

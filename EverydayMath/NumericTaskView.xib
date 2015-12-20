@@ -135,22 +135,31 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVq-8j-HR2">
-                            <rect key="frame" x="75" y="25" width="517" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVq-8j-HR2">
+                            <rect key="frame" x="92" y="49" width="517" height="21"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dpO-du-0cI" customClass="ScaleControl" customModule="EverydayMath" customModuleProvider="target">
+                            <rect key="frame" x="73" y="0.0" width="527" height="70"/>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.46466619318181818" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="dpO-du-0cI" firstAttribute="leading" secondItem="dfF-tA-Wgf" secondAttribute="trailing" id="8jV-cD-a4c"/>
                         <constraint firstAttribute="height" constant="70" id="Dhj-NZ-cSC"/>
                         <constraint firstItem="JVq-8j-HR2" firstAttribute="centerY" secondItem="Kqa-hJ-O8E" secondAttribute="centerY" id="EtE-d6-IYw"/>
+                        <constraint firstItem="dpO-du-0cI" firstAttribute="top" secondItem="Kqa-hJ-O8E" secondAttribute="top" id="K1f-OQ-hWw"/>
+                        <constraint firstAttribute="trailing" secondItem="dpO-du-0cI" secondAttribute="trailing" id="L55-xs-YEo"/>
                         <constraint firstAttribute="trailing" secondItem="JVq-8j-HR2" secondAttribute="trailing" constant="8" id="MM1-3X-nsY"/>
                         <constraint firstItem="JVq-8j-HR2" firstAttribute="leading" secondItem="dfF-tA-Wgf" secondAttribute="trailing" constant="15" id="SQu-ON-cIG"/>
                         <constraint firstItem="dfF-tA-Wgf" firstAttribute="leading" secondItem="Kqa-hJ-O8E" secondAttribute="leading" constant="10" id="TZ5-p2-DEB"/>
+                        <constraint firstAttribute="bottom" secondItem="dpO-du-0cI" secondAttribute="bottom" id="Vhd-pu-S76"/>
                         <constraint firstAttribute="bottom" secondItem="dfF-tA-Wgf" secondAttribute="bottom" constant="10" id="bjO-pe-yO3"/>
                         <constraint firstItem="dfF-tA-Wgf" firstAttribute="top" secondItem="Kqa-hJ-O8E" secondAttribute="top" constant="10" id="eo4-ht-rfp"/>
                     </constraints>
@@ -179,6 +188,14 @@
                 <outlet property="toValueTextField" destination="Deb-K6-IOV" id="rTx-3e-OTx"/>
             </connections>
             <point key="canvasLocation" x="243" y="203"/>
+        </view>
+        <view contentMode="scaleToFill" id="xT0-aE-zKa" customClass="ScaleControl" customModule="EverydayMath" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="481" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="264.5" y="-280"/>
         </view>
     </objects>
     <resources>
