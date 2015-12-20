@@ -8,13 +8,33 @@
 
 import UIKit
 
+enum LabelPosition {
+    case Up, Bottom;
+}
+
 @IBDesignable class ScaleControl: UIControl {
 
     var minValue: CGFloat = 10.5
-    var maxValue: CGFloat = 35.4
+    var maxValue: CGFloat = 22.4
+    var labelPosition: LabelPosition = .Bottom
     
     let contentInsets = UIEdgeInsetsMake(20, 20, 20, 20)
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialize()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        initialize()
+    }
+    
+    func initialize() {
+        self.backgroundColor = UIColor.whiteColor()
+    }
+        
     func labelPositions(rect: CGRect, range: Int) -> (index: Int) -> Bool {
         let labelWidth = CGFloat(20)
         let minRange = CGFloat(range) * labelWidth / CGRectGetWidth(rect)
@@ -44,10 +64,10 @@ import UIKit
         let context = UIGraphicsGetCurrentContext()
         CGContextSetLineWidth(context, 2.0)
         
-        UIColor.blackColor().setStroke()
-        UIColor.whiteColor().setFill()
-        
         for i in startValue...endValue {
+            UIColor.whiteColor().setStroke()
+            UIColor.whiteColor().setFill()
+            
             let xPosition = CGRectGetMinX(scaleRect) + CGRectGetWidth(scaleRect) * CGFloat(Float(i - startValue) / Float(intervalSize))
             
             var lineHeight: CGFloat?
@@ -74,7 +94,8 @@ import UIKit
             }
             
             if labelPositions(index: i) {
-                drawLabel(scaleRect, xPosition: xPosition, i: i, fontSize: CGFloat(fontSize))
+                let number = i / 10
+                drawLabel(scaleRect, xPosition: xPosition, i: number, fontSize: CGFloat(fontSize))
             }
             
         }
@@ -88,7 +109,7 @@ import UIKit
         
         let font = UIFont.systemFontOfSize(fontSize)
         let attributes = [
-            NSForegroundColorAttributeName: UIColor.blackColor(),
+            NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSFontAttributeName: font,
             NSParagraphStyleAttributeName: paragraphStyle
         ]

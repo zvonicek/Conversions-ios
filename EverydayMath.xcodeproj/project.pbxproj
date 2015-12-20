@@ -43,6 +43,16 @@
 		D0C901061BEF80E200A15F32 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C901051BEF80E200A15F32 /* GamesListViewController.swift */; };
 		D0C901081BEF815800A15F32 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C901071BEF815800A15F32 /* LoadingViewController.swift */; };
 		D0C9010B1BEF8B6400A15F32 /* FSQCollectionViewAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C9010A1BEF8B6400A15F32 /* FSQCollectionViewAlignedLayout.m */; };
+		D0E2E08C1C272D5A005E5B06 /* SortTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2E08B1C272D5A005E5B06 /* SortTaskView.swift */; };
+		D0E2E0901C272D8C005E5B06 /* SortTaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E2E08F1C272D8C005E5B06 /* SortTaskView.xib */; };
+		D0E2E09F1C2744B3005E5B06 /* SortTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2E09E1C2744B3005E5B06 /* SortTask.swift */; };
+		D0E2E0A11C27478B005E5B06 /* SortTaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2E0A01C27478B005E5B06 /* SortTaskCollectionViewCell.swift */; };
+		D0E2E0A31C275D6B005E5B06 /* SortTaskCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E2E0A21C275D6B005E5B06 /* SortTaskCollectionViewCell.xib */; };
+		D0E2E0A51C2760BD005E5B06 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E2E0A41C2760BD005E5B06 /* QuartzCore.framework */; };
+		D0E2E0B41C2761A4005E5B06 /* LSCollectionViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E2E0AA1C2761A4005E5B06 /* LSCollectionViewHelper.m */; };
+		D0E2E0B51C2761A4005E5B06 /* LSCollectionViewLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E2E0AC1C2761A4005E5B06 /* LSCollectionViewLayoutHelper.m */; };
+		D0E2E0B61C2761A4005E5B06 /* DraggableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E2E0AF1C2761A4005E5B06 /* DraggableCollectionViewFlowLayout.m */; };
+		D0E2E0B71C2761A4005E5B06 /* UICollectionView+Draggable.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E2E0B11C2761A4005E5B06 /* UICollectionView+Draggable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,6 +110,22 @@
 		D0C901091BEF8B6300A15F32 /* EverydayMath-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EverydayMath-Bridging-Header.h"; sourceTree = "<group>"; };
 		D0C9010A1BEF8B6400A15F32 /* FSQCollectionViewAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSQCollectionViewAlignedLayout.m; sourceTree = "<group>"; };
 		D0C9010C1BEF8B6D00A15F32 /* FSQCollectionViewAlignedLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSQCollectionViewAlignedLayout.h; sourceTree = "<group>"; };
+		D0E2E08B1C272D5A005E5B06 /* SortTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortTaskView.swift; sourceTree = "<group>"; };
+		D0E2E08F1C272D8C005E5B06 /* SortTaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortTaskView.xib; sourceTree = "<group>"; };
+		D0E2E09E1C2744B3005E5B06 /* SortTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortTask.swift; sourceTree = "<group>"; };
+		D0E2E0A01C27478B005E5B06 /* SortTaskCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortTaskCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0E2E0A21C275D6B005E5B06 /* SortTaskCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortTaskCollectionViewCell.xib; sourceTree = "<group>"; };
+		D0E2E0A41C2760BD005E5B06 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D0E2E0A91C2761A4005E5B06 /* LSCollectionViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSCollectionViewHelper.h; sourceTree = "<group>"; };
+		D0E2E0AA1C2761A4005E5B06 /* LSCollectionViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSCollectionViewHelper.m; sourceTree = "<group>"; };
+		D0E2E0AB1C2761A4005E5B06 /* LSCollectionViewLayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSCollectionViewLayoutHelper.h; sourceTree = "<group>"; };
+		D0E2E0AC1C2761A4005E5B06 /* LSCollectionViewLayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSCollectionViewLayoutHelper.m; sourceTree = "<group>"; };
+		D0E2E0AE1C2761A4005E5B06 /* DraggableCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		D0E2E0AF1C2761A4005E5B06 /* DraggableCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		D0E2E0B01C2761A4005E5B06 /* UICollectionView+Draggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Draggable.h"; sourceTree = "<group>"; };
+		D0E2E0B11C2761A4005E5B06 /* UICollectionView+Draggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Draggable.m"; sourceTree = "<group>"; };
+		D0E2E0B21C2761A4005E5B06 /* UICollectionViewDataSource_Draggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewDataSource_Draggable.h; sourceTree = "<group>"; };
+		D0E2E0B31C2761A4005E5B06 /* UICollectionViewLayout_Warpable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLayout_Warpable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0E2E0A51C2760BD005E5B06 /* QuartzCore.framework in Frameworks */,
 				D0C0CC1C1C0B9D4700D93B83 /* TZStackView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,9 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				D0C900FD1BEE8B7B00A15F32 /* Configuration.swift */,
-				D0C0CC271C0CDAF500D93B83 /* ClosedEndedTask.swift */,
-				D0C0CC251C0CDAE800D93B83 /* NumericTask.swift */,
-				D013F4E01C16423900DF8769 /* ScaleTask.swift */,
+				D0E2E09D1C2744A1005E5B06 /* Tasks */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -156,6 +181,7 @@
 		D0C900D51BEDFE3400A15F32 = {
 			isa = PBXGroup;
 			children = (
+				D0E2E0A41C2760BD005E5B06 /* QuartzCore.framework */,
 				D0C0CC1E1C0BA47A00D93B83 /* TZStackView.framework.dSYM */,
 				D0C0CC1B1C0B9D4700D93B83 /* TZStackView.framework */,
 				D0C900E01BEDFE3400A15F32 /* EverydayMath */,
@@ -179,10 +205,7 @@
 				D0C900FB1BEE87C600A15F32 /* ViewControllers */,
 				D0C900FC1BEE87FF00A15F32 /* Tasks */,
 				D0C900E11BEDFE3400A15F32 /* AppDelegate.swift */,
-				D0C9010C1BEF8B6D00A15F32 /* FSQCollectionViewAlignedLayout.h */,
-				D0C9010A1BEF8B6400A15F32 /* FSQCollectionViewAlignedLayout.m */,
-				D0B138971BFE7BB400BEA9C7 /* KKProgressTimer.h */,
-				D0B138951BFE7BAF00BEA9C7 /* KKProgressTimer.m */,
+				D0E2E0911C273265005E5B06 /* Libs */,
 				D0C900E51BEDFE3400A15F32 /* Main.storyboard */,
 				D0C900E81BEDFE3400A15F32 /* Assets.xcassets */,
 				D0C900EA1BEDFE3400A15F32 /* LaunchScreen.storyboard */,
@@ -210,6 +233,8 @@
 				D0C0CC211C0BA5FD00D93B83 /* Controls */,
 				D08F523E1BF13941000F840B /* GameList items */,
 				D0C900F51BEE4E4900A15F32 /* Numpad.swift */,
+				D0E2E0A01C27478B005E5B06 /* SortTaskCollectionViewCell.swift */,
+				D0E2E0A21C275D6B005E5B06 /* SortTaskCollectionViewCell.xib */,
 				D0B138981BFE8EFB00BEA9C7 /* GameHeaderView.swift */,
 				D0C0CC151C0B541400D93B83 /* GradientView.swift */,
 			);
@@ -237,8 +262,66 @@
 				D0C0CC171C0B992B00D93B83 /* ClosedEndedTaskView.swift */,
 				D013F4DC1C163B6600DF8769 /* ScaleTaskView.xib */,
 				D013F4DE1C163B7400DF8769 /* ScaleTaskView.swift */,
+				D0E2E08F1C272D8C005E5B06 /* SortTaskView.xib */,
+				D0E2E08B1C272D5A005E5B06 /* SortTaskView.swift */,
 			);
 			name = Tasks;
+			sourceTree = "<group>";
+		};
+		D0E2E0911C273265005E5B06 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				D0E2E0A71C2761A4005E5B06 /* DraggableCollectionView */,
+				D0C9010C1BEF8B6D00A15F32 /* FSQCollectionViewAlignedLayout.h */,
+				D0C9010A1BEF8B6400A15F32 /* FSQCollectionViewAlignedLayout.m */,
+				D0B138971BFE7BB400BEA9C7 /* KKProgressTimer.h */,
+				D0B138951BFE7BAF00BEA9C7 /* KKProgressTimer.m */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		D0E2E09D1C2744A1005E5B06 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				D0C0CC271C0CDAF500D93B83 /* ClosedEndedTask.swift */,
+				D0C0CC251C0CDAE800D93B83 /* NumericTask.swift */,
+				D013F4E01C16423900DF8769 /* ScaleTask.swift */,
+				D0E2E09E1C2744B3005E5B06 /* SortTask.swift */,
+			);
+			name = Tasks;
+			sourceTree = "<group>";
+		};
+		D0E2E0A71C2761A4005E5B06 /* DraggableCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				D0E2E0A81C2761A4005E5B06 /* Helpers */,
+				D0E2E0AD1C2761A4005E5B06 /* Layout */,
+				D0E2E0B01C2761A4005E5B06 /* UICollectionView+Draggable.h */,
+				D0E2E0B11C2761A4005E5B06 /* UICollectionView+Draggable.m */,
+				D0E2E0B21C2761A4005E5B06 /* UICollectionViewDataSource_Draggable.h */,
+				D0E2E0B31C2761A4005E5B06 /* UICollectionViewLayout_Warpable.h */,
+			);
+			path = DraggableCollectionView;
+			sourceTree = "<group>";
+		};
+		D0E2E0A81C2761A4005E5B06 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D0E2E0A91C2761A4005E5B06 /* LSCollectionViewHelper.h */,
+				D0E2E0AA1C2761A4005E5B06 /* LSCollectionViewHelper.m */,
+				D0E2E0AB1C2761A4005E5B06 /* LSCollectionViewLayoutHelper.h */,
+				D0E2E0AC1C2761A4005E5B06 /* LSCollectionViewLayoutHelper.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D0E2E0AD1C2761A4005E5B06 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				D0E2E0AE1C2761A4005E5B06 /* DraggableCollectionViewFlowLayout.h */,
+				D0E2E0AF1C2761A4005E5B06 /* DraggableCollectionViewFlowLayout.m */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,11 +384,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D013F4DD1C163B6600DF8769 /* ScaleTaskView.xib in Resources */,
+				D0E2E0A31C275D6B005E5B06 /* SortTaskCollectionViewCell.xib in Resources */,
 				D0C900EC1BEDFE3400A15F32 /* LaunchScreen.storyboard in Resources */,
 				D0C900F81BEE7CA900A15F32 /* NumericTaskView.xib in Resources */,
 				D0C0CC1A1C0B993500D93B83 /* ClosedEndedTaskView.xib in Resources */,
 				D0C900E91BEDFE3400A15F32 /* Assets.xcassets in Resources */,
 				D0C900E71BEDFE3400A15F32 /* Main.storyboard in Resources */,
+				D0E2E0901C272D8C005E5B06 /* SortTaskView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,22 +407,29 @@
 				D0C900F41BEE03F000A15F32 /* Game.swift in Sources */,
 				D0C900FE1BEE8B7B00A15F32 /* Configuration.swift in Sources */,
 				D013F4E11C16423900DF8769 /* ScaleTask.swift in Sources */,
+				D0E2E0B71C2761A4005E5B06 /* UICollectionView+Draggable.m in Sources */,
+				D0E2E0B51C2761A4005E5B06 /* LSCollectionViewLayoutHelper.m in Sources */,
 				D08F523C1BF1368D000F840B /* GameRun.swift in Sources */,
 				D013F4DF1C163B7400DF8769 /* ScaleTaskView.swift in Sources */,
 				D0C0CC141C0B4ED300D93B83 /* GameOverViewController.swift in Sources */,
 				D08F52421BF13971000F840B /* GameListCollectionViewCell.swift in Sources */,
 				D0C901041BEF7E0500A15F32 /* GameViewController.swift in Sources */,
 				D0C0CC341C0E27A800D93B83 /* MoneyGames.swift in Sources */,
+				D0E2E0A11C27478B005E5B06 /* SortTaskCollectionViewCell.swift in Sources */,
 				D0C901061BEF80E200A15F32 /* GamesListViewController.swift in Sources */,
 				D0C0CC161C0B541400D93B83 /* GradientView.swift in Sources */,
+				D0E2E08C1C272D5A005E5B06 /* SortTaskView.swift in Sources */,
 				D0C0CC261C0CDAE800D93B83 /* NumericTask.swift in Sources */,
+				D0E2E0B61C2761A4005E5B06 /* DraggableCollectionViewFlowLayout.m in Sources */,
 				D0C0CC321C0E272700D93B83 /* UnitsGames.swift in Sources */,
 				D0C901081BEF815800A15F32 /* LoadingViewController.swift in Sources */,
 				D08F52401BF1394A000F840B /* HeaderView.swift in Sources */,
+				D0E2E09F1C2744B3005E5B06 /* SortTask.swift in Sources */,
 				D0C0CC181C0B992B00D93B83 /* ClosedEndedTaskView.swift in Sources */,
 				D0C0CC231C0BA64C00D93B83 /* ClosedEndedButton.swift in Sources */,
 				D0B138961BFE7BAF00BEA9C7 /* KKProgressTimer.m in Sources */,
 				D0C901001BEE8B9800A15F32 /* Task.swift in Sources */,
+				D0E2E0B41C2761A4005E5B06 /* LSCollectionViewHelper.m in Sources */,
 				D0C901021BEEAFA100A15F32 /* NumericTaskView.swift in Sources */,
 				D0C9010B1BEF8B6400A15F32 /* FSQCollectionViewAlignedLayout.m in Sources */,
 				D0B138991BFE8EFB00BEA9C7 /* GameHeaderView.swift in Sources */,

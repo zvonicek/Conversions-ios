@@ -4,3 +4,4 @@
 
 #import "FSQCollectionViewAlignedLayout.h"
 #import "KKProgressTimer.h"
+#import "UICollectionViewDataSource_Draggable.h"

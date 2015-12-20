@@ -28,6 +28,8 @@ class TaskFactory {
             return NumericTask(config: configuration)
         } else if let configuration = configuration as? ClosedEndedTaskConfiguration {
             return ClosedEndedTask(config: configuration)
+        } else if let configuration = configuration as? SortTaskConfiguration {
+            return SortTask(config: configuration)
         }
         
         return nil
