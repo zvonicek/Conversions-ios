@@ -10,8 +10,10 @@ import UIKit
 
 class SortTaskCollectionViewCell: UICollectionViewCell {
     @IBOutlet var label: UILabel!
+    @IBOutlet var hintLabel: UILabel!
     
     func configureForItem(item: SortTaskItem) {
         self.label.text = item.title
+        self.hintLabel.text = item.errorExplanation
     }
 }

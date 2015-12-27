@@ -12,11 +12,26 @@ struct SortTaskItem: TaskConfiguration {
     let title: String
     let correctPosition: Int
     let presentedPosition: Int
+    let errorExplanation: String
+}
+
+extension SortTaskItem: Equatable {}
+
+func ==(lhs: SortTaskItem, rhs: SortTaskItem) -> Bool {
+    return lhs.title == rhs.title
 }
 
 struct SortTaskConfiguration: TaskConfiguration {
     let question: String
     let questions: [SortTaskItem]
+    
+    func presentedQuestions() -> [SortTaskItem] {
+        return questions.sort({ $0.presentedPosition < $1.presentedPosition })
+    }
+    
+    func correctQuestions() -> [SortTaskItem] {
+        return questions.sort({ $0.correctPosition < $1.correctPosition })
+    }
 }
 
 class SortTask: Task {

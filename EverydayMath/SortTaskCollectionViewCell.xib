@@ -8,30 +8,50 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SortTaskCollectionViewCell" customModule="EverydayMath" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="372" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="372" height="89"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wiz-cu-1Gn">
-                    <rect key="frame" x="17" y="19" width="347" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wiz-cu-1Gn">
+                    <rect key="frame" x="17" y="19" width="347" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="1gT-En-AjH"/>
+                        <constraint firstAttribute="height" constant="22" id="sMH-iU-JJb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="1gT-En-AjH"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 kg = 1,000 grams" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yY-nB-pgn">
+                    <rect key="frame" x="0.0" y="60" width="372" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="s4c-E0-eAL"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Wiz-cu-1Gn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="17" id="50T-gV-dLB"/>
-                <constraint firstItem="Wiz-cu-1Gn" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="S8c-OB-t20"/>
+                <constraint firstItem="8yY-nB-pgn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YeP-E2-CCa"/>
+                <constraint firstItem="8yY-nB-pgn" firstAttribute="top" secondItem="Wiz-cu-1Gn" secondAttribute="bottom" constant="19" id="qs8-h9-dR4"/>
                 <constraint firstAttribute="trailing" secondItem="Wiz-cu-1Gn" secondAttribute="trailing" constant="8" id="wzf-Lo-Dqt"/>
+                <constraint firstAttribute="trailing" secondItem="8yY-nB-pgn" secondAttribute="trailing" id="zPh-8f-qYZ"/>
+                <constraint firstItem="Wiz-cu-1Gn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="19" id="zwU-Na-vcg"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="hintLabel" destination="8yY-nB-pgn" id="ibB-Jg-qb5"/>
                 <outlet property="label" destination="Wiz-cu-1Gn" id="fHI-4a-m9J"/>
             </connections>
-            <point key="canvasLocation" x="166" y="-65"/>
+            <point key="canvasLocation" x="168" y="-28.5"/>
         </view>
     </objects>
 </document>
