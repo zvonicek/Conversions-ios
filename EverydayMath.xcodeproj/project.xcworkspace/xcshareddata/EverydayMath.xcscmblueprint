@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "07D37531B17EF4CA76A4D420ADD84AFF749FC017",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E5CEA7EA27B846CFEA53D6815BFE97B9D0CC31D1" : 0,
+    "3A2C8560B580B50F5135EF04DC2BE0B7A47C0BF6" : 0,
+    "07D37531B17EF4CA76A4D420ADD84AFF749FC017" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C50F7C5C-8D93-4D36-9CA8-72F98BFB1692",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E5CEA7EA27B846CFEA53D6815BFE97B9D0CC31D1" : "EverydayMath\/Libs\/DraggableCollectionView\/",
+    "3A2C8560B580B50F5135EF04DC2BE0B7A47C0BF6" : "EverydayMath\/Libs\/LMArrayChangeSets\/",
+    "07D37531B17EF4CA76A4D420ADD84AFF749FC017" : "EverydayMath\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "EverydayMath",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "EverydayMath.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zvonicek\/EverydayMath.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "07D37531B17EF4CA76A4D420ADD84AFF749FC017"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lintmachine\/LMArrayChangeSets.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3A2C8560B580B50F5135EF04DC2BE0B7A47C0BF6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lukescott\/DraggableCollectionView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E5CEA7EA27B846CFEA53D6815BFE97B9D0CC31D1"
+    }
+  ]
+}
