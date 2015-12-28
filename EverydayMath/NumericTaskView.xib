@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -15,7 +15,6 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssG-4C-tTy" customClass="NumpadView" customModule="EverydayMath" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="364" width="600" height="236"/>
-                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="236" id="BXx-cp-dzg"/>
@@ -26,7 +25,6 @@
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Deb-K6-IOV">
                             <rect key="frame" x="205" y="131" width="90" height="40"/>
-                            <animations/>
                             <color key="backgroundColor" white="0.91056924197408884" alpha="0.582763671875" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="50g-Nt-Wyb"/>
@@ -43,14 +41,12 @@
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="≈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTc-d0-495">
                             <rect key="frame" x="293" y="75" width="15" height="29"/>
-                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kilograms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nz-O9-08C">
                             <rect key="frame" x="305" y="137" width="295" height="29"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="XTM-oK-mJb"/>
                             </constraints>
@@ -65,7 +61,6 @@
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 pounds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO5-ux-whK">
                             <rect key="frame" x="0.0" y="18" width="600" height="29"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="34" id="6Ru-EU-eBe"/>
                             </constraints>
@@ -79,7 +74,6 @@
                             </variation>
                         </label>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="ZO5-ux-whK" firstAttribute="leading" secondItem="841-nT-GLe" secondAttribute="leading" id="0VM-go-cqT"/>
@@ -124,7 +118,6 @@
                     <subviews>
                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="bulb" translatesAutoresizingMaskIntoConstraints="NO" id="dfF-tA-Wgf">
                             <rect key="frame" x="10" y="10" width="50" height="50"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="dfF-tA-Wgf" secondAttribute="height" multiplier="1:1" id="SEW-yX-eG1"/>
                                 <constraint firstAttribute="width" constant="74" id="SwP-lC-08S"/>
@@ -137,18 +130,15 @@
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVq-8j-HR2">
                             <rect key="frame" x="92" y="49" width="517" height="21"/>
-                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dpO-du-0cI" customClass="ScaleControl" customModule="EverydayMath" customModuleProvider="target">
                             <rect key="frame" x="73" y="0.0" width="527" height="70"/>
-                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.46466619318181818" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="dpO-du-0cI" firstAttribute="leading" secondItem="dfF-tA-Wgf" secondAttribute="trailing" id="8jV-cD-a4c"/>
@@ -165,7 +155,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <animations/>
             <color key="backgroundColor" red="0.36862745099999999" green="0.39607843139999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="Kqa-hJ-O8E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BFc-t4-9cU"/>
@@ -192,7 +181,6 @@
         <view contentMode="scaleToFill" id="xT0-aE-zKa" customClass="ScaleControl" customModule="EverydayMath" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="481" height="94"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="264.5" y="-280"/>

@@ -1,6 +1,3 @@
 [submodule "Libs/LMArrayChangeSets"]
 	path = Libs/LMArrayChangeSets
 	url = https://github.com/lintmachine/LMArrayChangeSets.git
-[submodule "Libs/DraggableCollectionView"]
-	path = Libs/DraggableCollectionView
-	url = https://github.com/lukescott/DraggableCollectionView.git
