@@ -74,10 +74,7 @@ class ClosedEndedTaskView: UIView {
             }
         }
         
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.8 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            self.taskCompleted(correct)
-        }
+        self.taskCompleted(correct)
     }
     
     private func markButton(button: ClosedEndedButton) {

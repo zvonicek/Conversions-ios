@@ -16,13 +16,13 @@ enum ProgressViewState {
         case .Empty:
             return UIColor.clearColor()
         case .Incorrect:
-            return UIColor(white: 223/255.0, alpha: 1.0)
+            return UIColor(red: 232/255.0, green: 116/255.0, blue: 97/255.0, alpha: 1.0)
         case .CorrectA:
-            return UIColor(red: 61/255.0, green: 195/255.0, blue: 50/255.0, alpha: 1.0)
+            return UIColor(red: 122/255.0, green: 199/255.0, blue: 79/255.0, alpha: 1.0)
         case .CorrectB:
-            return UIColor(red: 242/255.0, green: 146/255.0, blue: 0/255.0, alpha: 1.0)
+            return UIColor(red: 161/255.0, green: 207/255.0, blue: 107/255.0, alpha: 1.0)
         case .CorrectC:
-            return UIColor(red: 213/255.0, green: 53/255.0, blue: 82/255.0, alpha: 1.0)
+            return UIColor(red: 213/255.0, green: 216/255.0, blue: 135/255.0, alpha: 1.0)
         }
     }
 }
@@ -44,7 +44,7 @@ class ProgressView: UIView {
             states = [ProgressViewState](count: components, repeatedValue: .Empty)
         }
     }
-    var states: [ProgressViewState] = [.Incorrect, .CorrectA, .CorrectB, .CorrectC, .Empty, .Empty, .Empty, .Empty, .Empty, .Empty]
+    var states: [ProgressViewState] = [.Incorrect, .CorrectA, .CorrectB, .CorrectC, .CorrectB, .CorrectA, .Incorrect, .CorrectB, .Empty, .Empty]
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

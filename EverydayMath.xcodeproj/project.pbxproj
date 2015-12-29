@@ -59,6 +59,7 @@
 		D0E34F2C1C31493200E7AB97 /* UICollectionView+Draggable.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E34F261C31493200E7AB97 /* UICollectionView+Draggable.m */; };
 		D0E34F2E1C32D14100E7AB97 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E34F2D1C32D14100E7AB97 /* ProgressView.swift */; };
 		D0E34F311C32D2B300E7AB97 /* ObjcExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E34F301C32D2B300E7AB97 /* ObjcExtensions.m */; };
+		D0E34F351C33320800E7AB97 /* SFlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E34F341C33320800E7AB97 /* SFlatButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -143,6 +144,7 @@
 		D0E34F2D1C32D14100E7AB97 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		D0E34F2F1C32D2B300E7AB97 /* ObjcExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjcExtensions.h; sourceTree = "<group>"; };
 		D0E34F301C32D2B300E7AB97 /* ObjcExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjcExtensions.m; sourceTree = "<group>"; };
+		D0E34F341C33320800E7AB97 /* SFlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFlatButton.swift; path = Libs/SFlatButton.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 		D0E2E0911C273265005E5B06 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				D0E34F341C33320800E7AB97 /* SFlatButton.swift */,
 				D0E34F1C1C31493200E7AB97 /* DraggableCollectionView */,
 				D0E34F0F1C308AB100E7AB97 /* LMArrayChangeSets */,
 				D0C9010C1BEF8B6D00A15F32 /* FSQCollectionViewAlignedLayout.h */,
@@ -444,6 +447,7 @@
 				D0C0CC281C0CDAF500D93B83 /* ClosedEndedTask.swift in Sources */,
 				D0A10E281C0FB15C007F0D91 /* GameCompletedViewController.swift in Sources */,
 				D0C900F61BEE4E4900A15F32 /* Numpad.swift in Sources */,
+				D0E34F351C33320800E7AB97 /* SFlatButton.swift in Sources */,
 				D0C900F41BEE03F000A15F32 /* Game.swift in Sources */,
 				D0C900FE1BEE8B7B00A15F32 /* Configuration.swift in Sources */,
 				D013F4E11C16423900DF8769 /* ScaleTask.swift in Sources */,

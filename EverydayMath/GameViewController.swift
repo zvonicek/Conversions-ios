@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
     
     @IBOutlet var topBar: GameHeaderView!
     @IBOutlet var gameView: UIView!
+    @IBOutlet var continueButtonView: UIView!
     
     var currentTaskView: UIView? {
         willSet(taskView) {
@@ -62,6 +63,22 @@ class GameViewController: UIViewController {
     @IBAction func pauseGame() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func continueButtonPressed() {
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.continueButtonView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - 70, 320, 70)
+        }
+        
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.continueButtonView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame), 320, 70)
+        }) { (let completed) -> Void in
+            self.continueButtonView.removeFromSuperview()
+            
+            if let gameRun = self.gameRun as? TaskBased {
+                gameRun.nextTask()
+            }
+        }
+    }
 }
 
 extension GameViewController: GameRunDelegate {
@@ -74,7 +91,13 @@ extension GameViewController: GameRunDelegate {
     
     func gameRun(gameRun: protocol<GameRun, TaskBased>, taskCompleted task: Task, index: Int, result: TaskResult) {
         topBar.progressView.updateStateForComponent(index, state: result.progressViewState())
-        gameRun.nextTask()
+        
+        continueButtonView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame), 320, 70)
+        self.view.addSubview(continueButtonView)
+        
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.continueButtonView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - 70, 320, 70)
+        }
     }
     
     func gameRunCompleted(gameRun: GameRun){

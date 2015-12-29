@@ -52,10 +52,7 @@ class ScaleTaskView: UIView, TrackingScaleControlDelegate {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.resultView.alpha = 1.0
         }) { (let finished) -> Void in
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
-            dispatch_after(delayTime, dispatch_get_main_queue()) {
-                self.delegate?.taskCompleted(self.task, correct: isCorrect)
-            }
+            self.delegate?.taskCompleted(self.task, correct: isCorrect)
         }
     }
 }

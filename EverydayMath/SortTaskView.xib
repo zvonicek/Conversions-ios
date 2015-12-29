@@ -24,7 +24,7 @@
                         <constraint firstAttribute="width" constant="200" id="FRO-pC-CES"/>
                         <constraint firstAttribute="height" constant="50" id="uVN-oT-zGp"/>
                     </constraints>
-                    <state key="normal" title="Continue"/>
+                    <state key="normal" title="Check"/>
                     <connections>
                         <action selector="verify" destination="Xv3-E6-d0d" eventType="touchUpInside" id="QEK-s3-AeU"/>
                     </connections>
