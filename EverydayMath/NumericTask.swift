@@ -11,6 +11,7 @@ import Foundation
 class NumericTask: Task {
     var delegate: TaskDelegate?
     let taskConfiguration: NumericTaskConfiguration
+    let properties: TaskProperties = TaskProperties(fastTime: 5, neutralTime: 10)
     
     init(config: NumericTaskConfiguration) {
         taskConfiguration = config
@@ -30,6 +31,10 @@ class NumericTask: Task {
             return false
         }
     }
+    
+    func identifier() -> String {
+        return String(ObjectIdentifier(self).uintValue)
+    }    
 }
 
 struct NumericTaskConfiguration: TaskConfiguration {

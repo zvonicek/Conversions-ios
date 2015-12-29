@@ -11,9 +11,8 @@ import Foundation
 // MARK: GameRun protocols
 protocol GameRunDelegate {
     func gameRun(gameRun: protocol<GameRun, TaskBased>, showTask task: Task, index: Int)
-    func gameRun(gameRun: protocol<GameRun, TimeBased>, timerTick time: NSTimeInterval)
+    func gameRun(gameRun: protocol<GameRun, TaskBased>, taskCompleted task: Task, index: Int, result: TaskResult)
     func gameRunCompleted(gameRun: GameRun)
-    func gameRunTimeouted(gameRun: GameRun)
     func gameRunAborted(gameRun: GameRun)
 }
 
@@ -33,21 +32,12 @@ protocol TaskBased {
     var currentTaskIndex: Int? { get }
 }
 
-protocol TimeBased {
-    var totalTime: NSTimeInterval { get }
-    var remainingTime: NSTimeInterval { get }
-}
-
-
-class TimedGameRun: GameRun, TaskBased, TimeBased, TaskDelegate {
+class TimedGameRun: GameRun, TaskBased, TaskDelegate {
     let game: Game
     let config: GameConfiguration
     
     let tasks: [Task]
     var currentTaskIndex: Int?
-    
-    let totalTime: NSTimeInterval
-    var remainingTime: NSTimeInterval
     
     var delegate: GameRunDelegate?
     
@@ -78,8 +68,6 @@ class TimedGameRun: GameRun, TaskBased, TimeBased, TaskDelegate {
         
         
         self.tasks = config.tasks.flatMap(TaskFactory.taskForConfiguration)
-        self.totalTime = config.time
-        self.remainingTime = config.time
     }
     
     func start() {
@@ -99,17 +87,6 @@ class TimedGameRun: GameRun, TaskBased, TimeBased, TaskDelegate {
         abortGameRun()
     }
     
-    @objc func tick() {
-        if remainingTime > 0 {
-            remainingTime--
-        } else {
-            timer.invalidate()
-            timeoutGameRn()
-        }
-        
-        delegate?.gameRun(self, timerTick: remainingTime)
-    }
-    
     private func nextTask() {
         let index = currentTaskIndex != nil ? currentTaskIndex! + 1 : 0
         
@@ -120,11 +97,6 @@ class TimedGameRun: GameRun, TaskBased, TimeBased, TaskDelegate {
         } else {
             finishGameRun()
         }
-    }
-    
-    private func timeoutGameRn() {
-        finished = true
-        delegate?.gameRunTimeouted(self)
     }
     
     private func abortGameRun() {
@@ -140,6 +112,12 @@ class TimedGameRun: GameRun, TaskBased, TimeBased, TaskDelegate {
     // MARK: TaskDelegate
     
     func taskCompleted(task: Task) {
-        self.nextTask()
+        guard let index = tasks.indexOf(task) else {
+            assertionFailure("task was not found")
+            return
+        }
+        
+        delegate?.gameRun(self, taskCompleted: task, index: index, result: TaskResult.CorrectFast)
+//        self.nextTask()
     }
 }

@@ -13,13 +13,13 @@ struct ScaleTaskConfiguration: TaskConfiguration {
     var scaleMin: Float
     var scaleMax: Float
     var correctValue: Float
-    var correctToleranceMin: Float
-    var correctToleranceMax: Float
+    var correctTolerance: Float
 }
 
 class ScaleTask: Task {
     var delegate: TaskDelegate?
     let configuration: ScaleTaskConfiguration
+    let properties: TaskProperties = TaskProperties(fastTime: 5, neutralTime: 10)
     
     init(config: ScaleTaskConfiguration) {
         configuration = config
@@ -27,8 +27,12 @@ class ScaleTask: Task {
     
     func getView() -> UIView {
         let view = ScaleTaskView.loadFromNibNamed("ScaleTaskView") as! ScaleTaskView
-//        view.delegate = self.delegate
-//        view.task = self
+        view.delegate = self.delegate
+        view.task = self
         return view
+    }
+    
+    func identifier() -> String {
+        return String(ObjectIdentifier(self).uintValue)
     }
 }

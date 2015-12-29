@@ -11,7 +11,8 @@ import Foundation
 class ClosedEndedTask: Task {
     var delegate: TaskDelegate?
     let configuration: ClosedEndedTaskConfiguration
-    
+    let properties: TaskProperties = TaskProperties(fastTime: 5, neutralTime: 10)
+
     init(config: ClosedEndedTaskConfiguration) {
         configuration = config
     }
@@ -22,6 +23,10 @@ class ClosedEndedTask: Task {
         view.delegate = self.delegate
         return view
     }
+    
+    func identifier() -> String {
+        return String(ObjectIdentifier(self).uintValue)
+    }    
 }
 
 struct ClosedEndedTaskAnswerConfiguration: Equatable {

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Task-specific configuration
 protocol TaskConfiguration {
     
 }

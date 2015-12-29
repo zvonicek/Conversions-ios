@@ -66,15 +66,14 @@ extension GameViewController: GameRunDelegate {
     
     func gameRun(gameRun: protocol<GameRun, TaskBased>, showTask task: Task, index: Int) {
         let progress = Float(Float(index) / Float(gameRun.tasks.count))
-        topBar.progressView.setProgress(progress, animated: true)
+//        topBar.progressView.setProgress(progress, animated: true)
         currentTaskView = task.getView()
         
         print("show view")
     }
-
-    func gameRun(gameRun: protocol<GameRun, TimeBased>, timerTick time: NSTimeInterval) {
-        let percentage = 1 - (gameRun.remainingTime / gameRun.totalTime)
-        topBar.timer.updateProgress(CGFloat(percentage))
+    
+    func gameRun(gameRun: protocol<GameRun, TaskBased>, taskCompleted task: Task, index: Int, result: TaskResult) {
+        
     }
     
     func gameRunCompleted(gameRun: GameRun){
