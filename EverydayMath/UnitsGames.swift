@@ -20,7 +20,7 @@ class UnitConversionGame: Game {
     
     func run(configuration: GameConfiguration) throws -> GameRun {
         if let configuration =  configuration as? TimeBasedGameConfiguration {
-            return TimedGameRun(game: self, config: configuration)
+            return DefaultGameRun(game: self, config: configuration)
         } else {
             throw GameError.InvalidConfiguration
         }

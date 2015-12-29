@@ -42,8 +42,11 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                    
-        gameRun?.delegate = self        
+        
+        if let gameRun = gameRun as? TaskBased {
+            topBar.progressView.components = gameRun.tasks.count
+        }
+        gameRun?.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -65,15 +68,13 @@ extension GameViewController: GameRunDelegate {
     // MARK: GameRunDelegate methods
     
     func gameRun(gameRun: protocol<GameRun, TaskBased>, showTask task: Task, index: Int) {
-        let progress = Float(Float(index) / Float(gameRun.tasks.count))
-//        topBar.progressView.setProgress(progress, animated: true)
-        currentTaskView = task.getView()
-        
+        currentTaskView = task.getView()        
         print("show view")
     }
     
     func gameRun(gameRun: protocol<GameRun, TaskBased>, taskCompleted task: Task, index: Int, result: TaskResult) {
-        
+        topBar.progressView.updateStateForComponent(index, state: ProgressViewState.CorrectA)
+        gameRun.nextTask()
     }
     
     func gameRunCompleted(gameRun: GameRun){

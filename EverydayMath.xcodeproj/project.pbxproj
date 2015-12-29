@@ -57,6 +57,8 @@
 		D0E34F2A1C31493200E7AB97 /* LSCollectionViewLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E34F211C31493200E7AB97 /* LSCollectionViewLayoutHelper.m */; };
 		D0E34F2B1C31493200E7AB97 /* DraggableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E34F241C31493200E7AB97 /* DraggableCollectionViewFlowLayout.m */; };
 		D0E34F2C1C31493200E7AB97 /* UICollectionView+Draggable.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E34F261C31493200E7AB97 /* UICollectionView+Draggable.m */; };
+		D0E34F2E1C32D14100E7AB97 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E34F2D1C32D14100E7AB97 /* ProgressView.swift */; };
+		D0E34F311C32D2B300E7AB97 /* ObjcExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E34F301C32D2B300E7AB97 /* ObjcExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -138,6 +140,9 @@
 		D0E34F261C31493200E7AB97 /* UICollectionView+Draggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Draggable.m"; sourceTree = "<group>"; };
 		D0E34F271C31493200E7AB97 /* UICollectionViewDataSource_Draggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewDataSource_Draggable.h; sourceTree = "<group>"; };
 		D0E34F281C31493200E7AB97 /* UICollectionViewLayout_Warpable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLayout_Warpable.h; sourceTree = "<group>"; };
+		D0E34F2D1C32D14100E7AB97 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		D0E34F2F1C32D2B300E7AB97 /* ObjcExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjcExtensions.h; sourceTree = "<group>"; };
+		D0E34F301C32D2B300E7AB97 /* ObjcExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjcExtensions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +172,7 @@
 			children = (
 				D0C0CC221C0BA64C00D93B83 /* ClosedEndedButton.swift */,
 				D013F4D71C14861800DF8769 /* ScaleControl.swift */,
+				D0E34F2D1C32D14100E7AB97 /* ProgressView.swift */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -223,6 +229,8 @@
 				D0C900EA1BEDFE3400A15F32 /* LaunchScreen.storyboard */,
 				D0C900ED1BEDFE3400A15F32 /* Info.plist */,
 				D0C901091BEF8B6300A15F32 /* EverydayMath-Bridging-Header.h */,
+				D0E34F2F1C32D2B300E7AB97 /* ObjcExtensions.h */,
+				D0E34F301C32D2B300E7AB97 /* ObjcExtensions.m */,
 				D08F52431BF15ED2000F840B /* Extensions.swift */,
 			);
 			path = EverydayMath;
@@ -457,6 +465,7 @@
 				D08F52401BF1394A000F840B /* HeaderView.swift in Sources */,
 				D0E2E09F1C2744B3005E5B06 /* SortTask.swift in Sources */,
 				D0C0CC181C0B992B00D93B83 /* ClosedEndedTaskView.swift in Sources */,
+				D0E34F311C32D2B300E7AB97 /* ObjcExtensions.m in Sources */,
 				D0C0CC231C0BA64C00D93B83 /* ClosedEndedButton.swift in Sources */,
 				D0E34F1A1C308AB100E7AB97 /* UICollectionView+LMIndexChangeSets.m in Sources */,
 				D0B138961BFE7BAF00BEA9C7 /* KKProgressTimer.m in Sources */,
@@ -470,6 +479,7 @@
 				D0E34F2A1C31493200E7AB97 /* LSCollectionViewLayoutHelper.m in Sources */,
 				D013F4D81C14861800DF8769 /* ScaleControl.swift in Sources */,
 				D08F52441BF15ED2000F840B /* Extensions.swift in Sources */,
+				D0E34F2E1C32D14100E7AB97 /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

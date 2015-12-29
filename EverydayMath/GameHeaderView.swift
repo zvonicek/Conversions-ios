@@ -10,7 +10,7 @@ import Foundation
 
 class GameHeaderView: UIView {
     @IBOutlet var timer: KKProgressTimer!
-    @IBOutlet var progressView: UIProgressView!
+    @IBOutlet var progressView: ProgressView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

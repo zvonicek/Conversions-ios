@@ -30,9 +30,11 @@ protocol GameRun {
 protocol TaskBased {
     var tasks: [Task] { get }
     var currentTaskIndex: Int? { get }
+    
+    func nextTask()
 }
 
-class TimedGameRun: GameRun, TaskBased, TaskDelegate {
+class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
     let game: Game
     let config: GameConfiguration
     
@@ -40,20 +42,8 @@ class TimedGameRun: GameRun, TaskBased, TaskDelegate {
     var currentTaskIndex: Int?
     
     var delegate: GameRunDelegate?
-    
-    var timer = NSTimer()
-    
-    var running = false {
-        didSet {
-            timer.invalidate()
-            if running {
-                timer = NSTimer(timeInterval: 1.0, target: self, selector: "tick", userInfo: nil, repeats: true)
-                NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
-            } else {
 
-            }
-        }
-    }
+    var running = false
     var finished = false {
         didSet(value) {
             if value {
@@ -87,7 +77,7 @@ class TimedGameRun: GameRun, TaskBased, TaskDelegate {
         abortGameRun()
     }
     
-    private func nextTask() {
+    func nextTask() {
         let index = currentTaskIndex != nil ? currentTaskIndex! + 1 : 0
         
         if var nextTask = tasks[safe: index] {
