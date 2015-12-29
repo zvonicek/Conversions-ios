@@ -128,15 +128,15 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVq-8j-HR2">
-                            <rect key="frame" x="92" y="49" width="517" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVq-8j-HR2">
+                            <rect key="frame" x="75" y="25" width="517" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dpO-du-0cI" customClass="ScaleControl" customModule="EverydayMath" customModuleProvider="target">
-                            <rect key="frame" x="73" y="0.0" width="527" height="70"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpO-du-0cI" customClass="ScaleControl" customModule="EverydayMath" customModuleProvider="target">
+                            <rect key="frame" x="60" y="0.0" width="540" height="70"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.46466619318181818" colorSpace="calibratedRGB"/>
@@ -177,13 +177,6 @@
                 <outlet property="toValueTextField" destination="Deb-K6-IOV" id="rTx-3e-OTx"/>
             </connections>
             <point key="canvasLocation" x="243" y="203"/>
-        </view>
-        <view contentMode="scaleToFill" id="xT0-aE-zKa" customClass="ScaleControl" customModule="EverydayMath" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="481" height="94"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="264.5" y="-280"/>
         </view>
     </objects>
     <resources>
