@@ -73,7 +73,7 @@ class ProgressView: UIView {
         CGContextSetAllowsAntialiasing(context, true)
         var currentRect: CGRect = rect
         var radius: CGFloat = 0
-        var halfLineWidth: CGFloat = 0
+        let halfLineWidth: CGFloat = self.barBorderWidth / 2.0
         // Background
         if self.usesRoundedCorners {
             radius = currentRect.size.height / 2.0
@@ -81,34 +81,9 @@ class ProgressView: UIView {
         self.barBackgroundColor.setFill()
 
         // Border
-        halfLineWidth = self.barBorderWidth / 2.0
         currentRect = CGRectInset(currentRect, halfLineWidth, halfLineWidth)
         if self.usesRoundedCorners {
             radius = currentRect.size.height / 2.0
-        }
-        self.barBorderColor.setStroke()
-        strokeRectInContext(context, currentRect, self.barBorderWidth, radius, radius)
-        currentRect = CGRectInset(currentRect, halfLineWidth, halfLineWidth)
-        
-        // Padding
-        currentRect = CGRectInset(currentRect, self.barInnerPadding, self.barInnerPadding)
-        var hasInnerBorder: Bool = false
-        
-        // Inner border
-        if let barInnerBorderColor = self.barInnerBorderColor {
-            hasInnerBorder = true
-            halfLineWidth = self.barInnerBorderWidth / 2.0
-            currentRect = CGRectInset(currentRect, halfLineWidth, halfLineWidth)
-            if self.usesRoundedCorners {
-                radius = currentRect.size.height / 2.0
-            }
-            
-            // progress
-            currentRect.size.width *= self.progress
-            currentRect.size.width = CGFloat(fmaxf(Float(currentRect.size.width), Float(CGFloat(2) * radius)))
-            barInnerBorderColor.setStroke()
-            strokeRectInContext(context, currentRect, self.barInnerBorderWidth, radius, radius)
-            currentRect = CGRectInset(currentRect, halfLineWidth, halfLineWidth)
         }
         
         let componentWidth = currentRect.size.width * CGFloat(1/CGFloat(components))
@@ -131,6 +106,10 @@ class ProgressView: UIView {
             barBorderColor.setFill()
             fillRectInContext(context, CGRectMake(xPos, currentRect.origin.y, componentSeparatorBorderWidth, currentRect.size.height), 0.0, 0.0)
         }
+        
+        // Draw border
+        self.barBorderColor.setStroke()
+        strokeRectInContext(context, currentRect, self.barBorderWidth, radius, radius)
         
         // Restore the context
         CGContextRestoreGState(context)
