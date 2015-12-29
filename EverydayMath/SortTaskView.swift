@@ -32,7 +32,7 @@ class SortTaskView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     @IBAction func verify() {
         // complete the task if result already exist
         if (self.result != nil) {
-            delegate?.taskCompleted(task)
+            delegate?.taskCompleted(task, correct: false)
             return
         }
         
@@ -52,7 +52,7 @@ class SortTaskView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         if result.reduce(true, combine: {$0 && $1}) {
             let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC)))
             dispatch_after(delayTime, dispatch_get_main_queue()) {
-                self.delegate?.taskCompleted(self.task)
+                self.delegate?.taskCompleted(self.task, correct: true)
             }
         }
     }

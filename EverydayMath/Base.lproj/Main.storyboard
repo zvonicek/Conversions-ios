@@ -194,14 +194,6 @@
                                             <action selector="pauseGame" destination="3Jj-Vo-GaI" eventType="touchUpInside" id="PDL-fJ-O61"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcG-HZ-97n" customClass="KKProgressTimer">
-                                        <rect key="frame" x="558" y="19" width="32" height="32"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="S47-C8-dav"/>
-                                            <constraint firstAttribute="width" constant="32" id="dOj-zO-zOX"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVU-cR-ci0" customClass="ProgressView" customModule="EverydayMath" customModuleProvider="target">
                                         <rect key="frame" x="50" y="24" width="500" height="22"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -212,24 +204,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="QcG-HZ-97n" firstAttribute="leading" secondItem="VVU-cR-ci0" secondAttribute="trailing" constant="8" id="63e-8J-VpC"/>
                                     <constraint firstAttribute="height" constant="60" id="6RW-Pf-slE"/>
-                                    <constraint firstAttribute="trailing" secondItem="QcG-HZ-97n" secondAttribute="trailing" constant="10" id="7f3-AE-VLR"/>
                                     <constraint firstItem="vGT-1W-cKM" firstAttribute="leading" secondItem="PeN-4t-Rv4" secondAttribute="leading" constant="10" id="Iuu-4N-HfV"/>
                                     <constraint firstItem="vGT-1W-cKM" firstAttribute="top" secondItem="PeN-4t-Rv4" secondAttribute="top" constant="24" id="MM5-CZ-gFD"/>
-                                    <constraint firstItem="QcG-HZ-97n" firstAttribute="centerY" secondItem="VVU-cR-ci0" secondAttribute="centerY" id="Ocz-X6-W2g"/>
+                                    <constraint firstAttribute="trailing" secondItem="VVU-cR-ci0" secondAttribute="trailing" constant="50" id="Oi0-d8-Rrg"/>
                                     <constraint firstItem="VVU-cR-ci0" firstAttribute="top" secondItem="PeN-4t-Rv4" secondAttribute="top" constant="24" id="joq-R5-B7c"/>
-                                    <constraint firstItem="QcG-HZ-97n" firstAttribute="top" secondItem="PeN-4t-Rv4" secondAttribute="top" constant="24" id="kbd-UH-3zn"/>
                                     <constraint firstItem="VVU-cR-ci0" firstAttribute="leading" secondItem="vGT-1W-cKM" secondAttribute="trailing" constant="8" id="xFS-CS-bCd"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="kbd-UH-3zn"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <outlet property="progressView" destination="VVU-cR-ci0" id="n3S-fN-fPV"/>
-                                    <outlet property="timer" destination="QcG-HZ-97n" id="cTL-8S-zKj"/>
                                 </connections>
                             </view>
                         </subviews>

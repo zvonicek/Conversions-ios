@@ -40,9 +40,10 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
     
     let tasks: [Task]
     var currentTaskIndex: Int?
+    var currentTaskPresentationDate: NSDate?
     
     var delegate: GameRunDelegate?
-
+    
     var running = false
     var finished = false {
         didSet(value) {
@@ -55,7 +56,6 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
     init(game: Game, config: TimeBasedGameConfiguration) {
         self.game = game
         self.config = config
-        
         
         self.tasks = config.tasks.flatMap(TaskFactory.taskForConfiguration)
     }
@@ -84,6 +84,7 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
             nextTask.delegate = self
             delegate?.gameRun(self, showTask: nextTask, index: index)
             currentTaskIndex = index
+            currentTaskPresentationDate = NSDate()
         } else {
             finishGameRun()
         }
@@ -101,13 +102,32 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
     
     // MARK: TaskDelegate
     
-    func taskCompleted(task: Task) {
+    func taskCompleted(task: Task, correct: Bool) {
         guard let index = tasks.indexOf(task) else {
             assertionFailure("task was not found")
             return
         }
         
-        delegate?.gameRun(self, taskCompleted: task, index: index, result: TaskResult.CorrectFast)
-//        self.nextTask()
+        guard let currentTaskPresentationDate = currentTaskPresentationDate else {
+            assertionFailure("task presentation date not found")
+            return
+        }
+        
+        var result: TaskResult
+        if correct {
+            let timeSpend = NSDate().timeIntervalSinceDate(currentTaskPresentationDate)
+            switch timeSpend {
+            case 0...task.properties.fastTime:
+                result = TaskResult.CorrectFast
+            case task.properties.fastTime...task.properties.neutralTime:
+                result = TaskResult.CorrectNeutral
+            default:
+                result = TaskResult.CorrectSlow
+            }
+        } else {
+            result = TaskResult.Incorrect
+        }
+        
+        delegate?.gameRun(self, taskCompleted: task, index: index, result: result)
     }
 }

@@ -73,7 +73,7 @@ extension GameViewController: GameRunDelegate {
     }
     
     func gameRun(gameRun: protocol<GameRun, TaskBased>, taskCompleted task: Task, index: Int, result: TaskResult) {
-        topBar.progressView.updateStateForComponent(index, state: ProgressViewState.CorrectA)
+        topBar.progressView.updateStateForComponent(index, state: result.progressViewState())
         gameRun.nextTask()
     }
     

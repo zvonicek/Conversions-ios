@@ -9,13 +9,13 @@
 import UIKit
 
 enum ProgressViewState {
-    case Empty, Wrong, CorrectA, CorrectB, CorrectC
+    case Empty, Incorrect, CorrectA, CorrectB, CorrectC
     
     func color() -> UIColor {
         switch self {
         case .Empty:
             return UIColor.clearColor()
-        case .Wrong:
+        case .Incorrect:
             return UIColor(white: 223/255.0, alpha: 1.0)
         case .CorrectA:
             return UIColor(red: 61/255.0, green: 195/255.0, blue: 50/255.0, alpha: 1.0)
@@ -44,7 +44,7 @@ class ProgressView: UIView {
             states = [ProgressViewState](count: components, repeatedValue: .Empty)
         }
     }
-    var states: [ProgressViewState] = [.Wrong, .CorrectA, .CorrectB, .CorrectC, .Empty, .Empty, .Empty, .Empty, .Empty, .Empty]
+    var states: [ProgressViewState] = [.Incorrect, .CorrectA, .CorrectB, .CorrectC, .Empty, .Empty, .Empty, .Empty, .Empty, .Empty]
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

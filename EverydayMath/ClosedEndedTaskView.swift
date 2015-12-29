@@ -63,15 +63,20 @@ class ClosedEndedTaskView: UIView {
     func answerSelected(sender: ClosedEndedButton) {
         markButton(sender)
         
+        var correct = true
         if !task.configuration.correctAnswers().contains(sender.answerCfg) {
             // selected answer is not correct
+            correct = false
             
             let correctButtons = answerButtons.filter { $0.answerCfg.correct }
             if let correctButton = correctButtons.first {
                 markButton(correctButton)
             }
-        } else {
-            self.performSelector("taskCompleted", withObject: nil, afterDelay: 0.8)
+        }
+        
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.8 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.taskCompleted(correct)
         }
     }
     
@@ -91,7 +96,7 @@ class ClosedEndedTaskView: UIView {
         }
     }
     
-    func taskCompleted() {
-        delegate?.taskCompleted(task)
+    func taskCompleted(correct: Bool) {
+        delegate?.taskCompleted(task, correct: correct)
     }
 }

@@ -10,6 +10,19 @@ import UIKit
 
 enum TaskResult {
     case Incorrect, CorrectFast, CorrectNeutral, CorrectSlow
+    
+    func progressViewState() -> ProgressViewState {
+        switch self {
+        case .Incorrect:
+            return ProgressViewState.Incorrect
+        case .CorrectFast:
+            return ProgressViewState.CorrectA
+        case .CorrectNeutral:
+            return ProgressViewState.CorrectB
+        case .CorrectSlow:
+            return ProgressViewState.CorrectC
+        }
+    }
 }
 
 enum TaskType {
@@ -17,11 +30,10 @@ enum TaskType {
 }
 
 protocol TaskDelegate {
-    func taskCompleted(task: Task)
+    func taskCompleted(task: Task, correct: Bool)
 }
 
 struct TaskProperties {
-//    var identifier: String
     var fastTime: NSTimeInterval
     var neutralTime: NSTimeInterval
 }
@@ -30,7 +42,7 @@ protocol Task {
     var delegate: TaskDelegate? { get set }
     var properties: TaskProperties { get }
     
-    func identifier() -> String    
+    func identifier() -> String
     func getView() -> UIView
 }
 

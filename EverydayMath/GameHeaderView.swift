@@ -9,13 +9,9 @@
 import Foundation
 
 class GameHeaderView: UIView {
-    @IBOutlet var timer: KKProgressTimer!
     @IBOutlet var progressView: ProgressView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        timer.progressColor = UIColor.redColor()
-        timer.progressBackgroundColor = UIColor.greenColor()        
-    }    
+    }
 }
