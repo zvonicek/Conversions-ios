@@ -62,6 +62,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="collectionView" destination="FE4-oa-LO8" id="hal-wY-d9t"/>
+                <outlet property="taskLabel" destination="WS8-r7-egh" id="6uW-GY-MNQ"/>
             </connections>
         </view>
     </objects>

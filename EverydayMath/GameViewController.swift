@@ -90,13 +90,13 @@ extension GameViewController: GameRunDelegate {
     }
     
     func gameRun(gameRun: protocol<GameRun, TaskBased>, taskCompleted task: Task, index: Int, result: TaskResult) {
-        topBar.progressView.updateStateForComponent(index, state: result.progressViewState())
-        
         continueButtonView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame), 320, 70)
         self.view.addSubview(continueButtonView)
         
-        UIView.animateWithDuration(0.3) { () -> Void in
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.continueButtonView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - 70, 320, 70)
+        }) { _ -> Void in
+            self.topBar.progressView.updateStateForComponent(index, state: result.progressViewState())
         }
     }
     

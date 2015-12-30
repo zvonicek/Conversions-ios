@@ -49,8 +49,7 @@ class ClosedEndedTaskView: UIView {
             self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[stackView]|",
                 options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
             self.addConstraint(NSLayoutConstraint(item: stackView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: questionLabel, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 5.0))
-            self.addConstraint(NSLayoutConstraint(item: stackView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: -50.0))
-            
+            self.addConstraint(NSLayoutConstraint(item: stackView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: -80.0))            
         }
     }
     

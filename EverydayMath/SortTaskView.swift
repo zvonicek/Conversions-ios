@@ -10,14 +10,17 @@ import UIKit
 
 class SortTaskView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource_Draggable {
     @IBOutlet var collectionView: UICollectionView!
-
+    @IBOutlet var taskLabel: UILabel!
+    
     var rows = [SortTaskItem]()
     var result: [Bool]?
     var hintVisibleRows = [SortTaskItem]()
     var task: SortTask! {
         didSet {
-            self.collectionView.reloadData()
+            taskLabel.text = task.configuration.question
+            
             rows = task.configuration.presentedQuestions()
+            self.collectionView.reloadData()
         }
     }
     
