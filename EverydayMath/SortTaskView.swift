@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import DraggableCollectionView
+import LMArrayChangeSets
 
 class SortTaskView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource_Draggable {
     @IBOutlet var collectionView: UICollectionView!

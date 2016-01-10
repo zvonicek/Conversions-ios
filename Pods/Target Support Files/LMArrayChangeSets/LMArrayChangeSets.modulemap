@@ -1,0 +1,6 @@
+framework module LMArrayChangeSets {
+  umbrella header "LMArrayChangeSets-umbrella.h"
+
+  export *
+  module * { export * }
+}
