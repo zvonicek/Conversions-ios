@@ -134,7 +134,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpO-du-0cI" customClass="ScaleControl" customModule="EverydayMath" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpO-du-0cI" customClass="DoubleScaleControl" customModule="EverydayMath" customModuleProvider="target">
                             <rect key="frame" x="60" y="0.0" width="540" height="70"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>

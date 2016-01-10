@@ -60,6 +60,7 @@
 		D0E34F2E1C32D14100E7AB97 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E34F2D1C32D14100E7AB97 /* ProgressView.swift */; };
 		D0E34F311C32D2B300E7AB97 /* ObjcExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E34F301C32D2B300E7AB97 /* ObjcExtensions.m */; };
 		D0E34F351C33320800E7AB97 /* SFlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E34F341C33320800E7AB97 /* SFlatButton.swift */; };
+		D0E34F371C33D86D00E7AB97 /* DoubleScaleControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E34F361C33D86D00E7AB97 /* DoubleScaleControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -145,6 +146,7 @@
 		D0E34F2F1C32D2B300E7AB97 /* ObjcExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjcExtensions.h; sourceTree = "<group>"; };
 		D0E34F301C32D2B300E7AB97 /* ObjcExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjcExtensions.m; sourceTree = "<group>"; };
 		D0E34F341C33320800E7AB97 /* SFlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFlatButton.swift; path = Libs/SFlatButton.swift; sourceTree = SOURCE_ROOT; };
+		D0E34F361C33D86D00E7AB97 /* DoubleScaleControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleScaleControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			children = (
 				D0C0CC221C0BA64C00D93B83 /* ClosedEndedButton.swift */,
 				D013F4D71C14861800DF8769 /* ScaleControl.swift */,
+				D0E34F361C33D86D00E7AB97 /* DoubleScaleControl.swift */,
 				D0E34F2D1C32D14100E7AB97 /* ProgressView.swift */,
 			);
 			name = Controls;
@@ -480,6 +483,7 @@
 				D0B138991BFE8EFB00BEA9C7 /* GameHeaderView.swift in Sources */,
 				D0E34F1B1C308AB100E7AB97 /* UITableView+LMIndexChangeSets.m in Sources */,
 				D0C900E21BEDFE3400A15F32 /* AppDelegate.swift in Sources */,
+				D0E34F371C33D86D00E7AB97 /* DoubleScaleControl.swift in Sources */,
 				D0E34F2A1C31493200E7AB97 /* LSCollectionViewLayoutHelper.m in Sources */,
 				D013F4D81C14861800DF8769 /* ScaleControl.swift in Sources */,
 				D08F52441BF15ED2000F840B /* Extensions.swift in Sources */,

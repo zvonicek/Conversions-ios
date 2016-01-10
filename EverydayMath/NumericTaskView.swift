@@ -24,6 +24,7 @@ class NumericTaskView: UIView, NumpadViewDelegate {
             fromLabel.text = String(format: "%.0f", task.taskConfiguration.fromValue) + " " + task.taskConfiguration.fromUnit
             toUnitLabel.text = task.taskConfiguration.toUnit
             hintLabel.text = task.taskConfiguration.hint
+            hintLabel.hidden = true
         }
     }
     var delegate: TaskDelegate?

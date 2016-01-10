@@ -9,19 +9,22 @@
 import UIKit
 
 enum LabelPosition {
-    case Up, Bottom;
+    case Top, Bottom;
 }
 
 @IBDesignable class ScaleControl: UIControl {
 
     var minValue: CGFloat = 10.5
     var maxValue: CGFloat = 22.4
+    var font1 = UIFont.systemFontOfSize(16)
+    var font2 = UIFont.systemFontOfSize(12)
     
     var labelPosition: LabelPosition = .Bottom
-    let contentInsets = UIEdgeInsetsMake(20, 20, 20, 20)
+    var labelPadding: CGFloat = 10.0
+    var drawOuterSideToEdge = false
     
     private var contentRect: CGRect = CGRectZero
-    
+    private var labelSize: CGSize = CGSizeZero
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,12 +38,24 @@ enum LabelPosition {
     }
     
     func initialize() {
+        self.backgroundColor = UIColor.clearColor()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+
+        // Simple heuristics to determine the correct label size and fixing the problem with decimal number longer than the ending value
+        if (maxValue - minValue < 10) {
+            labelSize = NSString(string: "8.8").sizeWithAttributes([NSFontAttributeName: font1])
+        } else {
+            labelSize = NSString(format: "%g", maxValue).sizeWithAttributes([NSFontAttributeName: font1])
+        }
         
-        contentRect = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(self.bounds.height * 0.2, 10, self.bounds.height * 0.4, 10))
+        if labelPosition == .Bottom {
+            contentRect = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(0, 10, labelSize.height + labelPadding, 10))
+        } else {
+            contentRect = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(labelSize.height + labelPadding, 10, 0, 10))
+        }
     }
     
     func valueForPoint(point: CGPoint) -> CGFloat {
@@ -86,7 +101,7 @@ enum LabelPosition {
         return counter
     }
     
-    private func scalePoints(startValue: Int, endValue: Int) -> (index: Int) -> (lineHeight: CGFloat, fontSize: Int)? {
+    private func scalePoints(startValue: Int, endValue: Int) -> (index: Int) -> (lineHeight: CGFloat, font: UIFont)? {
         var maxLevel: Int = 0
         for i in startValue...endValue {
             let level = Int(pow(Float(10), Float(ScaleControl.trailingZerosCount(i))))
@@ -97,9 +112,11 @@ enum LabelPosition {
         
         return {index in
             if index % maxLevel == 0 {
-                return (lineHeight: CGRectGetHeight(self.contentRect), fontSize: 16)
+                return (lineHeight: CGRectGetHeight(self.contentRect), font: self.font1)
+            } else if index % (maxLevel / 2) == 0 {
+                return (lineHeight: CGRectGetHeight(self.contentRect) * 0.6, font: self.font2)
             } else if index % (maxLevel / 10) == 0 {
-                return (lineHeight: CGRectGetHeight(self.contentRect) * 0.4, fontSize: 12)
+                return (lineHeight: CGRectGetHeight(self.contentRect) * 0.4, font: self.font2)
             } else {
                 return nil
             }
@@ -107,11 +124,10 @@ enum LabelPosition {
     }
     
     override func drawRect(rect: CGRect) {
-        let startValue = Int(minValue * 10)
-        let endValue = Int(maxValue * 10)
+        let startValue = Int(minValue * 100)
+        let endValue = Int(maxValue * 100)
         let intervalSize = endValue - startValue
         
-        let labelSize = NSString(format: "%d", Int(maxValue)).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(16)])
         let labelPositions = self.labelPositions(contentRect, labelWidth: labelSize.width, range: intervalSize)
         let scalePoints = self.scalePoints(startValue, endValue: endValue)
         
@@ -125,36 +141,42 @@ enum LabelPosition {
             let xPosition = CGRectGetMinX(contentRect) + CGRectGetWidth(contentRect) * CGFloat(Float(i - startValue) / Float(intervalSize))
             
             if let point = scalePoints(index: i) {
-                CGContextMoveToPoint(context, xPosition, CGRectGetMinY(contentRect) + (CGRectGetHeight(contentRect) - point.lineHeight) / 2)
-                CGContextAddLineToPoint(context, xPosition, CGRectGetMinY(contentRect) + (CGRectGetHeight(contentRect) - point.lineHeight) / 2 + point.lineHeight)
+                let topYposition = drawOuterSideToEdge && labelPosition == .Bottom ? CGRectGetMinY(contentRect)
+                    : CGRectGetMinY(contentRect) + (CGRectGetHeight(contentRect) - point.lineHeight) / 2
+                let bottomYposition = drawOuterSideToEdge && labelPosition == .Top ? CGRectGetMaxY(contentRect)
+                    : CGRectGetMinY(contentRect) + (CGRectGetHeight(contentRect) - point.lineHeight) / 2 + point.lineHeight
+                
+                CGContextMoveToPoint(context, xPosition, topYposition)
+                CGContextAddLineToPoint(context, xPosition, bottomYposition)
                 CGContextStrokePath(context)
 
                 if labelPositions(index: i) {
-                    let number = i / 10
-                    drawLabel(contentRect, xPosition: xPosition, i: number, fontSize: CGFloat(point.fontSize))
+                    let number = String(format: "%g", Float(i) / 100.0)
+                    drawLabel(contentRect, xPosition: xPosition, label: number, font: point.font)
                 }
             }
         }
     }
     
-    func drawLabel(scaleRect: CGRect, xPosition: CGFloat, i: Int, fontSize: CGFloat) {
-        let label: NSString = "\(i)"
-        
+    func drawLabel(scaleRect: CGRect, xPosition: CGFloat, label: String, font: UIFont) {
         let paragraphStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         paragraphStyle.alignment = NSTextAlignment.Center
         
-        let font = UIFont.systemFontOfSize(fontSize)
         let attributes = [
             NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSFontAttributeName: font,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
         
-        let labelSize = label.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(16)])
+        let labelSize = label.sizeWithAttributes([NSFontAttributeName: font1])
         
         let topPadding = labelSize.height / 2 - font.lineHeight / 2
-        label.drawInRect(CGRectMake(xPosition - labelSize.width / 2, CGRectGetMaxY(scaleRect) + labelSize.height / 2 + topPadding, labelSize.width, labelSize.height), withAttributes: attributes)
         
+        if labelPosition == .Bottom {
+            label.drawInRect(CGRectMake(xPosition - labelSize.width / 2, CGRectGetMaxY(self.bounds) - labelSize.height + topPadding, labelSize.width, labelSize.height), withAttributes: attributes)
+        } else {
+            label.drawInRect(CGRectMake(xPosition - labelSize.width / 2, topPadding, labelSize.width, labelSize.height), withAttributes: attributes)
+        }
     }
 }
 
