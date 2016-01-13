@@ -55,7 +55,7 @@ class NumericTaskView: UIView, NumpadViewDelegate {
     
     private func handleSuccess() {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.toValueTextField.backgroundColor = UIColor.greenColor()
+            self.toValueTextField.backgroundColor = UIColor.correctColor()
         }, completion: { _ -> Void in
             self.delegate?.taskCompleted(self.task, correct: true)
         })
@@ -65,7 +65,7 @@ class NumericTaskView: UIView, NumpadViewDelegate {
         let color = self.toValueTextField.backgroundColor
         
         UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.toValueTextField.backgroundColor = UIColor.redColor()
+            self.toValueTextField.backgroundColor = UIColor.errorColor()
             }, completion: { _ -> Void in
                 UIView.animateWithDuration(0.3, delay: 0.3, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
                     self.toValueTextField.backgroundColor = color

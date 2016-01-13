@@ -96,7 +96,7 @@ class SortTaskView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         // in case of a verification result, highlight the cell
         if let res = result?[indexPath.row] {
-            cell.backgroundColor = res ? UIColor.greenColor() : UIColor.redColor()
+            cell.backgroundColor = res ? UIColor.correctColor() : UIColor.errorColor()
         } else {
             cell.backgroundColor = UIColor.whiteColor()
         }

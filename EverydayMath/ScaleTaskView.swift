@@ -40,9 +40,9 @@ class ScaleTaskView: UIView, TrackingScaleControlDelegate {
         let isCorrect = Float(value) > task.configuration.correctValue - task.configuration.correctTolerance && Float(value) < task.configuration.correctValue + task.configuration.correctTolerance
         
         if  isCorrect {
-            resultNumberLabel.backgroundColor = UIColor.greenColor()
+            resultNumberLabel.backgroundColor = UIColor.correctColor()
         } else {
-            resultNumberLabel.backgroundColor = UIColor.redColor()
+            resultNumberLabel.backgroundColor = UIColor.errorColor()
         }
         resultNumberLabel.text = String(format: "%.2f", task.configuration.correctValue)
 

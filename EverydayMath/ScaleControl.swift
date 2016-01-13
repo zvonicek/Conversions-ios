@@ -232,7 +232,7 @@ class TrackingScaleControl: ScaleControl {
         self.userInteractionEnabled = false
         
         let resultView = UIView(frame: CGRectMake(-10, CGRectGetMidY(contentRect) - 10, 10, 10))
-        resultView.backgroundColor = UIColor.greenColor()
+        resultView.backgroundColor = UIColor.correctColor()
         resultView.alpha = 0.5
         self.addSubview(resultView)
         

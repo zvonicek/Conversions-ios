@@ -117,7 +117,7 @@ class CurrencyDragTaskView: UIView {
         }
         
         if (task.verifyResult(outputSum)) {
-            toDragView.backgroundColor = UIColor.greenColor()
+            toDragView.backgroundColor = UIColor.correctColor()
             delegate?.taskCompleted(task, correct: true)
         } else {
             if let hint = task.configuration.hint where self.hintView == nil {
@@ -125,7 +125,7 @@ class CurrencyDragTaskView: UIView {
                 self.hintView = hintView
                 showHintView(hintView)
             } else {
-                toDragView.backgroundColor = UIColor.redColor()
+                toDragView.backgroundColor = UIColor.errorColor()
                 delegate?.taskCompleted(task, correct: false)
             }
         }
