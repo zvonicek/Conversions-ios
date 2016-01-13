@@ -11,6 +11,29 @@ import SEDraggable
 
 class NoteDraggable: SEDraggable {
     var config: CurrencyDragTaskConfigurationNote!
+    lazy var tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap")
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.addGestureRecognizer(tapRecognizer)
+    }
+    
+    override init!(imageView: UIImageView!) {
+        super.init(imageView: imageView)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func handleTap() {
+        for location in self.droppableLocations {
+            if let location = location as? SEDraggableLocation where location != currentLocation {
+                location.draggableObjectWasDroppedInside(self, animated: true)
+                break
+            }
+        }
+    }
 }
 
 class CurrencyDragTaskView: UIView {
