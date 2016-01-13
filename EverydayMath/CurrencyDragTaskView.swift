@@ -71,6 +71,10 @@ class CurrencyDragTaskView: UIView {
     
     var delegate: TaskDelegate?
 
+    deinit {
+        toDragView.delegate = nil
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
