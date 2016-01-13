@@ -1,0 +1,6 @@
+framework module SEDraggable {
+  umbrella header "SEDraggable-umbrella.h"
+
+  export *
+  module * { export * }
+}

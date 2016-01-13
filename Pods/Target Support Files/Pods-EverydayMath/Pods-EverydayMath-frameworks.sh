@@ -87,11 +87,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-EverydayMath/DraggableCollectionView.framework"
   install_framework "Pods-EverydayMath/FSQCollectionViewAlignedLayout.framework"
   install_framework "Pods-EverydayMath/LMArrayChangeSets.framework"
+  install_framework "Pods-EverydayMath/SEDraggable.framework"
   install_framework "Pods-EverydayMath/TZStackView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-EverydayMath/DraggableCollectionView.framework"
   install_framework "Pods-EverydayMath/FSQCollectionViewAlignedLayout.framework"
   install_framework "Pods-EverydayMath/LMArrayChangeSets.framework"
+  install_framework "Pods-EverydayMath/SEDraggable.framework"
   install_framework "Pods-EverydayMath/TZStackView.framework"
 fi

@@ -7,75 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03BF920A0C328446D44AFDCFBAD77ECA /* LMArrayChangeSets-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C126C3356029DD5E244DE8B2F8ACB8B2 /* LMArrayChangeSets-dummy.m */; };
-		044CC36995FB47E8AE711D4B449D3FA3 /* UICollectionView+LMIndexChangeSets.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1FA4097259A5991C9E981271F1F68B /* UICollectionView+LMIndexChangeSets.m */; };
-		07C5B7646F71AA0A67A52776EEB6E3BF /* LSCollectionViewHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 43707F2C4F694AE4DE78B4DA65A619D4 /* LSCollectionViewHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		08CB4C0BFBDE01C24FDA4B748AE6804E /* DraggableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF9602BE36898B1A382C3E6A5D5F16 /* DraggableCollectionViewFlowLayout.m */; };
-		11682FACFE7BF1394DDDC0D6846B3EE2 /* LSCollectionViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1BC3B8E2DB24BA18AFCE9B7DDD5A3F /* LSCollectionViewHelper.m */; };
-		1186C7B0E2B282041BB57F66B2B764FF /* LMArrayChangeSets.h in Headers */ = {isa = PBXBuildFile; fileRef = BE61A73BB7A5BB8E6CEA9ED21C617490 /* LMArrayChangeSets.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11CA92B4B48CBBAF046D475CFAFAC748 /* FSQCollectionViewAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A329A06FD58E2F8993AE85D412825C81 /* FSQCollectionViewAlignedLayout.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		147DEA847B56EF429029673DC2B97399 /* TZStackViewAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1F2388520341C92709DAC40774A061 /* TZStackViewAlignment.swift */; };
-		1572737493B0ABB98A95F57C974C80EF /* TZStackViewDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1B53BCD9C505E34D164B32CF6E6646 /* TZStackViewDistribution.swift */; };
-		1AF1674F0611FE31F5AEE0B5B4C5FC80 /* UICollectionView+Draggable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2949E98DB5494FA0B138955F3945FB /* UICollectionView+Draggable.m */; };
-		1B28D2C1C6B5B596E1F995FE0E3D32E7 /* UICollectionViewLayout_Warpable.h in Headers */ = {isa = PBXBuildFile; fileRef = AF6C3C667C41E46F9BC1CE25284920B1 /* UICollectionViewLayout_Warpable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		27A9588D7317CEA2689BEC16D99AB243 /* FSQCollectionViewAlignedLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6162C62A9CEC10A4DEBDC8208C8D967 /* FSQCollectionViewAlignedLayout-dummy.m */; };
-		2F23692D4BDAA413C9175E84F4201295 /* DraggableCollectionView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39632E348326EABA81DB938DC30C36C7 /* DraggableCollectionView-dummy.m */; };
-		336613C76CD583B0F6F3ECCD7BF72E5B /* LMArrayChangeSets-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 73A45D5DF938D6E4AAB78B47D1C2F0DB /* LMArrayChangeSets-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00F65599396747EAE7B0EA44F84628AE /* Pods-EverydayMath-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B4607D6E34620598FB9DE3DD2FC1A324 /* Pods-EverydayMath-dummy.m */; };
+		03BF920A0C328446D44AFDCFBAD77ECA /* LMArrayChangeSets-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07966D8035903CDDA10F049064060FB9 /* LMArrayChangeSets-dummy.m */; };
+		044CC36995FB47E8AE711D4B449D3FA3 /* UICollectionView+LMIndexChangeSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8A94C5C5ECCB8AB222F4B7A29EA0 /* UICollectionView+LMIndexChangeSets.m */; };
+		07C5B7646F71AA0A67A52776EEB6E3BF /* LSCollectionViewHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E3C64C4B59445C8C4BF896518B94F48 /* LSCollectionViewHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08CB4C0BFBDE01C24FDA4B748AE6804E /* DraggableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A804EE1FED65C2690B61230FF60C2255 /* DraggableCollectionViewFlowLayout.m */; };
+		11682FACFE7BF1394DDDC0D6846B3EE2 /* LSCollectionViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E2530163E8592EAC2FAD048E0444E /* LSCollectionViewHelper.m */; };
+		1186C7B0E2B282041BB57F66B2B764FF /* LMArrayChangeSets.h in Headers */ = {isa = PBXBuildFile; fileRef = 72E2C6B9588576B6148D4D2301423F41 /* LMArrayChangeSets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11CA92B4B48CBBAF046D475CFAFAC748 /* FSQCollectionViewAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 73789F97106A9CC09D33BD09B95D0AFC /* FSQCollectionViewAlignedLayout.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1AF1674F0611FE31F5AEE0B5B4C5FC80 /* UICollectionView+Draggable.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DFD8128B7EB1289F91D5725964B3B6 /* UICollectionView+Draggable.m */; };
+		1B28D2C1C6B5B596E1F995FE0E3D32E7 /* UICollectionViewLayout_Warpable.h in Headers */ = {isa = PBXBuildFile; fileRef = 43C9E4DEFC3638E406915D72FF916D9E /* UICollectionViewLayout_Warpable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2066AA1B3A18D7102D8F4221228EEB77 /* TZStackViewAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F2405CC9072B4369FBF19589B4D9C9 /* TZStackViewAlignment.swift */; };
+		255E6D90D81A1FCA2A8D7E59EEED325D /* SEDraggable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8394F9017FE4BA43DB05E129D0F88C2D /* SEDraggable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27A9588D7317CEA2689BEC16D99AB243 /* FSQCollectionViewAlignedLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A33F6C8B72FB866C1AF3AC3DE9208E40 /* FSQCollectionViewAlignedLayout-dummy.m */; };
+		2F23692D4BDAA413C9175E84F4201295 /* DraggableCollectionView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF30E7FCE113E9A3118DB47D7E58A1 /* DraggableCollectionView-dummy.m */; };
+		2F3C1862B929A4DB7082377E1CFA19CA /* SEDraggable.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB0E3CF17CBF5DC06A767E926151E23 /* SEDraggable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		336613C76CD583B0F6F3ECCD7BF72E5B /* LMArrayChangeSets-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 962F14351B72F17D23DE8527488ECC6C /* LMArrayChangeSets-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		384579ABFC55D0D25282ECD91C16F33D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		399F2492C3719240029D17880E250BB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		46EFE77DA6B7E610712F8DCF9E6CAF2D /* TZStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4352E7870D4BF8725C4D565E5FC814F9 /* TZStackView.swift */; };
-		50AA63D21436CD6F5B7F0604A7D26C17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		5649AD0DAAAD112E977C975A2CE35224 /* Pods-EverydayMath-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B4607D6E34620598FB9DE3DD2FC1A324 /* Pods-EverydayMath-dummy.m */; };
-		5844E4116DD7E8CE30C3473C0F1B9C4A /* DraggableCollectionView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E030E34BA144A973EF7B1F0CE59FD6D /* DraggableCollectionView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		615DD46E775787D5F09AD302AC27DE76 /* NSArray+LMIndexChangeSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B0C8B03FD3A4D9E1D160E900806C2E /* NSArray+LMIndexChangeSets.m */; };
-		665072E9BC4648919F63323ACE1EB619 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		6C58562523D8569322F85CBB270C3778 /* UICollectionView+LMIndexChangeSets.h in Headers */ = {isa = PBXBuildFile; fileRef = 181FAA680B5B69C47960AFB7B19157A8 /* UICollectionView+LMIndexChangeSets.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6DC8D933C9E2189EA4FF3EF16D520456 /* FSQCollectionViewAlignedLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AB80482F8A58A5CD714027C332F2195 /* FSQCollectionViewAlignedLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7007CAD2F96A12098E64A341D5FAFA32 /* TZSpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB255CB1F3C9C12BA4A8F18DCC86DE0 /* TZSpacerView.swift */; };
-		796E088B084C62925A17EEA64DC007AF /* LSCollectionViewLayoutHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C85B16C65D1ACDCCA95192A89D0F25F5 /* LSCollectionViewLayoutHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7B742FB0E503B2D57DDE5A3E57846193 /* UITableView+LMIndexChangeSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 13340A97C50D862B7239C8B02F366199 /* UITableView+LMIndexChangeSets.m */; };
-		87D81DC7DF8C4A6EA4F890F0BA067664 /* NSArray+LMIndexChangeSets.h in Headers */ = {isa = PBXBuildFile; fileRef = 32A6D909E37E2047E2A5F95A1415BA00 /* NSArray+LMIndexChangeSets.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8BD1820B3D08AEAE6B0C5E890F1E0FC3 /* UICollectionView+Draggable.h in Headers */ = {isa = PBXBuildFile; fileRef = CC64EC2C02EB595DD36E337761043BEA /* UICollectionView+Draggable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B2421FC6820418AD021D05F607DABE5E /* UITableView+LMIndexChangeSets.h in Headers */ = {isa = PBXBuildFile; fileRef = D4C5410591DBFA2A506A3AD89C043AE7 /* UITableView+LMIndexChangeSets.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B412588E0C5B81F89830A4B6405A9F75 /* TZStackView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00364A03A4A1D47D57E12A4C7B8E270D /* TZStackView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C3E31DED08B2DEEA8C4EDCA7781108AB /* UICollectionViewDataSource_Draggable.h in Headers */ = {isa = PBXBuildFile; fileRef = E80473B425868D83EE2BE8ADF9F3A8B7 /* UICollectionViewDataSource_Draggable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD8F319D1AAE66B4AE22648522B7EAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		4D3244BB9F8A0A7ABD047FABD14750DC /* TZStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E823586FA27D0359DA08A427E163CA /* TZStackView.swift */; };
+		5844E4116DD7E8CE30C3473C0F1B9C4A /* DraggableCollectionView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 728588CBC1C13CEE0EC43C6047FC10D8 /* DraggableCollectionView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		615DD46E775787D5F09AD302AC27DE76 /* NSArray+LMIndexChangeSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB4772A4A9CB03D471A04802A619E11 /* NSArray+LMIndexChangeSets.m */; };
+		6C58562523D8569322F85CBB270C3778 /* UICollectionView+LMIndexChangeSets.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C4863079758DDB4DCC029A007C4C223 /* UICollectionView+LMIndexChangeSets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DC8D933C9E2189EA4FF3EF16D520456 /* FSQCollectionViewAlignedLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = BFA47D36A60BA28AC05647650C14FCEE /* FSQCollectionViewAlignedLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		796E088B084C62925A17EEA64DC007AF /* LSCollectionViewLayoutHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 273DC7850E4510D77275D968FD123B57 /* LSCollectionViewLayoutHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B742FB0E503B2D57DDE5A3E57846193 /* UITableView+LMIndexChangeSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF141156935778498739A930636D295 /* UITableView+LMIndexChangeSets.m */; };
+		82A271DE9367F66889236340337D9F3F /* SEDraggableLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C9AE36F6C947A1E1133A3B98281547C /* SEDraggableLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87D81DC7DF8C4A6EA4F890F0BA067664 /* NSArray+LMIndexChangeSets.h in Headers */ = {isa = PBXBuildFile; fileRef = 8329FA29BF5DAEB2D0E9DF3B72369162 /* NSArray+LMIndexChangeSets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8867DE60AD4B2D3A52AFBAF4AE3DE697 /* SEDraggableLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CED92DE0507F4E23FDE161F262C3A0 /* SEDraggableLocation.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		8BD1820B3D08AEAE6B0C5E890F1E0FC3 /* UICollectionView+Draggable.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD800BD96C481FB679135BFE3BBA5C4 /* UICollectionView+Draggable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2421FC6820418AD021D05F607DABE5E /* UITableView+LMIndexChangeSets.h in Headers */ = {isa = PBXBuildFile; fileRef = 13255FD6E87FD01D71708AAD52B86A25 /* UITableView+LMIndexChangeSets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B761A681C2A3A396195387AC5A4D612E /* Pods-EverydayMath-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F7384509566400A88ED29F125D1F95C7 /* Pods-EverydayMath-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC12EBD8E8AD087266FC4C902EE6F0E4 /* TZStackViewDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBEEDCC49128556D16F72A48A7316AF /* TZStackViewDistribution.swift */; };
+		C3E31DED08B2DEEA8C4EDCA7781108AB /* UICollectionViewDataSource_Draggable.h in Headers */ = {isa = PBXBuildFile; fileRef = 12BAC31B746D7988DAE4098EE8F71C48 /* UICollectionViewDataSource_Draggable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C598CB715501A8F1705CF41464EBA432 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		C8DA68BA8B6530891B769E36F5CC5105 /* TZStackView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7E9A8875DAAC184366CFE8F21705 /* TZStackView-dummy.m */; };
 		C99680ED1B24ECEE328C2104ACC35A11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		CB42B8E43A11EDA0DF94BCDBBF5D16AE /* DraggableCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 79F4EF22ABDB2432C0A666A1C31DE694 /* DraggableCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CED6269CDAFABF67F9BA9A0220673AC4 /* LSCollectionViewLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A02C9A0398979E9CF6B81BB7293AED /* LSCollectionViewLayoutHelper.m */; };
-		D23B1DDF5CADB37050BA67205DF7909A /* Pods-EverydayMath-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F7384509566400A88ED29F125D1F95C7 /* Pods-EverydayMath-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F7B58D488D1565EC8CC506C7ABC9E064 /* FSQCollectionViewAlignedLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2539D3280BE073EC835B8EB5EB64E962 /* FSQCollectionViewAlignedLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F80FEAF3A1DD815B66C497A1D704189C /* LMArrayChangeSets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3EEF7A945E2C796AFE425B6AD9384B40 /* LMArrayChangeSets.bundle */; };
+		CB42B8E43A11EDA0DF94BCDBBF5D16AE /* DraggableCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C36A5A7BE76E3E5372C0FD154B7B113 /* DraggableCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBB34AC66166D8B41F25E746D6275E97 /* SEDraggable.m in Sources */ = {isa = PBXBuildFile; fileRef = 870B3599289F2FDD1039811C5B9068EA /* SEDraggable.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		CED6269CDAFABF67F9BA9A0220673AC4 /* LSCollectionViewLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EE0199AB0DA080DF35E5388E754E78 /* LSCollectionViewLayoutHelper.m */; };
+		CFD852FEA07FE12961BB79D37F371DE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		D23C17EC357D0C33F0A4B6136BFE2820 /* TZStackView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D74009EB6E6CF7A379590061BD43DD4A /* TZStackView-dummy.m */; };
+		E61FCED53F732E39175A5606D9E2919A /* TZSpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB0287220D8557B89CFB2945CCC38FA /* TZSpacerView.swift */; };
+		E8777CDAB88B25757F6868A294F73E59 /* SEDraggable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C67CE323210EAC2F564B91047153EA /* SEDraggable-dummy.m */; };
+		F5B26EC475C642F9E16583A4473C90FC /* TZStackView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E335B2BCA209F8CA380AE69A4671209 /* TZStackView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7B58D488D1565EC8CC506C7ABC9E064 /* FSQCollectionViewAlignedLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D7A028ECEB0F90D7EC96095D78EE9F /* FSQCollectionViewAlignedLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F80FEAF3A1DD815B66C497A1D704189C /* LMArrayChangeSets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B048A4EE918CA5CAD96AA9510BAC5E49 /* LMArrayChangeSets.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		05499CD518188273D9359F4EE23E7187 /* PBXContainerItemProxy */ = {
+		017BE290BEDC24A5DAD8C94463B43E6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 582F1CCEAE113150B36691ECC0327C5D;
+			remoteInfo = TZStackView;
+		};
+		0CD20485D799F4B066EA0EF4B74D8799 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F7B57051D8F81ABCC6DED78FC119407F;
 			remoteInfo = DraggableCollectionView;
-		};
-		19EFFCE583F359D698C610FD00CC54C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DF608BF2087CD1212DB2F895CE7CBCFB;
-			remoteInfo = LMArrayChangeSets;
-		};
-		1DE838C2B27709F9070D5522B5B8E769 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5AA33F692CA610C34D5959871D5BD88C;
-			remoteInfo = FSQCollectionViewAlignedLayout;
-		};
-		32CC33F59332BAFFB02926AC7F1F730B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4B833C754352437CA235FF37397C85D3;
-			remoteInfo = TZStackView;
 		};
 		3942C5C585355E6C419F1D50B42819F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -84,74 +77,106 @@
 			remoteGlobalIDString = D3B506A5368FCDA5E0276402874323F5;
 			remoteInfo = "LMArrayChangeSets-LMArrayChangeSets";
 		};
+		47D419CCF43CD6D67ABF37DA660BDDC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AA33F692CA610C34D5959871D5BD88C;
+			remoteInfo = FSQCollectionViewAlignedLayout;
+		};
+		6C04E13F0649ADC0547DA08C44F9A27A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA0A48B69A2415758E5429F20935673D;
+			remoteInfo = SEDraggable;
+		};
+		A265DE39078BFF6069F49675FBEBC765 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF608BF2087CD1212DB2F895CE7CBCFB;
+			remoteInfo = LMArrayChangeSets;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00364A03A4A1D47D57E12A4C7B8E270D /* TZStackView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TZStackView-umbrella.h"; sourceTree = "<group>"; };
-		03E2B292542E7FAA442A72AE91623668 /* TZStackView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TZStackView-prefix.pch"; sourceTree = "<group>"; };
-		0A391A1807D8E7C06D763F1834052DFC /* FSQCollectionViewAlignedLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSQCollectionViewAlignedLayout-prefix.pch"; sourceTree = "<group>"; };
-		1251C3E2708206502CA034BE986478A4 /* TZStackView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TZStackView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		13340A97C50D862B7239C8B02F366199 /* UITableView+LMIndexChangeSets.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+LMIndexChangeSets.m"; path = "Pod/Classes/UITableView+LMIndexChangeSets.m"; sourceTree = "<group>"; };
-		15BBF16FAFF26CF1E92CDEE7225A8BC9 /* DraggableCollectionView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DraggableCollectionView.xcconfig; sourceTree = "<group>"; };
-		181FAA680B5B69C47960AFB7B19157A8 /* UICollectionView+LMIndexChangeSets.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+LMIndexChangeSets.h"; path = "Pod/Classes/UICollectionView+LMIndexChangeSets.h"; sourceTree = "<group>"; };
+		00D7A028ECEB0F90D7EC96095D78EE9F /* FSQCollectionViewAlignedLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSQCollectionViewAlignedLayout-umbrella.h"; sourceTree = "<group>"; };
+		00EE0199AB0DA080DF35E5388E754E78 /* LSCollectionViewLayoutHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LSCollectionViewLayoutHelper.m; path = DraggableCollectionView/Helpers/LSCollectionViewLayoutHelper.m; sourceTree = "<group>"; };
+		011E8A94C5C5ECCB8AB222F4B7A29EA0 /* UICollectionView+LMIndexChangeSets.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionView+LMIndexChangeSets.m"; path = "Pod/Classes/UICollectionView+LMIndexChangeSets.m"; sourceTree = "<group>"; };
+		045AF35E91F8E80DD1F768E7F6D21FDC /* DraggableCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DraggableCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F3681CC0B3CE4FA57F93A2F0D79967 /* FSQCollectionViewAlignedLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSQCollectionViewAlignedLayout.xcconfig; sourceTree = "<group>"; };
+		07421306C4D4AEFABC3A67B97CA7A9D9 /* DraggableCollectionView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DraggableCollectionView.modulemap; sourceTree = "<group>"; };
+		07966D8035903CDDA10F049064060FB9 /* LMArrayChangeSets-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LMArrayChangeSets-dummy.m"; sourceTree = "<group>"; };
+		0B993843DE7A686F67D0AE4AD59AF3BA /* LMArrayChangeSets.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LMArrayChangeSets.xcconfig; sourceTree = "<group>"; };
+		12BAC31B746D7988DAE4098EE8F71C48 /* UICollectionViewDataSource_Draggable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UICollectionViewDataSource_Draggable.h; path = DraggableCollectionView/UICollectionViewDataSource_Draggable.h; sourceTree = "<group>"; };
+		13255FD6E87FD01D71708AAD52B86A25 /* UITableView+LMIndexChangeSets.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+LMIndexChangeSets.h"; path = "Pod/Classes/UITableView+LMIndexChangeSets.h"; sourceTree = "<group>"; };
 		1B1DE4B6E058EF4602F666306D13678F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2539D3280BE073EC835B8EB5EB64E962 /* FSQCollectionViewAlignedLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSQCollectionViewAlignedLayout-umbrella.h"; sourceTree = "<group>"; };
-		2AB80482F8A58A5CD714027C332F2195 /* FSQCollectionViewAlignedLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FSQCollectionViewAlignedLayout.h; sourceTree = "<group>"; };
-		32A6D909E37E2047E2A5F95A1415BA00 /* NSArray+LMIndexChangeSets.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+LMIndexChangeSets.h"; path = "Pod/Classes/NSArray+LMIndexChangeSets.h"; sourceTree = "<group>"; };
-		39632E348326EABA81DB938DC30C36C7 /* DraggableCollectionView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DraggableCollectionView-dummy.m"; sourceTree = "<group>"; };
+		25B30824E24E633671049FD11E9DA6C6 /* TZStackView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TZStackView.xcconfig; sourceTree = "<group>"; };
+		273DC7850E4510D77275D968FD123B57 /* LSCollectionViewLayoutHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LSCollectionViewLayoutHelper.h; path = DraggableCollectionView/Helpers/LSCollectionViewLayoutHelper.h; sourceTree = "<group>"; };
+		2F2B357984541A1A85BEF3DC972D13B8 /* SEDraggable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SEDraggable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32EF30E7FCE113E9A3118DB47D7E58A1 /* DraggableCollectionView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DraggableCollectionView-dummy.m"; sourceTree = "<group>"; };
+		3AB0E3CF17CBF5DC06A767E926151E23 /* SEDraggable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SEDraggable.h; path = Classes/SEDraggable.h; sourceTree = "<group>"; };
+		3B5F4A659817DB694A7932E71E50AF0F /* SEDraggable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SEDraggable.modulemap; sourceTree = "<group>"; };
 		3C352448D98A781F6FF28CE7F5E3B801 /* Pods-EverydayMath.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EverydayMath.modulemap"; sourceTree = "<group>"; };
 		3C703AD6BB68D2612D4E02FB06DE497D /* Pods-EverydayMath-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EverydayMath-frameworks.sh"; sourceTree = "<group>"; };
-		3D6D7E9A8875DAAC184366CFE8F21705 /* TZStackView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TZStackView-dummy.m"; sourceTree = "<group>"; };
+		3C9AE36F6C947A1E1133A3B98281547C /* SEDraggableLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SEDraggableLocation.h; path = Classes/SEDraggableLocation.h; sourceTree = "<group>"; };
+		3E3C64C4B59445C8C4BF896518B94F48 /* LSCollectionViewHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LSCollectionViewHelper.h; path = DraggableCollectionView/Helpers/LSCollectionViewHelper.h; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3EEF7A945E2C796AFE425B6AD9384B40 /* LMArrayChangeSets.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LMArrayChangeSets.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		433125E2735C6313EC9E5D46FC88D9B4 /* LMArrayChangeSets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LMArrayChangeSets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4352E7870D4BF8725C4D565E5FC814F9 /* TZStackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TZStackView.swift; path = TZStackView/TZStackView.swift; sourceTree = "<group>"; };
-		43707F2C4F694AE4DE78B4DA65A619D4 /* LSCollectionViewHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LSCollectionViewHelper.h; path = DraggableCollectionView/Helpers/LSCollectionViewHelper.h; sourceTree = "<group>"; };
-		48A02C9A0398979E9CF6B81BB7293AED /* LSCollectionViewLayoutHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LSCollectionViewLayoutHelper.m; path = DraggableCollectionView/Helpers/LSCollectionViewLayoutHelper.m; sourceTree = "<group>"; };
+		413846D74F1E6D328B118684B6A1E8E2 /* Pods_EverydayMath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverydayMath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43C9E4DEFC3638E406915D72FF916D9E /* UICollectionViewLayout_Warpable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UICollectionViewLayout_Warpable.h; path = DraggableCollectionView/UICollectionViewLayout_Warpable.h; sourceTree = "<group>"; };
+		43CED92DE0507F4E23FDE161F262C3A0 /* SEDraggableLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SEDraggableLocation.m; path = Classes/SEDraggableLocation.m; sourceTree = "<group>"; };
+		47EE724A3610DE1279DB0A8788BB6B07 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48F2405CC9072B4369FBF19589B4D9C9 /* TZStackViewAlignment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TZStackViewAlignment.swift; path = TZStackView/TZStackViewAlignment.swift; sourceTree = "<group>"; };
+		495DA33874862827C054F0B500DA62F9 /* LMArrayChangeSets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LMArrayChangeSets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BA8E97177B68845B80074FC603D3B54 /* Pods-EverydayMath-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EverydayMath-resources.sh"; sourceTree = "<group>"; };
-		56B0C8B03FD3A4D9E1D160E900806C2E /* NSArray+LMIndexChangeSets.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+LMIndexChangeSets.m"; path = "Pod/Classes/NSArray+LMIndexChangeSets.m"; sourceTree = "<group>"; };
-		62A1755F9B7DD5A670143E3451E7758D /* DraggableCollectionView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DraggableCollectionView.modulemap; sourceTree = "<group>"; };
-		6E030E34BA144A973EF7B1F0CE59FD6D /* DraggableCollectionView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DraggableCollectionView-umbrella.h"; sourceTree = "<group>"; };
-		6F1BC3B8E2DB24BA18AFCE9B7DDD5A3F /* LSCollectionViewHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LSCollectionViewHelper.m; path = DraggableCollectionView/Helpers/LSCollectionViewHelper.m; sourceTree = "<group>"; };
-		7385A6D19C5A6AC6F3E08E211A02559B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73A45D5DF938D6E4AAB78B47D1C2F0DB /* LMArrayChangeSets-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LMArrayChangeSets-umbrella.h"; sourceTree = "<group>"; };
-		755C82E07F6EF4C1848ACC0BF1A44E2E /* LMArrayChangeSets.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LMArrayChangeSets.modulemap; sourceTree = "<group>"; };
-		798B12E5A62D3F1B785ACF9FB35BC9C9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79F4EF22ABDB2432C0A666A1C31DE694 /* DraggableCollectionViewFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DraggableCollectionViewFlowLayout.h; path = DraggableCollectionView/Layout/DraggableCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		8A564F067711C7000803A4F037D4F687 /* Pods_EverydayMath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverydayMath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C337F1F9D25840AF7A8C898D66CF08C /* SEDraggable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SEDraggable.xcconfig; sourceTree = "<group>"; };
+		5326CEFD68CF23DC319FB0C6096EAD0B /* LMArrayChangeSets-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LMArrayChangeSets-prefix.pch"; sourceTree = "<group>"; };
+		57E823586FA27D0359DA08A427E163CA /* TZStackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TZStackView.swift; path = TZStackView/TZStackView.swift; sourceTree = "<group>"; };
+		5817456815152AE6C058FE6F79E90E2F /* SEDraggable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SEDraggable-prefix.pch"; sourceTree = "<group>"; };
+		5BB4772A4A9CB03D471A04802A619E11 /* NSArray+LMIndexChangeSets.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+LMIndexChangeSets.m"; path = "Pod/Classes/NSArray+LMIndexChangeSets.m"; sourceTree = "<group>"; };
+		6C36A5A7BE76E3E5372C0FD154B7B113 /* DraggableCollectionViewFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DraggableCollectionViewFlowLayout.h; path = DraggableCollectionView/Layout/DraggableCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		6E9E2530163E8592EAC2FAD048E0444E /* LSCollectionViewHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LSCollectionViewHelper.m; path = DraggableCollectionView/Helpers/LSCollectionViewHelper.m; sourceTree = "<group>"; };
+		728588CBC1C13CEE0EC43C6047FC10D8 /* DraggableCollectionView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DraggableCollectionView-umbrella.h"; sourceTree = "<group>"; };
+		72E2C6B9588576B6148D4D2301423F41 /* LMArrayChangeSets.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMArrayChangeSets.h; path = Pod/Classes/LMArrayChangeSets.h; sourceTree = "<group>"; };
+		73789F97106A9CC09D33BD09B95D0AFC /* FSQCollectionViewAlignedLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FSQCollectionViewAlignedLayout.m; sourceTree = "<group>"; };
+		7BD800BD96C481FB679135BFE3BBA5C4 /* UICollectionView+Draggable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+Draggable.h"; path = "DraggableCollectionView/UICollectionView+Draggable.h"; sourceTree = "<group>"; };
+		7C4863079758DDB4DCC029A007C4C223 /* UICollectionView+LMIndexChangeSets.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+LMIndexChangeSets.h"; path = "Pod/Classes/UICollectionView+LMIndexChangeSets.h"; sourceTree = "<group>"; };
+		7CF141156935778498739A930636D295 /* UITableView+LMIndexChangeSets.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+LMIndexChangeSets.m"; path = "Pod/Classes/UITableView+LMIndexChangeSets.m"; sourceTree = "<group>"; };
+		7E9A96DCA03000068108ECA744C2A774 /* DraggableCollectionView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DraggableCollectionView.xcconfig; sourceTree = "<group>"; };
+		8329FA29BF5DAEB2D0E9DF3B72369162 /* NSArray+LMIndexChangeSets.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+LMIndexChangeSets.h"; path = "Pod/Classes/NSArray+LMIndexChangeSets.h"; sourceTree = "<group>"; };
+		8394F9017FE4BA43DB05E129D0F88C2D /* SEDraggable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SEDraggable-umbrella.h"; sourceTree = "<group>"; };
+		85F34BB66ED02E3EF2F406EFE9766691 /* LMArrayChangeSets.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LMArrayChangeSets.modulemap; sourceTree = "<group>"; };
+		870B3599289F2FDD1039811C5B9068EA /* SEDraggable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SEDraggable.m; path = Classes/SEDraggable.m; sourceTree = "<group>"; };
 		8C6132C19A49D8A0BFCCF8DD0A39E9A0 /* Pods-EverydayMath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EverydayMath.debug.xcconfig"; sourceTree = "<group>"; };
-		8EFFBF27108CC10C82B55897772A7BAE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91E21F0E1D7930F6C43BF4182C140C1A /* DraggableCollectionView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DraggableCollectionView-prefix.pch"; sourceTree = "<group>"; };
-		923ED6A51ABB4AF677A12E10971F17C8 /* TZStackView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TZStackView.modulemap; sourceTree = "<group>"; };
-		9A2949E98DB5494FA0B138955F3945FB /* UICollectionView+Draggable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionView+Draggable.m"; path = "DraggableCollectionView/UICollectionView+Draggable.m"; sourceTree = "<group>"; };
-		9E1DD85AA7395A101F723433B16437D1 /* FSQCollectionViewAlignedLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FSQCollectionViewAlignedLayout.modulemap; sourceTree = "<group>"; };
-		9FDA26D8CE76D4513F4B8EC76E1A9A35 /* LMArrayChangeSets-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LMArrayChangeSets-prefix.pch"; sourceTree = "<group>"; };
-		A329A06FD58E2F8993AE85D412825C81 /* FSQCollectionViewAlignedLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FSQCollectionViewAlignedLayout.m; sourceTree = "<group>"; };
-		A8F2A15DA5216F90A563DE7AC91058E2 /* FSQCollectionViewAlignedLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSQCollectionViewAlignedLayout.xcconfig; sourceTree = "<group>"; };
-		A94C9BD9EE84DF7769D7C9C581A993C7 /* FSQCollectionViewAlignedLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FSQCollectionViewAlignedLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD1B53BCD9C505E34D164B32CF6E6646 /* TZStackViewDistribution.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TZStackViewDistribution.swift; path = TZStackView/TZStackViewDistribution.swift; sourceTree = "<group>"; };
-		AF6C3C667C41E46F9BC1CE25284920B1 /* UICollectionViewLayout_Warpable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UICollectionViewLayout_Warpable.h; path = DraggableCollectionView/UICollectionViewLayout_Warpable.h; sourceTree = "<group>"; };
-		B3303E54B72E78114F4F2F3929881F53 /* TZStackView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TZStackView.xcconfig; sourceTree = "<group>"; };
+		962F14351B72F17D23DE8527488ECC6C /* LMArrayChangeSets-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LMArrayChangeSets-umbrella.h"; sourceTree = "<group>"; };
+		96851603F7BA724655E568B8E49DEADA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E335B2BCA209F8CA380AE69A4671209 /* TZStackView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TZStackView-umbrella.h"; sourceTree = "<group>"; };
+		A33F6C8B72FB866C1AF3AC3DE9208E40 /* FSQCollectionViewAlignedLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSQCollectionViewAlignedLayout-dummy.m"; sourceTree = "<group>"; };
+		A3C67CE323210EAC2F564B91047153EA /* SEDraggable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SEDraggable-dummy.m"; sourceTree = "<group>"; };
+		A53754F77E04CAE61CBBB71125C5611D /* TZStackView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TZStackView.modulemap; sourceTree = "<group>"; };
+		A804EE1FED65C2690B61230FF60C2255 /* DraggableCollectionViewFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DraggableCollectionViewFlowLayout.m; path = DraggableCollectionView/Layout/DraggableCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		A963C888019CF44FA82B4EF2D3B4D823 /* FSQCollectionViewAlignedLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FSQCollectionViewAlignedLayout.modulemap; sourceTree = "<group>"; };
+		A9CD472DF6D9B0B8709D5DF88F76DFF9 /* TZStackView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TZStackView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B048A4EE918CA5CAD96AA9510BAC5E49 /* LMArrayChangeSets.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LMArrayChangeSets.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4607D6E34620598FB9DE3DD2FC1A324 /* Pods-EverydayMath-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EverydayMath-dummy.m"; sourceTree = "<group>"; };
+		B5CA51BF8F19DB5440A3B054AE539410 /* TZStackView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TZStackView-prefix.pch"; sourceTree = "<group>"; };
 		B6F2C2D89D6C1A2905190841DC574E45 /* Pods-EverydayMath-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EverydayMath-acknowledgements.plist"; sourceTree = "<group>"; };
-		B9BC4F256625B4B733A1FC7CF0ED5FBF /* LMArrayChangeSets.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LMArrayChangeSets.xcconfig; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BC7C7BE0CA2C60E703883BD9FF14D73C /* DraggableCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DraggableCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE61A73BB7A5BB8E6CEA9ED21C617490 /* LMArrayChangeSets.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMArrayChangeSets.h; path = Pod/Classes/LMArrayChangeSets.h; sourceTree = "<group>"; };
-		C126C3356029DD5E244DE8B2F8ACB8B2 /* LMArrayChangeSets-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LMArrayChangeSets-dummy.m"; sourceTree = "<group>"; };
-		C18F4B819AA36CDC126428716209BDC7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C6162C62A9CEC10A4DEBDC8208C8D967 /* FSQCollectionViewAlignedLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSQCollectionViewAlignedLayout-dummy.m"; sourceTree = "<group>"; };
-		C85B16C65D1ACDCCA95192A89D0F25F5 /* LSCollectionViewLayoutHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LSCollectionViewLayoutHelper.h; path = DraggableCollectionView/Helpers/LSCollectionViewLayoutHelper.h; sourceTree = "<group>"; };
-		CC64EC2C02EB595DD36E337761043BEA /* UICollectionView+Draggable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+Draggable.h"; path = "DraggableCollectionView/UICollectionView+Draggable.h"; sourceTree = "<group>"; };
+		BFA47D36A60BA28AC05647650C14FCEE /* FSQCollectionViewAlignedLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FSQCollectionViewAlignedLayout.h; sourceTree = "<group>"; };
+		C1DFD8128B7EB1289F91D5725964B3B6 /* UICollectionView+Draggable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionView+Draggable.m"; path = "DraggableCollectionView/UICollectionView+Draggable.m"; sourceTree = "<group>"; };
 		CD02B4AD5A2B998BD762893B937E3741 /* Pods-EverydayMath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EverydayMath.release.xcconfig"; sourceTree = "<group>"; };
-		D4C5410591DBFA2A506A3AD89C043AE7 /* UITableView+LMIndexChangeSets.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+LMIndexChangeSets.h"; path = "Pod/Classes/UITableView+LMIndexChangeSets.h"; sourceTree = "<group>"; };
-		DAB255CB1F3C9C12BA4A8F18DCC86DE0 /* TZSpacerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TZSpacerView.swift; path = TZStackView/TZSpacerView.swift; sourceTree = "<group>"; };
-		DD1FA4097259A5991C9E981271F1F68B /* UICollectionView+LMIndexChangeSets.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionView+LMIndexChangeSets.m"; path = "Pod/Classes/UICollectionView+LMIndexChangeSets.m"; sourceTree = "<group>"; };
-		DF1F2388520341C92709DAC40774A061 /* TZStackViewAlignment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TZStackViewAlignment.swift; path = TZStackView/TZStackViewAlignment.swift; sourceTree = "<group>"; };
-		E80473B425868D83EE2BE8ADF9F3A8B7 /* UICollectionViewDataSource_Draggable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UICollectionViewDataSource_Draggable.h; path = DraggableCollectionView/UICollectionViewDataSource_Draggable.h; sourceTree = "<group>"; };
-		E8DF9602BE36898B1A382C3E6A5D5F16 /* DraggableCollectionViewFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DraggableCollectionViewFlowLayout.m; path = DraggableCollectionView/Layout/DraggableCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		D35DD23556C2AD75B5E0AD821B2E58A2 /* FSQCollectionViewAlignedLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSQCollectionViewAlignedLayout-prefix.pch"; sourceTree = "<group>"; };
+		D74009EB6E6CF7A379590061BD43DD4A /* TZStackView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TZStackView-dummy.m"; sourceTree = "<group>"; };
+		DF063A7CB5BC55A37CDEC8927181353F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E376DE7E4C999B23BC19B11FF45F6137 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDB0287220D8557B89CFB2945CCC38FA /* TZSpacerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TZSpacerView.swift; path = TZStackView/TZSpacerView.swift; sourceTree = "<group>"; };
+		EE5189863CA04E9D795F6FDCAA486AA5 /* DraggableCollectionView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DraggableCollectionView-prefix.pch"; sourceTree = "<group>"; };
+		F45C5EB73E561992302E444DDD29EA2C /* FSQCollectionViewAlignedLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FSQCollectionViewAlignedLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7384509566400A88ED29F125D1F95C7 /* Pods-EverydayMath-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EverydayMath-umbrella.h"; sourceTree = "<group>"; };
 		F80B8C99E34E272E9F18FB9865B542AC /* Pods-EverydayMath-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EverydayMath-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FCDEBCF6CC728F1399B3DFFA93D42480 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEBEEDCC49128556D16F72A48A7316AF /* TZStackViewDistribution.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TZStackViewDistribution.swift; path = TZStackView/TZStackViewDistribution.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,19 +187,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75BAC4157D7DB5EF73BAC40E180CE7CE /* Frameworks */ = {
+		19451FF8C907AB4A64C2F1F79707894E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50AA63D21436CD6F5B7F0604A7D26C17 /* Foundation.framework in Frameworks */,
+				3BD8F319D1AAE66B4AE22648522B7EAF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B9EB2AC8EDA1B0C1F0AF44040A0A6C77 /* Frameworks */ = {
+		308FFB266E63FDEF812F88C645569D3E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				665072E9BC4648919F63323ACE1EB619 /* Foundation.framework in Frameworks */,
+				384579ABFC55D0D25282ECD91C16F33D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31A906455AB4B5EB404B9305DF13B6DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD852FEA07FE12961BB79D37F371DE1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,16 +238,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01540385DCA2D5B8979C74A24A3B6812 /* FSQCollectionViewAlignedLayout */ = {
-			isa = PBXGroup;
-			children = (
-				2AB80482F8A58A5CD714027C332F2195 /* FSQCollectionViewAlignedLayout.h */,
-				A329A06FD58E2F8993AE85D412825C81 /* FSQCollectionViewAlignedLayout.m */,
-				799EE69A05BB7F45B16E9410A6A982BB /* Support Files */,
-			);
-			path = FSQCollectionViewAlignedLayout;
-			sourceTree = "<group>";
-		};
 		14327968236A12846AE608A81F17A039 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,45 +246,85 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		1EAAB9E978350E886018FC9E2B011150 /* Products */ = {
+		23AD7F80EF33A22A8E1A487F436A4D2C /* LMArrayChangeSets */ = {
 			isa = PBXGroup;
 			children = (
-				BC7C7BE0CA2C60E703883BD9FF14D73C /* DraggableCollectionView.framework */,
-				A94C9BD9EE84DF7769D7C9C581A993C7 /* FSQCollectionViewAlignedLayout.framework */,
-				3EEF7A945E2C796AFE425B6AD9384B40 /* LMArrayChangeSets.bundle */,
-				433125E2735C6313EC9E5D46FC88D9B4 /* LMArrayChangeSets.framework */,
-				8A564F067711C7000803A4F037D4F687 /* Pods_EverydayMath.framework */,
-				1251C3E2708206502CA034BE986478A4 /* TZStackView.framework */,
+				72E2C6B9588576B6148D4D2301423F41 /* LMArrayChangeSets.h */,
+				8329FA29BF5DAEB2D0E9DF3B72369162 /* NSArray+LMIndexChangeSets.h */,
+				5BB4772A4A9CB03D471A04802A619E11 /* NSArray+LMIndexChangeSets.m */,
+				7C4863079758DDB4DCC029A007C4C223 /* UICollectionView+LMIndexChangeSets.h */,
+				011E8A94C5C5ECCB8AB222F4B7A29EA0 /* UICollectionView+LMIndexChangeSets.m */,
+				13255FD6E87FD01D71708AAD52B86A25 /* UITableView+LMIndexChangeSets.h */,
+				7CF141156935778498739A930636D295 /* UITableView+LMIndexChangeSets.m */,
+				6D10CCAE8DEC25C9C5E40BC2D1F4D7DC /* Support Files */,
 			);
-			name = Products;
+			path = LMArrayChangeSets;
 			sourceTree = "<group>";
 		};
-		3EF1110E71B0628FD18CC26678C21C52 /* Support Files */ = {
+		4DBCC6A32C5E6CA0B62E61EBD0FFF89A /* SEDraggable */ = {
 			isa = PBXGroup;
 			children = (
-				7385A6D19C5A6AC6F3E08E211A02559B /* Info.plist */,
-				923ED6A51ABB4AF677A12E10971F17C8 /* TZStackView.modulemap */,
-				B3303E54B72E78114F4F2F3929881F53 /* TZStackView.xcconfig */,
-				3D6D7E9A8875DAAC184366CFE8F21705 /* TZStackView-dummy.m */,
-				03E2B292542E7FAA442A72AE91623668 /* TZStackView-prefix.pch */,
-				00364A03A4A1D47D57E12A4C7B8E270D /* TZStackView-umbrella.h */,
+				3AB0E3CF17CBF5DC06A767E926151E23 /* SEDraggable.h */,
+				870B3599289F2FDD1039811C5B9068EA /* SEDraggable.m */,
+				3C9AE36F6C947A1E1133A3B98281547C /* SEDraggableLocation.h */,
+				43CED92DE0507F4E23FDE161F262C3A0 /* SEDraggableLocation.m */,
+				9D8665B9E73C1CCAD6C93B8EF9E17043 /* Support Files */,
+			);
+			path = SEDraggable;
+			sourceTree = "<group>";
+		};
+		53EA9189A06C76E3BEC75F43F5E46B3F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCDEBCF6CC728F1399B3DFFA93D42480 /* Info.plist */,
+				A53754F77E04CAE61CBBB71125C5611D /* TZStackView.modulemap */,
+				25B30824E24E633671049FD11E9DA6C6 /* TZStackView.xcconfig */,
+				D74009EB6E6CF7A379590061BD43DD4A /* TZStackView-dummy.m */,
+				B5CA51BF8F19DB5440A3B054AE539410 /* TZStackView-prefix.pch */,
+				9E335B2BCA209F8CA380AE69A4671209 /* TZStackView-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/TZStackView";
 			sourceTree = "<group>";
 		};
-		799EE69A05BB7F45B16E9410A6A982BB /* Support Files */ = {
+		54CEF7C496D654A388A653D16C3A6849 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9E1DD85AA7395A101F723433B16437D1 /* FSQCollectionViewAlignedLayout.modulemap */,
-				A8F2A15DA5216F90A563DE7AC91058E2 /* FSQCollectionViewAlignedLayout.xcconfig */,
-				C6162C62A9CEC10A4DEBDC8208C8D967 /* FSQCollectionViewAlignedLayout-dummy.m */,
-				0A391A1807D8E7C06D763F1834052DFC /* FSQCollectionViewAlignedLayout-prefix.pch */,
-				2539D3280BE073EC835B8EB5EB64E962 /* FSQCollectionViewAlignedLayout-umbrella.h */,
-				798B12E5A62D3F1B785ACF9FB35BC9C9 /* Info.plist */,
+				A963C888019CF44FA82B4EF2D3B4D823 /* FSQCollectionViewAlignedLayout.modulemap */,
+				05F3681CC0B3CE4FA57F93A2F0D79967 /* FSQCollectionViewAlignedLayout.xcconfig */,
+				A33F6C8B72FB866C1AF3AC3DE9208E40 /* FSQCollectionViewAlignedLayout-dummy.m */,
+				D35DD23556C2AD75B5E0AD821B2E58A2 /* FSQCollectionViewAlignedLayout-prefix.pch */,
+				00D7A028ECEB0F90D7EC96095D78EE9F /* FSQCollectionViewAlignedLayout-umbrella.h */,
+				E376DE7E4C999B23BC19B11FF45F6137 /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/FSQCollectionViewAlignedLayout";
+			sourceTree = "<group>";
+		};
+		6D10CCAE8DEC25C9C5E40BC2D1F4D7DC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				47EE724A3610DE1279DB0A8788BB6B07 /* Info.plist */,
+				85F34BB66ED02E3EF2F406EFE9766691 /* LMArrayChangeSets.modulemap */,
+				0B993843DE7A686F67D0AE4AD59AF3BA /* LMArrayChangeSets.xcconfig */,
+				07966D8035903CDDA10F049064060FB9 /* LMArrayChangeSets-dummy.m */,
+				5326CEFD68CF23DC319FB0C6096EAD0B /* LMArrayChangeSets-prefix.pch */,
+				962F14351B72F17D23DE8527488ECC6C /* LMArrayChangeSets-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LMArrayChangeSets";
+			sourceTree = "<group>";
+		};
+		7A37CAFA6895E81E676816779EC5846E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92A3C16651B49A09A62BE6450D8DBE0A /* DraggableCollectionView */,
+				9357AE42881F799E9B0A42C8B019A0BF /* FSQCollectionViewAlignedLayout */,
+				23AD7F80EF33A22A8E1A487F436A4D2C /* LMArrayChangeSets */,
+				4DBCC6A32C5E6CA0B62E61EBD0FFF89A /* SEDraggable */,
+				8CDCE20B34507B195352C976E33BF128 /* TZStackView */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -269,8 +332,8 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				BE1B4B87B750B80768A578C63C852F23 /* Pods */,
-				1EAAB9E978350E886018FC9E2B011150 /* Products */,
+				7A37CAFA6895E81E676816779EC5846E /* Pods */,
+				91D9A7D50B635E9938D63907B7A70844 /* Products */,
 				14327968236A12846AE608A81F17A039 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -293,30 +356,72 @@
 			path = "Target Support Files/Pods-EverydayMath";
 			sourceTree = "<group>";
 		};
-		8D8C1259A85DBBFDB3496E11E3F96CBC /* Support Files */ = {
+		8CDCE20B34507B195352C976E33BF128 /* TZStackView */ = {
 			isa = PBXGroup;
 			children = (
-				62A1755F9B7DD5A670143E3451E7758D /* DraggableCollectionView.modulemap */,
-				15BBF16FAFF26CF1E92CDEE7225A8BC9 /* DraggableCollectionView.xcconfig */,
-				39632E348326EABA81DB938DC30C36C7 /* DraggableCollectionView-dummy.m */,
-				91E21F0E1D7930F6C43BF4182C140C1A /* DraggableCollectionView-prefix.pch */,
-				6E030E34BA144A973EF7B1F0CE59FD6D /* DraggableCollectionView-umbrella.h */,
-				C18F4B819AA36CDC126428716209BDC7 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/DraggableCollectionView";
-			sourceTree = "<group>";
-		};
-		A3038F3F7397850E5CF894EA48F8649F /* TZStackView */ = {
-			isa = PBXGroup;
-			children = (
-				DAB255CB1F3C9C12BA4A8F18DCC86DE0 /* TZSpacerView.swift */,
-				4352E7870D4BF8725C4D565E5FC814F9 /* TZStackView.swift */,
-				DF1F2388520341C92709DAC40774A061 /* TZStackViewAlignment.swift */,
-				AD1B53BCD9C505E34D164B32CF6E6646 /* TZStackViewDistribution.swift */,
-				3EF1110E71B0628FD18CC26678C21C52 /* Support Files */,
+				EDB0287220D8557B89CFB2945CCC38FA /* TZSpacerView.swift */,
+				57E823586FA27D0359DA08A427E163CA /* TZStackView.swift */,
+				48F2405CC9072B4369FBF19589B4D9C9 /* TZStackViewAlignment.swift */,
+				FEBEEDCC49128556D16F72A48A7316AF /* TZStackViewDistribution.swift */,
+				53EA9189A06C76E3BEC75F43F5E46B3F /* Support Files */,
 			);
 			path = TZStackView;
+			sourceTree = "<group>";
+		};
+		91D9A7D50B635E9938D63907B7A70844 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				045AF35E91F8E80DD1F768E7F6D21FDC /* DraggableCollectionView.framework */,
+				F45C5EB73E561992302E444DDD29EA2C /* FSQCollectionViewAlignedLayout.framework */,
+				B048A4EE918CA5CAD96AA9510BAC5E49 /* LMArrayChangeSets.bundle */,
+				495DA33874862827C054F0B500DA62F9 /* LMArrayChangeSets.framework */,
+				413846D74F1E6D328B118684B6A1E8E2 /* Pods_EverydayMath.framework */,
+				2F2B357984541A1A85BEF3DC972D13B8 /* SEDraggable.framework */,
+				A9CD472DF6D9B0B8709D5DF88F76DFF9 /* TZStackView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92A3C16651B49A09A62BE6450D8DBE0A /* DraggableCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				6C36A5A7BE76E3E5372C0FD154B7B113 /* DraggableCollectionViewFlowLayout.h */,
+				A804EE1FED65C2690B61230FF60C2255 /* DraggableCollectionViewFlowLayout.m */,
+				3E3C64C4B59445C8C4BF896518B94F48 /* LSCollectionViewHelper.h */,
+				6E9E2530163E8592EAC2FAD048E0444E /* LSCollectionViewHelper.m */,
+				273DC7850E4510D77275D968FD123B57 /* LSCollectionViewLayoutHelper.h */,
+				00EE0199AB0DA080DF35E5388E754E78 /* LSCollectionViewLayoutHelper.m */,
+				7BD800BD96C481FB679135BFE3BBA5C4 /* UICollectionView+Draggable.h */,
+				C1DFD8128B7EB1289F91D5725964B3B6 /* UICollectionView+Draggable.m */,
+				12BAC31B746D7988DAE4098EE8F71C48 /* UICollectionViewDataSource_Draggable.h */,
+				43C9E4DEFC3638E406915D72FF916D9E /* UICollectionViewLayout_Warpable.h */,
+				E2D57E855314A720E80FAF24D8430D7C /* Support Files */,
+			);
+			path = DraggableCollectionView;
+			sourceTree = "<group>";
+		};
+		9357AE42881F799E9B0A42C8B019A0BF /* FSQCollectionViewAlignedLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BFA47D36A60BA28AC05647650C14FCEE /* FSQCollectionViewAlignedLayout.h */,
+				73789F97106A9CC09D33BD09B95D0AFC /* FSQCollectionViewAlignedLayout.m */,
+				54CEF7C496D654A388A653D16C3A6849 /* Support Files */,
+			);
+			path = FSQCollectionViewAlignedLayout;
+			sourceTree = "<group>";
+		};
+		9D8665B9E73C1CCAD6C93B8EF9E17043 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF063A7CB5BC55A37CDEC8927181353F /* Info.plist */,
+				3B5F4A659817DB694A7932E71E50AF0F /* SEDraggable.modulemap */,
+				4C337F1F9D25840AF7A8C898D66CF08C /* SEDraggable.xcconfig */,
+				A3C67CE323210EAC2F564B91047153EA /* SEDraggable-dummy.m */,
+				5817456815152AE6C058FE6F79E90E2F /* SEDraggable-prefix.pch */,
+				8394F9017FE4BA43DB05E129D0F88C2D /* SEDraggable-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SEDraggable";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -327,17 +432,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BE1B4B87B750B80768A578C63C852F23 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D2AFF3471CA1925DF2466603EF519689 /* DraggableCollectionView */,
-				01540385DCA2D5B8979C74A24A3B6812 /* FSQCollectionViewAlignedLayout */,
-				E3A484938A332D631FA5E5774891FBA9 /* LMArrayChangeSets */,
-				A3038F3F7397850E5CF894EA48F8649F /* TZStackView */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,56 +440,33 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C3B478437CEE6F9DEB882692318DCD1F /* Support Files */ = {
+		E2D57E855314A720E80FAF24D8430D7C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8EFFBF27108CC10C82B55897772A7BAE /* Info.plist */,
-				755C82E07F6EF4C1848ACC0BF1A44E2E /* LMArrayChangeSets.modulemap */,
-				B9BC4F256625B4B733A1FC7CF0ED5FBF /* LMArrayChangeSets.xcconfig */,
-				C126C3356029DD5E244DE8B2F8ACB8B2 /* LMArrayChangeSets-dummy.m */,
-				9FDA26D8CE76D4513F4B8EC76E1A9A35 /* LMArrayChangeSets-prefix.pch */,
-				73A45D5DF938D6E4AAB78B47D1C2F0DB /* LMArrayChangeSets-umbrella.h */,
+				07421306C4D4AEFABC3A67B97CA7A9D9 /* DraggableCollectionView.modulemap */,
+				7E9A96DCA03000068108ECA744C2A774 /* DraggableCollectionView.xcconfig */,
+				32EF30E7FCE113E9A3118DB47D7E58A1 /* DraggableCollectionView-dummy.m */,
+				EE5189863CA04E9D795F6FDCAA486AA5 /* DraggableCollectionView-prefix.pch */,
+				728588CBC1C13CEE0EC43C6047FC10D8 /* DraggableCollectionView-umbrella.h */,
+				96851603F7BA724655E568B8E49DEADA /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/LMArrayChangeSets";
-			sourceTree = "<group>";
-		};
-		D2AFF3471CA1925DF2466603EF519689 /* DraggableCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				79F4EF22ABDB2432C0A666A1C31DE694 /* DraggableCollectionViewFlowLayout.h */,
-				E8DF9602BE36898B1A382C3E6A5D5F16 /* DraggableCollectionViewFlowLayout.m */,
-				43707F2C4F694AE4DE78B4DA65A619D4 /* LSCollectionViewHelper.h */,
-				6F1BC3B8E2DB24BA18AFCE9B7DDD5A3F /* LSCollectionViewHelper.m */,
-				C85B16C65D1ACDCCA95192A89D0F25F5 /* LSCollectionViewLayoutHelper.h */,
-				48A02C9A0398979E9CF6B81BB7293AED /* LSCollectionViewLayoutHelper.m */,
-				CC64EC2C02EB595DD36E337761043BEA /* UICollectionView+Draggable.h */,
-				9A2949E98DB5494FA0B138955F3945FB /* UICollectionView+Draggable.m */,
-				E80473B425868D83EE2BE8ADF9F3A8B7 /* UICollectionViewDataSource_Draggable.h */,
-				AF6C3C667C41E46F9BC1CE25284920B1 /* UICollectionViewLayout_Warpable.h */,
-				8D8C1259A85DBBFDB3496E11E3F96CBC /* Support Files */,
-			);
-			path = DraggableCollectionView;
-			sourceTree = "<group>";
-		};
-		E3A484938A332D631FA5E5774891FBA9 /* LMArrayChangeSets */ = {
-			isa = PBXGroup;
-			children = (
-				BE61A73BB7A5BB8E6CEA9ED21C617490 /* LMArrayChangeSets.h */,
-				32A6D909E37E2047E2A5F95A1415BA00 /* NSArray+LMIndexChangeSets.h */,
-				56B0C8B03FD3A4D9E1D160E900806C2E /* NSArray+LMIndexChangeSets.m */,
-				181FAA680B5B69C47960AFB7B19157A8 /* UICollectionView+LMIndexChangeSets.h */,
-				DD1FA4097259A5991C9E981271F1F68B /* UICollectionView+LMIndexChangeSets.m */,
-				D4C5410591DBFA2A506A3AD89C043AE7 /* UITableView+LMIndexChangeSets.h */,
-				13340A97C50D862B7239C8B02F366199 /* UITableView+LMIndexChangeSets.m */,
-				C3B478437CEE6F9DEB882692318DCD1F /* Support Files */,
-			);
-			path = LMArrayChangeSets;
+			path = "../Target Support Files/DraggableCollectionView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		338A652F7505419ED0E06660AC368235 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				255E6D90D81A1FCA2A8D7E59EEED325D /* SEDraggable-umbrella.h in Headers */,
+				2F3C1862B929A4DB7082377E1CFA19CA /* SEDraggable.h in Headers */,
+				82A271DE9367F66889236340337D9F3F /* SEDraggableLocation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9DF6C412D58A82617AD97FEB6D54FB29 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -408,20 +479,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A55CF8D6D31C5B2F4EDA0675C6969A39 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5B26EC475C642F9E16583A4473C90FC /* TZStackView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A93E9D025336609DE2EE0972DAF7ECDF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F7B58D488D1565EC8CC506C7ABC9E064 /* FSQCollectionViewAlignedLayout-umbrella.h in Headers */,
 				6DC8D933C9E2189EA4FF3EF16D520456 /* FSQCollectionViewAlignedLayout.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC23B3CB20C9A6701DF00853A1C39DEA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B412588E0C5B81F89830A4B6405A9F75 /* TZStackView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,45 +510,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEAD7C3331AA4742C0A0D4C6E59392F8 /* Headers */ = {
+		F107E178304DB089752076F5F0C2992E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D23B1DDF5CADB37050BA67205DF7909A /* Pods-EverydayMath-umbrella.h in Headers */,
+				B761A681C2A3A396195387AC5A4D612E /* Pods-EverydayMath-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		05C8A9AD3182C8CE919EE9280AE1DD01 /* Pods-EverydayMath */ = {
+		582F1CCEAE113150B36691ECC0327C5D /* TZStackView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22611676A0E65852209D7125EC648BD1 /* Build configuration list for PBXNativeTarget "Pods-EverydayMath" */;
+			buildConfigurationList = 1F87C09BFD9AA9D94345D1FCD8C708D5 /* Build configuration list for PBXNativeTarget "TZStackView" */;
 			buildPhases = (
-				88B9FD8BCD3C2DF45D42F43566FC857E /* Sources */,
-				75BAC4157D7DB5EF73BAC40E180CE7CE /* Frameworks */,
-				FEAD7C3331AA4742C0A0D4C6E59392F8 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0CDB493A12CCF88E81CC97D955226782 /* PBXTargetDependency */,
-				5A9B36F394DED863CA3FEA643D44D23E /* PBXTargetDependency */,
-				CDCD4477805864DCDA5A044F9E029508 /* PBXTargetDependency */,
-				3025033F8AB7278CB38C495DE4D647C3 /* PBXTargetDependency */,
-			);
-			name = "Pods-EverydayMath";
-			productName = "Pods-EverydayMath";
-			productReference = 8A564F067711C7000803A4F037D4F687 /* Pods_EverydayMath.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		4B833C754352437CA235FF37397C85D3 /* TZStackView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6DA397AF495F8E64E307037CA1A15DF7 /* Build configuration list for PBXNativeTarget "TZStackView" */;
-			buildPhases = (
-				EA53A910E8EF60C055722BFD1230F1EC /* Sources */,
-				B9EB2AC8EDA1B0C1F0AF44040A0A6C77 /* Frameworks */,
-				DC23B3CB20C9A6701DF00853A1C39DEA /* Headers */,
+				CFF8AF7840E2EACD6F000F6E57700355 /* Sources */,
+				19451FF8C907AB4A64C2F1F79707894E /* Frameworks */,
+				A55CF8D6D31C5B2F4EDA0675C6969A39 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -485,7 +535,7 @@
 			);
 			name = TZStackView;
 			productName = TZStackView;
-			productReference = 1251C3E2708206502CA034BE986478A4 /* TZStackView.framework */;
+			productReference = A9CD472DF6D9B0B8709D5DF88F76DFF9 /* TZStackView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5AA33F692CA610C34D5959871D5BD88C /* FSQCollectionViewAlignedLayout */ = {
@@ -502,7 +552,46 @@
 			);
 			name = FSQCollectionViewAlignedLayout;
 			productName = FSQCollectionViewAlignedLayout;
-			productReference = A94C9BD9EE84DF7769D7C9C581A993C7 /* FSQCollectionViewAlignedLayout.framework */;
+			productReference = F45C5EB73E561992302E444DDD29EA2C /* FSQCollectionViewAlignedLayout.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		63C119E5676D590060130F4C9DF2D9B4 /* Pods-EverydayMath */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15A76A07E20BA7D2E09336008EEBCE6B /* Build configuration list for PBXNativeTarget "Pods-EverydayMath" */;
+			buildPhases = (
+				0EF921C19CB64E21EDC7C4A260A8FA43 /* Sources */,
+				308FFB266E63FDEF812F88C645569D3E /* Frameworks */,
+				F107E178304DB089752076F5F0C2992E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				677ACF11166DAF8DFD499206E44CE7A2 /* PBXTargetDependency */,
+				5305548434007A8A776E593589EB9244 /* PBXTargetDependency */,
+				A4BC569383EAB214291F354F75D2525A /* PBXTargetDependency */,
+				9D90E0BADFC558BBE4F3915FB56A1DE3 /* PBXTargetDependency */,
+				066E198D44772BEDC09A77C85F9DDB5A /* PBXTargetDependency */,
+			);
+			name = "Pods-EverydayMath";
+			productName = "Pods-EverydayMath";
+			productReference = 413846D74F1E6D328B118684B6A1E8E2 /* Pods_EverydayMath.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA0A48B69A2415758E5429F20935673D /* SEDraggable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62BBACA8D25E4F5000E231B79AD82B76 /* Build configuration list for PBXNativeTarget "SEDraggable" */;
+			buildPhases = (
+				47CC1DA2076A9201234F4ACFD6979491 /* Sources */,
+				31A906455AB4B5EB404B9305DF13B6DC /* Frameworks */,
+				338A652F7505419ED0E06660AC368235 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SEDraggable;
+			productName = SEDraggable;
+			productReference = 2F2B357984541A1A85BEF3DC972D13B8 /* SEDraggable.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D3B506A5368FCDA5E0276402874323F5 /* LMArrayChangeSets-LMArrayChangeSets */ = {
@@ -519,7 +608,7 @@
 			);
 			name = "LMArrayChangeSets-LMArrayChangeSets";
 			productName = "LMArrayChangeSets-LMArrayChangeSets";
-			productReference = 3EEF7A945E2C796AFE425B6AD9384B40 /* LMArrayChangeSets.bundle */;
+			productReference = B048A4EE918CA5CAD96AA9510BAC5E49 /* LMArrayChangeSets.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		DF608BF2087CD1212DB2F895CE7CBCFB /* LMArrayChangeSets */ = {
@@ -538,7 +627,7 @@
 			);
 			name = LMArrayChangeSets;
 			productName = LMArrayChangeSets;
-			productReference = 433125E2735C6313EC9E5D46FC88D9B4 /* LMArrayChangeSets.framework */;
+			productReference = 495DA33874862827C054F0B500DA62F9 /* LMArrayChangeSets.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F7B57051D8F81ABCC6DED78FC119407F /* DraggableCollectionView */ = {
@@ -555,7 +644,7 @@
 			);
 			name = DraggableCollectionView;
 			productName = DraggableCollectionView;
-			productReference = BC7C7BE0CA2C60E703883BD9FF14D73C /* DraggableCollectionView.framework */;
+			productReference = 045AF35E91F8E80DD1F768E7F6D21FDC /* DraggableCollectionView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -575,7 +664,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 1EAAB9E978350E886018FC9E2B011150 /* Products */;
+			productRefGroup = 91D9A7D50B635E9938D63907B7A70844 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -583,8 +672,9 @@
 				5AA33F692CA610C34D5959871D5BD88C /* FSQCollectionViewAlignedLayout */,
 				DF608BF2087CD1212DB2F895CE7CBCFB /* LMArrayChangeSets */,
 				D3B506A5368FCDA5E0276402874323F5 /* LMArrayChangeSets-LMArrayChangeSets */,
-				05C8A9AD3182C8CE919EE9280AE1DD01 /* Pods-EverydayMath */,
-				4B833C754352437CA235FF37397C85D3 /* TZStackView */,
+				63C119E5676D590060130F4C9DF2D9B4 /* Pods-EverydayMath */,
+				BA0A48B69A2415758E5429F20935673D /* SEDraggable */,
+				582F1CCEAE113150B36691ECC0327C5D /* TZStackView */,
 			);
 		};
 /* End PBXProject section */
@@ -617,6 +707,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0EF921C19CB64E21EDC7C4A260A8FA43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00F65599396747EAE7B0EA44F84628AE /* Pods-EverydayMath-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		35F1ABE0B7A9EE229FDBDA209B3E854C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -636,6 +734,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		47CC1DA2076A9201234F4ACFD6979491 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8777CDAB88B25757F6868A294F73E59 /* SEDraggable-dummy.m in Sources */,
+				CBB34AC66166D8B41F25E746D6275E97 /* SEDraggable.m in Sources */,
+				8867DE60AD4B2D3A52AFBAF4AE3DE697 /* SEDraggableLocation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		699C07FF5F4CE4D00F41E5AAF32742E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -647,34 +755,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88B9FD8BCD3C2DF45D42F43566FC857E /* Sources */ = {
+		CFF8AF7840E2EACD6F000F6E57700355 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5649AD0DAAAD112E977C975A2CE35224 /* Pods-EverydayMath-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EA53A910E8EF60C055722BFD1230F1EC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7007CAD2F96A12098E64A341D5FAFA32 /* TZSpacerView.swift in Sources */,
-				C8DA68BA8B6530891B769E36F5CC5105 /* TZStackView-dummy.m in Sources */,
-				46EFE77DA6B7E610712F8DCF9E6CAF2D /* TZStackView.swift in Sources */,
-				147DEA847B56EF429029673DC2B97399 /* TZStackViewAlignment.swift in Sources */,
-				1572737493B0ABB98A95F57C974C80EF /* TZStackViewDistribution.swift in Sources */,
+				E61FCED53F732E39175A5606D9E2919A /* TZSpacerView.swift in Sources */,
+				D23C17EC357D0C33F0A4B6136BFE2820 /* TZStackView-dummy.m in Sources */,
+				4D3244BB9F8A0A7ABD047FABD14750DC /* TZStackView.swift in Sources */,
+				2066AA1B3A18D7102D8F4221228EEB77 /* TZStackViewAlignment.swift in Sources */,
+				BC12EBD8E8AD087266FC4C902EE6F0E4 /* TZStackViewDistribution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0CDB493A12CCF88E81CC97D955226782 /* PBXTargetDependency */ = {
+		066E198D44772BEDC09A77C85F9DDB5A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = DraggableCollectionView;
-			target = F7B57051D8F81ABCC6DED78FC119407F /* DraggableCollectionView */;
-			targetProxy = 05499CD518188273D9359F4EE23E7187 /* PBXContainerItemProxy */;
+			name = TZStackView;
+			target = 582F1CCEAE113150B36691ECC0327C5D /* TZStackView */;
+			targetProxy = 017BE290BEDC24A5DAD8C94463B43E6B /* PBXContainerItemProxy */;
 		};
 		1BDA1D6B26A79F94A5FBD41EB6B9A3E2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -682,30 +782,36 @@
 			target = D3B506A5368FCDA5E0276402874323F5 /* LMArrayChangeSets-LMArrayChangeSets */;
 			targetProxy = 3942C5C585355E6C419F1D50B42819F6 /* PBXContainerItemProxy */;
 		};
-		3025033F8AB7278CB38C495DE4D647C3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TZStackView;
-			target = 4B833C754352437CA235FF37397C85D3 /* TZStackView */;
-			targetProxy = 32CC33F59332BAFFB02926AC7F1F730B /* PBXContainerItemProxy */;
-		};
-		5A9B36F394DED863CA3FEA643D44D23E /* PBXTargetDependency */ = {
+		5305548434007A8A776E593589EB9244 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FSQCollectionViewAlignedLayout;
 			target = 5AA33F692CA610C34D5959871D5BD88C /* FSQCollectionViewAlignedLayout */;
-			targetProxy = 1DE838C2B27709F9070D5522B5B8E769 /* PBXContainerItemProxy */;
+			targetProxy = 47D419CCF43CD6D67ABF37DA660BDDC6 /* PBXContainerItemProxy */;
 		};
-		CDCD4477805864DCDA5A044F9E029508 /* PBXTargetDependency */ = {
+		677ACF11166DAF8DFD499206E44CE7A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DraggableCollectionView;
+			target = F7B57051D8F81ABCC6DED78FC119407F /* DraggableCollectionView */;
+			targetProxy = 0CD20485D799F4B066EA0EF4B74D8799 /* PBXContainerItemProxy */;
+		};
+		9D90E0BADFC558BBE4F3915FB56A1DE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SEDraggable;
+			target = BA0A48B69A2415758E5429F20935673D /* SEDraggable */;
+			targetProxy = 6C04E13F0649ADC0547DA08C44F9A27A /* PBXContainerItemProxy */;
+		};
+		A4BC569383EAB214291F354F75D2525A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LMArrayChangeSets;
 			target = DF608BF2087CD1212DB2F895CE7CBCFB /* LMArrayChangeSets */;
-			targetProxy = 19EFFCE583F359D698C610FD00CC54C8 /* PBXContainerItemProxy */;
+			targetProxy = A265DE39078BFF6069F49675FBEBC765 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		035990C33BD599C210A8567F0D7286DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9BC4F256625B4B733A1FC7CF0ED5FBF /* LMArrayChangeSets.xcconfig */;
+			baseConfigurationReference = 0B993843DE7A686F67D0AE4AD59AF3BA /* LMArrayChangeSets.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -730,7 +836,127 @@
 			};
 			name = Release;
 		};
-		050A7EB255539B984FF8597FA6D0BB39 /* Debug */ = {
+		1ACFF73FA2EE08637A62ED543D27A795 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05F3681CC0B3CE4FA57F93A2F0D79967 /* FSQCollectionViewAlignedLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FSQCollectionViewAlignedLayout/FSQCollectionViewAlignedLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FSQCollectionViewAlignedLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FSQCollectionViewAlignedLayout/FSQCollectionViewAlignedLayout.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FSQCollectionViewAlignedLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		548A109A74BD1D061B9E73A200601DEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B993843DE7A686F67D0AE4AD59AF3BA /* LMArrayChangeSets.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = LMArrayChangeSets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		66C581525B67B01D59C15A8C6BA7CB2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C337F1F9D25840AF7A8C898D66CF08C /* SEDraggable.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SEDraggable/SEDraggable-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SEDraggable/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SEDraggable/SEDraggable.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SEDraggable;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7690E1637809B77C8CAF77D98E69C0F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05F3681CC0B3CE4FA57F93A2F0D79967 /* FSQCollectionViewAlignedLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FSQCollectionViewAlignedLayout/FSQCollectionViewAlignedLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FSQCollectionViewAlignedLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FSQCollectionViewAlignedLayout/FSQCollectionViewAlignedLayout.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FSQCollectionViewAlignedLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7A5E5AD6582AC98191E3B14B358FF81C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B993843DE7A686F67D0AE4AD59AF3BA /* LMArrayChangeSets.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LMArrayChangeSets/LMArrayChangeSets-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LMArrayChangeSets/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LMArrayChangeSets/LMArrayChangeSets.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LMArrayChangeSets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		92CFD86C6F794D933220CEC4B069CE71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C6132C19A49D8A0BFCCF8DD0A39E9A0 /* Pods-EverydayMath.debug.xcconfig */;
 			buildSettings = {
@@ -761,64 +987,9 @@
 			};
 			name = Debug;
 		};
-		1ACFF73FA2EE08637A62ED543D27A795 /* Release */ = {
+		9791630B2805C5048313631F4E82A5D6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8F2A15DA5216F90A563DE7AC91058E2 /* FSQCollectionViewAlignedLayout.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FSQCollectionViewAlignedLayout/FSQCollectionViewAlignedLayout-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FSQCollectionViewAlignedLayout/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FSQCollectionViewAlignedLayout/FSQCollectionViewAlignedLayout.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = FSQCollectionViewAlignedLayout;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		1AE2827508BB91F292B6D347F45E9882 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3303E54B72E78114F4F2F3929881F53 /* TZStackView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TZStackView/TZStackView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TZStackView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TZStackView/TZStackView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = TZStackView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1CF824CBEE1ED51017D94B34F92595B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3303E54B72E78114F4F2F3929881F53 /* TZStackView.xcconfig */;
+			baseConfigurationReference = 25B30824E24E633671049FD11E9DA6C6 /* TZStackView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -842,76 +1013,10 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		548A109A74BD1D061B9E73A200601DEB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9BC4F256625B4B733A1FC7CF0ED5FBF /* LMArrayChangeSets.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = LMArrayChangeSets;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		7690E1637809B77C8CAF77D98E69C0F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8F2A15DA5216F90A563DE7AC91058E2 /* FSQCollectionViewAlignedLayout.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FSQCollectionViewAlignedLayout/FSQCollectionViewAlignedLayout-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FSQCollectionViewAlignedLayout/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FSQCollectionViewAlignedLayout/FSQCollectionViewAlignedLayout.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = FSQCollectionViewAlignedLayout;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7A5E5AD6582AC98191E3B14B358FF81C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9BC4F256625B4B733A1FC7CF0ED5FBF /* LMArrayChangeSets.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LMArrayChangeSets/LMArrayChangeSets-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LMArrayChangeSets/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LMArrayChangeSets/LMArrayChangeSets.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = LMArrayChangeSets;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		A0E37A33ED7CC99A4DEB04B8F6B27BC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15BBF16FAFF26CF1E92CDEE7225A8BC9 /* DraggableCollectionView.xcconfig */;
+			baseConfigurationReference = 7E9A96DCA03000068108ECA744C2A774 /* DraggableCollectionView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -977,7 +1082,7 @@
 		};
 		B18425C11662FCC95AD46B71881C5D85 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9BC4F256625B4B733A1FC7CF0ED5FBF /* LMArrayChangeSets.xcconfig */;
+			baseConfigurationReference = 0B993843DE7A686F67D0AE4AD59AF3BA /* LMArrayChangeSets.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = LMArrayChangeSets;
@@ -987,9 +1092,94 @@
 			};
 			name = Release;
 		};
+		BDBDF159DC97B76D43D206CE55DFE9BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25B30824E24E633671049FD11E9DA6C6 /* TZStackView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TZStackView/TZStackView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TZStackView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TZStackView/TZStackView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TZStackView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D9BF5B7AC412FC65D7DA449002DDA581 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD02B4AD5A2B998BD762893B937E3741 /* Pods-EverydayMath.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-EverydayMath/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EverydayMath/Pods-EverydayMath.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_EverydayMath;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E13E3881009B3C5E67C4302CD5FBC3D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C337F1F9D25840AF7A8C898D66CF08C /* SEDraggable.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SEDraggable/SEDraggable-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SEDraggable/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SEDraggable/SEDraggable.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SEDraggable;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		E88E997C26421908F56DAC3D63BB4631 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15BBF16FAFF26CF1E92CDEE7225A8BC9 /* DraggableCollectionView.xcconfig */;
+			baseConfigurationReference = 7E9A96DCA03000068108ECA744C2A774 /* DraggableCollectionView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1048,44 +1238,23 @@
 			};
 			name = Release;
 		};
-		FF6D0C99835F2F9CD818890D6F4F274E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD02B4AD5A2B998BD762893B937E3741 /* Pods-EverydayMath.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-EverydayMath/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EverydayMath/Pods-EverydayMath.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_EverydayMath;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22611676A0E65852209D7125EC648BD1 /* Build configuration list for PBXNativeTarget "Pods-EverydayMath" */ = {
+		15A76A07E20BA7D2E09336008EEBCE6B /* Build configuration list for PBXNativeTarget "Pods-EverydayMath" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				050A7EB255539B984FF8597FA6D0BB39 /* Debug */,
-				FF6D0C99835F2F9CD818890D6F4F274E /* Release */,
+				92CFD86C6F794D933220CEC4B069CE71 /* Debug */,
+				D9BF5B7AC412FC65D7DA449002DDA581 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F87C09BFD9AA9D94345D1FCD8C708D5 /* Build configuration list for PBXNativeTarget "TZStackView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDBDF159DC97B76D43D206CE55DFE9BB /* Debug */,
+				9791630B2805C5048313631F4E82A5D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1117,20 +1286,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		62BBACA8D25E4F5000E231B79AD82B76 /* Build configuration list for PBXNativeTarget "SEDraggable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E13E3881009B3C5E67C4302CD5FBC3D2 /* Debug */,
+				66C581525B67B01D59C15A8C6BA7CB2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		65C79937B2D784E641BB0B4D8F896FA6 /* Build configuration list for PBXNativeTarget "FSQCollectionViewAlignedLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7690E1637809B77C8CAF77D98E69C0F6 /* Debug */,
 				1ACFF73FA2EE08637A62ED543D27A795 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6DA397AF495F8E64E307037CA1A15DF7 /* Build configuration list for PBXNativeTarget "TZStackView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1AE2827508BB91F292B6D347F45E9882 /* Debug */,
-				1CF824CBEE1ED51017D94B34F92595B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
