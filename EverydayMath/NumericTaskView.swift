@@ -12,19 +12,14 @@ class NumericTaskView: UIView, NumpadViewDelegate {
     @IBOutlet var fromLabel: UILabel!
     @IBOutlet var toValueTextField: UITextField!
     @IBOutlet var toUnitLabel: UILabel!
+    var hintView: UIView?
     
     @IBOutlet var numpad: NumpadView!
     
-    @IBOutlet var hintViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet var hintViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var hintLabel: UILabel!
-    
     var task: NumericTask! {
         didSet {
-            fromLabel.text = String(format: "%.0f", task.taskConfiguration.fromValue) + " " + task.taskConfiguration.fromUnit
-            toUnitLabel.text = task.taskConfiguration.toUnit
-            hintLabel.text = task.taskConfiguration.hint
-            hintLabel.hidden = true
+            fromLabel.text = String(format: "%.0f", task.configuration.fromValue) + " " + task.configuration.fromUnit
+            toUnitLabel.text = task.configuration.toUnit
         }
     }
     var delegate: TaskDelegate?
@@ -32,8 +27,6 @@ class NumericTaskView: UIView, NumpadViewDelegate {
     override func awakeFromNib() {
         numpad.delegate = self
         self.backgroundColor = UIColor.clearColor()
-        
-        hintViewTopConstraint.constant = -hintViewHeightConstraint.constant
     }
     
     func numpadDidTapOnButton(button: NumpadButton) {
@@ -81,11 +74,21 @@ class NumericTaskView: UIView, NumpadViewDelegate {
                 })
         })
         
-        hintViewTopConstraint.constant = 0
-        
-        UIView.animateWithDuration(0.4, delay: 0.8, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-                self.layoutIfNeeded()
-            }, completion: nil)        
+        if let hint = task.configuration.hint where self.hintView == nil {
+            let hintView = hint.getHintView()
+            self.hintView = hintView
+            showHintView(hintView)
+        } else {
+            delegate?.taskCompleted(task, correct: false)
+        }
     }
-
+    
+    func showHintView(view: UIView) {
+        view.translatesAutoresizingMaskIntoConstraints = true
+        self.addSubview(view)
+        view.frame = CGRectMake(0, -view.frame.size.height, self.frame.width, view.frame.size.height)
+        UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            view.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)
+            }, completion: nil)
+    }
 }

@@ -10,11 +10,11 @@ import Foundation
 
 class NumericTask: Task {
     var delegate: TaskDelegate?
-    let taskConfiguration: NumericTaskConfiguration
+    let configuration: NumericTaskConfiguration
     let properties: TaskProperties = TaskProperties(fastTime: 5, neutralTime: 10)
     
     init(config: NumericTaskConfiguration) {
-        taskConfiguration = config
+        configuration = config
     }
     
     func getView() -> UIView {
@@ -25,7 +25,7 @@ class NumericTask: Task {
     }
     
     func verifyResult(value: Float) -> Bool {
-        if case taskConfiguration.minCorrectValue ... taskConfiguration.maxCorrectValue = value {
+        if case configuration.minCorrectValue ... configuration.maxCorrectValue = value {
             return true
         } else {
             return false
@@ -45,5 +45,5 @@ struct NumericTaskConfiguration: TaskConfiguration {
     let minCorrectValue: Float
     let maxCorrectValue: Float
     
-    let hint: String
+    let hint: Hint?
 }
