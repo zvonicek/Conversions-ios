@@ -9,14 +9,16 @@
 import UIKit
 import SEDraggable
 
+class NoteDraggable: SEDraggable {
+    var config: CurrencyDragTaskConfigurationNote!
+}
+
 class CurrencyDragTaskView: UIView {
 //    @IBOutlet var topView: SEDraggableLocation!
     @IBOutlet var fromValueLabel: UILabel!
     @IBOutlet var toDragView: SEDraggableLocation!
     @IBOutlet var fromDragView: SEDraggableLocation!
     var hintView: UIView?
-    
-    var draggableMapping = [SEDraggable: Float]()
     
     var task: CurrencyDragTask! {
         didSet {
@@ -32,9 +34,9 @@ class CurrencyDragTaskView: UIView {
             for (note, count) in task.configuration.availableNotes {
                 for _ in 0..<count {
                     let noteView = BankNote.instanceFromNib(note)
-                    let draggable = SEDraggable(imageView: noteView)
+                    let draggable = NoteDraggable(imageView: noteView)
+                    draggable.config = note
                     draggable.tag = index
-                    draggableMapping[draggable] = note.value
                     addDraggableToFrom(draggable)
                 }
                 index++
@@ -112,8 +114,8 @@ class CurrencyDragTaskView: UIView {
     
     @IBAction func verify() {
         let outputSum = toDragView.containedObjects.reduce(0.0) { (value: Float, item: AnyObject) -> Float in
-            let item = item as! SEDraggable
-            return value + (draggableMapping[item] ?? 0)
+            let item = item as! NoteDraggable
+            return value + item.config.value
         }
         
         if (task.verifyResult(outputSum)) {
@@ -121,17 +123,73 @@ class CurrencyDragTaskView: UIView {
             delegate?.taskCompleted(task, correct: true)
         } else {
             if let hint = task.configuration.hint where self.hintView == nil {
+                handleFailure()
                 let hintView = hint.getHintView()
                 self.hintView = hintView
                 showHintView(hintView)
             } else {
+                handleSecondFailure()
+                self.userInteractionEnabled = false
                 toDragView.backgroundColor = UIColor.errorColor()
                 delegate?.taskCompleted(task, correct: false)
             }
         }
     }
     
-    func showHintView(view: UIView) {
+    private func handleFailure() {
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.toDragView.backgroundColor = UIColor.errorColor()
+            }, completion: { _ -> Void in
+                UIView.animateWithDuration(0.3, delay: 0.3, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
+                    self.toDragView.backgroundColor = UIColor.clearColor()
+                    }, completion: { _ -> Void in
+                        self.clearAnswerView()
+                })
+        })
+    }
+    
+    private func handleSecondFailure() {
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.toDragView.backgroundColor = UIColor.errorColor()
+            }, completion: { _ -> Void in
+                UIView.animateWithDuration(0.3, delay: 0.3, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
+                    self.toDragView.backgroundColor = UIColor.clearColor()
+                    }, completion: { _ -> Void in
+                        self.clearAnswerView()
+                        
+                        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.2 * Double(NSEC_PER_SEC)))
+                        dispatch_after(delayTime, dispatch_get_main_queue()) {
+                            self.showCorrectAnswer()
+                        }
+                })
+        })
+    }
+    
+    private func clearAnswerView() {
+        for object in toDragView.containedObjects {
+            if let object = object as? SEDraggable {
+                fromDragView.draggableObjectWasDroppedInside(object, animated: true)
+            }
+        }
+    }
+    
+    private func showCorrectAnswer() {
+        var correctDraggables = [NoteDraggable]()
+        var remainingCorrect = self.task.configuration.correctNotes
+        for note in self.fromDragView.containedObjects {
+            let note = note as! NoteDraggable
+            if let i = remainingCorrect.indexOf({$0.value == note.config.value}) {
+                correctDraggables.append(note)
+                remainingCorrect.removeAtIndex(i)
+            }
+        }
+        
+        for draggable in correctDraggables {
+            toDragView.draggableObjectWasDroppedInside(draggable, animated: true)
+        }
+    }
+    
+    private func showHintView(view: UIView) {
         view.translatesAutoresizingMaskIntoConstraints = true
         self.addSubview(view)
         view.frame = CGRectMake(0, -view.frame.size.height, self.frame.width, view.frame.size.height)

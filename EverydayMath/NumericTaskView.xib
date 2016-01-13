@@ -101,18 +101,18 @@
                         <mask key="constraints">
                             <exclude reference="hkz-0t-rkz"/>
                             <exclude reference="xDS-AS-cRz"/>
+                            <exclude reference="a18-GI-xqN"/>
                             <exclude reference="I6H-t6-Juq"/>
                             <exclude reference="Lmw-2q-Sxu"/>
                             <exclude reference="REJ-zP-Zaj"/>
                             <exclude reference="flG-iC-fGu"/>
                             <exclude reference="sgT-nD-fWf"/>
-                            <exclude reference="a18-GI-xqN"/>
                             <exclude reference="gzr-4i-nao"/>
                             <exclude reference="nrz-EN-SEJ"/>
                         </mask>
                     </variation>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select correct value on the scale" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKp-SW-AUH">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type correct value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKp-SW-AUH">
                     <rect key="frame" x="8" y="8" width="304" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

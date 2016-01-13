@@ -49,7 +49,18 @@ class NumericTaskView: UIView, NumpadViewDelegate {
         if result {
             handleSuccess()
         } else {
-            handleFailure()
+            if let hint = task.configuration.hint where self.hintView == nil {
+                handleFailure()
+                
+                let hintView = hint.getHintView()
+                self.hintView = hintView
+                showHintView(hintView)
+            } else {
+                handleSecondFailure()
+                
+                self.userInteractionEnabled = false
+                delegate?.taskCompleted(task, correct: false)
+            }
         }
     }
     
@@ -73,17 +84,23 @@ class NumericTaskView: UIView, NumpadViewDelegate {
                         self.toValueTextField.text = ""
                 })
         })
-        
-        if let hint = task.configuration.hint where self.hintView == nil {
-            let hintView = hint.getHintView()
-            self.hintView = hintView
-            showHintView(hintView)
-        } else {
-            delegate?.taskCompleted(task, correct: false)
-        }
     }
     
-    func showHintView(view: UIView) {
+    private func handleSecondFailure() {
+        let color = self.toValueTextField.backgroundColor
+        
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.toValueTextField.backgroundColor = UIColor.errorColor()
+            }, completion: { _ -> Void in
+                UIView.animateWithDuration(0.3, delay: 0.3, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
+                    self.toValueTextField.backgroundColor = color
+                    }, completion: { _ -> Void in
+                        self.toValueTextField.text = String(format: "%.0f", self.task.configuration.toValue)
+                })
+        })
+    }
+    
+    private func showHintView(view: UIView) {
         view.translatesAutoresizingMaskIntoConstraints = true
         self.addSubview(view)
         view.frame = CGRectMake(0, -view.frame.size.height, self.frame.width, view.frame.size.height)

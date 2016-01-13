@@ -12,32 +12,32 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75K-x7-qc8" customClass="DoubleScaleControl" customModule="EverydayMath" customModuleProvider="target">
-                    <rect key="frame" x="67" y="0.0" width="253" height="70"/>
+                    <rect key="frame" x="75" y="2" width="242" height="66"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="GTN-uG-V31">
-                    <rect key="frame" x="8" y="8" width="59" height="16"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kilograms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="dgg-V9-l6L">
                     <rect key="frame" x="8" y="46" width="59" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="pounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="GTN-uG-V31">
+                    <rect key="frame" x="8" y="8" width="59" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" red="0.36862745099999999" green="0.39607843139999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.396078431372549" green="0.63921568627450975" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="75K-x7-qc8" secondAttribute="trailing" id="593-nc-wyD"/>
+                <constraint firstAttribute="trailing" secondItem="75K-x7-qc8" secondAttribute="trailing" constant="3" id="593-nc-wyD"/>
                 <constraint firstAttribute="bottom" secondItem="dgg-V9-l6L" secondAttribute="bottom" constant="8" id="59t-1e-Bzb"/>
-                <constraint firstAttribute="bottom" secondItem="75K-x7-qc8" secondAttribute="bottom" id="Gvm-gR-uN4"/>
-                <constraint firstItem="75K-x7-qc8" firstAttribute="leading" secondItem="dgg-V9-l6L" secondAttribute="trailing" id="H9i-wl-ny9"/>
+                <constraint firstAttribute="bottom" secondItem="75K-x7-qc8" secondAttribute="bottom" constant="2" id="Gvm-gR-uN4"/>
+                <constraint firstItem="75K-x7-qc8" firstAttribute="leading" secondItem="dgg-V9-l6L" secondAttribute="trailing" constant="8" id="H9i-wl-ny9"/>
                 <constraint firstItem="75K-x7-qc8" firstAttribute="top" secondItem="1pt-Lu-6zD" secondAttribute="top" id="SYj-xI-uwg"/>
-                <constraint firstItem="75K-x7-qc8" firstAttribute="leading" secondItem="GTN-uG-V31" secondAttribute="trailing" id="YfU-Yj-mbT"/>
+                <constraint firstItem="75K-x7-qc8" firstAttribute="leading" secondItem="GTN-uG-V31" secondAttribute="trailing" constant="8" id="YfU-Yj-mbT"/>
                 <constraint firstItem="GTN-uG-V31" firstAttribute="leading" secondItem="1pt-Lu-6zD" secondAttribute="leading" constant="8" id="bwW-CW-Vey"/>
-                <constraint firstItem="75K-x7-qc8" firstAttribute="top" secondItem="1pt-Lu-6zD" secondAttribute="top" id="hbM-m8-NX4"/>
+                <constraint firstItem="75K-x7-qc8" firstAttribute="top" secondItem="1pt-Lu-6zD" secondAttribute="top" constant="2" id="hbM-m8-NX4"/>
                 <constraint firstAttribute="bottom" secondItem="75K-x7-qc8" secondAttribute="bottom" id="jIM-jj-hxg"/>
                 <constraint firstItem="dgg-V9-l6L" firstAttribute="leading" secondItem="1pt-Lu-6zD" secondAttribute="leading" constant="8" id="jiv-qG-gd5"/>
                 <constraint firstItem="GTN-uG-V31" firstAttribute="top" secondItem="1pt-Lu-6zD" secondAttribute="top" constant="8" id="koh-CP-0mO"/>
@@ -46,6 +46,14 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="SYj-xI-uwg"/>
+                    <exclude reference="YfU-Yj-mbT"/>
+                    <exclude reference="jIM-jj-hxg"/>
+                    <exclude reference="o2v-jm-6ZT"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="bottomLabel" destination="dgg-V9-l6L" id="PnM-3C-41s"/>
                 <outlet property="scaleControl" destination="75K-x7-qc8" id="xUO-g5-zM1"/>
@@ -75,7 +83,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.36862745099999999" green="0.39607843139999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.39607843139999999" green="0.63921568630000003" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="0ve-Ek-xl5" firstAttribute="centerY" secondItem="Lna-lN-9ze" secondAttribute="centerY" id="FKQ-b0-KhW"/>
                 <constraint firstItem="pX6-rL-co0" firstAttribute="top" secondItem="Lna-lN-9ze" secondAttribute="top" constant="15" id="S8p-RZ-zX5"/>

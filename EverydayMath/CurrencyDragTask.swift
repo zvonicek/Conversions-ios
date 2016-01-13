@@ -19,7 +19,8 @@ struct CurrencyDragTaskConfiguration: TaskConfiguration {
     let toValue: Float
     let toCurrency: String
     let tolerance: Float
-    let fromNotes: [CurrencyDragTaskConfigurationNote]
+    let fromNotes: [CurrencyDragTaskConfigurationNote] // may be removed
+    let correctNotes: [CurrencyDragTaskConfigurationNote]
     let availableNotes: [(note: CurrencyDragTaskConfigurationNote, count: Int)]
     let hint: Hint?
 }
