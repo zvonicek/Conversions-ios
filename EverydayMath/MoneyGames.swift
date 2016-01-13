@@ -19,10 +19,6 @@ class CurrencyGame: Game {
     }
     
     func run(configuration: GameConfiguration) throws -> GameRun {
-        if let configuration =  configuration as? TimeBasedGameConfiguration {
-            return DefaultGameRun(game: self, config: configuration)
-        } else {
-            throw GameError.InvalidConfiguration
-        }
+        return DefaultGameRun(game: self, config: configuration)
     }
 }

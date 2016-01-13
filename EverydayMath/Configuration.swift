@@ -8,18 +8,13 @@
 
 import Foundation
 
-// Task-specific configuration
+// MARK: Task-specific configuration
 protocol TaskConfiguration {
     
 }
 
 // MARK: GameConfiguration
 
-protocol GameConfiguration {
-    var tasks: [TaskConfiguration] { get }
-}
-
-struct TimeBasedGameConfiguration: GameConfiguration {
-    let tasks: [TaskConfiguration]
-    let time: NSTimeInterval
+struct GameConfiguration {
+    var tasks: [TaskConfiguration]
 }

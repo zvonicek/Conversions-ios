@@ -53,7 +53,7 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
         }
     }
     
-    init(game: Game, config: TimeBasedGameConfiguration) {
+    init(game: Game, config: GameConfiguration) {
         self.game = game
         self.config = config
         
