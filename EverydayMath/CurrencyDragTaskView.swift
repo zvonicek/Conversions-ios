@@ -42,6 +42,8 @@ class CurrencyDragTaskView: UIView {
     @IBOutlet var toDragView: SEDraggableLocation!
     @IBOutlet var fromDragView: SEDraggableLocation!
     var hintView: UIView?
+
+    let toDragViewNotesLimit = 8
     
     var task: CurrencyDragTask! {
         didSet {
@@ -82,6 +84,7 @@ class CurrencyDragTaskView: UIView {
         configureDraggableLocation(fromDragView)
         
         toDragView.enableOrdering = false
+        toDragView.delegate = self
         
 //        topView.layer.borderColor = UIColor.whiteColor().CGColor
 //        topView.layer.borderWidth = 1.0
@@ -219,5 +222,13 @@ class CurrencyDragTaskView: UIView {
         UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
             view.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)
         }, completion: nil)
+    }
+}
+
+extension CurrencyDragTaskView: SEDraggableLocationEventResponder {
+    func draggableLocationDidRecalculateObjectPositions(location: SEDraggableLocation!) {
+        if (location == toDragView) {
+            location.shouldAcceptDroppedObjects = location.containedObjects.count < self.toDragViewNotesLimit
+        }
     }
 }
