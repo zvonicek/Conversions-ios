@@ -14,6 +14,7 @@ class CurrencyDragTaskView: UIView {
     @IBOutlet var fromValueLabel: UILabel!
     @IBOutlet var toDragView: SEDraggableLocation!
     @IBOutlet var fromDragView: SEDraggableLocation!
+    var hintView: UIView?
     
     var draggableMapping = [SEDraggable: Float]()
     
@@ -47,6 +48,7 @@ class CurrencyDragTaskView: UIView {
         super.awakeFromNib()
         
         self.backgroundColor = UIColor.clearColor()
+        self.clipsToBounds = true
         
 //        topView.enableOrdering = false
 //        topView.userInteractionEnabled = false
@@ -118,8 +120,23 @@ class CurrencyDragTaskView: UIView {
             toDragView.backgroundColor = UIColor.greenColor()
             delegate?.taskCompleted(task, correct: true)
         } else {
-            toDragView.backgroundColor = UIColor.redColor()
-            delegate?.taskCompleted(task, correct: false)
+            if let hint = task.configuration.hint where self.hintView == nil {
+                let hintView = hint.getHintView()
+                self.hintView = hintView
+                showHintView(hintView)
+            } else {
+                toDragView.backgroundColor = UIColor.redColor()
+                delegate?.taskCompleted(task, correct: false)
+            }
         }
+    }
+    
+    func showHintView(view: UIView) {
+        view.translatesAutoresizingMaskIntoConstraints = true
+        self.addSubview(view)
+        view.frame = CGRectMake(0, -view.frame.size.height, self.frame.width, view.frame.size.height)
+        UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            view.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)
+        }, completion: nil)
     }
 }

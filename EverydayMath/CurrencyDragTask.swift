@@ -21,6 +21,7 @@ struct CurrencyDragTaskConfiguration: TaskConfiguration {
     let tolerance: Float
     let fromNotes: [CurrencyDragTaskConfigurationNote]
     let availableNotes: [(note: CurrencyDragTaskConfigurationNote, count: Int)]
+    let hint: Hint?
 }
 
 class CurrencyDragTask: Task {
