@@ -62,6 +62,8 @@ class TaskFactory {
             return SortTask(config: configuration)
         } else if let configuration = configuration as? ScaleTaskConfiguration {
             return ScaleTask(config: configuration)
+        } else if let configuration = configuration as? CurrencyDragTaskConfiguration {
+            return CurrencyDragTask(config: configuration)
         }
         
         return nil
