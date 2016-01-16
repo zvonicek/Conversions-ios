@@ -127,7 +127,9 @@ extension GameViewController: GameRunDelegate {
     func gameRun(gameRun: protocol<GameRun, TaskBased>, taskGaveSecondTry task: Task, index: Int) {
         resultView.setFailureWithMessage(NSLocalizedString("Try it again with hint", comment: "Try it again with hint"), subtitle: NSLocalizedString("Tap to try it again", comment: "Tap to try it again"))
         resultView.finalResult = false
-        showResultView(nil)
+        showResultView {
+            self.performSelector("continueGame", withObject: nil, afterDelay: 0.8)
+        }
     }
     
     func gameRunCompleted(gameRun: GameRun) {

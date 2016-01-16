@@ -94,6 +94,7 @@ class CurrencyDragTaskView: UIView {
 //        topView.layer.borderWidth = 1.0
         toDragView.layer.borderColor = UIColor.whiteColor().CGColor
         toDragView.layer.borderWidth = 1.0
+        toDragView.layer.cornerRadius = 3.0
     }
     
     func configureDraggableLocation(draggableLocation: SEDraggableLocation) {
@@ -225,7 +226,7 @@ class CurrencyDragTaskView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = true
         self.addSubview(view)
         view.frame = CGRectMake(0, -view.frame.size.height, self.frame.width, view.frame.size.height)
-        UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+        UIView.animateWithDuration(0.4, delay: 1.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
             view.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)
         }, completion: nil)
     }

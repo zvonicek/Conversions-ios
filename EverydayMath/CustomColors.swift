@@ -10,11 +10,11 @@ import Foundation
 
 extension UIColor {
     static func errorColor() -> UIColor{
-        return UIColor(red: 219/255.0, green: 44/255.0, blue: 0/255.0, alpha: 1.0)
+        return UIColor(red: 240/255.0, green: 156/255.0, blue: 156/255.0, alpha: 1.0)
     }
     
     static func correctColor() -> UIColor{
-        return UIColor(red: 122/255.0, green: 199/255.0, blue: 79/255.0, alpha: 1.0)
+        return UIColor(red: 167/255.0, green: 236/255.0, blue: 118/255.0, alpha: 1.0)
     }
     
 }

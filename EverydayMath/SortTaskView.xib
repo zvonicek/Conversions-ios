@@ -18,13 +18,21 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bld-rf-DWx">
-                    <rect key="frame" x="60" y="422" width="200" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="35" y="422" width="250" height="50"/>
+                    <color key="backgroundColor" red="1" green="0.74117647058823533" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="200" id="FRO-pC-CES"/>
+                        <constraint firstAttribute="width" constant="250" id="FRO-pC-CES"/>
                         <constraint firstAttribute="height" constant="50" id="uVN-oT-zGp"/>
                     </constraints>
-                    <state key="normal" title="Check"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Check">
+                        <color key="titleColor" red="0.36470588235294116" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="verify" destination="Xv3-E6-d0d" eventType="touchUpInside" id="QEK-s3-AeU"/>
                     </connections>

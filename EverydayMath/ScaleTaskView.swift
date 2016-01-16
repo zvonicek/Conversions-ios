@@ -45,7 +45,6 @@ class ScaleTaskView: UIView, TrackingScaleControlDelegate {
             resultNumberLabel.backgroundColor = UIColor.errorColor()
         }
         resultNumberLabel.text = String(format: "%.2f", task.configuration.correctValue)
-
         
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.resultView.alpha = 1.0

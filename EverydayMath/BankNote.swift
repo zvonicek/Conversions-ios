@@ -13,8 +13,7 @@ class BankNote: UIImageView {
     @IBOutlet var priceLabel: UILabel!
     
     override func awakeFromNib() {
-        self.layer.borderColor = UIColor.blackColor().CGColor
-        self.layer.borderWidth = 1.0
+        self.layer.cornerRadius = 3.0
     }
     
     class func instanceFromNib(config: CurrencyDragTaskConfigurationNote) -> BankNote {

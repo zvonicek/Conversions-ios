@@ -90,15 +90,14 @@ class SortTaskView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
-        cell.clipsToBounds = true
         
         let item = rows[indexPath.row]
         
-        // in case of a verification result, highlight the cell
+        // if have a verification result, highlight the cell
         if let res = result?[indexPath.row] {
             cell.backgroundColor = res ? UIColor.correctColor() : UIColor.errorColor()
         } else {
-            cell.backgroundColor = UIColor.whiteColor()
+            cell.backgroundColor = UIColor(red: 232/255.0, green: 232/255.0, blue: 232/255.0, alpha: 1.0)
         }
         
         if let cell = cell as? SortTaskCollectionViewCell {
