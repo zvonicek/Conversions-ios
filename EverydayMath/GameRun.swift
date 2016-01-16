@@ -12,6 +12,7 @@ import Foundation
 protocol GameRunDelegate {
     func gameRun(gameRun: protocol<GameRun, TaskBased>, showTask task: Task, index: Int)
     func gameRun(gameRun: protocol<GameRun, TaskBased>, taskCompleted task: Task, index: Int, result: TaskResult)
+    func gameRun(gameRun: protocol<GameRun, TaskBased>, taskGaveSecondTry task: Task, index: Int)
     func gameRunCompleted(gameRun: GameRun)
     func gameRunAborted(gameRun: GameRun)
 }
@@ -129,5 +130,14 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
         }
         
         delegate?.gameRun(self, taskCompleted: task, index: index, result: result)
+    }
+    
+    func taskGaveSecondTry(task: Task) {
+        guard let index = tasks.indexOf(task) else {
+            assertionFailure("task was not found")
+            return
+        }
+        
+        delegate?.gameRun(self, taskGaveSecondTry: task, index: index)
     }
 }

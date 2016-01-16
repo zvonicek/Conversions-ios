@@ -55,6 +55,8 @@ class NumericTaskView: UIView, NumpadViewDelegate {
                 let hintView = hint.getHintView()
                 self.hintView = hintView
                 showHintView(hintView)
+                
+                delegate?.taskGaveSecondTry(task)
             } else {
                 handleSecondFailure()
                 

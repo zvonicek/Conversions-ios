@@ -24,7 +24,7 @@ enum ProgressViewState {
         case .CorrectC:
             return UIColor(red: 213/255.0, green: 216/255.0, blue: 135/255.0, alpha: 1.0)
         }
-    }
+    }    
 }
 
 class ProgressView: UIView {

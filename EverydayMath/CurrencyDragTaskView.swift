@@ -157,6 +157,8 @@ class CurrencyDragTaskView: UIView {
                 let hintView = hint.getHintView()
                 self.hintView = hintView
                 showHintView(hintView)
+                
+                delegate?.taskGaveSecondTry(task)
             } else {
                 handleSecondFailure()
                 self.userInteractionEnabled = false

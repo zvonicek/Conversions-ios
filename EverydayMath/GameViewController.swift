@@ -13,7 +13,8 @@ class GameViewController: UIViewController {
     
     @IBOutlet var topBar: GameHeaderView!
     @IBOutlet var gameView: UIView!
-    @IBOutlet var continueButtonView: UIView!
+    @IBOutlet var resultView: ResultView!
+    var dimView: UIView = UIView()
     
     var currentTaskView: UIView? {
         willSet(taskView) {
@@ -44,6 +45,9 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dimView.backgroundColor = UIColor(white: 0.0, alpha: 0.2)
+        dimView.alpha = 0.0
+        
         if let gameRun = gameRun as? TaskBased {
             topBar.progressView.components = gameRun.tasks.count
         }
@@ -58,25 +62,43 @@ class GameViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
+        dimView.frame = self.view.frame
     }
     
     @IBAction func pauseGame() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func continueButtonPressed() {
-        UIView.animateWithDuration(0.3) { () -> Void in
-            self.continueButtonView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - 70, 320, 70)
-        }
-        
+    /// request to hide resutView
+    @IBAction func continueGame() {
         UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.continueButtonView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame), 320, 70)
+            self.resultView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame), CGRectGetWidth(self.resultView.frame), CGRectGetHeight(self.resultView.frame))
+            self.dimView.alpha = 0.0
         }) { (let completed) -> Void in
-            self.continueButtonView.removeFromSuperview()
+            self.resultView.removeFromSuperview()
+            self.dimView.removeFromSuperview()
             
-            if let gameRun = self.gameRun as? TaskBased {
+            if let gameRun = self.gameRun as? TaskBased where self.resultView.finalResult {
                 gameRun.nextTask()
             }
+        }
+    }
+    
+    /// request to show resultView
+    func showResultView(completionHandler: (Void -> Void)?) {
+        self.view.addSubview(dimView)
+        
+        resultView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame), self.view.frame.size.width, CGRectGetHeight(resultView.frame))
+        self.view.addSubview(resultView)
+        
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.resultView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.resultView.frame), self.view.frame.size.width, CGRectGetHeight(self.resultView.frame))
+            self.dimView.alpha = 1.0
+            }) { _ -> Void in
+                if let completionHandler = completionHandler {
+                    completionHandler()
+                }
         }
     }
 }
@@ -90,24 +112,27 @@ extension GameViewController: GameRunDelegate {
     }
     
     func gameRun(gameRun: protocol<GameRun, TaskBased>, taskCompleted task: Task, index: Int, result: TaskResult) {
-        continueButtonView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame), 320, 70)
-        self.view.addSubview(continueButtonView)
+        if result.correct() {
+            resultView.setSuccessWithMessage(result.message())
+        } else {
+            resultView.setFailureWithMessage(result.message(), subtitle: nil)
+        }
+        resultView.finalResult = true
         
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.continueButtonView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - 70, 320, 70)
-        }) { _ -> Void in
+        showResultView {
             self.topBar.progressView.updateStateForComponent(index, state: result.progressViewState())
         }
     }
     
-    func gameRunCompleted(gameRun: GameRun){
-        print("game completed")
-        performSegueWithIdentifier("completedSegue", sender: self)
+    func gameRun(gameRun: protocol<GameRun, TaskBased>, taskGaveSecondTry task: Task, index: Int) {
+        resultView.setFailureWithMessage(NSLocalizedString("Try it again with hint", comment: "Try it again with hint"), subtitle: NSLocalizedString("Tap to try it again", comment: "Tap to try it again"))
+        resultView.finalResult = false
+        showResultView(nil)
     }
     
-    func gameRunTimeouted(gameRun: GameRun){
-        print("game timeouted")
-        performSegueWithIdentifier("timeOutSegue", sender: self)
+    func gameRunCompleted(gameRun: GameRun) {
+        print("game completed")
+        performSegueWithIdentifier("completedSegue", sender: self)
     }
     
     func gameRunAborted(gameRun: GameRun){

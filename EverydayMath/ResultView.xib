@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ResultView" customModule="EverydayMath" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1oK-fo-CxM">
+                    <rect key="frame" x="0.0" y="70" width="320" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap anywhere to continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaC-PO-jlk">
+                            <rect key="frame" x="15" y="4" width="297" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.42016697303921569" green="0.65440538194444275" blue="0.10632148692810414" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.69019607843137254" green="0.92549019607843142" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="I6j-O5-U9v"/>
+                        <constraint firstItem="YaC-PO-jlk" firstAttribute="top" secondItem="1oK-fo-CxM" secondAttribute="top" constant="4" id="Mqz-Rp-GXE"/>
+                        <constraint firstAttribute="bottom" secondItem="YaC-PO-jlk" secondAttribute="bottom" constant="5" id="RU9-ML-49o"/>
+                        <constraint firstAttribute="trailing" secondItem="YaC-PO-jlk" secondAttribute="trailing" constant="8" id="XS6-Nf-EE7"/>
+                        <constraint firstItem="YaC-PO-jlk" firstAttribute="leading" secondItem="1oK-fo-CxM" secondAttribute="leading" constant="15" id="ZyL-97-P01"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That's correct!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RC-x3-hBx">
+                    <rect key="frame" x="15" y="8" width="297" height="54"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                    <color key="textColor" red="0.23921568627450979" green="0.73725490196078436" blue="0.054901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.74117647058823533" green="0.94901960784313721" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="0RC-x3-hBx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="1JB-kX-OJr"/>
+                <constraint firstItem="1oK-fo-CxM" firstAttribute="top" secondItem="0RC-x3-hBx" secondAttribute="bottom" constant="8" id="4Sw-dz-hVM"/>
+                <constraint firstAttribute="bottom" secondItem="1oK-fo-CxM" secondAttribute="bottom" id="C4v-Di-Cma"/>
+                <constraint firstAttribute="trailing" secondItem="0RC-x3-hBx" secondAttribute="trailing" constant="8" id="Q76-AH-bpC"/>
+                <constraint firstItem="0RC-x3-hBx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="SHX-kC-kPP"/>
+                <constraint firstAttribute="trailing" secondItem="1oK-fo-CxM" secondAttribute="trailing" id="bo4-97-PAi"/>
+                <constraint firstItem="1oK-fo-CxM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dCf-ID-UVJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="subtitleLabel" destination="YaC-PO-jlk" id="ilV-ct-0kS"/>
+                <outlet property="subtitleWrapper" destination="1oK-fo-CxM" id="BeO-1W-IWa"/>
+                <outlet property="titleLabel" destination="0RC-x3-hBx" id="yqt-7U-lxc"/>
+            </connections>
+            <point key="canvasLocation" x="311" y="139"/>
+        </view>
+    </objects>
+</document>

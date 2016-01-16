@@ -23,14 +23,28 @@ enum TaskResult {
             return ProgressViewState.CorrectC
         }
     }
-}
-
-enum TaskType {
-    case Numeric, ClosedOptions
+    
+    func message() -> String {
+        switch self {
+        case .Incorrect:
+            return ["Oh, no!", "Maybe next time", "Bad luck", "That's not correct"].randomItem()
+        case .CorrectFast:
+            return ["That was fast!", "You rock!", "Wow, that was quick"].randomItem()
+        case .CorrectNeutral:
+            return ["You are correct!", "That's correct", "Good effort", "Nice"].randomItem()
+        case .CorrectSlow:
+            return ["Try to be faster", "You can do faster"].randomItem()
+        }
+    }
+    
+    func correct() -> Bool {
+        return self != .Incorrect
+    }
 }
 
 protocol TaskDelegate {
     func taskCompleted(task: Task, correct: Bool)
+    func taskGaveSecondTry(task: Task)
 }
 
 struct TaskProperties {
