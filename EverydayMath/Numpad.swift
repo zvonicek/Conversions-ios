@@ -57,6 +57,11 @@ class NumpadView: UIView {
     let numberButtons: [NumpadButton] = (0..<12).map {i in NumpadButton(position: i) }
     var delegate: NumpadViewDelegate?
     
+    let rows = 4
+    let cols = 3
+    let sep = CGFloat(2)
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -86,27 +91,86 @@ class NumpadView: UIView {
         delegate?.numpadDidTapOnButton(button)
     }
     
+    func buttonSize() -> CGSize {
+        return CGSizeMake((CGRectGetWidth(self.bounds) - sep * (CGFloat(cols) - 1)) / CGFloat(cols), ((CGRectGetHeight(self.bounds) - sep * (CGFloat(rows) - 1)) / CGFloat(rows)))
+    }
+    
     override func layoutSubviews() {
-        let rows = 4
-        let cols = 3
-        let sep = CGFloat(2)
-        
         var left = CGFloat(0)
         var top = CGFloat(0)
         
-        let buttonSize = CGSizeMake((CGRectGetWidth(self.bounds) - sep * (CGFloat(cols) - 1)) / CGFloat(cols), ((CGRectGetHeight(self.bounds) - sep * (CGFloat(rows) - 1)) / CGFloat(rows)))
-        
         for i in 0..<self.numberButtons.count {
             let button = self.numberButtons[i]
-            button.frame = CGRectMake(left, top, buttonSize.width, buttonSize.height)
+            button.frame = CGRectMake(left, top, buttonSize().width, buttonSize().height)
             
             if i % cols == 2 {
                 left = CGFloat(0)
-                top += buttonSize.height + sep
+                top += buttonSize().height + sep
             } else {
-                left += buttonSize.width + sep
+                left += buttonSize().width + sep
             }
         }
+    }
+    
+    override func drawRect(rect: CGRect) {
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        var colorComponents:[CGFloat] = [1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.4, 1.0, 1.0, 1.0, 0.0]
+        var verticalLocations:[CGFloat] = [0.0, 0.5, 1.0]
+        let verticalGradient = CGGradientCreateWithColorComponents(colorSpace, &colorComponents, &verticalLocations, 3)
+        var horizontalLocations:[CGFloat] = [1.0, 0.5, 0.0]
+        let horizontalGradient = CGGradientCreateWithColorComponents(colorSpace, &colorComponents, &horizontalLocations, 3)
+        
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 0.0);
+        
+        for i in 1..<self.cols {
+            CGContextSaveGState(context);
+            CGContextAddRect(context, CGRectMake(buttonSize().width * CGFloat(i) + sep * CGFloat(i-1), 0, 1, rect.size.height));
+            CGContextClip(context);
+            CGContextDrawLinearGradient (context, verticalGradient, CGPointMake(0, 0), CGPointMake(0, rect.size.height), CGGradientDrawingOptions(rawValue: 0))
+            CGContextRestoreGState(context);
+        }
+        
+        for i in 1..<self.rows {
+            CGContextSaveGState(context);
+            CGContextAddRect(context, CGRectMake(0, buttonSize().height * CGFloat(i) + sep * CGFloat(i-1), rect.size.width, 1));
+            CGContextClip(context);
+            CGContextDrawLinearGradient (context, horizontalGradient, CGPointMake(0, 0), CGPointMake(rect.size.width, 0), CGGradientDrawingOptions(rawValue: 0))
+            CGContextRestoreGState(context);
+        }
+        
+//        // 1
+//        var currentContext = UIGraphicsGetCurrentContext()
+//        
+//        // 2
+//        CGContextSaveGState(currentContext);
+//        
+//        // 3
+//        var colorSpace = CGColorSpaceCreateDeviceRGB()
+//        
+//        // 4
+//        var startColor = UIColor(white: 1.0, alpha: 1.0)
+//        var startColorComponents = CGColorGetComponents(startColor.CGColor)
+//        var endColor = UIColor(white: 1.0, alpha: 0.0);
+//        var endColorComponents = CGColorGetComponents(endColor.CGColor)
+//        
+//        // 5
+//        var colorComponents:[CGFloat] = [1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0]
+//        
+//        // 6
+//        var locations:[CGFloat] = [0.0, 1.0]
+//        
+//        // 7
+//        var gradient = CGGradientCreateWithColorComponents(colorSpace,&colorComponents,&locations,2)
+//        
+//        var startPoint = CGPointMake(0, 10)
+//        var endPoint = CGPointMake(320, 10)
+//        
+//        // 8
+//        CGContextDrawLinearGradient(currentContext,gradient,startPoint,endPoint, CGGradientDrawingOptions(rawValue: 0))
+//        
+//        // 9
+//        CGContextRestoreGState(currentContext);
     }
     
 }
