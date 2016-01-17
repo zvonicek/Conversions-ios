@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Games List View Controller-->
@@ -178,14 +179,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZF-P8-5RZ">
-                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                                <rect key="frame" x="0.0" y="45" width="600" height="555"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PeN-4t-Rv4" customClass="GameHeaderView" customModule="EverydayMath" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGT-1W-cKM">
-                                        <rect key="frame" x="10" y="24" width="32" height="22"/>
+                                        <rect key="frame" x="10" y="15" width="32" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="fyk-Pq-bc0"/>
                                         </constraints>
@@ -195,7 +196,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVU-cR-ci0" customClass="ProgressView" customModule="EverydayMath" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="24" width="500" height="22"/>
+                                        <rect key="frame" x="50" y="15" width="500" height="22"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="AHs-cH-1TX"/>
@@ -204,13 +205,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="6RW-Pf-slE"/>
+                                    <constraint firstAttribute="height" constant="45" id="6RW-Pf-slE"/>
                                     <constraint firstItem="vGT-1W-cKM" firstAttribute="leading" secondItem="PeN-4t-Rv4" secondAttribute="leading" constant="10" id="Iuu-4N-HfV"/>
-                                    <constraint firstItem="vGT-1W-cKM" firstAttribute="top" secondItem="PeN-4t-Rv4" secondAttribute="top" constant="24" id="MM5-CZ-gFD"/>
-                                    <constraint firstAttribute="trailing" secondItem="VVU-cR-ci0" secondAttribute="trailing" constant="50" id="Oi0-d8-Rrg"/>
-                                    <constraint firstItem="VVU-cR-ci0" firstAttribute="top" secondItem="PeN-4t-Rv4" secondAttribute="top" constant="24" id="joq-R5-B7c"/>
+                                    <constraint firstItem="vGT-1W-cKM" firstAttribute="top" secondItem="PeN-4t-Rv4" secondAttribute="top" constant="15" id="MM5-CZ-gFD"/>
+                                    <constraint firstItem="VVU-cR-ci0" firstAttribute="top" secondItem="PeN-4t-Rv4" secondAttribute="top" constant="15" id="Mkb-IS-T9v"/>
+                                    <constraint firstItem="vGT-1W-cKM" firstAttribute="leading" secondItem="PeN-4t-Rv4" secondAttribute="leadingMargin" constant="2" id="aMT-gM-Gyi"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="VVU-cR-ci0" secondAttribute="trailing" constant="42" id="kRe-Vw-esE"/>
                                     <constraint firstItem="VVU-cR-ci0" firstAttribute="leading" secondItem="vGT-1W-cKM" secondAttribute="trailing" constant="8" id="xFS-CS-bCd"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Iuu-4N-HfV"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="progressView" destination="VVU-cR-ci0" id="n3S-fN-fPV"/>
                                 </connections>
@@ -218,13 +225,32 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PeN-4t-Rv4" firstAttribute="leading" secondItem="Tnb-ll-4yc" secondAttribute="leading" id="0T2-pI-dp7">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
                             <constraint firstItem="mJm-L0-jI6" firstAttribute="top" secondItem="pZF-P8-5RZ" secondAttribute="bottom" id="46N-yP-YYW"/>
+                            <constraint firstItem="pZF-P8-5RZ" firstAttribute="leading" secondItem="Tnb-ll-4yc" secondAttribute="leading" id="AEE-8F-6L0">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
                             <constraint firstItem="PeN-4t-Rv4" firstAttribute="top" secondItem="Tnb-ll-4yc" secondAttribute="top" id="BgU-Vf-TCl"/>
+                            <constraint firstItem="mJm-L0-jI6" firstAttribute="top" secondItem="pZF-P8-5RZ" secondAttribute="bottom" id="ET2-vA-bur">
+                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="PeN-4t-Rv4" secondAttribute="trailing" id="FoV-P9-WTu"/>
+                            <constraint firstAttribute="trailing" secondItem="pZF-P8-5RZ" secondAttribute="trailing" id="PLz-69-b7d">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
                             <constraint firstItem="pZF-P8-5RZ" firstAttribute="leading" secondItem="Tnb-ll-4yc" secondAttribute="leading" id="VZn-ej-yTa"/>
                             <constraint firstItem="PeN-4t-Rv4" firstAttribute="leading" secondItem="Tnb-ll-4yc" secondAttribute="leading" id="WRE-6l-FDA"/>
-                            <constraint firstItem="pZF-P8-5RZ" firstAttribute="top" secondItem="PeN-4t-Rv4" secondAttribute="bottom" id="X51-Sp-ITS"/>
+                            <constraint firstItem="pZF-P8-5RZ" firstAttribute="top" secondItem="PeN-4t-Rv4" secondAttribute="bottom" id="X51-Sp-ITS">
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="PeN-4t-Rv4" secondAttribute="trailing" id="evZ-1l-Jun">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="pZF-P8-5RZ" secondAttribute="trailing" id="gpp-Uo-G85"/>
+                            <constraint firstItem="PeN-4t-Rv4" firstAttribute="top" secondItem="Tnb-ll-4yc" secondAttribute="top" id="rKU-jO-ksn"/>
+                            <constraint firstItem="PeN-4t-Rv4" firstAttribute="top" secondItem="Tnb-ll-4yc" secondAttribute="top" id="w9T-cI-0Fl"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="fromColor">
@@ -234,6 +260,17 @@
                                 <color key="value" red="0.36862745099999999" green="0.39607843139999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BgU-Vf-TCl"/>
+                                <exclude reference="FoV-P9-WTu"/>
+                                <exclude reference="WRE-6l-FDA"/>
+                                <exclude reference="w9T-cI-0Fl"/>
+                                <exclude reference="VZn-ej-yTa"/>
+                                <exclude reference="gpp-Uo-G85"/>
+                                <exclude reference="46N-yP-YYW"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="gameView" destination="pZF-P8-5RZ" id="RT5-or-6Pg"/>

@@ -36,7 +36,7 @@ class ClosedEndedTaskView: UIView {
                 button.translatesAutoresizingMaskIntoConstraints = false
                 button.addTarget(self, action: "answerSelected:", forControlEvents: UIControlEvents.TouchUpInside)
                 button.oa_widthAnchor.constraintEqualToConstant(CGRectGetWidth(self.frame) - 80).oa_active = true
-                button.oa_heightAnchor.constraintEqualToConstant(60).oa_active = true
+                button.oa_heightAnchor.constraintEqualToConstant(50).oa_active = true
                 buttons.append(button)
                 answerButtons.append(button)
             }
@@ -60,6 +60,14 @@ class ClosedEndedTaskView: UIView {
         super.init(coder: aDecoder)
         
         self.backgroundColor = UIColor.clearColor()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        for button in answerButtons {
+            button.oa_widthAnchor.constraintEqualToConstant(CGRectGetWidth(self.frame) - 80).oa_active = true
+        }
     }
     
     func answerSelected(sender: ClosedEndedButton) {
