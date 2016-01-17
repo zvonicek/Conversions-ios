@@ -18,7 +18,7 @@ class NumericTask: Task {
     }
     
     func getView() -> UIView {
-        let view = NumericTaskView.loadFromNibNamed("NumericTaskView") as! NumericTaskView
+        let view = self.configuration.image == nil ? NumericTaskView.loadFromNibNamed("NumericTaskView") as! NumericTaskView : NumericTaskView.loadFromNibNamed("NumericTaskView", index: 1) as! NumericTaskView
         view.task = self
         view.delegate = self.delegate
         return view
@@ -44,6 +44,7 @@ struct NumericTaskConfiguration: TaskConfiguration {
     let toUnit: String
     let minCorrectValue: Float
     let maxCorrectValue: Float
+    let image: UIImage?
     
     let hint: Hint?
 }

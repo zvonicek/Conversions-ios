@@ -14,11 +14,11 @@ extension Array {
     }
 }
 
-extension UIView {
-    class func loadFromNibNamed(nibNamed: String, bundle : NSBundle? = nil) -> UIView? {
+extension UIView {    
+    class func loadFromNibNamed(nibNamed: String, index: Int = 0, bundle: NSBundle? = nil) -> UIView? {
         return UINib(
             nibName: nibNamed,
             bundle: bundle
-            ).instantiateWithOwner(nil, options: nil)[0] as? UIView
+            ).instantiateWithOwner(nil, options: nil)[index] as? UIView
     }
 }

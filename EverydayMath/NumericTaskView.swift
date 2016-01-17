@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import OALayoutAnchor
 
 class NumericTaskView: UIView, NumpadViewDelegate {
     @IBOutlet var fromLabel: UILabel!
     @IBOutlet var toValueTextField: UITextField!
     @IBOutlet var toUnitLabel: UILabel!
+    @IBOutlet var imageView: UIImageView?
+    @IBOutlet var middleView: UIView!
     var hintView: UIView?
     
     @IBOutlet var numpad: NumpadView!
@@ -20,6 +23,9 @@ class NumericTaskView: UIView, NumpadViewDelegate {
         didSet {
             fromLabel.text = String(format: "%.0f", task.configuration.fromValue) + " " + task.configuration.fromUnit
             toUnitLabel.text = task.configuration.toUnit
+            if let imageView = imageView, let image = task.configuration.image {
+                imageView.image = image
+            }
         }
     }
     var delegate: TaskDelegate?
@@ -27,6 +33,11 @@ class NumericTaskView: UIView, NumpadViewDelegate {
     override func awakeFromNib() {
         numpad.delegate = self
         self.backgroundColor = UIColor.clearColor()
+        
+        if UIScreen.mainScreen().bounds.size.height == 480 {
+            numpad.oa_heightAnchor.constraintEqualToConstant(180).oa_active = true
+//            middleView.oa_heightAnchor.constraintEqualToConstant(80).oa_active = true
+        }
     }
     
     func numpadDidTapOnButton(button: NumpadButton) {
