@@ -8,6 +8,7 @@ pod 'DraggableCollectionView', :git => 'https://github.com/zvonicek/DraggableCol
 pod 'LMArrayChangeSets', '~> 0.1'
 pod 'FSQCollectionViewAlignedLayout', '~> 1.1'
 pod 'SEDraggable', :git => 'https://github.com/zvonicek/iOS-DragAndDrop.git'
+pod "OALayoutAnchor"
 
 end
 

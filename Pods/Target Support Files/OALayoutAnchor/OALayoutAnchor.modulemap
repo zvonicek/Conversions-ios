@@ -1,0 +1,6 @@
+framework module OALayoutAnchor {
+  umbrella header "OALayoutAnchor-umbrella.h"
+
+  export *
+  module * { export * }
+}

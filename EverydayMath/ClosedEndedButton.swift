@@ -24,14 +24,13 @@ class ClosedEndedButton: UIButton {
         self.addSubview(hintLabel)
         
         self.setTitle(answerCfg.answer, forState: UIControlState.Normal)
-        self.backgroundColor = UIColor.grayColor()
+        self.backgroundColor = UIColor(red: 255/255.0, green: 179/255.0, blue: 106/255.0, alpha: 1.0)
+        self.setTitleColor(UIColor(red: 93/255.0, green: 36/255.0, blue: 36/255.0, alpha: 1.0), forState: UIControlState.Normal)
+        self.titleLabel?.font = UIFont.boldSystemFontOfSize(16.0)
+        self.layer.cornerRadius = 3.0
         self.clipsToBounds = true
     }
     
-    override func intrinsicContentSize() -> CGSize {
-        return CGSizeMake(250, 50)
-    }
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

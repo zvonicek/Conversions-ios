@@ -12,16 +12,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pde-WB-bRi">
-                    <rect key="frame" x="8" y="70" width="359" height="35"/>
+                    <rect key="frame" x="8" y="79" width="359" height="35"/>
                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select correct answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQ4-ZM-x9d">
+                    <rect key="frame" x="8" y="8" width="359" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="0.36862745099999999" green="0.39607843139999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="QQ4-ZM-x9d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="SqQ-f6-kHJ"/>
+                <constraint firstItem="QQ4-ZM-x9d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="bg7-qW-PTS"/>
+                <constraint firstItem="pde-WB-bRi" firstAttribute="top" secondItem="QQ4-ZM-x9d" secondAttribute="bottom" constant="50" id="jUd-l8-dkx"/>
+                <constraint firstAttribute="trailing" secondItem="QQ4-ZM-x9d" secondAttribute="trailing" constant="8" id="mxd-OK-GcB"/>
                 <constraint firstItem="pde-WB-bRi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="pXM-oZ-Zt0"/>
-                <constraint firstItem="pde-WB-bRi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="qcE-bJ-D5e"/>
                 <constraint firstAttribute="trailing" secondItem="pde-WB-bRi" secondAttribute="trailing" constant="8" id="yVk-rO-qJR"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

@@ -8,10 +8,11 @@
 
 import UIKit
 import TZStackView
+import OALayoutAnchor
 
 class ClosedEndedTaskView: UIView {
     @IBOutlet var questionLabel: UILabel!
-    @IBOutlet var answerButtons = [ClosedEndedButton]()
+    var answerButtons = [ClosedEndedButton]()
 
     var delegate: TaskDelegate?
     
@@ -34,6 +35,8 @@ class ClosedEndedTaskView: UIView {
                 let button = ClosedEndedButton(answerCfg: answerCfg)
                 button.translatesAutoresizingMaskIntoConstraints = false
                 button.addTarget(self, action: "answerSelected:", forControlEvents: UIControlEvents.TouchUpInside)
+                button.oa_widthAnchor.constraintEqualToConstant(CGRectGetWidth(self.frame) - 80).oa_active = true
+                button.oa_heightAnchor.constraintEqualToConstant(60).oa_active = true
                 buttons.append(button)
                 answerButtons.append(button)
             }

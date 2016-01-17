@@ -2,6 +2,7 @@ PODS:
   - DraggableCollectionView (0.1)
   - FSQCollectionViewAlignedLayout (1.1.1)
   - LMArrayChangeSets (0.1.3)
+  - OALayoutAnchor (0.2.0)
   - SEDraggable (1.0.0)
   - TZStackView (1.1.2)
 
@@ -9,6 +10,7 @@ DEPENDENCIES:
   - DraggableCollectionView (from `https://github.com/zvonicek/DraggableCollectionView.git`)
   - FSQCollectionViewAlignedLayout (~> 1.1)
   - LMArrayChangeSets (~> 0.1)
+  - OALayoutAnchor
   - SEDraggable (from `https://github.com/zvonicek/iOS-DragAndDrop.git`)
   - TZStackView (~> 1.1)
 
@@ -30,6 +32,7 @@ SPEC CHECKSUMS:
   DraggableCollectionView: b6d1a6239f263577869ab2bf868af82b2dfc056a
   FSQCollectionViewAlignedLayout: 122006b230bf5635ae159f1ad1eaa9b5ef11391e
   LMArrayChangeSets: 141a8321bdaba14a03fc5520bc869f2cfc7ed273
+  OALayoutAnchor: 27a15a06ebfd3bc07de527f6cd4a5a714c47226d
   SEDraggable: aacb2e95742fb51760dfdbe372fb9e3e19ab666b
   TZStackView: 19aeaa414fb653f4be9b80a73f4f0c66e33bf033
 
