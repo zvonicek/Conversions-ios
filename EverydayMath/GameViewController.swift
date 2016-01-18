@@ -14,6 +14,8 @@ class GameViewController: UIViewController {
     @IBOutlet var topBar: GameHeaderView!
     @IBOutlet var gameView: UIView!
     @IBOutlet var resultView: ResultView!
+    @IBOutlet var pauseView: UIView!
+    
     lazy var dimView: UIView = {
         let view = UIView()
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: "continueGame")
@@ -26,10 +28,12 @@ class GameViewController: UIViewController {
             if let taskView = taskView {
                 gameView.addSubview(taskView)
                 
+                // configure task view
                 if let currentTaskView = currentTaskView {
                     taskView.frame = CGRectOffset(gameView.bounds, gameView.bounds.width, 0)
                     taskView.translatesAutoresizingMaskIntoConstraints = true
                     
+                    // animate task transition
                     UIView.animateWithDuration(0.5, animations: { () -> Void in
                         taskView.frame = self.gameView.bounds
                         currentTaskView.frame = CGRectOffset(currentTaskView.frame, -currentTaskView.frame.size.width, 0)
@@ -69,9 +73,26 @@ class GameViewController: UIViewController {
         super.viewWillLayoutSubviews()
         
         dimView.frame = self.view.frame
+        pauseView.frame = self.view.frame
     }
     
     @IBAction func pauseGame() {
+        self.pauseView.alpha = 0.0
+        self.view.addSubview(self.pauseView)
+        UIView.animateWithDuration(0.2) { () -> Void in
+            self.pauseView.alpha = 1.0
+        }
+    }
+    
+    @IBAction func unpauseGame() {
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.pauseView.alpha = 0.0
+            }) { _ -> Void in
+                self.pauseView.removeFromSuperview()
+        }
+    }
+    
+    @IBAction func exitGame() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
