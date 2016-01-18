@@ -14,7 +14,12 @@ class GameViewController: UIViewController {
     @IBOutlet var topBar: GameHeaderView!
     @IBOutlet var gameView: UIView!
     @IBOutlet var resultView: ResultView!
-    var dimView: UIView = UIView()
+    lazy var dimView: UIView = {
+        let view = UIView()
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: "continueGame")
+        view.addGestureRecognizer(gestureRecognizer)
+        return view
+    }()
     
     var currentTaskView: UIView? {
         willSet(taskView) {
