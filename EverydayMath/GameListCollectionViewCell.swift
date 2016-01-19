@@ -10,10 +10,12 @@ import UIKit
 
 class GameListCollectionViewCell: UICollectionViewCell {
     @IBOutlet var label: UILabel!
+    @IBOutlet var imageView: UIImageView!
     var game: Game?
     
     func configureForGame(game: Game) {
         self.label.text = game.name
         self.game = game
+        self.imageView.image = game.image
     }
 }

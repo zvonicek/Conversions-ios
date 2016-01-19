@@ -3,7 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Games List View Controller-->
@@ -20,10 +22,15 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NzE-Ur-rzJ">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem title="Everyday Math" id="M5J-yX-yeF">
-                                        <barButtonItem key="leftBarButtonItem" title="Options" id="CEQ-0o-AnY"/>
-                                        <barButtonItem key="rightBarButtonItem" title="About" id="nDv-oW-Z1A"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Options" id="CEQ-0o-AnY">
+                                            <color key="tintColor" red="0.39607843139999999" green="0.63921568630000003" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="About" id="nDv-oW-Z1A">
+                                            <color key="tintColor" red="0.39607843139999999" green="0.63921568630000003" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                                 <connections>
@@ -32,7 +39,7 @@
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gq1-jy-5Lb">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="wA7-BS-1cJ" customClass="FSQCollectionViewAlignedLayout"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="HdB-nf-hqp" customClass="GameListCollectionViewCell" customModule="EverydayMath" customModuleProvider="target">
@@ -43,21 +50,43 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IF-X1-eZN">
-                                                    <rect key="frame" x="73" y="84" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="69" y="128" width="50" height="23"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mass" translatesAutoresizingMaskIntoConstraints="NO" id="5ik-4N-bPX">
+                                                    <rect key="frame" x="67" y="54" width="54" height="54"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="5ik-4N-bPX" secondAttribute="height" multiplier="1:1" id="KhB-68-ZOf"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="8IF-X1-eZN" firstAttribute="centerY" secondItem="HdB-nf-hqp" secondAttribute="centerY" id="3Fg-HY-9CN"/>
-                                            <constraint firstItem="8IF-X1-eZN" firstAttribute="centerX" secondItem="HdB-nf-hqp" secondAttribute="centerX" id="WHw-Uz-HcS"/>
+                                            <constraint firstItem="5ik-4N-bPX" firstAttribute="centerX" secondItem="HdB-nf-hqp" secondAttribute="centerX" id="AQM-D1-XP5"/>
+                                            <constraint firstItem="8IF-X1-eZN" firstAttribute="centerX" secondItem="HdB-nf-hqp" secondAttribute="centerX" id="Asg-2P-jgR"/>
+                                            <constraint firstItem="5ik-4N-bPX" firstAttribute="centerX" secondItem="HdB-nf-hqp" secondAttribute="centerX" id="FLX-1F-Zac"/>
+                                            <constraint firstItem="5ik-4N-bPX" firstAttribute="width" secondItem="HdB-nf-hqp" secondAttribute="width" multiplier="0.29" id="R9f-5j-fba"/>
+                                            <constraint firstItem="5ik-4N-bPX" firstAttribute="centerY" secondItem="HdB-nf-hqp" secondAttribute="centerY" id="TGs-lP-Ls0"/>
+                                            <constraint firstItem="8IF-X1-eZN" firstAttribute="top" secondItem="5ik-4N-bPX" secondAttribute="bottom" constant="20" id="bv0-3X-pEI"/>
+                                            <constraint firstItem="8IF-X1-eZN" firstAttribute="centerY" secondItem="HdB-nf-hqp" secondAttribute="centerY" id="gds-33-VhE"/>
+                                            <constraint firstItem="5ik-4N-bPX" firstAttribute="centerY" secondItem="HdB-nf-hqp" secondAttribute="centerY" constant="-14" id="h1v-mv-yqQ"/>
+                                            <constraint firstItem="8IF-X1-eZN" firstAttribute="centerX" secondItem="HdB-nf-hqp" secondAttribute="centerX" id="tf0-Vf-7sV"/>
                                         </constraints>
                                         <size key="customSize" width="189" height="189"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="AQM-D1-XP5"/>
+                                                <exclude reference="TGs-lP-Ls0"/>
+                                                <exclude reference="Asg-2P-jgR"/>
+                                                <exclude reference="gds-33-VhE"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
+                                            <outlet property="imageView" destination="5ik-4N-bPX" id="e2i-KG-hoo"/>
                                             <outlet property="label" destination="8IF-X1-eZN" id="YfV-md-QlC"/>
                                             <segue destination="4bU-4b-C4a" kind="presentation" identifier="loadingSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="l8z-vN-FYV"/>
                                         </connections>
@@ -161,6 +190,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="nameLabel" destination="XAh-NB-vN1" id="r7l-K5-6PP"/>
                         <outlet property="startButton" destination="2NS-KS-k6a" id="5dV-cH-ACc"/>
                     </connections>
                 </viewController>
@@ -552,5 +582,6 @@
     </scenes>
     <resources>
         <image name="ic_cross_white" width="13" height="13"/>
+        <image name="ic_mass" width="85" height="85"/>
     </resources>
 </document>

@@ -9,13 +9,15 @@
 class UnitConversionGame: Game {
     var identifier: String
     var name: String
+    var image: UIImage
     var category: GameCategory
     var gameConfiguration: GameConfiguration?
     
-    init(identifier: String, name: String) {
+    init(identifier: String, name: String, image: UIImage) {
         self.identifier = identifier
         self.name = name
         self.category = .Units
+        self.image = image
     }
     
     func run(configuration: GameConfiguration) throws -> GameRun {

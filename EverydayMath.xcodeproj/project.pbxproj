@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		14EB884A5026B2653D58982C /* Pods_EverydayMath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0AE521D4E0CF43D29AC3D7 /* Pods_EverydayMath.framework */; };
+		D003E0DB1C4ED1570090DA52 /* ViewBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003E0DA1C4ED1570090DA52 /* ViewBorder.swift */; };
 		D013F4D81C14861800DF8769 /* ScaleControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013F4D71C14861800DF8769 /* ScaleControl.swift */; };
 		D013F4DD1C163B6600DF8769 /* ScaleTaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D013F4DC1C163B6600DF8769 /* ScaleTaskView.xib */; };
 		D013F4DF1C163B7400DF8769 /* ScaleTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013F4DE1C163B7400DF8769 /* ScaleTaskView.swift */; };
 		D013F4E11C16423900DF8769 /* ScaleTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013F4E01C16423900DF8769 /* ScaleTask.swift */; };
+		D02CE8871C4C5A6E0088E90A /* GameResultRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CE8861C4C5A6E0088E90A /* GameResultRecord.swift */; };
 		D089FC7E1C4A854900D41863 /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D089FC7D1C4A854900D41863 /* ResultView.xib */; };
 		D089FC801C4A872200D41863 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D089FC7F1C4A872200D41863 /* ResultView.swift */; };
 		D089FC821C4A919A00D41863 /* ArrayRandomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D089FC811C4A919A00D41863 /* ArrayRandomItem.swift */; };
@@ -81,10 +83,12 @@
 		0C0AE521D4E0CF43D29AC3D7 /* Pods_EverydayMath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverydayMath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3CD3569EEE8140EF83F4EF /* Pods-EverydayMath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayMath.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EverydayMath/Pods-EverydayMath.debug.xcconfig"; sourceTree = "<group>"; };
 		8680052E1FDE95CBAD941208 /* Pods-EverydayMath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayMath.release.xcconfig"; path = "Pods/Target Support Files/Pods-EverydayMath/Pods-EverydayMath.release.xcconfig"; sourceTree = "<group>"; };
+		D003E0DA1C4ED1570090DA52 /* ViewBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBorder.swift; sourceTree = "<group>"; };
 		D013F4D71C14861800DF8769 /* ScaleControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleControl.swift; sourceTree = "<group>"; };
 		D013F4DC1C163B6600DF8769 /* ScaleTaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScaleTaskView.xib; sourceTree = "<group>"; };
 		D013F4DE1C163B7400DF8769 /* ScaleTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleTaskView.swift; sourceTree = "<group>"; };
 		D013F4E01C16423900DF8769 /* ScaleTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleTask.swift; sourceTree = "<group>"; };
+		D02CE8861C4C5A6E0088E90A /* GameResultRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResultRecord.swift; sourceTree = "<group>"; };
 		D089FC7D1C4A854900D41863 /* ResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultView.xib; sourceTree = "<group>"; };
 		D089FC7F1C4A872200D41863 /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		D089FC811C4A919A00D41863 /* ArrayRandomItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayRandomItem.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 			children = (
 				D0A4774B1C46DCCA00649EB3 /* CustomColors.swift */,
 				D089FC811C4A919A00D41863 /* ArrayRandomItem.swift */,
+				D003E0DA1C4ED1570090DA52 /* ViewBorder.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				D0C0CC291C0CDAFA00D93B83 /* Configuration */,
 				D0C900FF1BEE8B9800A15F32 /* Task.swift */,
 				D0A477421C45D39700649EB3 /* Hint.swift */,
+				D02CE8861C4C5A6E0088E90A /* GameResultRecord.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -500,6 +506,7 @@
 				D0C0CC261C0CDAE800D93B83 /* NumericTask.swift in Sources */,
 				D0C0CC321C0E272700D93B83 /* UnitsGames.swift in Sources */,
 				D0C901081BEF815800A15F32 /* LoadingViewController.swift in Sources */,
+				D02CE8871C4C5A6E0088E90A /* GameResultRecord.swift in Sources */,
 				D08F52401BF1394A000F840B /* HeaderView.swift in Sources */,
 				D0E2E09F1C2744B3005E5B06 /* SortTask.swift in Sources */,
 				D0A4774C1C46DCCA00649EB3 /* CustomColors.swift in Sources */,
@@ -514,6 +521,7 @@
 				D0E34F371C33D86D00E7AB97 /* DoubleScaleControl.swift in Sources */,
 				D089FC801C4A872200D41863 /* ResultView.swift in Sources */,
 				D013F4D81C14861800DF8769 /* ScaleControl.swift in Sources */,
+				D003E0DB1C4ED1570090DA52 /* ViewBorder.swift in Sources */,
 				D08F52441BF15ED2000F840B /* Extensions.swift in Sources */,
 				D0E34F2E1C32D14100E7AB97 /* ProgressView.swift in Sources */,
 				D0A477411C45CA6600649EB3 /* NumericHintView.swift in Sources */,

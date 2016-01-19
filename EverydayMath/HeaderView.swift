@@ -17,8 +17,10 @@ class HeaderView: UICollectionReusableView {
         
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor.lightGrayColor()
+        self.backgroundColor = UIColor.whiteColor()
         self.addSubview(label)
+        self.addTopBorderWithColor(UIColor.lightGrayColor(), width: 1.0)
+        self.addBottomBorderWithColor(UIColor.lightGrayColor(), width: 1.0)
     }
     
     func configure(category: GameCategory) {
