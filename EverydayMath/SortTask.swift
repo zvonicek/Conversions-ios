@@ -23,6 +23,8 @@ func ==(lhs: SortTaskItem, rhs: SortTaskItem) -> Bool {
 
 struct SortTaskConfiguration: TaskConfiguration {
     let question: String
+    let topDescription: String
+    let bottomDescription: String
     let questions: [SortTaskItem]
     
     func presentedQuestions() -> [SortTaskItem] {

@@ -31,7 +31,9 @@ class SortTaskView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     override func awakeFromNib() {
         self.backgroundColor = UIColor.clearColor()
         
-        collectionView.registerNib(UINib(nibName: "SortTaskCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: "cell")        
+        collectionView.registerNib(UINib(nibName: "SortTaskCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: "cell")
+        collectionView.registerClass(SortTaskLabelView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView")
+        collectionView.registerClass(SortTaskLabelView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "footerView")
     }
     
     @IBAction func verify() {
@@ -110,6 +112,20 @@ class SortTaskView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let item = rows[indexPath.row]
         return CGSizeMake(CGRectGetWidth(self.collectionView.frame) - 80, hintVisibleRows.contains(item) ? 90 : 60)
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        if kind == UICollectionElementKindSectionHeader {
+            let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "headerView", forIndexPath: indexPath) as! SortTaskLabelView
+            view.label.text = task.configuration.topDescription
+            return view
+        } else if kind == UICollectionElementKindSectionFooter {
+            let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "footerView", forIndexPath: indexPath) as! SortTaskLabelView
+            view.label.text = task.configuration.bottomDescription
+            return view
+        }
+        
+        return self.collectionView(collectionView, viewForSupplementaryElementOfKind: kind, atIndexPath: indexPath)        
     }
     
     // MARK - UICollectionViewDataSource_Draggable
