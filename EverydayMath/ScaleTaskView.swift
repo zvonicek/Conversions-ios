@@ -14,6 +14,7 @@ class ScaleTaskView: UIView, TrackingScaleControlDelegate {
     var task: ScaleTask! {
         didSet {
             self.taskLabel.text = task.configuration.task
+            self.toUnitLabel.text = task.configuration.toUnit
             
             self.scaleControl.minValue = CGFloat(task.configuration.scaleMin)
             self.scaleControl.maxValue = CGFloat(task.configuration.scaleMax)
@@ -24,8 +25,8 @@ class ScaleTaskView: UIView, TrackingScaleControlDelegate {
     
     @IBOutlet var taskLabel: UILabel!
     @IBOutlet var scaleControl: TrackingScaleControl!
+    @IBOutlet var toUnitLabel: UILabel!
     @IBOutlet var resultView: UIView!
-    @IBOutlet var resultTextLabel: UILabel!
     @IBOutlet var resultNumberLabel: UILabel!
     
     override func awakeFromNib() {

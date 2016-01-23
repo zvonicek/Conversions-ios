@@ -260,7 +260,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Poa-L6-tcT">
                     <rect key="frame" x="115" y="68" width="90" height="90"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tNP-3C-yX8">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="field" translatesAutoresizingMaskIntoConstraints="NO" id="tNP-3C-yX8">
                             <rect key="frame" x="10" y="10" width="70" height="70"/>
                         </imageView>
                     </subviews>
@@ -360,4 +360,7 @@
             <point key="canvasLocation" x="697" y="193"/>
         </view>
     </objects>
+    <resources>
+        <image name="field" width="170" height="135"/>
+    </resources>
 </document>

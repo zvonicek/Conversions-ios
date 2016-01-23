@@ -12,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcB-Xw-Mev" customClass="TrackingScaleControl" customModule="EverydayMath" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="304" width="320" height="100"/>
+                    <rect key="frame" x="0.0" y="270" width="320" height="100"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="bWO-GL-Fcw"/>
@@ -37,10 +37,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4O-Vs-DeV">
-                    <rect key="frame" x="0.0" y="118" width="320" height="186"/>
+                    <rect key="frame" x="0.0" y="118" width="320" height="152"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="59.90" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1K-He-t6j">
-                            <rect key="frame" x="96" y="71" width="128" height="64"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="59.90" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1K-He-t6j">
+                            <rect key="frame" x="96" y="55" width="128" height="64"/>
                             <color key="backgroundColor" white="1" alpha="0.33729137073863635" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="64" id="BfC-4i-hk7"/>
@@ -72,7 +72,7 @@
                 <constraint firstItem="qcB-Xw-Mev" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="g7B-6e-Y8c"/>
                 <constraint firstItem="2xc-GR-yyx" firstAttribute="top" secondItem="nBz-uZ-Df7" secondAttribute="bottom" constant="18" id="haV-c8-1Cf"/>
                 <constraint firstAttribute="trailing" secondItem="qcB-Xw-Mev" secondAttribute="trailing" id="lVH-K9-H7z"/>
-                <constraint firstItem="A87-xC-sqb" firstAttribute="top" secondItem="qcB-Xw-Mev" secondAttribute="bottom" constant="40" id="uQG-Oe-Ajo"/>
+                <constraint firstAttribute="bottom" secondItem="qcB-Xw-Mev" secondAttribute="bottom" constant="110" id="rvY-G0-Cs1"/>
                 <constraint firstItem="A87-xC-sqb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xVw-vJ-hz2"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -81,6 +81,7 @@
                 <outlet property="resultView" destination="X4O-Vs-DeV" id="axE-eJ-NMU"/>
                 <outlet property="scaleControl" destination="qcB-Xw-Mev" id="vFm-PR-Q1F"/>
                 <outlet property="taskLabel" destination="2xc-GR-yyx" id="gmq-i3-yJK"/>
+                <outlet property="toUnitLabel" destination="A87-xC-sqb" id="M6g-n9-lSl"/>
             </connections>
         </view>
     </objects>

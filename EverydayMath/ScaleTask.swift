@@ -14,6 +14,7 @@ struct ScaleTaskConfiguration: TaskConfiguration {
     var scaleMax: Float
     var correctValue: Float
     var correctTolerance: Float
+    var toUnit: String
 }
 
 class ScaleTask: Task {
