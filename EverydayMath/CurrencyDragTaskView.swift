@@ -148,10 +148,15 @@ class CurrencyDragTaskView: UIView {
             let item = item as! NoteDraggable
             return value + item.config.value
         }
+        let outputValues = toDragView.containedObjects.map { (item: AnyObject) -> String in
+            let item = item as! NoteDraggable
+            return String(item.config.value)
+        }
+        let answerDescription: [String: AnyObject] = ["sum": String(outputSum), "notes": outputValues]
         
         if (task.verifyResult(outputSum)) {
             toDragView.backgroundColor = UIColor.correctColor()
-            delegate?.taskCompleted(task, correct: true)
+            delegate?.taskCompleted(task, correct: true, answer: answerDescription)
         } else {
             if let hint = task.configuration.hint where self.hintView == nil {
                 handleFailure()
@@ -164,7 +169,7 @@ class CurrencyDragTaskView: UIView {
                 handleSecondFailure()
                 self.userInteractionEnabled = false
                 toDragView.backgroundColor = UIColor.errorColor()
-                delegate?.taskCompleted(task, correct: false)
+                delegate?.taskCompleted(task, correct: false, answer: answerDescription)
             }
         }
     }

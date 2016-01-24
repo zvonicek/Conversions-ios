@@ -43,11 +43,12 @@ enum TaskResult {
 }
 
 protocol TaskDelegate {
-    func taskCompleted(task: Task, correct: Bool)
+    func taskCompleted(task: Task, correct: Bool, answer: [String: AnyObject])
     func taskGaveSecondTry(task: Task)
 }
 
 struct TaskProperties {
+    var taskId: String
     var fastTime: NSTimeInterval
     var neutralTime: NSTimeInterval
 }

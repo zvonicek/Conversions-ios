@@ -84,7 +84,7 @@ class ClosedEndedTaskView: UIView {
             }
         }
         
-        self.taskCompleted(correct)
+        delegate?.taskCompleted(task, correct: correct, answer: ["answer": sender.answerCfg.answer])
     }
     
     private func markButton(button: ClosedEndedButton) {
@@ -101,9 +101,5 @@ class ClosedEndedTaskView: UIView {
                 }) { (completed: Bool) -> Void in
             }
         }
-    }
-    
-    func taskCompleted(correct: Bool) {
-        delegate?.taskCompleted(task, correct: correct)
     }
 }

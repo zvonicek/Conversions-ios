@@ -11,7 +11,7 @@ import Foundation
 class ClosedEndedTask: Task {
     var delegate: TaskDelegate?
     let configuration: ClosedEndedTaskConfiguration
-    let properties: TaskProperties = TaskProperties(fastTime: 5, neutralTime: 10)
+    let properties: TaskProperties = TaskProperties(taskId: "B", fastTime: 5, neutralTime: 10)
 
     init(config: ClosedEndedTaskConfiguration) {
         configuration = config

@@ -28,7 +28,7 @@ struct CurrencyDragTaskConfiguration: TaskConfiguration {
 class CurrencyDragTask: Task {
     var delegate: TaskDelegate?    
     let configuration: CurrencyDragTaskConfiguration
-    let properties = TaskProperties(fastTime: 5, neutralTime: 10)
+    let properties = TaskProperties(taskId: "A", fastTime: 5, neutralTime: 10)
     
     init(config: CurrencyDragTaskConfiguration) {
         configuration = config

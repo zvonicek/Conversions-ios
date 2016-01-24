@@ -16,5 +16,6 @@ protocol TaskConfiguration {
 // MARK: GameConfiguration
 
 struct GameConfiguration {
+    var gameRunId: String
     var tasks: [TaskConfiguration]
 }

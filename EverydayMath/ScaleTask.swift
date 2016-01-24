@@ -20,7 +20,7 @@ struct ScaleTaskConfiguration: TaskConfiguration {
 class ScaleTask: Task {
     var delegate: TaskDelegate?
     let configuration: ScaleTaskConfiguration
-    let properties: TaskProperties = TaskProperties(fastTime: 5, neutralTime: 10)
+    let properties: TaskProperties = TaskProperties(taskId: "D", fastTime: 5, neutralTime: 10)
     
     init(config: ScaleTaskConfiguration) {
         configuration = config

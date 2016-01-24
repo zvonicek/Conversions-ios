@@ -58,7 +58,7 @@ class NumericTaskView: UIView, NumpadViewDelegate {
         let result = task.verifyResult(number)
         
         if result {
-            handleSuccess()
+            handleSuccess(number)
         } else {
             if let hint = task.configuration.hint where self.hintView == nil {
                 handleFailure()
@@ -69,19 +69,18 @@ class NumericTaskView: UIView, NumpadViewDelegate {
                 
                 delegate?.taskGaveSecondTry(task)
             } else {
-                handleSecondFailure()
+                handleSecondFailure(number)
                 
                 self.userInteractionEnabled = false
-                delegate?.taskCompleted(task, correct: false)
             }
         }
     }
     
-    private func handleSuccess() {
+    private func handleSuccess(number: Float) {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.toValueTextField.backgroundColor = UIColor.correctColor()
         }, completion: { _ -> Void in
-            self.delegate?.taskCompleted(self.task, correct: true)
+            self.delegate?.taskCompleted(self.task, correct: true, answer: ["number": String(number)])
         })
     }
     
@@ -99,7 +98,7 @@ class NumericTaskView: UIView, NumpadViewDelegate {
         })
     }
     
-    private func handleSecondFailure() {
+    private func handleSecondFailure(number: Float) {
         let color = self.toValueTextField.backgroundColor
         
         UIView.animateWithDuration(0.3, animations: { () -> Void in
@@ -109,6 +108,7 @@ class NumericTaskView: UIView, NumpadViewDelegate {
                     self.toValueTextField.backgroundColor = color
                     }, completion: { _ -> Void in
                         self.toValueTextField.text = String(format: "%.0f", self.task.configuration.toValue)
+                        self.delegate?.taskCompleted(self.task, correct: false, answer: ["number": String(number)])
                 })
         })
     }

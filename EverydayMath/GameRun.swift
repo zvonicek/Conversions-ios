@@ -38,10 +38,12 @@ protocol TaskBased {
 class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
     let game: Game
     let config: GameConfiguration
-    
     let tasks: [Task]
+    let log: GameRunLog
+    
     var currentTaskIndex: Int?
     var currentTaskPresentationDate: NSDate?
+    var currentTaskSecondTry = false
     
     var delegate: GameRunDelegate?
     
@@ -57,8 +59,8 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
     init(game: Game, config: GameConfiguration) {
         self.game = game
         self.config = config
-        
         self.tasks = config.tasks.flatMap(TaskFactory.taskForConfiguration)
+        self.log = GameRunLog(gameRunId: config.gameRunId)
     }
     
     func start() {
@@ -86,6 +88,7 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
             delegate?.gameRun(self, showTask: nextTask, index: index)
             currentTaskIndex = index
             currentTaskPresentationDate = NSDate()
+            currentTaskSecondTry = false
         } else {
             finishGameRun()
         }
@@ -94,16 +97,21 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
     private func abortGameRun() {
         finished = true
         delegate?.gameRunAborted(self)
+        
+        self.log.aborted = true
+        APIClient.uploadGameRunLog(self.log, callback: nil)
     }
     
     private func finishGameRun() {
         finished = true
         delegate?.gameRunCompleted(self)
+        
+        APIClient.uploadGameRunLog(self.log, callback: nil)        
     }
     
     // MARK: TaskDelegate
     
-    func taskCompleted(task: Task, correct: Bool) {
+    func taskCompleted(task: Task, correct: Bool, answer: [String: AnyObject]) {
         guard let index = tasks.indexOf(task) else {
             assertionFailure("task was not found")
             return
@@ -114,9 +122,10 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
             return
         }
         
+        let timeSpend = NSDate().timeIntervalSinceDate(currentTaskPresentationDate)
+        
         var result: TaskResult
         if correct {
-            let timeSpend = NSDate().timeIntervalSinceDate(currentTaskPresentationDate)
             switch timeSpend {
             case 0...task.properties.fastTime:
                 result = TaskResult.CorrectFast
@@ -129,6 +138,9 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
             result = TaskResult.Incorrect
         }
         
+        let taskLog = TaskRunLog(taskId: task.properties.taskId, correct: correct, time: timeSpend, hintShown: currentTaskSecondTry, answer: answer)
+        log.appendTaskLog(taskLog)
+
         delegate?.gameRun(self, taskCompleted: task, index: index, result: result)
     }
     
@@ -138,6 +150,7 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
             return
         }
         
+        currentTaskSecondTry = true
         delegate?.gameRun(self, taskGaveSecondTry: task, index: index)
     }
 }

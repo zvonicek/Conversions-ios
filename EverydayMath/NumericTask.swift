@@ -11,7 +11,7 @@ import Foundation
 class NumericTask: Task {
     var delegate: TaskDelegate?
     let configuration: NumericTaskConfiguration
-    let properties: TaskProperties = TaskProperties(fastTime: 5, neutralTime: 10)
+    let properties: TaskProperties = TaskProperties(taskId: "C", fastTime: 5, neutralTime: 10)
     
     init(config: NumericTaskConfiguration) {
         configuration = config

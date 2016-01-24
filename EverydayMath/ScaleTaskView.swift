@@ -50,7 +50,7 @@ class ScaleTaskView: UIView, TrackingScaleControlDelegate {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.resultView.alpha = 1.0
         }) { (let finished) -> Void in
-            self.delegate?.taskCompleted(self.task, correct: isCorrect)
+            self.delegate?.taskCompleted(self.task, correct: isCorrect, answer: ["number": String(value)])
         }
     }
 }

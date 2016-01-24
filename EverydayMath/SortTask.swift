@@ -39,7 +39,7 @@ struct SortTaskConfiguration: TaskConfiguration {
 class SortTask: Task {
     var delegate: TaskDelegate?
     let configuration: SortTaskConfiguration
-    let properties: TaskProperties = TaskProperties(fastTime: 5, neutralTime: 10)
+    let properties: TaskProperties = TaskProperties(taskId: "E", fastTime: 5, neutralTime: 10)
     
     init(config: SortTaskConfiguration) {
         configuration = config

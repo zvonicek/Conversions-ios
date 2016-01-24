@@ -49,7 +49,10 @@ class SortTaskView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         // update the UI
         showCorrectAnswers()
 
-        self.delegate?.taskCompleted(self.task, correct: result.reduce(true, combine: {$0 && $1}))
+        let isAllCorrect = result.reduce(true, combine: {$0 && $1})
+        let orderOfPresentedPositions = rows.map { $0.presentedPosition }
+        let orderOfTitles = rows.map { $0.title }
+        self.delegate?.taskCompleted(self.task, correct: isAllCorrect, answer: ["orderOfPresentedPositions": orderOfPresentedPositions, "orderOfTitles": orderOfTitles])
     }
     
     private func showCorrectAnswers() {
