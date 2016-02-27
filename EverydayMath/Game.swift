@@ -13,14 +13,20 @@ enum GameError: ErrorType {
 }
 
 enum GameCategory {
-    case Units, Money
+    case Mass, Length, Area, Volume, Currency
     
     func description() -> String {
         switch self {
-        case .Units:
-            return "Unit conversion"
-        case .Money:
-            return "Money"
+        case .Mass:
+            return "Mass"
+        case .Length:
+            return "Length"
+        case .Area:
+            return "Area"
+        case .Volume:
+            return "Volume"
+        case .Currency:
+            return "Currency"
         }
     }
 }
@@ -37,9 +43,20 @@ protocol Game {
 
 
 class GameFactory {
-    static let games: [Game] = [UnitConversionGame(identifier: "mass", name: "Mass", image: UIImage(named: "ic_mass")!),
-        UnitConversionGame(identifier: "length", name: "Length", image: UIImage(named: "ic_length")!), UnitConversionGame(identifier: "area", name: "Area", image: UIImage(named: "ic_area")!), CurrencyGame(identifier: "currency", name: "Currency", image: UIImage(named: "ic_currency")!)]
-    static var categories: [GameCategory: [Game]] = {
+    static let games: [Game] = [
+        UnitConversionGame(identifier: "mass_i", name: "Imperial", category: .Mass, image: UIImage(named: "ic_mass")!),
+        UnitConversionGame(identifier: "mass_m", name: "Metric", category: .Mass, image: UIImage(named: "ic_mass")!),
+        UnitConversionGame(identifier: "mass_mi", name: "Combined", category: .Mass, image: UIImage(named: "ic_mass")!),
+        
+        UnitConversionGame(identifier: "length_i", name: "Imperial", category: .Length, image: UIImage(named: "ic_length")!),
+        UnitConversionGame(identifier: "length_m", name: "Metric", category: .Length, image: UIImage(named: "ic_length")!),
+        UnitConversionGame(identifier: "length_mi", name: "Combined", category: .Length, image: UIImage(named: "ic_length")!),
+        
+        UnitConversionGame(identifier: "area_i", name: "Imperial", category: .Area, image: UIImage(named: "ic_area")!),
+        UnitConversionGame(identifier: "area_m", name: "Metric", category: .Area, image: UIImage(named: "ic_area")!),
+        UnitConversionGame(identifier: "area_mi", name: "Combined", category: .Area, image: UIImage(named: "ic_area")!),
+    ]
+    static var gamesByCategory: [GameCategory: [Game]] = {
         return  GameFactory.games.reduce([:]) { (var dict, var game: Game) -> Dictionary<GameCategory, Array<Game>> in
             if var it = dict[game.category] {
                 it.append(game)
@@ -50,6 +67,15 @@ class GameFactory {
             
             return dict
         }
+    }()
+    static var categories: [GameCategory] = {
+        return GameFactory.games.reduce([], combine: { (var arr: [GameCategory], var game: Game) -> [GameCategory] in
+            if !arr.contains(game.category) {
+                arr.append(game.category)
+            }
+            
+            return arr
+        })
     }()
     
     init() {

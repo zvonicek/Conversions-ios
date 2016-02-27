@@ -31,12 +31,12 @@ class APIClient {
                 SortTaskItem(title: "1000 in²", correctPosition: 0, presentedPosition: 3, errorExplanation: "1000 in² 0.65 m²"),
                 SortTaskItem(title: "50 mi²", correctPosition: 3, presentedPosition: 0, errorExplanation: "50 mi² = 130 km²")
                 ]),
-            ClosedEndedTaskConfiguration(question: "What's shorter?", answers: [ClosedEndedTaskAnswerConfiguration(answer: "1 mile", explanation: nil, correct: true), ClosedEndedTaskAnswerConfiguration(answer: "1 km", explanation: "1 km = 0.62 mile", correct: false)]),
+            ClosedEndedTaskConfiguration(question: "What's shorter?", answers: [ClosedEndedTaskAnswerConfiguration(answer: "1 mile", explanation: nil, correct: false), ClosedEndedTaskAnswerConfiguration(answer: "1 km", explanation: "1 km = 0.62 mile", correct: true)]),
             NumericTaskConfiguration(fromValue: 3, fromUnit: "yd²", toValue: 27, toUnit: "ft²", minCorrectValue: 25, maxCorrectValue: 30, image: nil, hint: NumericHint(text: "1 yd² = 9 ft²")),
             ScaleTaskConfiguration(task: "Convert 23 m² to ft²", scaleMin: 120, scaleMax: 340, correctValue: 248, correctTolerance: 20, toUnit: "ft²"),
         ])
         
-        if game.name == "Area" {
+        if game.category == GameCategory.Area {
             callback(configArea)
         } else {
             callback(config)

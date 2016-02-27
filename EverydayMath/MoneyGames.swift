@@ -16,7 +16,7 @@ class CurrencyGame: Game {
     init(identifier: String, name: String, image: UIImage) {
         self.identifier = identifier
         self.name = name
-        self.category = .Money
+        self.category = .Currency
         self.image = image
     }
     

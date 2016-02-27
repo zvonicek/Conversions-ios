@@ -13,10 +13,10 @@ class UnitConversionGame: Game {
     var category: GameCategory
     var gameConfiguration: GameConfiguration?
     
-    init(identifier: String, name: String, image: UIImage) {
+    init(identifier: String, name: String, category: GameCategory, image: UIImage) {
         self.identifier = identifier
         self.name = name
-        self.category = .Units
+        self.category = category
         self.image = image
     }
     

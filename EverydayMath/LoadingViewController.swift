@@ -19,7 +19,7 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         assert(game != nil)
         
-        self.nameLabel.text = game?.name
+        self.nameLabel.text = "\(game!.category.description()) – \(game!.name)"
         startButton.setTitle("Loading", forState: UIControlState.Normal)
         startButton.enabled = false
         
