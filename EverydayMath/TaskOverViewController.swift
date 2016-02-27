@@ -1,5 +1,5 @@
 //
-//  GameOverViewController.swift
+//  TaskOverViewController.swift
 //  EverydayMath
 //
 //  Created by Petr Zvoníček on 29.11.15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameOverViewController: UIViewController {
+class TaskOverViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

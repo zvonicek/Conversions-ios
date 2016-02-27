@@ -1,5 +1,5 @@
 //
-//  GameViewController.swift
+//  TaskViewController.swift
 //  EverydayMath
 //
 //  Created by Petr Zvoníček on 08.11.15.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
-    var gameRun: GameRun?
+class TaskViewController: UIViewController {
+    var taskRun: TaskRun?
     
-    @IBOutlet var topBar: GameHeaderView!
-    @IBOutlet var gameView: UIView!
+    @IBOutlet var topBar: TaskHeaderView!
+    @IBOutlet var taskView: UIView!
     @IBOutlet var resultView: ResultView!
     @IBOutlet var pauseView: UIView!
     
@@ -26,22 +26,22 @@ class GameViewController: UIViewController {
     var currentQuestionView: UIView? {
         willSet(questionView) {
             if let questionView = questionView {
-                gameView.addSubview(questionView)
+                taskView.addSubview(questionView)
                 
                 // configure task view
                 if let currentQuestionView = currentQuestionView {
-                    questionView.frame = CGRectOffset(gameView.bounds, gameView.bounds.width, 0)
+                    questionView.frame = CGRectOffset(taskView.bounds, taskView.bounds.width, 0)
                     questionView.translatesAutoresizingMaskIntoConstraints = true
                     
                     // animate task transition
                     UIView.animateWithDuration(0.5, animations: { () -> Void in
-                        questionView.frame = self.gameView.bounds
+                        questionView.frame = self.taskView.bounds
                         currentQuestionView.frame = CGRectOffset(currentQuestionView.frame, -currentQuestionView.frame.size.width, 0)
                     }, completion: { (val: Bool) -> Void in
                         currentQuestionView.removeFromSuperview()
                     })
                 } else {
-                    questionView.frame = gameView.bounds
+                    questionView.frame = taskView.bounds
                 }
             }
         }
@@ -57,14 +57,14 @@ class GameViewController: UIViewController {
         dimView.backgroundColor = UIColor(white: 0.0, alpha: 0.2)
         dimView.alpha = 0.0
         
-        if let gameRun = gameRun as? QuestionBased {
-            topBar.progressView.components = gameRun.questions.count
+        if let taskRun = taskRun as? QuestionBased {
+            topBar.progressView.components = taskRun.questions.count
         }
-        gameRun?.delegate = self
+        taskRun?.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
-        if let gameRun = gameRun where !gameRun.finished {
+        if let gameRun = taskRun where !gameRun.finished {
             gameRun.start()
         }
     }
@@ -105,8 +105,8 @@ class GameViewController: UIViewController {
             self.resultView.removeFromSuperview()
             self.dimView.removeFromSuperview()
             
-            if let gameRun = self.gameRun as? QuestionBased where self.resultView.finalResult {
-                gameRun.nextQuestion()
+            if let taskRun = self.taskRun as? QuestionBased where self.resultView.finalResult {
+                taskRun.nextQuestion()
             }
         }
     }
@@ -129,15 +129,15 @@ class GameViewController: UIViewController {
     }
 }
 
-extension GameViewController: GameRunDelegate {
+extension TaskViewController: TaskRunDelegate {
     // MARK: GameRunDelegate methods
-    
-    func gameRun(gameRun: protocol<GameRun, QuestionBased>, showQuestion question: Question, index: Int) {
+
+    func taskRun(taskRun: protocol<TaskRun, QuestionBased>, showQuestion question: Question, index: Int) {
         currentQuestionView = question.getView()
         print("show view")
     }
     
-    func gameRun(gameRun: protocol<GameRun, QuestionBased>, questionCompleted question: Question, index: Int, result: QuestionResult) {
+    func taskRun(taskRun: protocol<TaskRun, QuestionBased>, questionCompleted question: Question, index: Int, result: QuestionResult) {
         if result.correct() {
             resultView.setSuccessWithMessage(result.message())
         } else {
@@ -150,7 +150,7 @@ extension GameViewController: GameRunDelegate {
         }
     }
     
-    func gameRun(gameRun: protocol<GameRun, QuestionBased>, questionGaveSecondTry task: Question, index: Int) {
+    func taskRun(taskRun: protocol<TaskRun, QuestionBased>, questionGaveSecondTry task: Question, index: Int) {
         resultView.setFailureWithMessage(NSLocalizedString("Try it again with hint", comment: "Try it again with hint"), subtitle: NSLocalizedString("Tap to try it again", comment: "Tap to try it again"))
         resultView.finalResult = false
         showResultView {
@@ -158,12 +158,12 @@ extension GameViewController: GameRunDelegate {
         }
     }
     
-    func gameRunCompleted(gameRun: GameRun) {
+    func taskRunCompleted(taskRun: TaskRun) {
         print("game completed")
         performSegueWithIdentifier("completedSegue", sender: self)
     }
     
-    func gameRunAborted(gameRun: GameRun){
+    func taskRunAborted(taskRun: TaskRun){
         print("game aborted")
     }
 

@@ -13,17 +13,17 @@ class LoadingViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var startButton: UIButton!
     
-    var game: Game?
-    var config: GameConfiguration?
+    var task: Task?
+    var config: TaskConfiguration?
     
     override func viewDidLoad() {
-        assert(game != nil)
+        assert(task != nil)
         
-        self.nameLabel.text = "\(game!.category.description()) – \(game!.name)"
+        self.nameLabel.text = "\(task!.category.description()) – \(task!.name)"
         startButton.setTitle("Loading", forState: UIControlState.Normal)
         startButton.enabled = false
         
-        APIClient.getConfigurationForGame(self.game!, callback: { (let configuration: GameConfiguration) -> Void in
+        APIClient.getConfigurationForTask(self.task!, callback: { (let configuration: TaskConfiguration) -> Void in
             self.configurationLoaded(configuration)
         })        
     }
@@ -32,7 +32,7 @@ class LoadingViewController: UIViewController {
         return UIStatusBarStyle.LightContent
     }
     
-    func configurationLoaded(config: GameConfiguration) {
+    func configurationLoaded(config: TaskConfiguration) {
         startButton.setTitle("Play", forState: UIControlState.Normal)
         startButton.enabled = true
         
@@ -44,9 +44,9 @@ class LoadingViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let destination = segue.destinationViewController as? GameViewController, game = game, config = config {
+        if let destination = segue.destinationViewController as? TaskViewController, task = task, config = config {
             do {
-                try destination.gameRun = game.run(config)
+                try destination.taskRun = task.run(config)
             } catch {                
             }
         }

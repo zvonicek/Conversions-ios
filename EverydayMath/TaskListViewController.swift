@@ -1,5 +1,5 @@
 //
-//  GamesListViewController.swift
+//  TaskListViewController.swift
 //  EverydayMath
 //
 //  Created by Petr Zvoníček on 08.11.15.
@@ -9,10 +9,10 @@
 import UIKit
 import FSQCollectionViewAlignedLayout
 
-class GamesListViewController: UIViewController {
+class TaskListViewController: UIViewController {
     
-    let categories = GameFactory.gamesByCategory
-    let sections = GameFactory.categories
+    let categories = TaskFactory.tasksByCategory
+    let sections = TaskFactory.categories
     
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewLayout: FSQCollectionViewAlignedLayout!
@@ -25,19 +25,19 @@ class GamesListViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let destination = segue.destinationViewController as? LoadingViewController, cell = sender as? GameListCollectionViewCell, game = cell.game {
-            destination.game = game
+        if let destination = segue.destinationViewController as? LoadingViewController, cell = sender as? TaskListCollectionViewCell, task = cell.task {
+            destination.task = task
         }
     }
 }
 
-extension GamesListViewController: UINavigationBarDelegate {
+extension TaskListViewController: UINavigationBarDelegate {
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
         return UIBarPosition.TopAttached
     }
 }
 
-extension GamesListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension TaskListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return sections.count
     }
@@ -51,8 +51,8 @@ extension GamesListViewController: UICollectionViewDataSource, UICollectionViewD
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
         let section = categories[sections[indexPath.section]]
         
-        if let cell = cell as? GameListCollectionViewCell, game = section?[indexPath.row] {
-            cell.configureForGame(game)
+        if let cell = cell as? TaskListCollectionViewCell, task = section?[indexPath.row] {
+            cell.configureForTask(task)
         }
         
         

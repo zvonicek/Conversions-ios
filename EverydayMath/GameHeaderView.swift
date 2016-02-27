@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GameHeaderView: UIView {
+class TaskHeaderView: UIView {
     @IBOutlet var progressView: ProgressView!
     
     override func awakeFromNib() {

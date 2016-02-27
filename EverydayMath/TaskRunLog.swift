@@ -16,15 +16,15 @@ struct QuestionRunLog {
     var answer: [String: AnyObject]
 }
 
-class GameRunLog {
-    var gameRunId: String
+class TaskRunLog {
+    var taskRunId: String
     var questionResults = [QuestionRunLog]()
     var userId: String
     var aborted = false
     var date = NSDate()
     
-    init(gameRunId: String) {
-        self.gameRunId = gameRunId
+    init(taskRunId: String) {
+        self.taskRunId = taskRunId
         self.userId = "foo"
     }
     

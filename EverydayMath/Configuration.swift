@@ -15,7 +15,7 @@ protocol QuestionConfiguration {
 
 // MARK: GameConfiguration
 
-struct GameConfiguration {
-    var gameRunId: String
+struct TaskConfiguration {
+    var taskRunId: String
     var questions: [QuestionConfiguration]
 }

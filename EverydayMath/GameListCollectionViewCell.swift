@@ -8,14 +8,14 @@
 
 import UIKit
 
-class GameListCollectionViewCell: UICollectionViewCell {
+class TaskListCollectionViewCell: UICollectionViewCell {
     @IBOutlet var label: UILabel!
     @IBOutlet var imageView: UIImageView!
-    var game: Game?
+    var task: Task?
     
-    func configureForGame(game: Game) {
+    func configureForTask(game: Task) {
         self.label.text = game.name
-        self.game = game
+        self.task = game
         self.imageView.image = game.image
     }
 }

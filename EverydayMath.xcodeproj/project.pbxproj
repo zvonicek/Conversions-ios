@@ -8,24 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		14EB884A5026B2653D58982C /* Pods_EverydayMath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0AE521D4E0CF43D29AC3D7 /* Pods_EverydayMath.framework */; };
+		A717FFC32AC6F0E18E6DD09E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717F5B1396AE33225462317 /* Task.swift */; };
 		D003E0DB1C4ED1570090DA52 /* ViewBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003E0DA1C4ED1570090DA52 /* ViewBorder.swift */; };
 		D003E0DE1C4EEA410090DA52 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003E0DD1C4EEA410090DA52 /* APIClient.swift */; };
 		D013F4D81C14861800DF8769 /* ScaleControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013F4D71C14861800DF8769 /* ScaleControl.swift */; };
 		D013F4DD1C163B6600DF8769 /* ScaleQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D013F4DC1C163B6600DF8769 /* ScaleQuestionView.xib */; };
 		D013F4DF1C163B7400DF8769 /* ScaleQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013F4DE1C163B7400DF8769 /* ScaleQuestionView.swift */; };
 		D013F4E11C16423900DF8769 /* ScaleQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013F4E01C16423900DF8769 /* ScaleQuestion.swift */; };
-		D02CE8871C4C5A6E0088E90A /* GameRunLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CE8861C4C5A6E0088E90A /* GameRunLog.swift */; };
+		D02CE8871C4C5A6E0088E90A /* TaskRunLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CE8861C4C5A6E0088E90A /* TaskRunLog.swift */; };
 		D089FC7E1C4A854900D41863 /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D089FC7D1C4A854900D41863 /* ResultView.xib */; };
 		D089FC801C4A872200D41863 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D089FC7F1C4A872200D41863 /* ResultView.swift */; };
 		D089FC821C4A919A00D41863 /* ArrayRandomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D089FC811C4A919A00D41863 /* ArrayRandomItem.swift */; };
-		D08F523C1BF1368D000F840B /* GameRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F523B1BF1368D000F840B /* GameRun.swift */; };
+		D08F523C1BF1368D000F840B /* TaskRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F523B1BF1368D000F840B /* TaskRun.swift */; };
 		D08F52401BF1394A000F840B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F523F1BF1394A000F840B /* HeaderView.swift */; };
 		D08F52421BF13971000F840B /* GameListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F52411BF13971000F840B /* GameListCollectionViewCell.swift */; };
 		D08F52441BF15ED2000F840B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F52431BF15ED2000F840B /* Extensions.swift */; };
 		D09EE9FC1C42A04D00B4FB31 /* CurrencyDragQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09EE9FB1C42A04D00B4FB31 /* CurrencyDragQuestionView.swift */; };
 		D09EE9FE1C42A05800B4FB31 /* CurrencyDragQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09EE9FD1C42A05800B4FB31 /* CurrencyDragQuestionView.xib */; };
 		D09EEA001C42A08D00B4FB31 /* CurrencyDragQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09EE9FF1C42A08D00B4FB31 /* CurrencyDragQuestion.swift */; };
-		D0A10E281C0FB15C007F0D91 /* GameCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A10E271C0FB15C007F0D91 /* GameCompletedViewController.swift */; };
+		D0A10E281C0FB15C007F0D91 /* TaskCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A10E271C0FB15C007F0D91 /* TaskCompletedViewController.swift */; };
 		D0A477391C4592CA00649EB3 /* BankNote.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A477381C4592CA00649EB3 /* BankNote.xib */; };
 		D0A4773B1C45935900649EB3 /* BankNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A4773A1C45935900649EB3 /* BankNote.swift */; };
 		D0A4773D1C45C27200649EB3 /* HintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A4773C1C45C27200649EB3 /* HintView.xib */; };
@@ -34,28 +35,25 @@
 		D0A477431C45D39700649EB3 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A477421C45D39700649EB3 /* Hint.swift */; };
 		D0A4774C1C46DCCA00649EB3 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A4774B1C46DCCA00649EB3 /* CustomColors.swift */; };
 		D0B138991BFE8EFB00BEA9C7 /* GameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B138981BFE8EFB00BEA9C7 /* GameHeaderView.swift */; };
-		D0C0CC141C0B4ED300D93B83 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0CC131C0B4ED300D93B83 /* GameOverViewController.swift */; };
+		D0C0CC141C0B4ED300D93B83 /* TaskOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0CC131C0B4ED300D93B83 /* TaskOverViewController.swift */; };
 		D0C0CC161C0B541400D93B83 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0CC151C0B541400D93B83 /* GradientView.swift */; };
 		D0C0CC181C0B992B00D93B83 /* ClosedEndedQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0CC171C0B992B00D93B83 /* ClosedEndedQuestionView.swift */; };
 		D0C0CC1A1C0B993500D93B83 /* ClosedEndedQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C0CC191C0B993500D93B83 /* ClosedEndedQuestionView.xib */; };
 		D0C0CC231C0BA64C00D93B83 /* ClosedEndedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0CC221C0BA64C00D93B83 /* ClosedEndedButton.swift */; };
 		D0C0CC261C0CDAE800D93B83 /* NumericQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0CC251C0CDAE800D93B83 /* NumericQuestion.swift */; };
 		D0C0CC281C0CDAF500D93B83 /* ClosedEndedQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0CC271C0CDAF500D93B83 /* ClosedEndedQuestion.swift */; };
-		D0C0CC321C0E272700D93B83 /* UnitsGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0CC311C0E272700D93B83 /* UnitsGames.swift */; };
-		D0C0CC341C0E27A800D93B83 /* MoneyGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0CC331C0E27A800D93B83 /* MoneyGames.swift */; };
 		D0C8650B1C54396E00DF5AF3 /* SortQuestionLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C8650A1C54396E00DF5AF3 /* SortQuestionLabelView.swift */; };
 		D0C900E21BEDFE3400A15F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C900E11BEDFE3400A15F32 /* AppDelegate.swift */; };
 		D0C900E71BEDFE3400A15F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0C900E51BEDFE3400A15F32 /* Main.storyboard */; };
 		D0C900E91BEDFE3400A15F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0C900E81BEDFE3400A15F32 /* Assets.xcassets */; };
 		D0C900EC1BEDFE3400A15F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0C900EA1BEDFE3400A15F32 /* LaunchScreen.storyboard */; };
-		D0C900F41BEE03F000A15F32 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C900F31BEE03F000A15F32 /* Game.swift */; };
 		D0C900F61BEE4E4900A15F32 /* Numpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C900F51BEE4E4900A15F32 /* Numpad.swift */; };
 		D0C900F81BEE7CA900A15F32 /* NumericQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C900F71BEE7CA900A15F32 /* NumericQuestionView.xib */; };
 		D0C900FE1BEE8B7B00A15F32 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C900FD1BEE8B7B00A15F32 /* Configuration.swift */; };
 		D0C901001BEE8B9800A15F32 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C900FF1BEE8B9800A15F32 /* Question.swift */; };
 		D0C901021BEEAFA100A15F32 /* NumericQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C901011BEEAFA100A15F32 /* NumericQuestionView.swift */; };
-		D0C901041BEF7E0500A15F32 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C901031BEF7E0500A15F32 /* GameViewController.swift */; };
-		D0C901061BEF80E200A15F32 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C901051BEF80E200A15F32 /* GamesListViewController.swift */; };
+		D0C901041BEF7E0500A15F32 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C901031BEF7E0500A15F32 /* TaskViewController.swift */; };
+		D0C901061BEF80E200A15F32 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C901051BEF80E200A15F32 /* TaskListViewController.swift */; };
 		D0C901081BEF815800A15F32 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C901071BEF815800A15F32 /* LoadingViewController.swift */; };
 		D0E2E08C1C272D5A005E5B06 /* SortQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2E08B1C272D5A005E5B06 /* SortQuestionView.swift */; };
 		D0E2E0901C272D8C005E5B06 /* SortQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E2E08F1C272D8C005E5B06 /* SortQuestionView.xib */; };
@@ -85,24 +83,25 @@
 		0C0AE521D4E0CF43D29AC3D7 /* Pods_EverydayMath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverydayMath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3CD3569EEE8140EF83F4EF /* Pods-EverydayMath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayMath.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EverydayMath/Pods-EverydayMath.debug.xcconfig"; sourceTree = "<group>"; };
 		8680052E1FDE95CBAD941208 /* Pods-EverydayMath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayMath.release.xcconfig"; path = "Pods/Target Support Files/Pods-EverydayMath/Pods-EverydayMath.release.xcconfig"; sourceTree = "<group>"; };
+		A717F5B1396AE33225462317 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D003E0DA1C4ED1570090DA52 /* ViewBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBorder.swift; sourceTree = "<group>"; };
 		D003E0DD1C4EEA410090DA52 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D013F4D71C14861800DF8769 /* ScaleControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleControl.swift; sourceTree = "<group>"; };
 		D013F4DC1C163B6600DF8769 /* ScaleQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScaleQuestionView.xib; sourceTree = "<group>"; };
 		D013F4DE1C163B7400DF8769 /* ScaleQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleQuestionView.swift; sourceTree = "<group>"; };
 		D013F4E01C16423900DF8769 /* ScaleQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleQuestion.swift; sourceTree = "<group>"; };
-		D02CE8861C4C5A6E0088E90A /* GameRunLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRunLog.swift; sourceTree = "<group>"; };
+		D02CE8861C4C5A6E0088E90A /* TaskRunLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRunLog.swift; sourceTree = "<group>"; };
 		D089FC7D1C4A854900D41863 /* ResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultView.xib; sourceTree = "<group>"; };
 		D089FC7F1C4A872200D41863 /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		D089FC811C4A919A00D41863 /* ArrayRandomItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayRandomItem.swift; sourceTree = "<group>"; };
-		D08F523B1BF1368D000F840B /* GameRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRun.swift; sourceTree = "<group>"; };
+		D08F523B1BF1368D000F840B /* TaskRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRun.swift; sourceTree = "<group>"; };
 		D08F523F1BF1394A000F840B /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		D08F52411BF13971000F840B /* GameListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListCollectionViewCell.swift; sourceTree = "<group>"; };
 		D08F52431BF15ED2000F840B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D09EE9FB1C42A04D00B4FB31 /* CurrencyDragQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyDragQuestionView.swift; sourceTree = "<group>"; };
 		D09EE9FD1C42A05800B4FB31 /* CurrencyDragQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyDragQuestionView.xib; sourceTree = "<group>"; };
 		D09EE9FF1C42A08D00B4FB31 /* CurrencyDragQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyDragQuestion.swift; sourceTree = "<group>"; };
-		D0A10E271C0FB15C007F0D91 /* GameCompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCompletedViewController.swift; sourceTree = "<group>"; };
+		D0A10E271C0FB15C007F0D91 /* TaskCompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCompletedViewController.swift; sourceTree = "<group>"; };
 		D0A477381C4592CA00649EB3 /* BankNote.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankNote.xib; sourceTree = "<group>"; };
 		D0A4773A1C45935900649EB3 /* BankNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankNote.swift; sourceTree = "<group>"; };
 		D0A4773C1C45C27200649EB3 /* HintView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HintView.xib; sourceTree = "<group>"; };
@@ -111,15 +110,13 @@
 		D0A477421C45D39700649EB3 /* Hint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
 		D0A4774B1C46DCCA00649EB3 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		D0B138981BFE8EFB00BEA9C7 /* GameHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHeaderView.swift; sourceTree = "<group>"; };
-		D0C0CC131C0B4ED300D93B83 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		D0C0CC131C0B4ED300D93B83 /* TaskOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskOverViewController.swift; sourceTree = "<group>"; };
 		D0C0CC151C0B541400D93B83 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D0C0CC171C0B992B00D93B83 /* ClosedEndedQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedEndedQuestionView.swift; sourceTree = "<group>"; };
 		D0C0CC191C0B993500D93B83 /* ClosedEndedQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClosedEndedQuestionView.xib; sourceTree = "<group>"; };
 		D0C0CC221C0BA64C00D93B83 /* ClosedEndedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedEndedButton.swift; sourceTree = "<group>"; };
 		D0C0CC251C0CDAE800D93B83 /* NumericQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericQuestion.swift; sourceTree = "<group>"; };
 		D0C0CC271C0CDAF500D93B83 /* ClosedEndedQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedEndedQuestion.swift; sourceTree = "<group>"; };
-		D0C0CC311C0E272700D93B83 /* UnitsGames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsGames.swift; sourceTree = "<group>"; };
-		D0C0CC331C0E27A800D93B83 /* MoneyGames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyGames.swift; sourceTree = "<group>"; };
 		D0C8650A1C54396E00DF5AF3 /* SortQuestionLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortQuestionLabelView.swift; sourceTree = "<group>"; };
 		D0C900DE1BEDFE3400A15F32 /* EverydayMath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverydayMath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C900E11BEDFE3400A15F32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,14 +124,13 @@
 		D0C900E81BEDFE3400A15F32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0C900EB1BEDFE3400A15F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0C900ED1BEDFE3400A15F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0C900F31BEE03F000A15F32 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		D0C900F51BEE4E4900A15F32 /* Numpad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numpad.swift; sourceTree = "<group>"; };
 		D0C900F71BEE7CA900A15F32 /* NumericQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumericQuestionView.xib; sourceTree = "<group>"; };
 		D0C900FD1BEE8B7B00A15F32 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		D0C900FF1BEE8B9800A15F32 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		D0C901011BEEAFA100A15F32 /* NumericQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericQuestionView.swift; sourceTree = "<group>"; };
-		D0C901031BEF7E0500A15F32 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		D0C901051BEF80E200A15F32 /* GamesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
+		D0C901031BEF7E0500A15F32 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		D0C901051BEF80E200A15F32 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		D0C901071BEF815800A15F32 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		D0C901091BEF8B6300A15F32 /* EverydayMath-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EverydayMath-Bridging-Header.h"; sourceTree = "<group>"; };
 		D0E2E08B1C272D5A005E5B06 /* SortQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortQuestionView.swift; sourceTree = "<group>"; };
@@ -218,16 +214,6 @@
 			name = Configuration;
 			sourceTree = "<group>";
 		};
-		D0C0CC301C0E271300D93B83 /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				D0C900F31BEE03F000A15F32 /* Game.swift */,
-				D0C0CC311C0E272700D93B83 /* UnitsGames.swift */,
-				D0C0CC331C0E27A800D93B83 /* MoneyGames.swift */,
-			);
-			name = Game;
-			sourceTree = "<group>";
-		};
 		D0C865091C54395F00DF5AF3 /* SortQuestion items */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,12 +269,12 @@
 		D0C900F91BEE87B200A15F32 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D0C0CC301C0E271300D93B83 /* Game */,
-				D08F523B1BF1368D000F840B /* GameRun.swift */,
+				D08F523B1BF1368D000F840B /* TaskRun.swift */,
 				D0C0CC291C0CDAFA00D93B83 /* Configuration */,
 				D0C900FF1BEE8B9800A15F32 /* Question.swift */,
 				D0A477421C45D39700649EB3 /* Hint.swift */,
-				D02CE8861C4C5A6E0088E90A /* GameRunLog.swift */,
+				D02CE8861C4C5A6E0088E90A /* TaskRunLog.swift */,
+				A717F5B1396AE33225462317 /* Task.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -316,11 +302,11 @@
 		D0C900FB1BEE87C600A15F32 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D0C901031BEF7E0500A15F32 /* GameViewController.swift */,
-				D0C901051BEF80E200A15F32 /* GamesListViewController.swift */,
+				D0C901031BEF7E0500A15F32 /* TaskViewController.swift */,
+				D0C901051BEF80E200A15F32 /* TaskListViewController.swift */,
 				D0C901071BEF815800A15F32 /* LoadingViewController.swift */,
-				D0C0CC131C0B4ED300D93B83 /* GameOverViewController.swift */,
-				D0A10E271C0FB15C007F0D91 /* GameCompletedViewController.swift */,
+				D0C0CC131C0B4ED300D93B83 /* TaskOverViewController.swift */,
+				D0A10E271C0FB15C007F0D91 /* TaskCompletedViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -505,32 +491,29 @@
 			files = (
 				D0A477431C45D39700649EB3 /* Hint.swift in Sources */,
 				D0C0CC281C0CDAF500D93B83 /* ClosedEndedQuestion.swift in Sources */,
-				D0A10E281C0FB15C007F0D91 /* GameCompletedViewController.swift in Sources */,
+				D0A10E281C0FB15C007F0D91 /* TaskCompletedViewController.swift in Sources */,
 				D0C8650B1C54396E00DF5AF3 /* SortQuestionLabelView.swift in Sources */,
 				D089FC821C4A919A00D41863 /* ArrayRandomItem.swift in Sources */,
 				D0C900F61BEE4E4900A15F32 /* Numpad.swift in Sources */,
 				D0E34F351C33320800E7AB97 /* SFlatButton.swift in Sources */,
-				D0C900F41BEE03F000A15F32 /* Game.swift in Sources */,
 				D0C900FE1BEE8B7B00A15F32 /* Configuration.swift in Sources */,
 				D003E0DE1C4EEA410090DA52 /* APIClient.swift in Sources */,
 				D09EEA001C42A08D00B4FB31 /* CurrencyDragQuestion.swift in Sources */,
 				D0A4773B1C45935900649EB3 /* BankNote.swift in Sources */,
 				D013F4E11C16423900DF8769 /* ScaleQuestion.swift in Sources */,
-				D08F523C1BF1368D000F840B /* GameRun.swift in Sources */,
+				D08F523C1BF1368D000F840B /* TaskRun.swift in Sources */,
 				D013F4DF1C163B7400DF8769 /* ScaleQuestionView.swift in Sources */,
-				D0C0CC141C0B4ED300D93B83 /* GameOverViewController.swift in Sources */,
+				D0C0CC141C0B4ED300D93B83 /* TaskOverViewController.swift in Sources */,
 				D08F52421BF13971000F840B /* GameListCollectionViewCell.swift in Sources */,
-				D0C901041BEF7E0500A15F32 /* GameViewController.swift in Sources */,
-				D0C0CC341C0E27A800D93B83 /* MoneyGames.swift in Sources */,
+				D0C901041BEF7E0500A15F32 /* TaskViewController.swift in Sources */,
 				D0E2E0A11C27478B005E5B06 /* SortQuestionCollectionViewCell.swift in Sources */,
-				D0C901061BEF80E200A15F32 /* GamesListViewController.swift in Sources */,
+				D0C901061BEF80E200A15F32 /* TaskListViewController.swift in Sources */,
 				D09EE9FC1C42A04D00B4FB31 /* CurrencyDragQuestionView.swift in Sources */,
 				D0C0CC161C0B541400D93B83 /* GradientView.swift in Sources */,
 				D0E2E08C1C272D5A005E5B06 /* SortQuestionView.swift in Sources */,
 				D0C0CC261C0CDAE800D93B83 /* NumericQuestion.swift in Sources */,
-				D0C0CC321C0E272700D93B83 /* UnitsGames.swift in Sources */,
 				D0C901081BEF815800A15F32 /* LoadingViewController.swift in Sources */,
-				D02CE8871C4C5A6E0088E90A /* GameRunLog.swift in Sources */,
+				D02CE8871C4C5A6E0088E90A /* TaskRunLog.swift in Sources */,
 				D08F52401BF1394A000F840B /* HeaderView.swift in Sources */,
 				D0E2E09F1C2744B3005E5B06 /* SortQuestion.swift in Sources */,
 				D0A4774C1C46DCCA00649EB3 /* CustomColors.swift in Sources */,
@@ -549,6 +532,7 @@
 				D08F52441BF15ED2000F840B /* Extensions.swift in Sources */,
 				D0E34F2E1C32D14100E7AB97 /* ProgressView.swift in Sources */,
 				D0A477411C45CA6600649EB3 /* NumericHintView.swift in Sources */,
+				A717FFC32AC6F0E18E6DD09E /* Task.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

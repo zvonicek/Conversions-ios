@@ -10,8 +10,8 @@ import Foundation
 
 class APIClient {
     
-    static func getConfigurationForGame(game: Game, callback: GameConfiguration -> Void) {
-        let config = GameConfiguration(gameRunId: "1", questions: [
+    static func getConfigurationForTask(task: Task, callback: TaskConfiguration -> Void) {
+        let config = TaskConfiguration(taskRunId: "1", questions: [
                 NumericQuestionConfiguration(fromValue: 4000, fromUnit: "pounds", toValue: 1814, toUnit: "kilograms", minCorrectValue: 1600, maxCorrectValue: 2000, image: UIImage(named: "car"), hint: NumericHint(text: "1 pound is 0.4536 kilograms")),
                 SortQuestionConfiguration(question: "Sort from shortest to longest", topDescription: "shortest", bottomDescription: "longest", questions: [SortQuestionItem(title: "5 kg", correctPosition: 1, presentedPosition: 1, errorExplanation: "5 kg = 5000 g"), SortQuestionItem(title: "1 kg", correctPosition: 0, presentedPosition: 2, errorExplanation: "1 kg = 1000 g"),
                                                                                                                                                            SortQuestionItem(title: "20 kg", correctPosition: 2, presentedPosition: 0, errorExplanation: "20 kg = 20000 g")]),
@@ -21,7 +21,7 @@ class APIClient {
                 ScaleQuestionConfiguration(question: "How many MILES is 10 KILOMETRES?", scaleMin: 10.0, scaleMax: 23.0, correctValue: 18.21, correctTolerance: 1.0, toUnit: "Miles")
             ])
 
-        let configArea = GameConfiguration(gameRunId: "2", questions: [
+        let configArea = TaskConfiguration(taskRunId: "2", questions: [
                 NumericQuestionConfiguration(fromValue: 8, fromUnit: "km²", toValue: 800, toUnit: "ha (hectare)", minCorrectValue: 750, maxCorrectValue: 850, image: nil, hint: NumericHint(text: "1 km² is 100 ha")),
                 ScaleQuestionConfiguration(question: "Convert 10 km² to mi² (miles squared)", scaleMin: 0, scaleMax: 22, correctValue: 3.86, correctTolerance: 1.0, toUnit: "km²"),
                 NumericQuestionConfiguration(fromValue: 4, fromUnit: "football fields", toValue: 24000, toUnit: "m²", minCorrectValue: 16000, maxCorrectValue: 40000, image: UIImage(named: "field")!, hint: NumericHint(text: "1 football field is approx. from 4000 to 10000 m²")),
@@ -36,14 +36,14 @@ class APIClient {
                 ScaleQuestionConfiguration(question: "Convert 23 m² to ft²", scaleMin: 120, scaleMax: 340, correctValue: 248, correctTolerance: 20, toUnit: "ft²"),
         ])
         
-        if game.category == GameCategory.Area {
+        if task.category == TaskCategory.Area {
             callback(configArea)
         } else {
             callback(config)
         }
     }
     
-    static func uploadGameRunLog(log: GameRunLog, callback: ((error: NSError?) -> Void)?) {
+    static func uploadTaskRunLog(log: TaskRunLog, callback: ((error: NSError?) -> Void)?) {
         if let callback = callback {
             callback(error: nil)
         }

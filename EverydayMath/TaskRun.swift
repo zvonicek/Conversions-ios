@@ -1,5 +1,5 @@
 //
-//  GameRun.swift
+//  TaskRun.swift
 //  EverydayMath
 //
 //  Created by Petr Zvoníček on 09.11.15.
@@ -9,16 +9,16 @@
 import Foundation
 
 // MARK: GameRun protocols
-protocol GameRunDelegate {
-    func gameRun(gameRun: protocol<GameRun, QuestionBased>, showQuestion question: Question, index: Int)
-    func gameRun(gameRun: protocol<GameRun, QuestionBased>, questionCompleted question: Question, index: Int, result: QuestionResult)
-    func gameRun(gameRun: protocol<GameRun, QuestionBased>, questionGaveSecondTry question: Question, index: Int)
-    func gameRunCompleted(gameRun: GameRun)
-    func gameRunAborted(gameRun: GameRun)
+protocol TaskRunDelegate {
+    func taskRun(taskRun: protocol<TaskRun, QuestionBased>, showQuestion question: Question, index: Int)
+    func taskRun(taskRun: protocol<TaskRun, QuestionBased>, questionCompleted question: Question, index: Int, result: QuestionResult)
+    func taskRun(taskRun: protocol<TaskRun, QuestionBased>, questionGaveSecondTry question: Question, index: Int)
+    func taskRunCompleted(taskRun: TaskRun)
+    func taskRunAborted(taskRun: TaskRun)
 }
 
-protocol GameRun {
-    var delegate: GameRunDelegate? { get set }
+protocol TaskRun {
+    var delegate: TaskRunDelegate? { get set }
     
     var running: Bool { get }
     var finished: Bool { get }
@@ -35,17 +35,17 @@ protocol QuestionBased {
     func nextQuestion()
 }
 
-class DefaultGameRun: GameRun, QuestionBased, QuestionDelegate {
-    let game: Game
-    let config: GameConfiguration
+class DefaultTaskRun: TaskRun, QuestionBased, QuestionDelegate {
+    let task: Task
+    let config: TaskConfiguration
     let questions: [Question]
-    let log: GameRunLog
+    let log: TaskRunLog
     
     var currentQuestionIndex: Int?
     var currentQuestionPresentationDate: NSDate?
     var currentQuestionSecondTry = false
     
-    var delegate: GameRunDelegate?
+    var delegate: TaskRunDelegate?
     
     var running = false
     var finished = false {
@@ -56,11 +56,11 @@ class DefaultGameRun: GameRun, QuestionBased, QuestionDelegate {
         }
     }
     
-    init(game: Game, config: GameConfiguration) {
-        self.game = game
+    init(task: Task, config: TaskConfiguration) {
+        self.task = task
         self.config = config
         self.questions = config.questions.flatMap(QuestionFactory.questionForConfiguration)
-        self.log = GameRunLog(gameRunId: config.gameRunId)
+        self.log = TaskRunLog(taskRunId: config.taskRunId)
     }
     
     func start() {
@@ -77,7 +77,7 @@ class DefaultGameRun: GameRun, QuestionBased, QuestionDelegate {
     }
     
     func abort() {
-        abortGameRun()
+        abortTaskRun()
     }
     
     func nextQuestion() {
@@ -85,28 +85,28 @@ class DefaultGameRun: GameRun, QuestionBased, QuestionDelegate {
         
         if var nextQuestion = questions[safe: index] {
             nextQuestion.delegate = self
-            delegate?.gameRun(self, showQuestion: nextQuestion, index: index)
+            delegate?.taskRun(self, showQuestion: nextQuestion, index: index)
             currentQuestionIndex = index
             currentQuestionPresentationDate = NSDate()
             currentQuestionSecondTry = false
         } else {
-            finishGameRun()
+            finishTaskRun()
         }
     }
     
-    private func abortGameRun() {
+    private func abortTaskRun() {
         finished = true
-        delegate?.gameRunAborted(self)
+        delegate?.taskRunAborted(self)
         
         self.log.aborted = true
-        APIClient.uploadGameRunLog(self.log, callback: nil)
+        APIClient.uploadTaskRunLog(self.log, callback: nil)
     }
     
-    private func finishGameRun() {
+    private func finishTaskRun() {
         finished = true
-        delegate?.gameRunCompleted(self)
+        delegate?.taskRunCompleted(self)
         
-        APIClient.uploadGameRunLog(self.log, callback: nil)        
+        APIClient.uploadTaskRunLog(self.log, callback: nil)
     }
     
     // MARK: TaskDelegate
@@ -141,7 +141,7 @@ class DefaultGameRun: GameRun, QuestionBased, QuestionDelegate {
         let taskLog = QuestionRunLog(questionId: question.properties.questionId, correct: correct, time: timeSpend, hintShown: currentQuestionSecondTry, answer: answer)
         log.appendQuestionLog(taskLog)
 
-        delegate?.gameRun(self, questionCompleted: question, index: index, result: result)
+        delegate?.taskRun(self, questionCompleted: question, index: index, result: result)
     }
     
     func questionGaveSecondTry(question: Question) {
@@ -151,6 +151,6 @@ class DefaultGameRun: GameRun, QuestionBased, QuestionDelegate {
         }
         
         currentQuestionSecondTry = true
-        delegate?.gameRun(self, questionGaveSecondTry: question, index: index)
+        delegate?.taskRun(self, questionGaveSecondTry: question, index: index)
     }
 }

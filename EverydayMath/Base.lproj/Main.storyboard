@@ -8,10 +8,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Games List View Controller-->
+        <!--Task List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GamesListViewController" customModule="EverydayMath" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TaskListViewController" customModule="EverydayMath" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -46,7 +46,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="wA7-BS-1cJ" customClass="FSQCollectionViewAlignedLayout"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="HdB-nf-hqp" customClass="GameListCollectionViewCell" customModule="EverydayMath" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="HdB-nf-hqp" customClass="TaskListCollectionViewCell" customModule="EverydayMath" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="189" height="189"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -223,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="1285" y="440"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Task View Controller-->
         <scene sceneID="4ng-ff-j5y">
             <objects>
-                <viewController id="3Jj-Vo-GaI" customClass="GameViewController" customModule="EverydayMath" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3Jj-Vo-GaI" customClass="TaskViewController" customModule="EverydayMath" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SMh-bD-v2h"/>
                         <viewControllerLayoutGuide type="bottom" id="mJm-L0-jI6"/>
@@ -239,7 +239,7 @@
                                 <rect key="frame" x="0.0" y="50" width="600" height="550"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PeN-4t-Rv4" customClass="GameHeaderView" customModule="EverydayMath" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PeN-4t-Rv4" customClass="TaskHeaderView" customModule="EverydayMath" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGT-1W-cKM">
@@ -330,9 +330,9 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="gameView" destination="pZF-P8-5RZ" id="RT5-or-6Pg"/>
                         <outlet property="pauseView" destination="1E0-n8-MVa" id="3da-nE-qgW"/>
                         <outlet property="resultView" destination="RYn-Pg-pvR" id="fmn-1K-m6N"/>
+                        <outlet property="taskView" destination="pZF-P8-5RZ" id="5Lf-fc-pva"/>
                         <outlet property="topBar" destination="PeN-4t-Rv4" id="wKb-6A-hZJ"/>
                         <segue destination="SGw-ad-Bh0" kind="show" identifier="timeOutSegue" id="J1h-C9-ATo"/>
                         <segue destination="sa7-j2-TI0" kind="show" identifier="completedSegue" id="dYG-Df-T4x"/>
@@ -485,10 +485,10 @@
             </objects>
             <point key="canvasLocation" x="2055" y="440"/>
         </scene>
-        <!--Game Completed View Controller-->
+        <!--Task Completed View Controller-->
         <scene sceneID="mSZ-Hd-ENv">
             <objects>
-                <viewController id="sa7-j2-TI0" customClass="GameCompletedViewController" customModule="EverydayMath" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sa7-j2-TI0" customClass="TaskCompletedViewController" customModule="EverydayMath" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7dC-8d-1m6"/>
                         <viewControllerLayoutGuide type="bottom" id="Mvb-Sh-kCk"/>
@@ -546,10 +546,10 @@
             </objects>
             <point key="canvasLocation" x="2819" y="93"/>
         </scene>
-        <!--Game Over View Controller-->
+        <!--Task Over View Controller-->
         <scene sceneID="jhH-l3-E4P">
             <objects>
-                <viewController id="SGw-ad-Bh0" customClass="GameOverViewController" customModule="EverydayMath" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SGw-ad-Bh0" customClass="TaskOverViewController" customModule="EverydayMath" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VWM-Nt-ANc"/>
                         <viewControllerLayoutGuide type="bottom" id="fRq-2v-9VE"/>

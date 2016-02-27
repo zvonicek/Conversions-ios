@@ -26,7 +26,7 @@ class HeaderView: UICollectionReusableView {
 //        self.addBottomBorderWithColor(UIColor.lightGrayColor(), width: 1.0)
     }
     
-    func configure(category: GameCategory) {
+    func configure(category: TaskCategory) {
         self.label.text = category.description().uppercaseString
     }
     

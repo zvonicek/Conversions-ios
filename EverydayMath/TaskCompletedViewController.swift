@@ -1,5 +1,5 @@
 //
-//  GameCompletedViewController.swift
+//  TaskCompletedViewController.swift
 //  EverydayMath
 //
 //  Created by Petr Zvoníček on 03.12.15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameCompletedViewController: UIViewController {
+class TaskCompletedViewController: UIViewController {
 
     @IBAction func dismiss() {
         self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
