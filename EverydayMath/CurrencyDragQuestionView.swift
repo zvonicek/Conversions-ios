@@ -1,5 +1,5 @@
 //
-//  CurrencyDragTask.swift
+//  CurrencyDragQuestion.swift
 //  EverydayMath
 //
 //  Created by Petr Zvoníček on 10.01.16.
@@ -10,7 +10,7 @@ import UIKit
 import SEDraggable
 
 class NoteDraggable: SEDraggable {
-    var config: CurrencyDragTaskConfigurationNote!
+    var config: CurrencyDragQuestionConfigurationNote!
     lazy var tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap")
     
     override init(frame: CGRect) {
@@ -36,7 +36,7 @@ class NoteDraggable: SEDraggable {
     }
 }
 
-class CurrencyDragTaskView: UIView {
+class CurrencyDragQuestionView: UIView {
 //    @IBOutlet var topView: SEDraggableLocation!
     @IBOutlet var fromValueLabel: UILabel!
     @IBOutlet var toDragView: SEDraggableLocation!
@@ -45,9 +45,9 @@ class CurrencyDragTaskView: UIView {
 
     let toDragViewNotesLimit = 8
     
-    var task: CurrencyDragTask! {
+    var question: CurrencyDragQuestion! {
         didSet {
-            fromValueLabel.text = String(format: "%.0f %@", task.configuration.fromValue, task.configuration.fromCurrency)
+            fromValueLabel.text = String(format: "%.0f %@", question.configuration.fromValue, question.configuration.fromCurrency)
             
 //            for note in task.configuration.fromNotes {
 //                let noteView = BankNote.instanceFromNib(note)
@@ -56,7 +56,7 @@ class CurrencyDragTaskView: UIView {
 //            }
             
             var index = 0
-            for (note, count) in task.configuration.availableNotes {
+            for (note, count) in question.configuration.availableNotes {
                 for _ in 0..<count {
                     let noteView = BankNote.instanceFromNib(note)
                     let draggable = NoteDraggable(imageView: noteView)
@@ -69,7 +69,7 @@ class CurrencyDragTaskView: UIView {
         }
     }
     
-    var delegate: TaskDelegate?
+    var delegate: QuestionDelegate?
 
     deinit {
         toDragView.delegate = nil
@@ -154,22 +154,22 @@ class CurrencyDragTaskView: UIView {
         }
         let answerDescription: [String: AnyObject] = ["sum": String(outputSum), "notes": outputValues]
         
-        if (task.verifyResult(outputSum)) {
+        if (question.verifyResult(outputSum)) {
             toDragView.backgroundColor = UIColor.correctColor()
-            delegate?.taskCompleted(task, correct: true, answer: answerDescription)
+            delegate?.questionCompleted(question, correct: true, answer: answerDescription)
         } else {
-            if let hint = task.configuration.hint where self.hintView == nil {
+            if let hint = question.configuration.hint where self.hintView == nil {
                 handleFailure()
                 let hintView = hint.getHintView()
                 self.hintView = hintView
                 showHintView(hintView)
                 
-                delegate?.taskGaveSecondTry(task)
+                delegate?.questionGaveSecondTry(question)
             } else {
                 handleSecondFailure()
                 self.userInteractionEnabled = false
                 toDragView.backgroundColor = UIColor.errorColor()
-                delegate?.taskCompleted(task, correct: false, answer: answerDescription)
+                delegate?.questionCompleted(question, correct: false, answer: answerDescription)
             }
         }
     }
@@ -213,7 +213,7 @@ class CurrencyDragTaskView: UIView {
     
     private func showCorrectAnswer() {
         var correctDraggables = [NoteDraggable]()
-        var remainingCorrect = self.task.configuration.correctNotes
+        var remainingCorrect = self.question.configuration.correctNotes
         for note in self.fromDragView.containedObjects {
             let note = note as! NoteDraggable
             if let i = remainingCorrect.indexOf({$0.value == note.config.value}) {
@@ -237,7 +237,7 @@ class CurrencyDragTaskView: UIView {
     }
 }
 
-extension CurrencyDragTaskView: SEDraggableLocationEventResponder {
+extension CurrencyDragQuestionView: SEDraggableLocationEventResponder {
     func draggableLocationDidRecalculateObjectPositions(location: SEDraggableLocation!) {
         if (location == toDragView) {
             location.shouldAcceptDroppedObjects = location.containedObjects.count < self.toDragViewNotesLimit

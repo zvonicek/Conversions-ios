@@ -1,5 +1,5 @@
 //
-//  ScaleTask.swift
+//  ScaleQuestion.swift
 //  EverydayMath
 //
 //  Created by Petr Zvoníček on 07.12.15.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct ScaleTaskConfiguration: TaskConfiguration {
-    var task: String
+struct ScaleQuestionConfiguration: QuestionConfiguration {
+    var question: String
     var scaleMin: Float
     var scaleMax: Float
     var correctValue: Float
@@ -17,19 +17,19 @@ struct ScaleTaskConfiguration: TaskConfiguration {
     var toUnit: String
 }
 
-class ScaleTask: Task {
-    var delegate: TaskDelegate?
-    let configuration: ScaleTaskConfiguration
-    let properties: TaskProperties = TaskProperties(taskId: "D", fastTime: 5, neutralTime: 10)
+class ScaleQuestion: Question {
+    var delegate: QuestionDelegate?
+    let configuration: ScaleQuestionConfiguration
+    let properties: QuestionProperties = QuestionProperties(questionId: "D", fastTime: 5, neutralTime: 10)
     
-    init(config: ScaleTaskConfiguration) {
+    init(config: ScaleQuestionConfiguration) {
         configuration = config
     }
     
     func getView() -> UIView {
-        let view = ScaleTaskView.loadFromNibNamed("ScaleTaskView") as! ScaleTaskView
+        let view = ScaleQuestionView.loadFromNibNamed("ScaleQuestionView") as! ScaleQuestionView
         view.delegate = self.delegate
-        view.task = self
+        view.question = self
         return view
     }
     

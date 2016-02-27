@@ -1,5 +1,5 @@
 //
-//  NumericTaskView.swift
+//  NumericQuestionView.swift
 //  EverydayMath
 //
 //  Created by Petr Zvoníček on 07.11.15.
@@ -9,7 +9,7 @@
 import UIKit
 import OALayoutAnchor
 
-class NumericTaskView: UIView, NumpadViewDelegate {
+class NumericQuestionView: UIView, NumpadViewDelegate {
     @IBOutlet var fromLabel: UILabel!
     @IBOutlet var toValueTextField: UITextField!
     @IBOutlet var toUnitLabel: UILabel!
@@ -19,16 +19,16 @@ class NumericTaskView: UIView, NumpadViewDelegate {
     
     @IBOutlet var numpad: NumpadView!
     
-    var task: NumericTask! {
+    var question: NumericQuestion! {
         didSet {
-            fromLabel.text = String(format: "%.0f", task.configuration.fromValue) + " " + task.configuration.fromUnit
-            toUnitLabel.text = task.configuration.toUnit
-            if let imageView = imageView, let image = task.configuration.image {
+            fromLabel.text = String(format: "%.0f", question.configuration.fromValue) + " " + question.configuration.fromUnit
+            toUnitLabel.text = question.configuration.toUnit
+            if let imageView = imageView, let image = question.configuration.image {
                 imageView.image = image
             }
         }
     }
-    var delegate: TaskDelegate?
+    var delegate: QuestionDelegate?
     
     override func awakeFromNib() {
         numpad.delegate = self
@@ -55,19 +55,19 @@ class NumericTaskView: UIView, NumpadViewDelegate {
     }
     
     func verifyResult(number: Float) {
-        let result = task.verifyResult(number)
+        let result = question.verifyResult(number)
         
         if result {
             handleSuccess(number)
         } else {
-            if let hint = task.configuration.hint where self.hintView == nil {
+            if let hint = question.configuration.hint where self.hintView == nil {
                 handleFailure()
                 
                 let hintView = hint.getHintView()
                 self.hintView = hintView
                 showHintView(hintView)
                 
-                delegate?.taskGaveSecondTry(task)
+                delegate?.questionGaveSecondTry(question)
             } else {
                 handleSecondFailure(number)
                 
@@ -80,7 +80,7 @@ class NumericTaskView: UIView, NumpadViewDelegate {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.toValueTextField.backgroundColor = UIColor.correctColor()
         }, completion: { _ -> Void in
-            self.delegate?.taskCompleted(self.task, correct: true, answer: ["number": String(number)])
+            self.delegate?.questionCompleted(self.question, correct: true, answer: ["number": String(number)])
         })
     }
     
@@ -107,8 +107,8 @@ class NumericTaskView: UIView, NumpadViewDelegate {
                 UIView.animateWithDuration(0.3, delay: 0.3, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
                     self.toValueTextField.backgroundColor = color
                     }, completion: { _ -> Void in
-                        self.toValueTextField.text = String(format: "%.0f", self.task.configuration.toValue)
-                        self.delegate?.taskCompleted(self.task, correct: false, answer: ["number": String(number)])
+                        self.toValueTextField.text = String(format: "%.0f", self.question.configuration.toValue)
+                        self.delegate?.questionCompleted(self.question, correct: false, answer: ["number": String(number)])
                 })
         })
     }

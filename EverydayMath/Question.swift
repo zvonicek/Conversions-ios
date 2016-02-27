@@ -1,5 +1,5 @@
 //
-//  TaskType.swift
+//  Question.swift
 //  EverydayMath
 //
 //  Created by Petr Zvoníček on 07.11.15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum TaskResult {
+enum QuestionResult {
     case Incorrect, CorrectFast, CorrectNeutral, CorrectSlow
     
     func progressViewState() -> ProgressViewState {
@@ -42,43 +42,43 @@ enum TaskResult {
     }
 }
 
-protocol TaskDelegate {
-    func taskCompleted(task: Task, correct: Bool, answer: [String: AnyObject])
-    func taskGaveSecondTry(task: Task)
+protocol QuestionDelegate {
+    func questionCompleted(question: Question, correct: Bool, answer: [String: AnyObject])
+    func questionGaveSecondTry(question: Question)
 }
 
-struct TaskProperties {
-    var taskId: String
+struct QuestionProperties {
+    var questionId: String
     var fastTime: NSTimeInterval
     var neutralTime: NSTimeInterval
 }
 
-protocol Task {
-    var delegate: TaskDelegate? { get set }
-    var properties: TaskProperties { get }
+protocol Question {
+    var delegate: QuestionDelegate? { get set }
+    var properties: QuestionProperties { get }
     
     func identifier() -> String
     func getView() -> UIView
 }
 
-extension CollectionType where Generator.Element == Task {
+extension CollectionType where Generator.Element == Question {
     func indexOf(element: Generator.Element) -> Index? {
         return indexOf({ $0.identifier() == element.identifier() })
     }
 }
 
-class TaskFactory {
-    class func taskForConfiguration(configuration: TaskConfiguration) -> Task? {
-        if let configuration = configuration as? NumericTaskConfiguration {
-            return NumericTask(config: configuration)
-        } else if let configuration = configuration as? ClosedEndedTaskConfiguration {
-            return ClosedEndedTask(config: configuration)
-        } else if let configuration = configuration as? SortTaskConfiguration {
-            return SortTask(config: configuration)
-        } else if let configuration = configuration as? ScaleTaskConfiguration {
-            return ScaleTask(config: configuration)
-        } else if let configuration = configuration as? CurrencyDragTaskConfiguration {
-            return CurrencyDragTask(config: configuration)
+class QuestionFactory {
+    class func questionForConfiguration(configuration: QuestionConfiguration) -> Question? {
+        if let configuration = configuration as? NumericQuestionConfiguration {
+            return NumericQuestion(config: configuration)
+        } else if let configuration = configuration as? ClosedEndedQuestionConfiguration {
+            return ClosedEndedQuestion(config: configuration)
+        } else if let configuration = configuration as? SortQuestionConfiguration {
+            return SortQuestion(config: configuration)
+        } else if let configuration = configuration as? ScaleQuestionConfiguration {
+            return ScaleQuestion(config: configuration)
+        } else if let configuration = configuration as? CurrencyDragQuestionConfiguration {
+            return CurrencyDragQuestion(config: configuration)
         }
         
         return nil

@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: Task-specific configuration
-protocol TaskConfiguration {
+protocol QuestionConfiguration {
     
 }
 
@@ -17,5 +17,5 @@ protocol TaskConfiguration {
 
 struct GameConfiguration {
     var gameRunId: String
-    var tasks: [TaskConfiguration]
+    var questions: [QuestionConfiguration]
 }

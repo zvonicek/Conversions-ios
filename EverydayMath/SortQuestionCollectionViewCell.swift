@@ -1,5 +1,5 @@
 //
-//  SortTaskCollectionViewCell.swift
+//  SortQuestionCollectionViewCell.swift
 //  EverydayMath
 //
 //  Created by Petr Zvoníček on 20.12.15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SortTaskCollectionViewCell: UICollectionViewCell {
+class SortQuestionCollectionViewCell: UICollectionViewCell {
     @IBOutlet var label: UILabel!
     @IBOutlet var hintLabel: UILabel!
     
@@ -25,7 +25,7 @@ class SortTaskCollectionViewCell: UICollectionViewCell {
         self.label.textColor = UIColor(red: 83/255.0, green: 117/255.0, blue: 127/255.0, alpha: 1.0)
     }
     
-    func configureForItem(item: SortTaskItem) {
+    func configureForItem(item: SortQuestionItem) {
         self.label.text = item.title
         self.hintLabel.text = item.errorExplanation
     }

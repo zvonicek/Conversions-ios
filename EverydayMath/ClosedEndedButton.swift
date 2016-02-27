@@ -10,10 +10,10 @@ import UIKit
 
 class ClosedEndedButton: UIButton {
 
-    let answerCfg: ClosedEndedTaskAnswerConfiguration
+    let answerCfg: ClosedEndedQuestionAnswerConfiguration
     let hintLabel = UILabel()
     
-    init(answerCfg: ClosedEndedTaskAnswerConfiguration) {
+    init(answerCfg: ClosedEndedQuestionAnswerConfiguration) {
         self.answerCfg = answerCfg
         
         super.init(frame: CGRectZero)

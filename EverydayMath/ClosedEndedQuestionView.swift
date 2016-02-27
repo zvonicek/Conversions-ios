@@ -1,5 +1,5 @@
 //
-//  ClosedEndedTaskView.swift
+//  ClosedEndedQuestionView.swift
 //  EverydayMath
 //
 //  Created by Petr Zvoníček on 29.11.15.
@@ -10,11 +10,11 @@ import UIKit
 import TZStackView
 import OALayoutAnchor
 
-class ClosedEndedTaskView: UIView {
+class ClosedEndedQuestionView: UIView {
     @IBOutlet var questionLabel: UILabel!
     var answerButtons = [ClosedEndedButton]()
 
-    var delegate: TaskDelegate?
+    var delegate: QuestionDelegate?
     
     var stackView = TZStackView() {
         didSet {
@@ -24,14 +24,14 @@ class ClosedEndedTaskView: UIView {
         }
     }
     
-    var task: ClosedEndedTask! {
+    var question: ClosedEndedQuestion! {
         didSet {
-            questionLabel.text = task.configuration.question
+            questionLabel.text = question.configuration.question
             
             var buttons = [UIView()]
             answerButtons = [ClosedEndedButton]()
             
-            for answerCfg in task.configuration.answers {
+            for answerCfg in question.configuration.answers {
                 let button = ClosedEndedButton(answerCfg: answerCfg)
                 button.translatesAutoresizingMaskIntoConstraints = false
                 button.addTarget(self, action: "answerSelected:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -74,7 +74,7 @@ class ClosedEndedTaskView: UIView {
         markButton(sender)
         
         var correct = true
-        if !task.configuration.correctAnswers().contains(sender.answerCfg) {
+        if !question.configuration.correctAnswers().contains(sender.answerCfg) {
             // selected answer is not correct
             correct = false
             
@@ -84,11 +84,11 @@ class ClosedEndedTaskView: UIView {
             }
         }
         
-        delegate?.taskCompleted(task, correct: correct, answer: ["answer": sender.answerCfg.answer])
+        delegate?.questionCompleted(question, correct: correct, answer: ["answer": sender.answerCfg.answer])
     }
     
     private func markButton(button: ClosedEndedButton) {
-        if task.configuration.correctAnswers().contains(button.answerCfg) {
+        if question.configuration.correctAnswers().contains(button.answerCfg) {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 button.backgroundColor = UIColor.correctColor()
                 }) { (completed: Bool) -> Void in

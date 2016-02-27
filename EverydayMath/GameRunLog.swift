@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct TaskRunLog {
-    var taskId: String
+struct QuestionRunLog {
+    var questionId: String
     var correct: Bool
     var time: NSTimeInterval
     var hintShown: Bool
@@ -18,7 +18,7 @@ struct TaskRunLog {
 
 class GameRunLog {
     var gameRunId: String
-    var taskResults = [TaskRunLog]()
+    var questionResults = [QuestionRunLog]()
     var userId: String
     var aborted = false
     var date = NSDate()
@@ -28,7 +28,7 @@ class GameRunLog {
         self.userId = "foo"
     }
     
-    func appendTaskLog(log: TaskRunLog) {
-        taskResults.append(log)
+    func appendQuestionLog(log: QuestionRunLog) {
+        questionResults.append(log)
     }
 }

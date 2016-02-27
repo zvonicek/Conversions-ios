@@ -8,18 +8,18 @@
 
 import Foundation
 
-class NumericTask: Task {
-    var delegate: TaskDelegate?
-    let configuration: NumericTaskConfiguration
-    let properties: TaskProperties = TaskProperties(taskId: "C", fastTime: 5, neutralTime: 10)
+class NumericQuestion: Question {
+    var delegate: QuestionDelegate?
+    let configuration: NumericQuestionConfiguration
+    let properties: QuestionProperties = QuestionProperties(questionId: "C", fastTime: 5, neutralTime: 10)
     
-    init(config: NumericTaskConfiguration) {
+    init(config: NumericQuestionConfiguration) {
         configuration = config
     }
     
     func getView() -> UIView {
-        let view = self.configuration.image == nil ? NumericTaskView.loadFromNibNamed("NumericTaskView") as! NumericTaskView : NumericTaskView.loadFromNibNamed("NumericTaskView", index: 1) as! NumericTaskView
-        view.task = self
+        let view = self.configuration.image == nil ? NumericQuestionView.loadFromNibNamed("NumericQuestionView") as! NumericQuestionView : NumericQuestionView.loadFromNibNamed("NumericQuestionView", index: 1) as! NumericQuestionView
+        view.question = self
         view.delegate = self.delegate
         return view
     }
@@ -37,7 +37,7 @@ class NumericTask: Task {
     }    
 }
 
-struct NumericTaskConfiguration: TaskConfiguration {
+struct NumericQuestionConfiguration: QuestionConfiguration {
     let fromValue: Float
     let fromUnit: String
     let toValue: Float

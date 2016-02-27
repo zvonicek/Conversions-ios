@@ -10,9 +10,9 @@ import Foundation
 
 // MARK: GameRun protocols
 protocol GameRunDelegate {
-    func gameRun(gameRun: protocol<GameRun, TaskBased>, showTask task: Task, index: Int)
-    func gameRun(gameRun: protocol<GameRun, TaskBased>, taskCompleted task: Task, index: Int, result: TaskResult)
-    func gameRun(gameRun: protocol<GameRun, TaskBased>, taskGaveSecondTry task: Task, index: Int)
+    func gameRun(gameRun: protocol<GameRun, QuestionBased>, showQuestion question: Question, index: Int)
+    func gameRun(gameRun: protocol<GameRun, QuestionBased>, questionCompleted question: Question, index: Int, result: QuestionResult)
+    func gameRun(gameRun: protocol<GameRun, QuestionBased>, questionGaveSecondTry question: Question, index: Int)
     func gameRunCompleted(gameRun: GameRun)
     func gameRunAborted(gameRun: GameRun)
 }
@@ -28,22 +28,22 @@ protocol GameRun {
     func resume()
 }
 
-protocol TaskBased {
-    var tasks: [Task] { get }
-    var currentTaskIndex: Int? { get }
+protocol QuestionBased {
+    var questions: [Question] { get }
+    var currentQuestionIndex: Int? { get }
     
-    func nextTask()
+    func nextQuestion()
 }
 
-class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
+class DefaultGameRun: GameRun, QuestionBased, QuestionDelegate {
     let game: Game
     let config: GameConfiguration
-    let tasks: [Task]
+    let questions: [Question]
     let log: GameRunLog
     
-    var currentTaskIndex: Int?
-    var currentTaskPresentationDate: NSDate?
-    var currentTaskSecondTry = false
+    var currentQuestionIndex: Int?
+    var currentQuestionPresentationDate: NSDate?
+    var currentQuestionSecondTry = false
     
     var delegate: GameRunDelegate?
     
@@ -59,13 +59,13 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
     init(game: Game, config: GameConfiguration) {
         self.game = game
         self.config = config
-        self.tasks = config.tasks.flatMap(TaskFactory.taskForConfiguration)
+        self.questions = config.questions.flatMap(QuestionFactory.questionForConfiguration)
         self.log = GameRunLog(gameRunId: config.gameRunId)
     }
     
     func start() {
         running = true
-        nextTask()
+        nextQuestion()
     }
     
     func pause() {
@@ -80,15 +80,15 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
         abortGameRun()
     }
     
-    func nextTask() {
-        let index = currentTaskIndex != nil ? currentTaskIndex! + 1 : 0
+    func nextQuestion() {
+        let index = currentQuestionIndex != nil ? currentQuestionIndex! + 1 : 0
         
-        if var nextTask = tasks[safe: index] {
-            nextTask.delegate = self
-            delegate?.gameRun(self, showTask: nextTask, index: index)
-            currentTaskIndex = index
-            currentTaskPresentationDate = NSDate()
-            currentTaskSecondTry = false
+        if var nextQuestion = questions[safe: index] {
+            nextQuestion.delegate = self
+            delegate?.gameRun(self, showQuestion: nextQuestion, index: index)
+            currentQuestionIndex = index
+            currentQuestionPresentationDate = NSDate()
+            currentQuestionSecondTry = false
         } else {
             finishGameRun()
         }
@@ -111,46 +111,46 @@ class DefaultGameRun: GameRun, TaskBased, TaskDelegate {
     
     // MARK: TaskDelegate
     
-    func taskCompleted(task: Task, correct: Bool, answer: [String: AnyObject]) {
-        guard let index = tasks.indexOf(task) else {
+    func questionCompleted(question: Question, correct: Bool, answer: [String: AnyObject]) {
+        guard let index = questions.indexOf(question) else {
             assertionFailure("task was not found")
             return
         }
         
-        guard let currentTaskPresentationDate = currentTaskPresentationDate else {
+        guard let currentQuestionPresentationDate = currentQuestionPresentationDate else {
             assertionFailure("task presentation date not found")
             return
         }
         
-        let timeSpend = NSDate().timeIntervalSinceDate(currentTaskPresentationDate)
+        let timeSpend = NSDate().timeIntervalSinceDate(currentQuestionPresentationDate)
         
-        var result: TaskResult
+        var result: QuestionResult
         if correct {
             switch timeSpend {
-            case 0...task.properties.fastTime:
-                result = TaskResult.CorrectFast
-            case task.properties.fastTime...task.properties.neutralTime:
-                result = TaskResult.CorrectNeutral
+            case 0...question.properties.fastTime:
+                result = QuestionResult.CorrectFast
+            case question.properties.fastTime...question.properties.neutralTime:
+                result = QuestionResult.CorrectNeutral
             default:
-                result = TaskResult.CorrectSlow
+                result = QuestionResult.CorrectSlow
             }
         } else {
-            result = TaskResult.Incorrect
+            result = QuestionResult.Incorrect
         }
         
-        let taskLog = TaskRunLog(taskId: task.properties.taskId, correct: correct, time: timeSpend, hintShown: currentTaskSecondTry, answer: answer)
-        log.appendTaskLog(taskLog)
+        let taskLog = QuestionRunLog(questionId: question.properties.questionId, correct: correct, time: timeSpend, hintShown: currentQuestionSecondTry, answer: answer)
+        log.appendQuestionLog(taskLog)
 
-        delegate?.gameRun(self, taskCompleted: task, index: index, result: result)
+        delegate?.gameRun(self, questionCompleted: question, index: index, result: result)
     }
     
-    func taskGaveSecondTry(task: Task) {
-        guard let index = tasks.indexOf(task) else {
+    func questionGaveSecondTry(question: Question) {
+        guard let index = questions.indexOf(question) else {
             assertionFailure("task was not found")
             return
         }
         
-        currentTaskSecondTry = true
-        delegate?.gameRun(self, taskGaveSecondTry: task, index: index)
+        currentQuestionSecondTry = true
+        delegate?.gameRun(self, questionGaveSecondTry: question, index: index)
     }
 }

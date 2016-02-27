@@ -16,7 +16,7 @@ class BankNote: UIImageView {
         self.layer.cornerRadius = 3.0
     }
     
-    class func instanceFromNib(config: CurrencyDragTaskConfigurationNote) -> BankNote {
+    class func instanceFromNib(config: CurrencyDragQuestionConfigurationNote) -> BankNote {
         let note = UINib(nibName: "BankNote", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! BankNote
         note.priceLabel.text = String(format: "%.0f %@", config.value, config.currency)
         

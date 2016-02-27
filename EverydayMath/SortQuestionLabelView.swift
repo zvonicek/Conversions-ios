@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SortTaskLabelView: UICollectionReusableView {
+class SortQuestionLabelView: UICollectionReusableView {
     let label = UILabel()
     
     override init(frame: CGRect) {

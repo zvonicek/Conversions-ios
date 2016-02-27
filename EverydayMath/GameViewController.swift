@@ -23,25 +23,25 @@ class GameViewController: UIViewController {
         return view
     }()
     
-    var currentTaskView: UIView? {
-        willSet(taskView) {
-            if let taskView = taskView {
-                gameView.addSubview(taskView)
+    var currentQuestionView: UIView? {
+        willSet(questionView) {
+            if let questionView = questionView {
+                gameView.addSubview(questionView)
                 
                 // configure task view
-                if let currentTaskView = currentTaskView {
-                    taskView.frame = CGRectOffset(gameView.bounds, gameView.bounds.width, 0)
-                    taskView.translatesAutoresizingMaskIntoConstraints = true
+                if let currentQuestionView = currentQuestionView {
+                    questionView.frame = CGRectOffset(gameView.bounds, gameView.bounds.width, 0)
+                    questionView.translatesAutoresizingMaskIntoConstraints = true
                     
                     // animate task transition
                     UIView.animateWithDuration(0.5, animations: { () -> Void in
-                        taskView.frame = self.gameView.bounds
-                        currentTaskView.frame = CGRectOffset(currentTaskView.frame, -currentTaskView.frame.size.width, 0)
+                        questionView.frame = self.gameView.bounds
+                        currentQuestionView.frame = CGRectOffset(currentQuestionView.frame, -currentQuestionView.frame.size.width, 0)
                     }, completion: { (val: Bool) -> Void in
-                        currentTaskView.removeFromSuperview()
+                        currentQuestionView.removeFromSuperview()
                     })
                 } else {
-                    taskView.frame = gameView.bounds
+                    questionView.frame = gameView.bounds
                 }
             }
         }
@@ -57,8 +57,8 @@ class GameViewController: UIViewController {
         dimView.backgroundColor = UIColor(white: 0.0, alpha: 0.2)
         dimView.alpha = 0.0
         
-        if let gameRun = gameRun as? TaskBased {
-            topBar.progressView.components = gameRun.tasks.count
+        if let gameRun = gameRun as? QuestionBased {
+            topBar.progressView.components = gameRun.questions.count
         }
         gameRun?.delegate = self
     }
@@ -105,8 +105,8 @@ class GameViewController: UIViewController {
             self.resultView.removeFromSuperview()
             self.dimView.removeFromSuperview()
             
-            if let gameRun = self.gameRun as? TaskBased where self.resultView.finalResult {
-                gameRun.nextTask()
+            if let gameRun = self.gameRun as? QuestionBased where self.resultView.finalResult {
+                gameRun.nextQuestion()
             }
         }
     }
@@ -132,12 +132,12 @@ class GameViewController: UIViewController {
 extension GameViewController: GameRunDelegate {
     // MARK: GameRunDelegate methods
     
-    func gameRun(gameRun: protocol<GameRun, TaskBased>, showTask task: Task, index: Int) {
-        currentTaskView = task.getView()        
+    func gameRun(gameRun: protocol<GameRun, QuestionBased>, showQuestion question: Question, index: Int) {
+        currentQuestionView = question.getView()
         print("show view")
     }
     
-    func gameRun(gameRun: protocol<GameRun, TaskBased>, taskCompleted task: Task, index: Int, result: TaskResult) {
+    func gameRun(gameRun: protocol<GameRun, QuestionBased>, questionCompleted question: Question, index: Int, result: QuestionResult) {
         if result.correct() {
             resultView.setSuccessWithMessage(result.message())
         } else {
@@ -150,7 +150,7 @@ extension GameViewController: GameRunDelegate {
         }
     }
     
-    func gameRun(gameRun: protocol<GameRun, TaskBased>, taskGaveSecondTry task: Task, index: Int) {
+    func gameRun(gameRun: protocol<GameRun, QuestionBased>, questionGaveSecondTry task: Question, index: Int) {
         resultView.setFailureWithMessage(NSLocalizedString("Try it again with hint", comment: "Try it again with hint"), subtitle: NSLocalizedString("Tap to try it again", comment: "Tap to try it again"))
         resultView.finalResult = false
         showResultView {

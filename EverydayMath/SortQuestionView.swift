@@ -1,5 +1,5 @@
 //
-//  SortTaskView.swift
+//  SortQuestionView.swift
 //  EverydayMath
 //
 //  Created by Petr Zvoníček on 20.12.15.
@@ -10,30 +10,30 @@ import UIKit
 import DraggableCollectionView
 import LMArrayChangeSets
 
-class SortTaskView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource_Draggable {
+class SortQuestionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource_Draggable {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var taskLabel: UILabel!
     
-    var rows = [SortTaskItem]()
+    var rows = [SortQuestionItem]()
     var result: [Bool]?
-    var hintVisibleRows = [SortTaskItem]()
-    var task: SortTask! {
+    var hintVisibleRows = [SortQuestionItem]()
+    var question: SortQuestion! {
         didSet {
-            taskLabel.text = task.configuration.question
+            taskLabel.text = question.configuration.question
             
-            rows = task.configuration.presentedQuestions()
+            rows = question.configuration.presentedQuestions()
             self.collectionView.reloadData()
         }
     }
     
-    var delegate: TaskDelegate?
+    var delegate: QuestionDelegate?
     
     override func awakeFromNib() {
         self.backgroundColor = UIColor.clearColor()
         
-        collectionView.registerNib(UINib(nibName: "SortTaskCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: "cell")
-        collectionView.registerClass(SortTaskLabelView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView")
-        collectionView.registerClass(SortTaskLabelView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "footerView")
+        collectionView.registerNib(UINib(nibName: "SortQuestionCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: "cell")
+        collectionView.registerClass(SortQuestionLabelView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView")
+        collectionView.registerClass(SortQuestionLabelView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "footerView")
     }
     
     @IBAction func verify() {
@@ -52,11 +52,11 @@ class SortTaskView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         let isAllCorrect = result.reduce(true, combine: {$0 && $1})
         let orderOfPresentedPositions = rows.map { $0.presentedPosition }
         let orderOfTitles = rows.map { $0.title }
-        self.delegate?.taskCompleted(self.task, correct: isAllCorrect, answer: ["orderOfPresentedPositions": orderOfPresentedPositions, "orderOfTitles": orderOfTitles])
+        self.delegate?.questionCompleted(self.question, correct: isAllCorrect, answer: ["orderOfPresentedPositions": orderOfPresentedPositions, "orderOfTitles": orderOfTitles])
     }
     
     private func showCorrectAnswers() {
-        let correctQuestions = task.configuration.correctQuestions()
+        let correctQuestions = question.configuration.correctQuestions()
         var newIndexSet = [Int]()
         for row in self.rows {
             newIndexSet.append(correctQuestions.indexOf({ $0 == row })!)
@@ -105,7 +105,7 @@ class SortTaskView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
             cell.backgroundColor = UIColor(red: 232/255.0, green: 232/255.0, blue: 232/255.0, alpha: 1.0)
         }
         
-        if let cell = cell as? SortTaskCollectionViewCell {
+        if let cell = cell as? SortQuestionCollectionViewCell {
             cell.configureForItem(item)
         }
         
@@ -119,12 +119,12 @@ class SortTaskView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         if kind == UICollectionElementKindSectionHeader {
-            let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "headerView", forIndexPath: indexPath) as! SortTaskLabelView
-            view.label.text = task.configuration.topDescription
+            let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "headerView", forIndexPath: indexPath) as! SortQuestionLabelView
+            view.label.text = question.configuration.topDescription
             return view
         } else if kind == UICollectionElementKindSectionFooter {
-            let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "footerView", forIndexPath: indexPath) as! SortTaskLabelView
-            view.label.text = task.configuration.bottomDescription
+            let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "footerView", forIndexPath: indexPath) as! SortQuestionLabelView
+            view.label.text = question.configuration.bottomDescription
             return view
         }
         
