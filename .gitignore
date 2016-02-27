@@ -17,4 +17,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 
+.idea/*
+
 Carthage/Build
