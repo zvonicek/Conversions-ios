@@ -56,8 +56,8 @@ class CurrencyDragQuestionView: UIView {
 //            }
             
             var index = 0
-            for (note, count) in question.configuration.availableNotes {
-                for _ in 0..<count {
+            for note in question.configuration.availableNotes {
+                for _ in 0..<note.count {
                     let noteView = BankNote.instanceFromNib(note)
                     let draggable = NoteDraggable(imageView: noteView)
                     draggable.config = note

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Unbox
 
 class ClosedEndedQuestion: Question {
     var delegate: QuestionDelegate?
@@ -29,16 +30,6 @@ class ClosedEndedQuestion: Question {
     }    
 }
 
-struct ClosedEndedQuestionAnswerConfiguration: Equatable {
-    let answer: String
-    let explanation: String?
-    let correct: Bool
-}
-
-func ==(lhs: ClosedEndedQuestionAnswerConfiguration, rhs: ClosedEndedQuestionAnswerConfiguration) -> Bool {
-    return lhs.answer == rhs.answer
-}
-
 struct ClosedEndedQuestionConfiguration: QuestionConfiguration {
     let question: String
     let answers: [ClosedEndedQuestionAnswerConfiguration]
@@ -46,4 +37,25 @@ struct ClosedEndedQuestionConfiguration: QuestionConfiguration {
     func correctAnswers() -> [ClosedEndedQuestionAnswerConfiguration] {
         return answers.filter { $0.correct }
     }
+    
+    init(unboxer: Unboxer) {
+        question = unboxer.unbox("question")
+        answers = unboxer.unbox("answers")
+    }
+}
+
+struct ClosedEndedQuestionAnswerConfiguration: Equatable, Unboxable {
+    let answer: String
+    let explanation: String?
+    let correct: Bool
+    
+    init(unboxer: Unboxer) {
+        answer = unboxer.unbox("answer")
+        explanation = unboxer.unbox("explanation")
+        correct = unboxer.unbox("correct")
+    }
+}
+
+func ==(lhs: ClosedEndedQuestionAnswerConfiguration, rhs: ClosedEndedQuestionAnswerConfiguration) -> Bool {
+    return lhs.answer == rhs.answer
 }

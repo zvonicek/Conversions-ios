@@ -17,13 +17,13 @@ struct QuestionRunLog {
 }
 
 class TaskRunLog {
-    var taskRunId: String
+    var taskRunId: Int
     var questionResults = [QuestionRunLog]()
     var userId: String
     var aborted = false
     var date = NSDate()
     
-    init(taskRunId: String) {
+    init(taskRunId: Int) {
         self.taskRunId = taskRunId
         self.userId = "foo"
     }

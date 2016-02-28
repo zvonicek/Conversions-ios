@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Unbox
 
 class NumericQuestion: Question {
     var delegate: QuestionDelegate?
@@ -47,4 +48,15 @@ struct NumericQuestionConfiguration: QuestionConfiguration {
     let image: UIImage?
     
     let hint: Hint?
+    
+    init(unboxer: Unboxer) {
+        fromValue = unboxer.unbox("fromValue")
+        fromUnit = unboxer.unbox("fromUnit")
+        toValue = unboxer.unbox("toValue")
+        toUnit = unboxer.unbox("toUnit")
+        minCorrectValue = unboxer.unbox("minCorrectValue")
+        maxCorrectValue = unboxer.unbox("maxCorrectValue")
+        image = nil //unboxer.unbox("imagePath")
+        hint = nil
+    }
 }

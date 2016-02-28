@@ -21,7 +21,7 @@ class SortQuestionView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         didSet {
             taskLabel.text = question.configuration.question
             
-            rows = question.configuration.presentedQuestions()
+            rows = question.configuration.presentedAnswers()
             self.collectionView.reloadData()
         }
     }
@@ -56,7 +56,7 @@ class SortQuestionView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     private func showCorrectAnswers() {
-        let correctQuestions = question.configuration.correctQuestions()
+        let correctQuestions = question.configuration.correctAnswers()
         var newIndexSet = [Int]()
         for row in self.rows {
             newIndexSet.append(correctQuestions.indexOf({ $0 == row })!)

@@ -7,15 +7,7 @@
 //
 
 import Foundation
-
-struct ScaleQuestionConfiguration: QuestionConfiguration {
-    var question: String
-    var scaleMin: Float
-    var scaleMax: Float
-    var correctValue: Float
-    var correctTolerance: Float
-    var toUnit: String
-}
+import Unbox
 
 class ScaleQuestion: Question {
     var delegate: QuestionDelegate?
@@ -35,5 +27,23 @@ class ScaleQuestion: Question {
     
     func identifier() -> String {
         return String(ObjectIdentifier(self).uintValue)
+    }
+}
+
+struct ScaleQuestionConfiguration: QuestionConfiguration {
+    var question: String
+    var scaleMin: Float
+    var scaleMax: Float
+    var correctValue: Float
+    var correctTolerance: Float
+    var toUnit: String
+    
+    init(unboxer: Unboxer) {
+        question = unboxer.unbox("question")
+        scaleMin = unboxer.unbox("scaleMin")
+        scaleMax = unboxer.unbox("scaleMax")
+        correctValue = unboxer.unbox("correctValue")
+        correctTolerance = unboxer.unbox("correctTolerance")
+        toUnit = unboxer.unbox("toUnit")
     }
 }

@@ -7,23 +7,7 @@
 //
 
 import Foundation
-
-struct CurrencyDragQuestionConfigurationNote {
-    let value: Float
-    let currency: String
-}
-
-struct CurrencyDragQuestionConfiguration: QuestionConfiguration {
-    let fromValue: Float
-    let fromCurrency: String
-    let toValue: Float
-    let toCurrency: String
-    let tolerance: Float
-    let fromNotes: [CurrencyDragQuestionConfigurationNote] // may be removed
-    let correctNotes: [CurrencyDragQuestionConfigurationNote]
-    let availableNotes: [(note: CurrencyDragQuestionConfigurationNote, count: Int)]
-    let hint: Hint?
-}
+import Unbox
 
 class CurrencyDragQuestion: Question {
     var delegate: QuestionDelegate?
@@ -47,5 +31,41 @@ class CurrencyDragQuestion: Question {
     
     func identifier() -> String {
         return String(ObjectIdentifier(self).uintValue)
+    }
+}
+
+struct CurrencyDragQuestionConfigurationNote: Unboxable {
+    let value: Float
+    let currency: String
+    var count: Int = 0
+    
+    init(unboxer: Unboxer) {
+        value = unboxer.unbox("value")
+        currency = unboxer.unbox("currency")
+        if unboxer.dictionary.indexForKey("count") != nil {
+            count = unboxer.unbox("count")
+        }
+    }
+}
+
+struct CurrencyDragQuestionConfiguration: QuestionConfiguration {
+    let fromValue: Float
+    let fromCurrency: String
+    let toValue: Float
+    let toCurrency: String
+    let tolerance: Float
+    let correctNotes: [CurrencyDragQuestionConfigurationNote]
+    let availableNotes: [CurrencyDragQuestionConfigurationNote]
+    let hint: Hint?
+    
+    init(unboxer: Unboxer) {
+        fromValue = unboxer.unbox("fromValue")
+        fromCurrency = unboxer.unbox("fromCurrency")
+        toValue = unboxer.unbox("toValue")
+        toCurrency = unboxer.unbox("toCurrency")
+        tolerance = unboxer.unbox("tolerance")
+        correctNotes = unboxer.unbox("correctNotes")
+        availableNotes = unboxer.unbox("availableNotes")
+        hint = nil
     }
 }

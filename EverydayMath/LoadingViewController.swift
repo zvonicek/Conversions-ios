@@ -23,9 +23,9 @@ class LoadingViewController: UIViewController {
         startButton.setTitle("Loading", forState: UIControlState.Normal)
         startButton.enabled = false
         
-        APIClient.getConfigurationForTask(self.task!, callback: { (let configuration: TaskConfiguration) -> Void in
-            self.configurationLoaded(configuration)
-        })        
+        APIClient.getConfigurationForTask(self.task!).then { taskConfiguration in
+            self.configurationLoaded(taskConfiguration)
+        }
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
