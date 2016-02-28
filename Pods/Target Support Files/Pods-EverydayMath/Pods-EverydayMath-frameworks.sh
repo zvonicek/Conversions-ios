@@ -84,18 +84,26 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-EverydayMath/Alamofire.framework"
   install_framework "Pods-EverydayMath/DraggableCollectionView.framework"
   install_framework "Pods-EverydayMath/FSQCollectionViewAlignedLayout.framework"
   install_framework "Pods-EverydayMath/LMArrayChangeSets.framework"
   install_framework "Pods-EverydayMath/OALayoutAnchor.framework"
+  install_framework "Pods-EverydayMath/OMGHTTPURLRQ.framework"
+  install_framework "Pods-EverydayMath/PromiseKit.framework"
   install_framework "Pods-EverydayMath/SEDraggable.framework"
   install_framework "Pods-EverydayMath/TZStackView.framework"
+  install_framework "Pods-EverydayMath/Unbox.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-EverydayMath/Alamofire.framework"
   install_framework "Pods-EverydayMath/DraggableCollectionView.framework"
   install_framework "Pods-EverydayMath/FSQCollectionViewAlignedLayout.framework"
   install_framework "Pods-EverydayMath/LMArrayChangeSets.framework"
   install_framework "Pods-EverydayMath/OALayoutAnchor.framework"
+  install_framework "Pods-EverydayMath/OMGHTTPURLRQ.framework"
+  install_framework "Pods-EverydayMath/PromiseKit.framework"
   install_framework "Pods-EverydayMath/SEDraggable.framework"
   install_framework "Pods-EverydayMath/TZStackView.framework"
+  install_framework "Pods-EverydayMath/Unbox.framework"
 fi

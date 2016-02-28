@@ -1,18 +1,42 @@
 PODS:
+  - Alamofire (3.2.1)
   - DraggableCollectionView (0.1)
   - FSQCollectionViewAlignedLayout (1.1.1)
   - LMArrayChangeSets (0.1.3)
   - OALayoutAnchor (0.2.0)
+  - OMGHTTPURLRQ (3.1.1):
+    - OMGHTTPURLRQ/RQ (= 3.1.1)
+  - OMGHTTPURLRQ/FormURLEncode (3.1.1)
+  - OMGHTTPURLRQ/RQ (3.1.1):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (3.1.1)
+  - PromiseKit (3.0.2):
+    - PromiseKit/Foundation (= 3.0.2)
+    - PromiseKit/QuartzCore (= 3.0.2)
+    - PromiseKit/UIKit (= 3.0.2)
+  - PromiseKit/CorePromise (3.0.2)
+  - PromiseKit/Foundation (3.0.2):
+    - OMGHTTPURLRQ (~> 3.1.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (3.0.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (3.0.2):
+    - PromiseKit/CorePromise
   - SEDraggable (1.0.0)
   - TZStackView (1.1.2)
+  - Unbox (1.3.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 3.2)
   - DraggableCollectionView (from `https://github.com/zvonicek/DraggableCollectionView.git`)
   - FSQCollectionViewAlignedLayout (~> 1.1)
   - LMArrayChangeSets (~> 0.1)
   - OALayoutAnchor
+  - PromiseKit (~> 3.0)
   - SEDraggable (from `https://github.com/zvonicek/iOS-DragAndDrop.git`)
   - TZStackView (~> 1.1)
+  - Unbox (~> 1.3)
 
 EXTERNAL SOURCES:
   DraggableCollectionView:
@@ -29,11 +53,15 @@ CHECKOUT OPTIONS:
     :git: https://github.com/zvonicek/iOS-DragAndDrop.git
 
 SPEC CHECKSUMS:
+  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
   DraggableCollectionView: b6d1a6239f263577869ab2bf868af82b2dfc056a
   FSQCollectionViewAlignedLayout: 122006b230bf5635ae159f1ad1eaa9b5ef11391e
   LMArrayChangeSets: 141a8321bdaba14a03fc5520bc869f2cfc7ed273
   OALayoutAnchor: 27a15a06ebfd3bc07de527f6cd4a5a714c47226d
+  OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
+  PromiseKit: ab1a380f7a30cf8cce663a2411e8b3580b10313d
   SEDraggable: aacb2e95742fb51760dfdbe372fb9e3e19ab666b
   TZStackView: 19aeaa414fb653f4be9b80a73f4f0c66e33bf033
+  Unbox: b6e468b47b5d941b197c1ea53e9c179528b454ed
 
 COCOAPODS: 0.39.0
