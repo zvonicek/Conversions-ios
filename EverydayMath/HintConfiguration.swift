@@ -2,17 +2,18 @@
 //  HintConfiguration.swift
 //  EverydayMath
 //
-//  Created by Petr Zvoníček on 13.01.16.
+//  Created by Petr Zvoníček on 02.03.16.
 //  Copyright © 2016 Petr Zvonicek. All rights reserved.
 //
 
 import Foundation
+import Unbox
 
-protocol Hint {
+protocol HintConfiguration {
     func getHintView() -> UIView
 }
 
-struct ScaleHint: Hint {
+struct ScaleHintConfiguration: HintConfiguration {
     var topUnit: String
     var topMin: Float
     var topMax: Float
@@ -34,7 +35,7 @@ struct ScaleHint: Hint {
     }
 }
 
-struct NumericHint: Hint {
+struct NumericHintConfiguration: HintConfiguration {
     var text: String
     
     func getHintView() -> UIView {

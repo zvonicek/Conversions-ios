@@ -56,7 +56,7 @@ struct CurrencyDragQuestionConfiguration: QuestionConfiguration {
     let tolerance: Float
     let correctNotes: [CurrencyDragQuestionConfigurationNote]
     let availableNotes: [CurrencyDragQuestionConfigurationNote]
-    let hint: Hint?
+    let hint: HintConfiguration?
     
     init(unboxer: Unboxer) {
         fromValue = unboxer.unbox("fromValue")

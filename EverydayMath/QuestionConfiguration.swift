@@ -13,16 +13,6 @@ protocol QuestionConfiguration: Unboxable {
     init(unboxer: Unboxer)
 }
 
-struct TaskConfiguration: Unboxable {
-    var taskRunId: Int
-    var questions: [QuestionConfiguration]
-    
-    init(unboxer: Unboxer) {
-        self.taskRunId = unboxer.unbox("id")
-        self.questions = unboxer.unbox("questions")
-    }
-}
-
 enum QuestionConfigurationType: String {
     case CloseEnded = "questionCloseEnded"
     case Numeric = "questionNumeric"

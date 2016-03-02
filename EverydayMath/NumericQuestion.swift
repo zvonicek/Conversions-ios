@@ -47,7 +47,7 @@ struct NumericQuestionConfiguration: QuestionConfiguration {
     let maxCorrectValue: Float
     let image: UIImage?
     
-    let hint: Hint?
+    let hint: HintConfiguration?
     
     init(unboxer: Unboxer) {
         fromValue = unboxer.unbox("fromValue")
