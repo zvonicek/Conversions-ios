@@ -9,8 +9,16 @@
 import Foundation
 import Unbox
 
-protocol QuestionConfiguration: Unboxable {
-    init(unboxer: Unboxer)
+class QuestionConfiguration: Unboxable {
+    var questionId: Int
+    var fastTime: NSTimeInterval?
+    var neutralTime: NSTimeInterval?
+    
+    required init(unboxer: Unboxer) {
+        questionId = unboxer.unbox("id")
+        fastTime = unboxer.unbox("fastTime")
+        neutralTime = unboxer.unbox("neutralTime")
+    }
 }
 
 enum QuestionConfigurationType: String {

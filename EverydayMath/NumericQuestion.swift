@@ -38,7 +38,7 @@ class NumericQuestion: Question {
     }    
 }
 
-struct NumericQuestionConfiguration: QuestionConfiguration {
+class NumericQuestionConfiguration: QuestionConfiguration {
     let fromValue: Float
     let fromUnit: String
     let toValue: Float
@@ -49,7 +49,7 @@ struct NumericQuestionConfiguration: QuestionConfiguration {
     
     let hint: HintConfiguration?
     
-    init(unboxer: Unboxer) {
+    required init(unboxer: Unboxer) {
         fromValue = unboxer.unbox("fromValue")
         fromUnit = unboxer.unbox("fromUnit")
         toValue = unboxer.unbox("toValue")
@@ -58,5 +58,7 @@ struct NumericQuestionConfiguration: QuestionConfiguration {
         maxCorrectValue = unboxer.unbox("maxCorrectValue")
         image = nil //unboxer.unbox("imagePath")
         hint = nil
+        
+        super.init(unboxer: unboxer)        
     }
 }

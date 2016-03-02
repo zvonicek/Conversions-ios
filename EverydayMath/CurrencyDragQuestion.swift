@@ -48,7 +48,7 @@ struct CurrencyDragQuestionConfigurationNote: Unboxable {
     }
 }
 
-struct CurrencyDragQuestionConfiguration: QuestionConfiguration {
+class CurrencyDragQuestionConfiguration: QuestionConfiguration {
     let fromValue: Float
     let fromCurrency: String
     let toValue: Float
@@ -58,7 +58,7 @@ struct CurrencyDragQuestionConfiguration: QuestionConfiguration {
     let availableNotes: [CurrencyDragQuestionConfigurationNote]
     let hint: HintConfiguration?
     
-    init(unboxer: Unboxer) {
+    required init(unboxer: Unboxer) {
         fromValue = unboxer.unbox("fromValue")
         fromCurrency = unboxer.unbox("fromCurrency")
         toValue = unboxer.unbox("toValue")
@@ -67,5 +67,7 @@ struct CurrencyDragQuestionConfiguration: QuestionConfiguration {
         correctNotes = unboxer.unbox("correctNotes")
         availableNotes = unboxer.unbox("availableNotes")
         hint = nil
+        
+        super.init(unboxer: unboxer)        
     }
 }

@@ -30,17 +30,19 @@ class SortQuestion: Question {
     }    
 }
 
-struct SortQuestionConfiguration: QuestionConfiguration {
+class SortQuestionConfiguration: QuestionConfiguration {
     let question: String
     let topDescription: String
     let bottomDescription: String
     let answers: [SortQuestionItem]
     
-    init(unboxer: Unboxer) {
+    required init(unboxer: Unboxer) {
         question = unboxer.unbox("question")
         topDescription = unboxer.unbox("topDescription")
         bottomDescription = unboxer.unbox("bottomDescription")
         answers = unboxer.unbox("answers")
+        
+        super.init(unboxer: unboxer)        
     }
     
     func presentedAnswers() -> [SortQuestionItem] {
@@ -52,13 +54,13 @@ struct SortQuestionConfiguration: QuestionConfiguration {
     }
 }
 
-struct SortQuestionItem: Unboxable {
+class SortQuestionItem: Unboxable {
     let title: String
     let correctPosition: Int
     let presentedPosition: Int
     let errorExplanation: String?
     
-    init(unboxer: Unboxer) {
+    required init(unboxer: Unboxer) {
         title = unboxer.unbox("title")
         correctPosition = unboxer.unbox("correctPosition")
         presentedPosition = unboxer.unbox("presentedPosition")

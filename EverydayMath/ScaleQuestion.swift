@@ -30,7 +30,7 @@ class ScaleQuestion: Question {
     }
 }
 
-struct ScaleQuestionConfiguration: QuestionConfiguration {
+class ScaleQuestionConfiguration: QuestionConfiguration {
     var question: String
     var scaleMin: Float
     var scaleMax: Float
@@ -38,12 +38,14 @@ struct ScaleQuestionConfiguration: QuestionConfiguration {
     var correctTolerance: Float
     var toUnit: String
     
-    init(unboxer: Unboxer) {
+    required init(unboxer: Unboxer) {
         question = unboxer.unbox("question")
         scaleMin = unboxer.unbox("scaleMin")
         scaleMax = unboxer.unbox("scaleMax")
         correctValue = unboxer.unbox("correctValue")
         correctTolerance = unboxer.unbox("correctTolerance")
         toUnit = unboxer.unbox("toUnit")
+        
+        super.init(unboxer: unboxer)
     }
 }

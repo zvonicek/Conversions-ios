@@ -30,7 +30,7 @@ class ClosedEndedQuestion: Question {
     }    
 }
 
-struct ClosedEndedQuestionConfiguration: QuestionConfiguration {
+class ClosedEndedQuestionConfiguration: QuestionConfiguration {
     let question: String
     let answers: [ClosedEndedQuestionAnswerConfiguration]
     
@@ -38,9 +38,11 @@ struct ClosedEndedQuestionConfiguration: QuestionConfiguration {
         return answers.filter { $0.correct }
     }
     
-    init(unboxer: Unboxer) {
+    required init(unboxer: Unboxer) {
         question = unboxer.unbox("question")
         answers = unboxer.unbox("answers")
+        
+        super.init(unboxer: unboxer)        
     }
 }
 
