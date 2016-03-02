@@ -12,10 +12,13 @@ import Unbox
 class NumericQuestion: Question {
     var delegate: QuestionDelegate?
     let configuration: NumericQuestionConfiguration
-    let properties: QuestionProperties = QuestionProperties(questionId: "C", fastTime: 5, neutralTime: 10)
     
     init(config: NumericQuestionConfiguration) {
         configuration = config
+    }
+    
+    func config() -> QuestionConfiguration {
+        return configuration
     }
     
     func getView() -> UIView {

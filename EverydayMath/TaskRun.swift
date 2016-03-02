@@ -127,9 +127,9 @@ class DefaultTaskRun: TaskRun, QuestionBased, QuestionDelegate {
         var result: QuestionResult
         if correct {
             switch timeSpend {
-            case 0...question.properties.fastTime:
+            case 0...question.config().fastTime:
                 result = QuestionResult.CorrectFast
-            case question.properties.fastTime...question.properties.neutralTime:
+            case question.config().fastTime...question.config().neutralTime:
                 result = QuestionResult.CorrectNeutral
             default:
                 result = QuestionResult.CorrectSlow
@@ -138,7 +138,7 @@ class DefaultTaskRun: TaskRun, QuestionBased, QuestionDelegate {
             result = QuestionResult.Incorrect
         }
         
-        let taskLog = QuestionRunLog(questionId: question.properties.questionId, correct: correct, time: timeSpend, hintShown: currentQuestionSecondTry, answer: answer)
+        let taskLog = QuestionRunLog(questionId: question.config().questionId, correct: correct, time: timeSpend, hintShown: currentQuestionSecondTry, answer: answer)
         log.appendQuestionLog(taskLog)
 
         delegate?.taskRun(self, questionCompleted: question, index: index, result: result)

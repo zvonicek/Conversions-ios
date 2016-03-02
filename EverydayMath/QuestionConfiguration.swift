@@ -11,8 +11,8 @@ import Unbox
 
 class QuestionConfiguration: Unboxable {
     var questionId: Int
-    var fastTime: NSTimeInterval?
-    var neutralTime: NSTimeInterval?
+    var fastTime: NSTimeInterval
+    var neutralTime: NSTimeInterval
     
     required init(unboxer: Unboxer) {
         questionId = unboxer.unbox("id")

@@ -47,16 +47,10 @@ protocol QuestionDelegate {
     func questionGaveSecondTry(question: Question)
 }
 
-struct QuestionProperties {
-    var questionId: String
-    var fastTime: NSTimeInterval
-    var neutralTime: NSTimeInterval
-}
-
 protocol Question {
     var delegate: QuestionDelegate? { get set }
-    var properties: QuestionProperties { get }
     
+    func config() -> QuestionConfiguration
     func identifier() -> String
     func getView() -> UIView
 }

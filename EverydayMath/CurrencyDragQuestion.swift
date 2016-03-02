@@ -12,10 +12,13 @@ import Unbox
 class CurrencyDragQuestion: Question {
     var delegate: QuestionDelegate?
     let configuration: CurrencyDragQuestionConfiguration
-    let properties = QuestionProperties(questionId: "A", fastTime: 5, neutralTime: 10)
     
     init(config: CurrencyDragQuestionConfiguration) {
         configuration = config
+    }
+    
+    func config() -> QuestionConfiguration {
+        return configuration
     }
     
     func getView() -> UIView {

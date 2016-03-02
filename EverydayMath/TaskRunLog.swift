@@ -9,7 +9,7 @@
 import Foundation
 
 struct QuestionRunLog {
-    var questionId: String
+    var questionId: Int
     var correct: Bool
     var time: NSTimeInterval
     var hintShown: Bool

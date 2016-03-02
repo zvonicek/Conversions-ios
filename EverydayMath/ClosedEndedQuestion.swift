@@ -12,10 +12,13 @@ import Unbox
 class ClosedEndedQuestion: Question {
     var delegate: QuestionDelegate?
     let configuration: ClosedEndedQuestionConfiguration
-    let properties: QuestionProperties = QuestionProperties(questionId: "B", fastTime: 5, neutralTime: 10)
 
     init(config: ClosedEndedQuestionConfiguration) {
         configuration = config
+    }
+    
+    func config() -> QuestionConfiguration {
+        return configuration
     }
     
     func getView() -> UIView {

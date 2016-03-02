@@ -12,10 +12,13 @@ import Unbox
 class SortQuestion: Question {
     var delegate: QuestionDelegate?
     let configuration: SortQuestionConfiguration
-    let properties: QuestionProperties = QuestionProperties(questionId: "E", fastTime: 5, neutralTime: 10)
     
     init(config: SortQuestionConfiguration) {
         configuration = config
+    }
+    
+    func config() -> QuestionConfiguration {
+        return configuration
     }
     
     func getView() -> UIView {

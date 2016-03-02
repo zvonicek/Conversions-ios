@@ -12,10 +12,13 @@ import Unbox
 class ScaleQuestion: Question {
     var delegate: QuestionDelegate?
     let configuration: ScaleQuestionConfiguration
-    let properties: QuestionProperties = QuestionProperties(questionId: "D", fastTime: 5, neutralTime: 10)
     
     init(config: ScaleQuestionConfiguration) {
         configuration = config
+    }
+    
+    func config() -> QuestionConfiguration {
+        return configuration
     }
     
     func getView() -> UIView {
