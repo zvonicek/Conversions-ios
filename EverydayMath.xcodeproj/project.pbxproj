@@ -15,6 +15,7 @@
 		D013F4DD1C163B6600DF8769 /* ScaleQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D013F4DC1C163B6600DF8769 /* ScaleQuestionView.xib */; };
 		D013F4DF1C163B7400DF8769 /* ScaleQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013F4DE1C163B7400DF8769 /* ScaleQuestionView.swift */; };
 		D013F4E11C16423900DF8769 /* ScaleQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013F4E01C16423900DF8769 /* ScaleQuestion.swift */; };
+		D021D9C91C8995980077FDBB /* AlamoPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D021D9C81C8995980077FDBB /* AlamoPromise.swift */; };
 		D02CE8871C4C5A6E0088E90A /* TaskRunLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CE8861C4C5A6E0088E90A /* TaskRunLog.swift */; };
 		D05672981C8795F0007CFAD0 /* TaskConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05672971C8795F0007CFAD0 /* TaskConfiguration.swift */; };
 		D056729A1C87960B007CFAD0 /* HintConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05672991C87960B007CFAD0 /* HintConfiguration.swift */; };
@@ -91,6 +92,7 @@
 		D013F4DC1C163B6600DF8769 /* ScaleQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScaleQuestionView.xib; sourceTree = "<group>"; };
 		D013F4DE1C163B7400DF8769 /* ScaleQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleQuestionView.swift; sourceTree = "<group>"; };
 		D013F4E01C16423900DF8769 /* ScaleQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleQuestion.swift; sourceTree = "<group>"; };
+		D021D9C81C8995980077FDBB /* AlamoPromise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamoPromise.swift; sourceTree = "<group>"; };
 		D02CE8861C4C5A6E0088E90A /* TaskRunLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRunLog.swift; sourceTree = "<group>"; };
 		D05672971C8795F0007CFAD0 /* TaskConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskConfiguration.swift; sourceTree = "<group>"; };
 		D05672991C87960B007CFAD0 /* HintConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintConfiguration.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				D0A4774B1C46DCCA00649EB3 /* CustomColors.swift */,
 				D089FC811C4A919A00D41863 /* ArrayRandomItem.swift */,
 				D003E0DA1C4ED1570090DA52 /* ViewBorder.swift */,
+				D021D9C81C8995980077FDBB /* AlamoPromise.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				D013F4DF1C163B7400DF8769 /* ScaleQuestionView.swift in Sources */,
 				D0C0CC141C0B4ED300D93B83 /* TaskOverViewController.swift in Sources */,
 				D08F52421BF13971000F840B /* GameListCollectionViewCell.swift in Sources */,
+				D021D9C91C8995980077FDBB /* AlamoPromise.swift in Sources */,
 				D0C901041BEF7E0500A15F32 /* TaskViewController.swift in Sources */,
 				D0E2E0A11C27478B005E5B06 /* SortQuestionCollectionViewCell.swift in Sources */,
 				D0C901061BEF80E200A15F32 /* TaskListViewController.swift in Sources */,

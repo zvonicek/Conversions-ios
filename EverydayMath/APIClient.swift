@@ -13,28 +13,32 @@ import Unbox
 
 class APIClient {
     
-    static let baseUrl = "http://localhost:5000/api/"
+    static let baseUrl = "http://localhost:5000"
     
     static func getConfigurationForTask(task: Task) -> Promise<TaskConfiguration> {
-        return Promise { fullfill, reject in
-            Alamofire.request(.GET, self.baseUrl + "start", parameters: ["task": "mass-metric", "user": "1"], encoding: ParameterEncoding.URL)
-                     .responseJSON { response in
-                        switch response.result {
-                        case .Success(let dictionary) where dictionary is UnboxableDictionary:
-                            do {
-                                let config: TaskConfiguration = try UnboxOrThrow(dictionary as! UnboxableDictionary)
-                                fullfill(config)
-                            } catch {
-                                reject(Error.errorWithCode(1, failureReason: "JSON deserialization failed"))
-                            }
-                        case .Failure(let error):
-                            reject(error)
-                        default:
-                            reject(Error.errorWithCode(1, failureReason: "JSON deserialization failed"))
-                        }
-                    debugPrint(response)
-            }
-        }
+        return Alamofire.request(.GET, self.baseUrl + "/api/start", parameters: ["task": "mass-metric", "user": "1"], encoding: ParameterEncoding.URL)
+            .promiseUnboxableJSON()
+            .then({ dictionary -> TaskConfiguration in
+                do {
+                    let config: TaskConfiguration = try UnboxOrThrow(dictionary)
+                    return config
+                } catch {
+                    throw Error.errorWithCode(1, failureReason: "JSON deserialization failed")
+                }
+            }).then({ configuration in
+                let numQuestions = configuration.questions.flatMap({ $0 as? NumericQuestionConfiguration}).filter({ $0.imagePath != nil})
+                
+                var imagePromises = [Promise<Void>]()
+                for numQuestion in numQuestions {
+                    imagePromises.append(Alamofire.request(.GET, self.baseUrl + numQuestion.imagePath!).promiseImage().then({ image in
+                        numQuestion.image = image
+                    }))
+                }
+                
+                return when(imagePromises).then({ a in
+                    return configuration
+                })
+            })    
         
 //        let config = TaskConfiguration(taskRunId: "1", questions: [
 //                NumericQuestionConfiguration(fromValue: 4000, fromUnit: "pounds", toValue: 1814, toUnit: "kilograms", minCorrectValue: 1600, maxCorrectValue: 2000, image: UIImage(named: "car"), hint: NumericHint(text: "1 pound is 0.4536 kilograms")),

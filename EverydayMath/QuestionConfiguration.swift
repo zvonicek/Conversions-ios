@@ -18,7 +18,7 @@ class QuestionConfiguration: Unboxable {
         questionId = unboxer.unbox("id")
         fastTime = unboxer.unbox("fastTime")
         neutralTime = unboxer.unbox("neutralTime")
-    }
+    }    
 }
 
 enum QuestionConfigurationType: String {

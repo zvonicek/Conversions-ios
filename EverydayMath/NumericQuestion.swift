@@ -48,7 +48,8 @@ class NumericQuestionConfiguration: QuestionConfiguration {
     let toUnit: String
     let minCorrectValue: Float
     let maxCorrectValue: Float
-    let image: UIImage?
+    var image: UIImage?
+    let imagePath: String?
     
     let hint: HintConfiguration?
     
@@ -59,7 +60,7 @@ class NumericQuestionConfiguration: QuestionConfiguration {
         toUnit = unboxer.unbox("toUnit")
         minCorrectValue = unboxer.unbox("minCorrectValue")
         maxCorrectValue = unboxer.unbox("maxCorrectValue")
-        image = nil //unboxer.unbox("imagePath")
+        imagePath = unboxer.unbox("imagePath")
         hint = unboxer.unbox("hint")
         
         super.init(unboxer: unboxer)        
