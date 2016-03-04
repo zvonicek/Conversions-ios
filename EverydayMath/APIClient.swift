@@ -38,8 +38,14 @@ class APIClient {
                 return when(imagePromises).then({ a in
                     return configuration
                 })
-            })    
-        
+            })
+    }
+    
+    static func uploadTaskRunLog(log: TaskRunLog) -> Promise<Void> {
+        return Alamofire.request(.POST, self.baseUrl + "/api/updateTaskRun", parameters: log.serialize(), encoding: ParameterEncoding.JSON)
+            .promiseResponse()
+    }    
+    
 //        let config = TaskConfiguration(taskRunId: "1", questions: [
 //                NumericQuestionConfiguration(fromValue: 4000, fromUnit: "pounds", toValue: 1814, toUnit: "kilograms", minCorrectValue: 1600, maxCorrectValue: 2000, image: UIImage(named: "car"), hint: NumericHint(text: "1 pound is 0.4536 kilograms")),
 //                SortQuestionConfiguration(question: "Sort from shortest to longest", topDescription: "shortest", bottomDescription: "longest", questions: [SortQuestionItem(title: "5 kg", correctPosition: 1, presentedPosition: 1, errorExplanation: "5 kg = 5000 g"), SortQuestionItem(title: "1 kg", correctPosition: 0, presentedPosition: 2, errorExplanation: "1 kg = 1000 g"),
@@ -70,12 +76,4 @@ class APIClient {
 //        } else {
 //            callback(config)
 //        }
-    }
-    
-    static func uploadTaskRunLog(log: TaskRunLog, callback: ((error: NSError?) -> Void)?) {
-        if let callback = callback {
-            callback(error: nil)
-        }
-    }
-    
 }

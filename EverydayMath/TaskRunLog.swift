@@ -14,21 +14,36 @@ struct QuestionRunLog {
     var time: NSTimeInterval
     var hintShown: Bool
     var answer: [String: AnyObject]
+    
+    func serialize() -> [String: AnyObject] {
+        return [
+            "id": questionId,
+            "correct": correct,
+            "time": time,
+            "hintShown": hintShown,
+            "answer": answer
+        ];
+    }
 }
 
 class TaskRunLog {
     var taskRunId: Int
     var questionResults = [QuestionRunLog]()
-    var userId: String
     var aborted = false
-    var date = NSDate()
     
     init(taskRunId: Int) {
         self.taskRunId = taskRunId
-        self.userId = "foo"
     }
     
     func appendQuestionLog(log: QuestionRunLog) {
         questionResults.append(log)
+    }
+    
+    func serialize() -> [String: AnyObject] {
+        return [
+            "id": taskRunId,
+            "aborted": aborted,
+            "questions": questionResults.map { $0.serialize() }
+        ]
     }
 }

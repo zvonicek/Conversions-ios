@@ -41,4 +41,17 @@ extension Alamofire.Request {
                 })
         }
     }
+    
+    func promiseResponse() -> Promise<Void> {
+        return Promise { resolve, reject in
+            self.validate()
+                .response { request, response, data, error in
+                    if let error = error {
+                        reject(error)
+                    } else {
+                        resolve()
+                    }
+                }
+        }
+    }
 }

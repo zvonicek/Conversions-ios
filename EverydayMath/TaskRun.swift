@@ -26,6 +26,7 @@ protocol TaskRun {
     func start()
     func pause()
     func resume()
+    func abort()
 }
 
 protocol QuestionBased {
@@ -99,14 +100,15 @@ class DefaultTaskRun: TaskRun, QuestionBased, QuestionDelegate {
         delegate?.taskRunAborted(self)
         
         self.log.aborted = true
-        APIClient.uploadTaskRunLog(self.log, callback: nil)
+        APIClient.uploadTaskRunLog(self.log)
     }
     
     private func finishTaskRun() {
         finished = true
         delegate?.taskRunCompleted(self)
         
-        APIClient.uploadTaskRunLog(self.log, callback: nil)
+        self.log.aborted = false
+        APIClient.uploadTaskRunLog(self.log)
     }
     
     // MARK: TaskDelegate

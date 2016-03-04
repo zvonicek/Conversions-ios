@@ -64,8 +64,8 @@ class TaskViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        if let gameRun = taskRun where !gameRun.finished {
-            gameRun.start()
+        if let taskRun = taskRun where !taskRun.finished {
+            taskRun.start()
         }
     }
     
@@ -93,6 +93,7 @@ class TaskViewController: UIViewController {
     }
     
     @IBAction func exitGame() {
+        taskRun?.abort()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
