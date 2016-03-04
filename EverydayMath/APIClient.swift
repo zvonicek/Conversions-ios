@@ -16,7 +16,18 @@ class APIClient {
     static let baseUrl = "http://localhost:5000"
     
     static func getConfigurationForTask(task: Task) -> Promise<TaskConfiguration> {
-        return Alamofire.request(.GET, self.baseUrl + "/api/start", parameters: ["task": "mass-metric", "user": "1"], encoding: ParameterEncoding.URL)
+        let user: String
+        if let storedUser = NSUserDefaults.standardUserDefaults().objectForKey("user") as? String {
+            user = storedUser
+        } else {
+            user = NSUUID().UUIDString
+            NSUserDefaults.standardUserDefaults().setObject(user, forKey: "user")
+        }
+        
+        let language = NSLocale.preferredLanguages().first ?? ""
+        let versionNumber = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
+        
+        return Alamofire.request(.GET, self.baseUrl + "/api/start", parameters: ["task": "mass-metric", "user": user, "language":language, "version": versionNumber], encoding: ParameterEncoding.URL)
             .promiseUnboxableJSON()
             .then({ dictionary -> TaskConfiguration in
                 do {
