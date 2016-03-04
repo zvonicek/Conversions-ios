@@ -34,13 +34,11 @@ enum HintType: String {
 }
 
 extension Unboxer {
-    func unbox(key: String) -> [HintConfiguration] {
-        guard let questions = self.dictionary[key] as? [UnboxableDictionary]
-            else { return [] }
+    func unbox(key: String) -> HintConfiguration? {
+        guard let dict = self.dictionary[key] as? UnboxableDictionary
+            else { return nil }
         
-        return questions.flatMap({ (dict) -> HintConfiguration? in
-            return HintType.unbox(dict)
-        })
+        return HintType.unbox(dict)
     }
 }
 

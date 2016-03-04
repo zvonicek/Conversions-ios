@@ -60,7 +60,7 @@ class NumericQuestionConfiguration: QuestionConfiguration {
         minCorrectValue = unboxer.unbox("minCorrectValue")
         maxCorrectValue = unboxer.unbox("maxCorrectValue")
         image = nil //unboxer.unbox("imagePath")
-        hint = nil
+        hint = unboxer.unbox("hint")
         
         super.init(unboxer: unboxer)        
     }

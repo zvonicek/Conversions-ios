@@ -69,7 +69,7 @@ class CurrencyDragQuestionConfiguration: QuestionConfiguration {
         tolerance = unboxer.unbox("tolerance")
         correctNotes = unboxer.unbox("correctNotes")
         availableNotes = unboxer.unbox("availableNotes")
-        hint = nil
+        hint = unboxer.unbox("hint")
         
         super.init(unboxer: unboxer)        
     }
