@@ -94,7 +94,8 @@ class TaskViewController: UIViewController {
     
     @IBAction func exitGame() {
         taskRun?.abort()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.presentingViewController?.modalTransitionStyle = UIModalTransitionStyle.CoverVertical;
+        self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     /// request to hide resutView

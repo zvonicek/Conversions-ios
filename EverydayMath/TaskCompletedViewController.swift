@@ -11,7 +11,9 @@ import UIKit
 class TaskCompletedViewController: UIViewController {
 
     @IBAction func dismiss() {
-        self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        self.presentingViewController?.presentingViewController?.modalTransitionStyle = UIModalTransitionStyle.CoverVertical;
+        self.presentingViewController?.presentingViewController?.presentingViewController?.modalTransitionStyle = UIModalTransitionStyle.CoverVertical;
+        self.presentingViewController?.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }
