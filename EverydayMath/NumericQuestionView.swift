@@ -101,16 +101,14 @@ class NumericQuestionView: UIView, NumpadViewDelegate {
     private func handleSecondFailure(number: Float) {
         let color = self.toValueTextField.backgroundColor
         
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
+        UIView.animateWithDuration(0.3, delay: 0.3, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
             self.toValueTextField.backgroundColor = UIColor.errorColor()
+            self.toValueTextField.backgroundColor = color
             }, completion: { _ -> Void in
-                UIView.animateWithDuration(0.3, delay: 0.3, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
-                    self.toValueTextField.backgroundColor = color
-                    }, completion: { _ -> Void in
-                        self.toValueTextField.text = String(format: "%.0f", self.question.configuration.toValue)
-                        self.delegate?.questionCompleted(self.question, correct: false, answer: ["number": String(number)])
-                })
+                self.toValueTextField.text = String(format: "%.0f", self.question.configuration.toValue)
         })
+        
+        self.delegate?.questionCompleted(self.question, correct: false, answer: ["number": String(number)])        
     }
     
     private func showHintView(view: UIView) {

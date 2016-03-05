@@ -11,7 +11,9 @@ import TZStackView
 import OALayoutAnchor
 
 class ClosedEndedQuestionView: UIView {
+    @IBOutlet var topSpace: NSLayoutConstraint!
     @IBOutlet var questionLabel: UILabel!
+    
     var answerButtons = [ClosedEndedButton]()
 
     var delegate: QuestionDelegate?
@@ -20,7 +22,7 @@ class ClosedEndedQuestionView: UIView {
         didSet {
             stackView.axis = .Vertical
             stackView.alignment = .Center
-            stackView.spacing = 25
+            stackView.spacing = 15
         }
     }
     
@@ -67,6 +69,12 @@ class ClosedEndedQuestionView: UIView {
         
         for button in answerButtons {
             button.oa_widthAnchor.constraintEqualToConstant(CGRectGetWidth(self.frame) - 80).oa_active = true
+        }
+    }
+    
+    override func awakeFromNib() {
+        if UIScreen.mainScreen().bounds.size.height == 480 {
+            topSpace.constant = 10
         }
     }
     

@@ -37,7 +37,7 @@ class NoteDraggable: SEDraggable {
 }
 
 class CurrencyDragQuestionView: UIView {
-//    @IBOutlet var topView: SEDraggableLocation!
+    @IBOutlet var taskVerticalSpace: NSLayoutConstraint!
     @IBOutlet var fromValueLabel: UILabel!
     @IBOutlet var toDragView: SEDraggableLocation!
     @IBOutlet var fromDragView: SEDraggableLocation!
@@ -48,13 +48,6 @@ class CurrencyDragQuestionView: UIView {
     var question: CurrencyDragQuestion! {
         didSet {
             fromValueLabel.text = String(format: "%.0f %@", question.configuration.fromValue, question.configuration.fromCurrency)
-            
-//            for note in task.configuration.fromNotes {
-//                let noteView = BankNote.instanceFromNib(note)
-//                let draggable = SEDraggable(imageView: noteView)
-//                addDraggableToTop(draggable)
-//            }
-            
             var index = 0
             for note in question.configuration.availableNotes {
                 for _ in 0..<note.count {
@@ -81,20 +74,19 @@ class CurrencyDragQuestionView: UIView {
         self.backgroundColor = UIColor.clearColor()
         self.clipsToBounds = true
         
-//        topView.enableOrdering = false
-//        topView.userInteractionEnabled = false
-//        configureDraggableLocation(topView)
         configureDraggableLocation(toDragView)
         configureDraggableLocation(fromDragView)
         
         toDragView.enableOrdering = false
         toDragView.delegate = self
         
-//        topView.layer.borderColor = UIColor.whiteColor().CGColor
-//        topView.layer.borderWidth = 1.0
         toDragView.layer.borderColor = UIColor.whiteColor().CGColor
         toDragView.layer.borderWidth = 1.0
         toDragView.layer.cornerRadius = 3.0
+        
+        if UIScreen.mainScreen().bounds.size.height == 480 {
+            taskVerticalSpace.constant = 5
+        }
     }
     
     func configureDraggableLocation(draggableLocation: SEDraggableLocation) {
@@ -130,10 +122,6 @@ class CurrencyDragQuestionView: UIView {
         draggableLocation.animationOptions = UIViewAnimationOptions.LayoutSubviews
         
         draggableLocation.shouldAcceptObjectsSnappingBack = true;
-    }
-    
-    func addDraggableToTop(draggable: SEDraggable) {
-//        topView.addDraggableObject(draggable, animated: false)
     }
     
     func addDraggableToFrom(draggable: SEDraggable) {
