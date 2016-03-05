@@ -20,10 +20,11 @@ class HeaderView: UICollectionReusableView {
         
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor(red: 77/255.0, green: 170/255.0, blue: 171/255.0, alpha: 1.0)
+        self.backgroundColor = UIColor(red: 96/255.0, green: 184/255.0, blue: 23/255.0, alpha: 1.0)
+//        self.backgroundColor = UIColor.clearColor()
         self.addSubview(label)
-//        self.addTopBorderWithColor(UIColor.lightGrayColor(), width: 1.0)
-//        self.addBottomBorderWithColor(UIColor.lightGrayColor(), width: 1.0)
+        self.addTopBorderWithColor(UIColor.whiteColor(), width: 1.0)
+        self.addBottomBorderWithColor(UIColor.whiteColor(), width: 1.0)
     }
     
     func configure(category: TaskCategory) {

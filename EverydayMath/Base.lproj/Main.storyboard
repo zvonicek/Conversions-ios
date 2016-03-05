@@ -16,24 +16,21 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GradientView" customModule="EverydayMath" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NzE-Ur-rzJ">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="barTintColor" red="0.0" green="0.2627450980392157" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.39607843139999999" green="0.71404207518888885" blue="0.7874719158222222" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
+                                <color key="barTintColor" red="0.5490196078431373" green="0.82352941176470584" blue="0.36470588235294116" alpha="0.46115944602272729" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Everyday Math" id="M5J-yX-yeF">
-                                        <barButtonItem key="leftBarButtonItem" title="Options" id="CEQ-0o-AnY">
-                                            <color key="tintColor" red="0.39607843139999999" green="0.63921568630000003" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="About" id="nDv-oW-Z1A">
-                                            <color key="tintColor" red="0.39607843139999999" green="0.63921568630000003" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="aes-94-bSZ" kind="presentation" id="p1G-LT-JXZ"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -42,7 +39,7 @@
                                 </connections>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gq1-jy-5Lb">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="134" width="600" height="466"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="wA7-BS-1cJ" customClass="FSQCollectionViewAlignedLayout"/>
                                 <cells>
@@ -83,7 +80,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.5490196078431373" green="0.82352941176470584" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="8OF-3y-gae" firstAttribute="top" secondItem="5ik-4N-bPX" secondAttribute="bottom" id="0OU-ek-YfU"/>
                                             <constraint firstItem="tmQ-gW-cSF" firstAttribute="centerX" secondItem="HdB-nf-hqp" secondAttribute="centerX" id="228-yl-rvq"/>
@@ -122,26 +119,90 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="iXG-Pw-Dx7"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to practise?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDx-05-2fB">
+                                <rect key="frame" x="158" y="86" width="285" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="NzE-Ur-rzJ" secondAttribute="trailing" id="73T-EE-b2J"/>
                             <constraint firstItem="NzE-Ur-rzJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8VS-xW-LrZ"/>
+                            <constraint firstItem="HDx-05-2fB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P8t-PE-eWh"/>
+                            <constraint firstItem="HDx-05-2fB" firstAttribute="top" secondItem="NzE-Ur-rzJ" secondAttribute="bottom" constant="22" id="etf-Uw-GfX"/>
                             <constraint firstAttribute="trailing" secondItem="Gq1-jy-5Lb" secondAttribute="trailing" id="irn-fS-NOT"/>
                             <constraint firstItem="NzE-Ur-rzJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="km7-LN-oMu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Gq1-jy-5Lb" secondAttribute="bottom" id="lVW-53-zoo"/>
                             <constraint firstItem="Gq1-jy-5Lb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oCp-wz-DJR"/>
-                            <constraint firstItem="Gq1-jy-5Lb" firstAttribute="top" secondItem="NzE-Ur-rzJ" secondAttribute="bottom" id="q1z-jd-xx3"/>
+                            <constraint firstItem="Gq1-jy-5Lb" firstAttribute="top" secondItem="NzE-Ur-rzJ" secondAttribute="bottom" constant="70" id="q1z-jd-xx3"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="fromColor">
+                                <color key="value" red="0.41568627450980389" green="0.76078431372549016" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="toColor">
+                                <color key="value" red="0.27450980392156865" green="0.68627450980392157" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Gq1-jy-5Lb" id="WZI-LU-dDE"/>
                         <outlet property="collectionViewLayout" destination="wA7-BS-1cJ" id="0q9-YF-KiO"/>
+                        <outlet property="navigationBar" destination="NzE-Ur-rzJ" id="esl-F5-yUm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="565" y="440"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="sN0-9T-umm">
+            <objects>
+                <viewController id="aes-94-bSZ" customClass="AboutViewController" customModule="EverydayMath" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KLB-gV-o2j"/>
+                        <viewControllerLayoutGuide type="bottom" id="rGv-wU-MJP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ANX-1P-ghT" customClass="GradientView" customModule="EverydayMath" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AnC-RC-njh">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="About" id="YGk-58-T3I">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="Eld-QC-TAy">
+                                            <connections>
+                                                <action selector="dismiss" destination="aes-94-bSZ" id="GDe-aD-2Nz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="aes-94-bSZ" id="wMi-gW-K58"/>
+                                </connections>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AnC-RC-njh" firstAttribute="top" secondItem="KLB-gV-o2j" secondAttribute="bottom" id="6Xg-sm-lzU"/>
+                            <constraint firstAttribute="trailing" secondItem="AnC-RC-njh" secondAttribute="trailing" id="9P7-YP-cVa"/>
+                            <constraint firstItem="AnC-RC-njh" firstAttribute="leading" secondItem="ANX-1P-ghT" secondAttribute="leading" id="FCO-PK-ckI"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="fromColor">
+                                <color key="value" red="0.68627450980392157" green="0.30196078431372547" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="toColor">
+                                <color key="value" red="0.85098039215686272" green="0.29803921568627451" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpK-Fd-F73" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="559" y="1253"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="UCz-dT-JUG">

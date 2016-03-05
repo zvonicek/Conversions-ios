@@ -14,14 +14,21 @@ class TaskListViewController: UIViewController {
     let categories = TaskFactory.tasksByCategory
     let sections = TaskFactory.categories
     
+    @IBOutlet var navigationBar: UINavigationBar!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewLayout: FSQCollectionViewAlignedLayout!
     
     override func viewDidLoad() {
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
         collectionViewLayout.contentInsets = UIEdgeInsetsMake(0, 0, 0, 0)
         collectionViewLayout.defaultCellAttributes = FSQCollectionViewAlignedLayoutCellAttributes.withInsets(UIEdgeInsetsMake(10, 0, 0, 0), shouldBeginLine: false, shouldEndLine: false, startLineIndentation: false)
         
         collectionView.registerClass(HeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -54,10 +61,6 @@ extension TaskListViewController: UICollectionViewDataSource, UICollectionViewDe
         if let cell = cell as? TaskListCollectionViewCell, task = section?[indexPath.row] {
             cell.configureForTask(task)
         }
-        
-        
-        cell.backgroundColor = UIColor(red: 30/255.0, green: 79/255.0, blue: 106/255.0, alpha: 1.0)
-
         
         return cell
     }
