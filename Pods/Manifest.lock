@@ -11,17 +11,17 @@ PODS:
     - OMGHTTPURLRQ/FormURLEncode
     - OMGHTTPURLRQ/UserAgent
   - OMGHTTPURLRQ/UserAgent (3.1.1)
-  - PromiseKit (3.0.2):
-    - PromiseKit/Foundation (= 3.0.2)
-    - PromiseKit/QuartzCore (= 3.0.2)
-    - PromiseKit/UIKit (= 3.0.2)
-  - PromiseKit/CorePromise (3.0.2)
-  - PromiseKit/Foundation (3.0.2):
+  - PromiseKit (3.0.3):
+    - PromiseKit/Foundation (= 3.0.3)
+    - PromiseKit/QuartzCore (= 3.0.3)
+    - PromiseKit/UIKit (= 3.0.3)
+  - PromiseKit/CorePromise (3.0.3)
+  - PromiseKit/Foundation (3.0.3):
     - OMGHTTPURLRQ (~> 3.1.0)
     - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (3.0.2):
+  - PromiseKit/QuartzCore (3.0.3):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (3.0.2):
+  - PromiseKit/UIKit (3.0.3):
     - PromiseKit/CorePromise
   - SEDraggable (1.0.0)
   - TZStackView (1.1.2)
@@ -46,7 +46,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   DraggableCollectionView:
-    :commit: de5cd66d92f10e463615aa18c7bfa83d60b34bff
+    :commit: 8abf696d074d86e7a745bf48afbec050c34e117b
     :git: https://github.com/zvonicek/DraggableCollectionView.git
   SEDraggable:
     :commit: 28449117969e8bb1640195f4e19b3ed53231bc7f
@@ -59,7 +59,7 @@ SPEC CHECKSUMS:
   LMArrayChangeSets: 141a8321bdaba14a03fc5520bc869f2cfc7ed273
   OALayoutAnchor: 27a15a06ebfd3bc07de527f6cd4a5a714c47226d
   OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
-  PromiseKit: ab1a380f7a30cf8cce663a2411e8b3580b10313d
+  PromiseKit: 00ec2a219bf5ad2833f95977698e921932b8dfd3
   SEDraggable: aacb2e95742fb51760dfdbe372fb9e3e19ab666b
   TZStackView: 19aeaa414fb653f4be9b80a73f4f0c66e33bf033
   Unbox: b6e468b47b5d941b197c1ea53e9c179528b454ed
