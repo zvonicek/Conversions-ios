@@ -19,6 +19,7 @@
 		D02CE8871C4C5A6E0088E90A /* TaskRunLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CE8861C4C5A6E0088E90A /* TaskRunLog.swift */; };
 		D041FDAC1C8B26E800056D2D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D041FDAB1C8B26E800056D2D /* AboutViewController.swift */; };
 		D041FDAE1C8B43DE00056D2D /* IntHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D041FDAD1C8B43DE00056D2D /* IntHelpers.swift */; };
+		D041FDB01C8B8F9300056D2D /* UIAlertController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D041FDAF1C8B8F9300056D2D /* UIAlertController+Error.swift */; };
 		D05672981C8795F0007CFAD0 /* TaskConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05672971C8795F0007CFAD0 /* TaskConfiguration.swift */; };
 		D056729A1C87960B007CFAD0 /* HintConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05672991C87960B007CFAD0 /* HintConfiguration.swift */; };
 		D089FC7E1C4A854900D41863 /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D089FC7D1C4A854900D41863 /* ResultView.xib */; };
@@ -98,6 +99,7 @@
 		D02CE8861C4C5A6E0088E90A /* TaskRunLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRunLog.swift; sourceTree = "<group>"; };
 		D041FDAB1C8B26E800056D2D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D041FDAD1C8B43DE00056D2D /* IntHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntHelpers.swift; sourceTree = "<group>"; };
+		D041FDAF1C8B8F9300056D2D /* UIAlertController+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Error.swift"; sourceTree = "<group>"; };
 		D05672971C8795F0007CFAD0 /* TaskConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskConfiguration.swift; sourceTree = "<group>"; };
 		D05672991C87960B007CFAD0 /* HintConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintConfiguration.swift; sourceTree = "<group>"; };
 		D089FC7D1C4A854900D41863 /* ResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultView.xib; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				D003E0DA1C4ED1570090DA52 /* ViewBorder.swift */,
 				D021D9C81C8995980077FDBB /* AlamoPromise.swift */,
 				D041FDAD1C8B43DE00056D2D /* IntHelpers.swift */,
+				D041FDAF1C8B8F9300056D2D /* UIAlertController+Error.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				D0C901001BEE8B9800A15F32 /* Question.swift in Sources */,
 				D0C901021BEEAFA100A15F32 /* NumericQuestionView.swift in Sources */,
 				D0B138991BFE8EFB00BEA9C7 /* GameHeaderView.swift in Sources */,
+				D041FDB01C8B8F9300056D2D /* UIAlertController+Error.swift in Sources */,
 				D0C900E21BEDFE3400A15F32 /* AppDelegate.swift in Sources */,
 				D0E34F371C33D86D00E7AB97 /* DoubleScaleControl.swift in Sources */,
 				D089FC801C4A872200D41863 /* ResultView.swift in Sources */,

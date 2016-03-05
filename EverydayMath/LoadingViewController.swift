@@ -25,6 +25,11 @@ class LoadingViewController: UIViewController {
         
         APIClient.getConfigurationForTask(self.task!).then { taskConfiguration in
             self.configurationLoaded(taskConfiguration)
+        }.error { error in
+            let alert = UIAlertController.alertControllerWithError(error as NSError, handler: { action -> Void in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     
