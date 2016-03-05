@@ -18,6 +18,7 @@
 		D021D9C91C8995980077FDBB /* AlamoPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D021D9C81C8995980077FDBB /* AlamoPromise.swift */; };
 		D02CE8871C4C5A6E0088E90A /* TaskRunLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CE8861C4C5A6E0088E90A /* TaskRunLog.swift */; };
 		D041FDAC1C8B26E800056D2D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D041FDAB1C8B26E800056D2D /* AboutViewController.swift */; };
+		D041FDAE1C8B43DE00056D2D /* IntHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D041FDAD1C8B43DE00056D2D /* IntHelpers.swift */; };
 		D05672981C8795F0007CFAD0 /* TaskConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05672971C8795F0007CFAD0 /* TaskConfiguration.swift */; };
 		D056729A1C87960B007CFAD0 /* HintConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05672991C87960B007CFAD0 /* HintConfiguration.swift */; };
 		D089FC7E1C4A854900D41863 /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D089FC7D1C4A854900D41863 /* ResultView.xib */; };
@@ -96,6 +97,7 @@
 		D021D9C81C8995980077FDBB /* AlamoPromise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamoPromise.swift; sourceTree = "<group>"; };
 		D02CE8861C4C5A6E0088E90A /* TaskRunLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRunLog.swift; sourceTree = "<group>"; };
 		D041FDAB1C8B26E800056D2D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		D041FDAD1C8B43DE00056D2D /* IntHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntHelpers.swift; sourceTree = "<group>"; };
 		D05672971C8795F0007CFAD0 /* TaskConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskConfiguration.swift; sourceTree = "<group>"; };
 		D05672991C87960B007CFAD0 /* HintConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintConfiguration.swift; sourceTree = "<group>"; };
 		D089FC7D1C4A854900D41863 /* ResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultView.xib; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				D089FC811C4A919A00D41863 /* ArrayRandomItem.swift */,
 				D003E0DA1C4ED1570090DA52 /* ViewBorder.swift */,
 				D021D9C81C8995980077FDBB /* AlamoPromise.swift */,
+				D041FDAD1C8B43DE00056D2D /* IntHelpers.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				D0C900FE1BEE8B7B00A15F32 /* QuestionConfiguration.swift in Sources */,
 				D003E0DE1C4EEA410090DA52 /* APIClient.swift in Sources */,
 				D09EEA001C42A08D00B4FB31 /* CurrencyDragQuestion.swift in Sources */,
+				D041FDAE1C8B43DE00056D2D /* IntHelpers.swift in Sources */,
 				D05672981C8795F0007CFAD0 /* TaskConfiguration.swift in Sources */,
 				D0A4773B1C45935900649EB3 /* BankNote.swift in Sources */,
 				D013F4E11C16423900DF8769 /* ScaleQuestion.swift in Sources */,

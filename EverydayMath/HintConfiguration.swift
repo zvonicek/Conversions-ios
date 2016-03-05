@@ -64,19 +64,17 @@ struct ScaleHintConfiguration: HintConfiguration {
     
     func getHintView() -> UIView {
         let view = ScaleHintView.instanceFromNib()
-        view.topLabel.text = topUnit
-        view.scaleControl.topScaleControl.minValue = CGFloat(topMin)
-        view.scaleControl.topScaleControl.maxValue = CGFloat(topMax)
-        view.bottomLabel.text = bottomUnit
-        view.scaleControl.bottomScaleControl.minValue = CGFloat(bottomMin)
-        view.scaleControl.bottomScaleControl.maxValue = CGFloat(bottomMax)
-        
+        view.configure(topMin: topMin, topMax: topMax, topUnit: topUnit, bottomMin: bottomMin, bottomMax: bottomMax, bottomUnit: bottomUnit)                
         return view
     }
 }
 
 struct TextHintConfiguration: HintConfiguration {
     var text: String
+    
+    init(text: String) {
+        self.text = text
+    }
     
     init(unboxer: Unboxer) {
         text = unboxer.unbox("text")

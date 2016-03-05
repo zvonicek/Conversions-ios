@@ -23,6 +23,9 @@ enum LabelPosition {
     var labelPadding: CGFloat = 10.0
     var drawOuterSideToEdge = false
     
+    /// Right border padding to prevent trailing label overflow
+    var rightBorderPadding: CGFloat = 0.0
+    
     private var contentRect: CGRect = CGRectZero
     private var labelSize: CGSize = CGSizeZero
     
@@ -52,9 +55,9 @@ enum LabelPosition {
         }
         
         if labelPosition == .Bottom {
-            contentRect = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(0, 10, labelSize.height + labelPadding, 10))
+            contentRect = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(0, 10, labelSize.height + labelPadding, 10 + rightBorderPadding))
         } else {
-            contentRect = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(labelSize.height + labelPadding, 10, 0, 10))
+            contentRect = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(labelSize.height + labelPadding, 10, 0, 10 + rightBorderPadding))
         }
     }
     
@@ -86,31 +89,26 @@ enum LabelPosition {
         
         return { $0 % value == 0 }
     }
-    
-    private static func trailingZerosCount(var number: Int) -> Int {
-        if (number == 0) {
-            return 0
-        }
         
-        var counter = 0
-        while number % 10 == 0 {
-            counter++
-            number /= 10
-        }
-        
-        return counter
-    }
-    
+    /**
+     Returns curried function checking whether to draw a line on that index
+     
+     - parameter startValue: start value
+     - parameter endValue:   end value
+     
+     - returns: curried function
+     */
     private func scalePoints(startValue: Int, endValue: Int) -> (index: Int) -> (lineHeight: CGFloat, font: UIFont)? {
+        // maxLevel is number 10^n describing the scale point level with smallest granularity
         var maxLevel: Int = 0
         for i in startValue...endValue {
-            let level = Int(pow(Float(10), Float(ScaleControl.trailingZerosCount(i))))
+            let level = Int(pow(Float(10), Float(i.trailingZerosCount())))
             if level > maxLevel {
                 maxLevel = level
             }
         }
         
-        return {index in
+        return { index in
             if index % maxLevel == 0 {
                 return (lineHeight: CGRectGetHeight(self.contentRect), font: self.font1)
             } else if index % (maxLevel / 2) == 0 {
