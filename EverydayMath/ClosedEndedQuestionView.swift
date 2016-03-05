@@ -94,7 +94,10 @@ class ClosedEndedQuestionView: UIView {
                 }) { (completed: Bool) -> Void in
             }
         } else {
-            button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 25, 0)
+            if button.answerCfg.explanation != nil {
+                button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 25, 0)
+            }
+            
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 button.backgroundColor = UIColor.errorColor()
                 button.layoutIfNeeded()

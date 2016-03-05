@@ -18,7 +18,12 @@ class ClosedEndedButton: UIButton {
         
         super.init(frame: CGRectZero)
         
-        hintLabel.text = "= " + (answerCfg.explanation ?? "")
+        if let explanation = answerCfg.explanation {
+            hintLabel.text = "= " + explanation
+        } else {
+            hintLabel.text = ""
+        }
+        
         hintLabel.textAlignment = NSTextAlignment.Center
         hintLabel.textColor = UIColor.whiteColor()
         self.addSubview(hintLabel)
