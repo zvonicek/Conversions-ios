@@ -32,6 +32,10 @@ class CurrencyDragQuestion: Question {
         return (abs(notesSum - self.configuration.toValue) < self.configuration.tolerance)
     }
     
+    func answerLogForAnswer(answer: Float, notes: [String]) -> AnswerLog {
+        return ["answer": String(answer), "notes": notes, "correctAnswer": configuration.toValue, "tolerance": configuration.tolerance]
+    }
+    
     func identifier() -> String {
         return String(ObjectIdentifier(self).uintValue)
     }

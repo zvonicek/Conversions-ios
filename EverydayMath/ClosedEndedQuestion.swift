@@ -28,6 +28,10 @@ class ClosedEndedQuestion: Question {
         return view
     }
     
+    func answerLogForAnswer(answer: String) -> AnswerLog {
+        return ["answer": answer]
+    }
+    
     func identifier() -> String {
         return String(ObjectIdentifier(self).uintValue)
     }    

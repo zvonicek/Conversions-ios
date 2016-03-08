@@ -30,7 +30,11 @@ class SortQuestion: Question {
 
     func identifier() -> String {
         return String(ObjectIdentifier(self).uintValue)
-    }    
+    }
+    
+    func answerLogForPositions(positions: [Int], titles: [String]) -> AnswerLog {
+        return ["orderOfPresentedPositions": positions, "orderOfTitles": titles]
+    }
 }
 
 class SortQuestionConfiguration: QuestionConfiguration {

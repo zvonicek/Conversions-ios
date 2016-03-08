@@ -50,7 +50,7 @@ class ScaleQuestionView: UIView, TrackingScaleControlDelegate {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.resultView.alpha = 1.0
         }) { (let finished) -> Void in
-            self.delegate?.questionCompleted(self.question, correct: isCorrect, answer: ["number": String(value)])
+            self.delegate?.questionCompleted(self.question, correct: isCorrect, answer: self.question.answerLogForAnswer(Float(value)))
         }
     }
 }

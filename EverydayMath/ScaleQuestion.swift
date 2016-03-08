@@ -28,6 +28,10 @@ class ScaleQuestion: Question {
         return view
     }
     
+    func answerLogForAnswer(answer: Float) -> AnswerLog {
+        return ["answer": String(answer), "correctAnswer": String(configuration.correctValue), "tolerance": String(configuration.correctTolerance)]
+    }
+    
     func identifier() -> String {
         return String(ObjectIdentifier(self).uintValue)
     }

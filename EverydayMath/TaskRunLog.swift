@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias AnswerLog = [String: AnyObject]
+
 struct QuestionRunLog {
     var questionId: Int
     var correct: Bool
@@ -15,7 +17,7 @@ struct QuestionRunLog {
     var hintShown: Bool
     var answer: [String: AnyObject]
     
-    func serialize() -> [String: AnyObject] {
+    func serialize() -> AnswerLog {
         return [
             "id": questionId,
             "correct": correct,

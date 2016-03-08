@@ -140,11 +140,10 @@ class CurrencyDragQuestionView: UIView {
             let item = item as! NoteDraggable
             return String(item.config.value)
         }
-        let answerDescription: [String: AnyObject] = ["sum": String(outputSum), "notes": outputValues]
         
         if (question.verifyResult(outputSum)) {
             toDragView.backgroundColor = UIColor.correctColor()
-            delegate?.questionCompleted(question, correct: true, answer: answerDescription)
+            delegate?.questionCompleted(question, correct: true, answer: self.question.answerLogForAnswer(outputSum, notes: outputValues))
         } else {
             if let hint = question.configuration.hint where self.hintView == nil {
                 handleFailure()
@@ -157,7 +156,7 @@ class CurrencyDragQuestionView: UIView {
                 handleSecondFailure()
                 self.userInteractionEnabled = false
                 toDragView.backgroundColor = UIColor.errorColor()
-                delegate?.questionCompleted(question, correct: false, answer: answerDescription)
+                delegate?.questionCompleted(question, correct: false, answer: self.question.answerLogForAnswer(outputSum, notes: outputValues))
             }
         }
     }

@@ -80,7 +80,7 @@ class NumericQuestionView: UIView, NumpadViewDelegate {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.toValueTextField.backgroundColor = UIColor.correctColor()
         }, completion: { _ -> Void in
-            self.delegate?.questionCompleted(self.question, correct: true, answer: ["number": String(number)])
+            self.delegate?.questionCompleted(self.question, correct: true, answer: self.question.answerLogForAnswer(String(number)))
         })
     }
     
@@ -108,7 +108,7 @@ class NumericQuestionView: UIView, NumpadViewDelegate {
                 self.toValueTextField.text = String(format: "%.0f", self.question.configuration.toValue)
         })
         
-        self.delegate?.questionCompleted(self.question, correct: false, answer: ["number": String(number)])        
+        self.delegate?.questionCompleted(self.question, correct: false, answer: self.question.answerLogForAnswer(String(number)))
     }
     
     private func showHintView(view: UIView) {

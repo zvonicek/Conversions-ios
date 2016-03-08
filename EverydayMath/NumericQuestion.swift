@@ -36,6 +36,10 @@ class NumericQuestion: Question {
         }
     }
     
+    func answerLogForAnswer(answer: String) -> AnswerLog {
+        return ["answer": String(answer), "correctAnswer": String(configuration.toValue), "tolerance": String(configuration.tolerance)]
+    }
+    
     func identifier() -> String {
         return String(ObjectIdentifier(self).uintValue)
     }    
@@ -46,6 +50,7 @@ class NumericQuestionConfiguration: QuestionConfiguration {
     let fromUnit: String
     let toValue: Float
     let toUnit: String
+    let tolerance: Float
     let minCorrectValue: Float
     let maxCorrectValue: Float
     var image: UIImage?
@@ -58,10 +63,12 @@ class NumericQuestionConfiguration: QuestionConfiguration {
         fromUnit = unboxer.unbox("fromUnit")
         toValue = unboxer.unbox("toValue")
         toUnit = unboxer.unbox("toUnit")
-        minCorrectValue = unboxer.unbox("minCorrectValue")
-        maxCorrectValue = unboxer.unbox("maxCorrectValue")
+        tolerance = unboxer.unbox("tolerance")
         imagePath = unboxer.unbox("imagePath")
         hint = unboxer.unbox("hint")
+        
+        self.minCorrectValue = self.toValue - self.tolerance
+        self.maxCorrectValue = self.toValue + self.tolerance
         
         super.init(unboxer: unboxer)        
     }
