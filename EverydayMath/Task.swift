@@ -13,7 +13,7 @@ enum TaskError: ErrorType {
 }
 
 enum TaskCategory {
-    case Mass, Length, Area, Volume, Currency
+    case Mass, Length, Area, Volume, Currency, Temperature
     
     func description() -> String {
         switch self {
@@ -27,6 +27,8 @@ enum TaskCategory {
             return "Volume"
         case .Currency:
             return "Currency"
+        case .Temperature:
+            return "Temperature"
         }
     }
 }
@@ -55,15 +57,21 @@ class TaskFactory {
     static let tasks: [Task] = [
         Task(identifier: "mass_i", name: "Imperial", category: .Mass, image: UIImage(named: "ic_mass")!),
         Task(identifier: "mass_m", name: "Metric", category: .Mass, image: UIImage(named: "ic_mass")!),
-        Task(identifier: "mass_mi", name: "Combined", category: .Mass, image: UIImage(named: "ic_mass")!),
+        Task(identifier: "mass_c", name: "Combined", category: .Mass, image: UIImage(named: "ic_mass")!),
         
         Task(identifier: "length_i", name: "Imperial", category: .Length, image: UIImage(named: "ic_length")!),
         Task(identifier: "length_m", name: "Metric", category: .Length, image: UIImage(named: "ic_length")!),
-        Task(identifier: "length_mi", name: "Combined", category: .Length, image: UIImage(named: "ic_length")!),
+        Task(identifier: "length_c", name: "Combined", category: .Length, image: UIImage(named: "ic_length")!),
         
         Task(identifier: "area_i", name: "Imperial", category: .Area, image: UIImage(named: "ic_area")!),
         Task(identifier: "area_m", name: "Metric", category: .Area, image: UIImage(named: "ic_area")!),
-        Task(identifier: "area_mi", name: "Combined", category: .Area, image: UIImage(named: "ic_area")!),
+        Task(identifier: "area_c", name: "Combined", category: .Area, image: UIImage(named: "ic_area")!),
+        
+        Task(identifier: "temperature", name: "ºC / ºF", category: .Temperature, image: UIImage(named: "ic_temperature")!),
+        
+        Task(identifier: "currency_eur", name: "EUR", category: .Currency, image: UIImage(named: "ic_currency")!),
+        Task(identifier: "currency_usd", name: "USD", category: .Currency, image: UIImage(named: "ic_currency")!),
+        Task(identifier: "currency_czk", name: "CZK", category: .Currency, image: UIImage(named: "ic_currency")!),        
     ]
     static var tasksByCategory: [TaskCategory: [Task]] = {
         return  TaskFactory.tasks.reduce([:]) { (var dict, var task: Task) -> Dictionary<TaskCategory, Array<Task>> in

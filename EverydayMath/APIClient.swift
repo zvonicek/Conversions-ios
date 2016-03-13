@@ -27,7 +27,7 @@ class APIClient {
         let language = NSLocale.preferredLanguages().first ?? ""
         let versionNumber = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
         
-        return Alamofire.request(.GET, self.baseUrl + "/api/start", parameters: ["task": "mass-metric", "user": user, "language":language, "version": versionNumber], encoding: ParameterEncoding.URL)
+        return Alamofire.request(.GET, self.baseUrl + "/api/start", parameters: ["task": task.identifier, "user": user, "language":language, "version": versionNumber], encoding: ParameterEncoding.URL)
             .promiseUnboxableJSON()
             .then({ dictionary -> TaskConfiguration in
                 do {
