@@ -20,8 +20,7 @@ class HeaderView: UICollectionReusableView {
         
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor(red: 96/255.0, green: 184/255.0, blue: 23/255.0, alpha: 1.0)
-//        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor(red: 102/255.0, green: 194/255.0, blue: 73/255.0, alpha: 1.0)
         self.addSubview(label)
         self.addTopBorderWithColor(UIColor.whiteColor(), width: 1.0)
         self.addBottomBorderWithColor(UIColor.whiteColor(), width: 1.0)

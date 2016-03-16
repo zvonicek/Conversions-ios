@@ -80,7 +80,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.5490196078431373" green="0.82352941176470584" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.72608123978758166" green="0.94839920343137252" blue="0.36146854575163395" alpha="0.45798561789772729" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="8OF-3y-gae" firstAttribute="top" secondItem="5ik-4N-bPX" secondAttribute="bottom" id="0OU-ek-YfU"/>
                                             <constraint firstItem="tmQ-gW-cSF" firstAttribute="centerX" secondItem="HdB-nf-hqp" secondAttribute="centerX" id="228-yl-rvq"/>
@@ -139,10 +139,10 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="fromColor">
-                                <color key="value" red="0.41568627450980389" green="0.76078431372549016" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.45098039215686275" green="0.78431372549019607" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="toColor">
-                                <color key="value" red="0.27450980392156865" green="0.68627450980392157" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.27450980392156865" green="0.70588235294117641" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
