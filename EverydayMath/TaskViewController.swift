@@ -57,7 +57,7 @@ class TaskViewController: UIViewController {
         dimView.backgroundColor = UIColor(white: 0.0, alpha: 0.2)
         dimView.alpha = 0.0
         
-        if let taskRun = taskRun as? QuestionBased {
+        if let taskRun = taskRun {
             topBar.progressView.components = taskRun.questions.count
         }
         taskRun?.delegate = self
@@ -107,7 +107,7 @@ class TaskViewController: UIViewController {
             self.resultView.removeFromSuperview()
             self.dimView.removeFromSuperview()
             
-            if let taskRun = self.taskRun as? QuestionBased where self.resultView.finalResult {
+            if let taskRun = self.taskRun where self.resultView.finalResult {
                 taskRun.nextQuestion()
             }
         }
@@ -134,12 +134,12 @@ class TaskViewController: UIViewController {
 extension TaskViewController: TaskRunDelegate {
     // MARK: GameRunDelegate methods
 
-    func taskRun(taskRun: protocol<TaskRun, QuestionBased>, showQuestion question: Question, index: Int) {
+    func taskRun(taskRun: TaskRun, showQuestion question: Question, index: Int) {
         currentQuestionView = question.getView()
         print("show view")
     }
     
-    func taskRun(taskRun: protocol<TaskRun, QuestionBased>, questionCompleted question: Question, index: Int, result: QuestionResult) {
+    func taskRun(taskRun: TaskRun, questionCompleted question: Question, index: Int, result: QuestionResult) {
         if result.correct() {
             resultView.setSuccessWithMessage(result.message())
         } else {
@@ -152,7 +152,7 @@ extension TaskViewController: TaskRunDelegate {
         }
     }
     
-    func taskRun(taskRun: protocol<TaskRun, QuestionBased>, questionGaveSecondTry task: Question, index: Int) {
+    func taskRun(taskRun: TaskRun, questionGaveSecondTry task: Question, index: Int) {
         resultView.setFailureWithMessage(NSLocalizedString("Try it again with hint", comment: "Try it again with hint"), subtitle: NSLocalizedString("Tap to try it again", comment: "Tap to try it again"))
         resultView.finalResult = false
         showResultView {

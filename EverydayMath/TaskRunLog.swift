@@ -12,7 +12,7 @@ typealias AnswerLog = [String: AnyObject]
 
 struct QuestionRunLog {
     var questionId: Int
-    var correct: Bool
+    var result: QuestionResult
     var time: NSTimeInterval
     var hintShown: Bool
     var answer: [String: AnyObject]
@@ -20,7 +20,7 @@ struct QuestionRunLog {
     func serialize() -> AnswerLog {
         return [
             "id": questionId,
-            "correct": correct,
+            "correct": result.correct(),
             "time": time,
             "hintShown": hintShown,
             "answer": answer

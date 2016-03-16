@@ -10,33 +10,14 @@ import Foundation
 
 // MARK: TaskRun protocols
 protocol TaskRunDelegate {
-    func taskRun(taskRun: protocol<TaskRun, QuestionBased>, showQuestion question: Question, index: Int)
-    func taskRun(taskRun: protocol<TaskRun, QuestionBased>, questionCompleted question: Question, index: Int, result: QuestionResult)
-    func taskRun(taskRun: protocol<TaskRun, QuestionBased>, questionGaveSecondTry question: Question, index: Int)
+    func taskRun(taskRun: TaskRun, showQuestion question: Question, index: Int)
+    func taskRun(taskRun: TaskRun, questionCompleted question: Question, index: Int, result: QuestionResult)
+    func taskRun(taskRun: TaskRun, questionGaveSecondTry question: Question, index: Int)
     func taskRunCompleted(taskRun: TaskRun)
     func taskRunAborted(taskRun: TaskRun)
 }
 
-protocol TaskRun {
-    var delegate: TaskRunDelegate? { get set }
-    
-    var running: Bool { get }
-    var finished: Bool { get }
-    
-    func start()
-    func pause()
-    func resume()
-    func abort()
-}
-
-protocol QuestionBased {
-    var questions: [Question] { get }
-    var currentQuestionIndex: Int? { get }
-    
-    func nextQuestion()
-}
-
-class DefaultTaskRun: TaskRun, QuestionBased, QuestionDelegate {
+class TaskRun: QuestionDelegate {
     let task: Task
     let config: TaskConfiguration
     let questions: [Question]
@@ -141,7 +122,7 @@ class DefaultTaskRun: TaskRun, QuestionBased, QuestionDelegate {
             result = QuestionResult.Incorrect
         }
         
-        let taskLog = QuestionRunLog(questionId: question.config().questionId, correct: correct, time: timeSpend, hintShown: currentQuestionSecondTry, answer: answer)
+        let taskLog = QuestionRunLog(questionId: question.config().questionId, result: result, time: timeSpend, hintShown: currentQuestionSecondTry, answer: answer)
         log.appendQuestionLog(taskLog)
 
         delegate?.taskRun(self, questionCompleted: question, index: index, result: result)

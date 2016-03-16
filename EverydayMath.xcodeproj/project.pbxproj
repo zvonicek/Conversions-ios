@@ -284,8 +284,8 @@
 		D0C900F91BEE87B200A15F32 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D08F523B1BF1368D000F840B /* TaskRun.swift */,
 				D0C0CC291C0CDAFA00D93B83 /* Configuration */,
+				D08F523B1BF1368D000F840B /* TaskRun.swift */,
 				D0C900FF1BEE8B9800A15F32 /* Question.swift */,
 				D02CE8861C4C5A6E0088E90A /* TaskRunLog.swift */,
 				A717F5B1396AE33225462317 /* Task.swift */,

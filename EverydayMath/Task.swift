@@ -48,7 +48,7 @@ class Task {
     }
 
     func run(configuration: TaskConfiguration) throws -> TaskRun {
-        return DefaultTaskRun(task: self, config: configuration)
+        return TaskRun(task: self, config: configuration)
     }
 }
 
