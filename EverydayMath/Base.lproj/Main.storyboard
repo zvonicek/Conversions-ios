@@ -558,12 +558,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're on the right track." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6Y-bU-nJV">
-                                <rect key="frame" x="206" y="286" width="189" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGG-VS-Ki2">
                                 <rect key="frame" x="185" y="530" width="230" height="50"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -585,9 +579,15 @@
                                     <action selector="dismiss" destination="sa7-j2-TI0" eventType="touchUpInside" id="g5h-EL-uLG"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well done." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fjz-ge-p9g">
-                                <rect key="frame" x="230" y="242" width="140" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well done." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fjz-ge-p9g">
+                                <rect key="frame" x="20" y="242" width="560" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're on the right track." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6Y-bU-nJV">
+                                <rect key="frame" x="20" y="286" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -595,13 +595,27 @@
                         <color key="backgroundColor" red="0.47450980390000003" green="0.78039215689999997" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oGG-VS-Ki2" firstAttribute="centerX" secondItem="GFH-p6-6eh" secondAttribute="centerX" id="5le-lC-XB2"/>
+                            <constraint firstItem="c6Y-bU-nJV" firstAttribute="leading" secondItem="GFH-p6-6eh" secondAttribute="leadingMargin" id="8SN-GH-z4k"/>
+                            <constraint firstItem="Fjz-ge-p9g" firstAttribute="leading" secondItem="GFH-p6-6eh" secondAttribute="leadingMargin" id="GDT-aP-V4x"/>
                             <constraint firstItem="Mvb-Sh-kCk" firstAttribute="top" secondItem="oGG-VS-Ki2" secondAttribute="bottom" constant="20" id="H9P-54-aPc"/>
                             <constraint firstItem="Fjz-ge-p9g" firstAttribute="centerY" secondItem="GFH-p6-6eh" secondAttribute="centerY" constant="-40" id="JTb-nk-dAb"/>
                             <constraint firstItem="c6Y-bU-nJV" firstAttribute="centerX" secondItem="GFH-p6-6eh" secondAttribute="centerX" id="dce-mO-BTj"/>
                             <constraint firstItem="Fjz-ge-p9g" firstAttribute="centerX" secondItem="GFH-p6-6eh" secondAttribute="centerX" id="kaF-xV-qvk"/>
                             <constraint firstItem="c6Y-bU-nJV" firstAttribute="top" secondItem="Fjz-ge-p9g" secondAttribute="bottom" constant="8" id="pzF-PV-Jj8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fjz-ge-p9g" secondAttribute="trailing" id="tlm-5i-cud"/>
+                            <constraint firstItem="c6Y-bU-nJV" firstAttribute="trailing" secondItem="GFH-p6-6eh" secondAttribute="trailingMargin" id="yTl-tw-Ty4"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dce-mO-BTj"/>
+                                <exclude reference="kaF-xV-qvk"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="subtitleLabel" destination="c6Y-bU-nJV" id="AtB-cM-rX7"/>
+                        <outlet property="titleLabel" destination="Fjz-ge-p9g" id="h0V-lM-V0m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVW-KK-CCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -129,6 +129,12 @@ class TaskViewController: UIViewController {
                 }
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destionation = segue.destinationViewController as? TaskCompletedViewController, let taskRun = sender as? TaskRun where segue.identifier == "completedSegue" {
+            destionation.taskRun = taskRun
+        }
+    }
 }
 
 extension TaskViewController: TaskRunDelegate {
@@ -162,7 +168,7 @@ extension TaskViewController: TaskRunDelegate {
     
     func taskRunCompleted(taskRun: TaskRun) {
         print("game completed")
-        performSegueWithIdentifier("completedSegue", sender: self)
+        performSegueWithIdentifier("completedSegue", sender: taskRun)
     }
     
     func taskRunAborted(taskRun: TaskRun){

@@ -10,6 +10,20 @@ import UIKit
 
 class TaskCompletedViewController: UIViewController {
 
+    var taskRun: TaskRun?
+    
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var subtitleLabel: UILabel!
+    
+    override func viewDidLoad() {
+        if let taskRun = taskRun {
+            let result = TaskRunResult.createFromRunLog(taskRun.log.questionResults)
+            let message = result.message()
+            titleLabel.text = message.title
+            subtitleLabel.text = message.subtitle
+        }
+    }
+    
     @IBAction func dismiss() {
         self.presentingViewController?.presentingViewController?.modalTransitionStyle = UIModalTransitionStyle.CoverVertical;
         self.presentingViewController?.presentingViewController?.presentingViewController?.modalTransitionStyle = UIModalTransitionStyle.CoverVertical;
