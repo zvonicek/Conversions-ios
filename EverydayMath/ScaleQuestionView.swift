@@ -39,6 +39,7 @@ class ScaleQuestionView: UIView, TrackingScaleControlDelegate {
     
     func scaleControlDidAnswer(value: CGFloat) {
         let isCorrect = Float(value) > question.configuration.correctValue - question.configuration.correctTolerance && Float(value) < question.configuration.correctValue + question.configuration.correctTolerance
+        let isPrecise = Float(value) > question.configuration.correctValue - question.configuration.correctTolerance / 2 && Float(value) < question.configuration.correctValue + question.configuration.correctTolerance / 2
         
         if  isCorrect {
             resultNumberLabel.backgroundColor = UIColor.correctColor()
@@ -50,7 +51,7 @@ class ScaleQuestionView: UIView, TrackingScaleControlDelegate {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.resultView.alpha = 1.0
         }) { (let finished) -> Void in
-            self.delegate?.questionCompleted(self.question, correct: isCorrect, answer: self.question.answerLogForAnswer(Float(value)))
+            self.delegate?.questionCompleted(self.question, correct: isCorrect, accuracy: isPrecise ? .Precise: .Imprecise, answer: self.question.answerLogForAnswer(Float(value)))
         }
     }
 }

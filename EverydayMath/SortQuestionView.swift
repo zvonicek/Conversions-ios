@@ -52,7 +52,7 @@ class SortQuestionView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         let isAllCorrect = result.reduce(true, combine: {$0 && $1})
         let orderOfPresentedPositions = rows.map { $0.presentedPosition }
         let orderOfTitles = rows.map { $0.title }
-        self.delegate?.questionCompleted(self.question, correct: isAllCorrect, answer: self.question.answerLogForPositions(orderOfPresentedPositions, titles: orderOfTitles))
+        self.delegate?.questionCompleted(self.question, correct: isAllCorrect, accuracy: .NonApplicable, answer: self.question.answerLogForPositions(orderOfPresentedPositions, titles: orderOfTitles))
     }
     
     private func showCorrectAnswers() {

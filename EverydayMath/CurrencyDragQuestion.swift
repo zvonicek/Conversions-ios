@@ -32,6 +32,10 @@ class CurrencyDragQuestion: Question {
         return (abs(notesSum - self.configuration.toValue) < self.configuration.tolerance)
     }
     
+    func isPrecise(notesSum: Float) -> Bool {
+        return (abs(notesSum - self.configuration.toValue) < self.configuration.tolerance / 2)
+    }
+    
     func answerLogForAnswer(answer: Float, notes: [String]) -> AnswerLog {
         return ["answer": String(answer), "notes": notes, "correctAnswer": configuration.toValue, "tolerance": configuration.tolerance]
     }

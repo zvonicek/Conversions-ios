@@ -29,11 +29,16 @@ class NumericQuestion: Question {
     }
     
     func verifyResult(value: Float) -> Bool {
+        // 'if case' cannot be rewritten to one-line bool expression :-(
         if case configuration.minCorrectValue ... configuration.maxCorrectValue = value {
             return true
         } else {
             return false
         }
+    }
+    
+    func isPrecise(value: Float) -> Bool {
+        return value  == configuration.toValue || value == floorf(configuration.toValue) || value == ceilf(configuration.toValue)
     }
     
     func answerLogForAnswer(answer: String) -> AnswerLog {

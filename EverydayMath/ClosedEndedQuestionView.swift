@@ -92,7 +92,7 @@ class ClosedEndedQuestionView: UIView {
             }
         }
         
-        delegate?.questionCompleted(question, correct: correct, answer: self.question.answerLogForAnswer(sender.answerCfg.answer))
+        delegate?.questionCompleted(question, correct: correct, accuracy: .NonApplicable, answer: self.question.answerLogForAnswer(sender.answerCfg.answer))
     }
     
     private func markButton(button: ClosedEndedButton) {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: GameRun protocols
+// MARK: TaskRun protocols
 protocol TaskRunDelegate {
     func taskRun(taskRun: protocol<TaskRun, QuestionBased>, showQuestion question: Question, index: Int)
     func taskRun(taskRun: protocol<TaskRun, QuestionBased>, questionCompleted question: Question, index: Int, result: QuestionResult)
@@ -113,7 +113,7 @@ class DefaultTaskRun: TaskRun, QuestionBased, QuestionDelegate {
     
     // MARK: TaskDelegate
     
-    func questionCompleted(question: Question, correct: Bool, answer: [String: AnyObject]) {
+    func questionCompleted(question: Question, correct: Bool, accuracy: QuestionResultAccuracy?, answer: [String: AnyObject]) {
         guard let index = questions.indexOf(question) else {
             assertionFailure("task was not found")
             return
@@ -127,15 +127,16 @@ class DefaultTaskRun: TaskRun, QuestionBased, QuestionDelegate {
         let timeSpend = NSDate().timeIntervalSinceDate(currentQuestionPresentationDate)
         
         var result: QuestionResult
-        if correct {
+        if let accuracy = accuracy where correct {
+            var speed: QuestionResultSpeed
             switch timeSpend {
             case 0...question.config().fastTime:
-                result = QuestionResult.CorrectFast
-            case question.config().fastTime...question.config().neutralTime:
-                result = QuestionResult.CorrectNeutral
+                speed = .Fast
             default:
-                result = QuestionResult.CorrectSlow
+                speed = .Slow
             }
+            
+            result = QuestionResult.Correct(accuracy, speed)
         } else {
             result = QuestionResult.Incorrect
         }
