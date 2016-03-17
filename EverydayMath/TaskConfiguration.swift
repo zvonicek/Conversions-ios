@@ -11,10 +11,12 @@ import Unbox
 
 struct TaskConfiguration: Unboxable {
     var taskRunId: Int
+    var showSpeedFeedback: Bool
     var questions: [QuestionConfiguration]
     
     init(unboxer: Unboxer) {
         self.taskRunId = unboxer.unbox("id")
+        self.showSpeedFeedback = unboxer.unbox("speedFeedback")
         self.questions = unboxer.unbox("questions")
     }
 }

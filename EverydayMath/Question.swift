@@ -13,7 +13,7 @@ enum QuestionResultAccuracy {
 }
 
 enum QuestionResultSpeed {
-    case Fast, Slow
+    case Fast, Slow, NonApplicable
 }
 
 enum QuestionResult {
@@ -23,18 +23,12 @@ enum QuestionResult {
         switch self {
         case .Incorrect:
             return ProgressViewState.Incorrect
-        case .Correct(.Imprecise, .Fast):
+        case .Correct(.Imprecise, .Fast), .Correct(.Precise, .Slow), .Correct(.NonApplicable, .Slow), .Correct(.Imprecise, .NonApplicable):
             return ProgressViewState.CorrectB
         case .Correct(.Imprecise, .Slow):
             return ProgressViewState.CorrectC
-        case .Correct(.Precise, .Fast):
+        case .Correct(.Precise, .Fast), .Correct(.NonApplicable, .Fast), .Correct(.Precise, .NonApplicable), .Correct(.NonApplicable, .NonApplicable):
             return ProgressViewState.CorrectA
-        case .Correct(.Precise, .Slow):
-            return ProgressViewState.CorrectB
-        case .Correct(.NonApplicable, .Fast):
-            return ProgressViewState.CorrectA
-        case .Correct(.NonApplicable, .Slow):
-            return ProgressViewState.CorrectB
         }
     }
     
@@ -44,12 +38,14 @@ enum QuestionResult {
             return ["Oh, no!", "Maybe next time", "Bad luck", "That's not correct"].randomItem()
         case .Correct(.Imprecise, .Fast), .Correct(.NonApplicable, .Fast):
             return ["That was really fast", "Great speed", "You're really fast"].randomItem()
-        case .Correct(.Imprecise, .Slow), .Correct(.NonApplicable, .Slow):
+        case .Correct(.Imprecise, .Slow), .Correct(.NonApplicable, .Slow), .Correct(.Imprecise, .NonApplicable), .Correct(.NonApplicable, .NonApplicable):
             return ["Good effort", "Fair enough"].randomItem()
         case .Correct(.Precise, .Fast):
             return ["Fast and correct!", "Wow, quick and correct", "Quick and precise", "Great time and precision!"].randomItem()
         case .Correct(.Precise, .Slow):
             return ["Correct, try to be faster", "Correct, but not so fast"].randomItem()
+        case .Correct(.Precise, .NonApplicable):
+            return ["Precise!", "That's correct", "Great precision", "That's exactly it"].randomItem()
         }
     }
     
