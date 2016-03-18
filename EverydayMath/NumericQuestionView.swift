@@ -21,7 +21,7 @@ class NumericQuestionView: UIView, NumpadViewDelegate {
     
     var question: NumericQuestion! {
         didSet {
-            fromLabel.text = String(format: "%.0f", question.configuration.fromValue) + " " + question.configuration.fromUnit
+            fromLabel.text = NSNumberFormatter.formatter.stringFromNumber(question.configuration.fromValue)! + " " + question.configuration.fromUnit
             toUnitLabel.text = question.configuration.toUnit
             if let imageView = imageView, let image = question.configuration.image {
                 imageView.image = image
@@ -80,7 +80,7 @@ class NumericQuestionView: UIView, NumpadViewDelegate {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.toValueTextField.backgroundColor = UIColor.correctColor()
         }, completion: { _ -> Void in
-            self.delegate?.questionCompleted(self.question, correct: true, accuracy: self.question.isPrecise(number) ? .Precise : .Imprecise, answer: self.question.answerLogForAnswer(String(number)))
+            self.delegate?.questionCompleted(self.question, correct: true, accuracy: self.question.isPrecise(number) ? .Precise : .Imprecise, answer: self.question.answerLogForAnswer(NSNumberFormatter.formatter.stringFromNumber(number)!))
         })
     }
     
@@ -105,10 +105,10 @@ class NumericQuestionView: UIView, NumpadViewDelegate {
             self.toValueTextField.backgroundColor = UIColor.errorColor()
             self.toValueTextField.backgroundColor = color
             }, completion: { _ -> Void in
-                self.toValueTextField.text = String(format: "%.0f", self.question.configuration.toValue)
+                self.toValueTextField.text = NSNumberFormatter.formatter.stringFromNumber(self.question.configuration.toValue)!
         })
         
-        self.delegate?.questionCompleted(self.question, correct: false, accuracy: nil, answer: self.question.answerLogForAnswer(String(number)))
+        self.delegate?.questionCompleted(self.question, correct: false, accuracy: nil, answer: self.question.answerLogForAnswer(NSNumberFormatter.formatter.stringFromNumber(number)!))
     }
     
     private func showHintView(view: UIView) {

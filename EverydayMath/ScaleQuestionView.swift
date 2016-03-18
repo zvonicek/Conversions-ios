@@ -46,7 +46,7 @@ class ScaleQuestionView: UIView, TrackingScaleControlDelegate {
         } else {
             resultNumberLabel.backgroundColor = UIColor.errorColor()
         }
-        resultNumberLabel.text = String(format: "%.2f", question.configuration.correctValue)
+        resultNumberLabel.text = NSNumberFormatter.formatter.stringFromNumber(question.configuration.correctValue)!
         
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.resultView.alpha = 1.0

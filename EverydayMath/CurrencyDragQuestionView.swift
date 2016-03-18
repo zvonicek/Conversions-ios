@@ -47,7 +47,7 @@ class CurrencyDragQuestionView: UIView {
     
     var question: CurrencyDragQuestion! {
         didSet {
-            fromValueLabel.text = String(format: "%.0f %@", question.configuration.fromValue, question.configuration.fromCurrency)
+            fromValueLabel.text = String(format: "%@ %@", NSNumberFormatter.formatter.stringFromNumber(question.configuration.fromValue)!, question.configuration.fromCurrency)
             var index = 0
             for note in question.configuration.availableNotes {
                 for _ in 0..<note.count {
@@ -138,7 +138,7 @@ class CurrencyDragQuestionView: UIView {
         }
         let outputValues = toDragView.containedObjects.map { (item: AnyObject) -> String in
             let item = item as! NoteDraggable
-            return String(item.config.value)
+            return NSNumberFormatter.formatter.stringFromNumber(item.config.value)!
         }
         
         if (question.verifyResult(outputSum)) {

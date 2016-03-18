@@ -18,7 +18,7 @@ class BankNote: UIImageView {
     
     class func instanceFromNib(config: CurrencyDragQuestionConfigurationNote) -> BankNote {
         let note = UINib(nibName: "BankNote", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! BankNote
-        note.priceLabel.text = String(format: "%.0f %@", config.value, config.currency)
+        note.priceLabel.text = String(format: "%@ %@", NSNumberFormatter.formatter.stringFromNumber(config.value)!, config.currency)
         
         return note
     }

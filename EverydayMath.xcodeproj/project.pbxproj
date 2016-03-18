@@ -29,6 +29,7 @@
 		D08F52401BF1394A000F840B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F523F1BF1394A000F840B /* HeaderView.swift */; };
 		D08F52421BF13971000F840B /* GameListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F52411BF13971000F840B /* GameListCollectionViewCell.swift */; };
 		D08F52441BF15ED2000F840B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F52431BF15ED2000F840B /* Extensions.swift */; };
+		D0986D3E1C9C104900E7D9D9 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0986D3D1C9C104900E7D9D9 /* NumberFormatter.swift */; };
 		D09EE9FC1C42A04D00B4FB31 /* CurrencyDragQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09EE9FB1C42A04D00B4FB31 /* CurrencyDragQuestionView.swift */; };
 		D09EE9FE1C42A05800B4FB31 /* CurrencyDragQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09EE9FD1C42A05800B4FB31 /* CurrencyDragQuestionView.xib */; };
 		D09EEA001C42A08D00B4FB31 /* CurrencyDragQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09EE9FF1C42A08D00B4FB31 /* CurrencyDragQuestion.swift */; };
@@ -109,6 +110,7 @@
 		D08F523F1BF1394A000F840B /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		D08F52411BF13971000F840B /* GameListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListCollectionViewCell.swift; sourceTree = "<group>"; };
 		D08F52431BF15ED2000F840B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D0986D3D1C9C104900E7D9D9 /* NumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		D09EE9FB1C42A04D00B4FB31 /* CurrencyDragQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyDragQuestionView.swift; sourceTree = "<group>"; };
 		D09EE9FD1C42A05800B4FB31 /* CurrencyDragQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyDragQuestionView.xib; sourceTree = "<group>"; };
 		D09EE9FF1C42A08D00B4FB31 /* CurrencyDragQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyDragQuestion.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				D021D9C81C8995980077FDBB /* AlamoPromise.swift */,
 				D041FDAD1C8B43DE00056D2D /* IntHelpers.swift */,
 				D041FDAF1C8B8F9300056D2D /* UIAlertController+Error.swift */,
+				D0986D3D1C9C104900E7D9D9 /* NumberFormatter.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				D0C901041BEF7E0500A15F32 /* TaskViewController.swift in Sources */,
 				D0E2E0A11C27478B005E5B06 /* SortQuestionCollectionViewCell.swift in Sources */,
 				D0C901061BEF80E200A15F32 /* TaskListViewController.swift in Sources */,
+				D0986D3E1C9C104900E7D9D9 /* NumberFormatter.swift in Sources */,
 				D09EE9FC1C42A04D00B4FB31 /* CurrencyDragQuestionView.swift in Sources */,
 				D0C0CC161C0B541400D93B83 /* GradientView.swift in Sources */,
 				D0E2E08C1C272D5A005E5B06 /* SortQuestionView.swift in Sources */,
