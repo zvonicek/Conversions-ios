@@ -13,8 +13,9 @@ class TaskViewController: UIViewController {
     
     @IBOutlet var topBar: TaskHeaderView!
     @IBOutlet var taskView: UIView!
-    @IBOutlet var resultView: ResultView!
     @IBOutlet var pauseView: UIView!
+    
+    var resultView: ResultView!
     
     lazy var dimView: UIView = {
         let view = UIView()
@@ -146,10 +147,18 @@ extension TaskViewController: TaskRunDelegate {
     }
     
     func taskRun(taskRun: TaskRun, questionCompleted question: Question, index: Int, result: QuestionResult) {
+        var simpleResult: String?
+        if let config = question.config() as? SimpleResultConfiguration {
+            let res = config.to()
+            simpleResult = String(format: "%f %@", res.value, res.unit)
+        }
+        
+        resultView = ResultView.instanceFromNib(simpleResult != nil)
+        
         if result.correct() {
-            resultView.setSuccessWithMessage(result.message())
+            resultView.setSuccessWithMessage(result.message(), result: simpleResult)
         } else {
-            resultView.setFailureWithMessage(result.message(), subtitle: nil)
+            resultView.setFailureWithMessage(result.message(), subtitle: nil, result: simpleResult)
         }
         resultView.finalResult = true
         
@@ -159,7 +168,8 @@ extension TaskViewController: TaskRunDelegate {
     }
     
     func taskRun(taskRun: TaskRun, questionGaveSecondTry task: Question, index: Int) {
-        resultView.setFailureWithMessage(NSLocalizedString("Try it again with hint", comment: "Try it again with hint"), subtitle: NSLocalizedString("Tap to try it again", comment: "Tap to try it again"))
+        resultView = ResultView.instanceFromNib(false)
+        resultView.setFailureWithMessage(NSLocalizedString("Try it again with hint", comment: "Try it again with hint"), subtitle: NSLocalizedString("Tap to try it again", comment: "Tap to try it again"), result: nil)
         resultView.finalResult = false
         showResultView {
             self.performSelector("continueGame", withObject: nil, afterDelay: 0.8)

@@ -59,7 +59,7 @@ struct CurrencyDragQuestionConfigurationNote: Unboxable {
     }
 }
 
-class CurrencyDragQuestionConfiguration: QuestionConfiguration {
+class CurrencyDragQuestionConfiguration: QuestionConfiguration, SimpleResultConfiguration {
     let fromValue: Float
     let fromCurrency: String
     let toValue: Float
@@ -80,5 +80,9 @@ class CurrencyDragQuestionConfiguration: QuestionConfiguration {
         hint = unboxer.unbox("hint")
         
         super.init(unboxer: unboxer)        
+    }
+    
+    func to() -> (value: Float, unit: String) {
+        return (toValue, toCurrency)
     }
 }

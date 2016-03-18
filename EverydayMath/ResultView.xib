@@ -55,5 +55,84 @@
             </connections>
             <point key="canvasLocation" x="311" y="139"/>
         </view>
+        <view contentMode="scaleToFill" id="K7v-9n-SII" customClass="ResultView" customModule="EverydayMath" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KN-1N-43F">
+                    <rect key="frame" x="0.0" y="75" width="320" height="25"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap anywhere to continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5T-HT-4xY">
+                            <rect key="frame" x="15" y="4" width="297" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.420166973" green="0.65440538189999997" blue="0.1063214869" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.69019607839999997" green="0.92549019610000005" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="C5T-HT-4xY" firstAttribute="top" secondItem="5KN-1N-43F" secondAttribute="top" constant="4" id="0Ns-D5-XhL"/>
+                        <constraint firstItem="C5T-HT-4xY" firstAttribute="leading" secondItem="5KN-1N-43F" secondAttribute="leading" constant="15" id="43b-vc-C0X"/>
+                        <constraint firstAttribute="height" constant="25" id="YUL-eM-GlB"/>
+                        <constraint firstAttribute="trailing" secondItem="C5T-HT-4xY" secondAttribute="trailing" constant="8" id="f0M-5c-b9t"/>
+                        <constraint firstAttribute="bottom" secondItem="C5T-HT-4xY" secondAttribute="bottom" constant="5" id="ldD-xf-Tta"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That's correct!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfC-J5-9Is">
+                    <rect key="frame" x="15" y="8" width="297" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="zj5-xg-xg5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                    <color key="textColor" red="0.23921568630000001" green="0.73725490199999999" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="It's exactly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YH-Aj-JUZ">
+                    <rect key="frame" x="15" y="41" width="80" height="28"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <color key="textColor" red="0.23921568630000001" green="0.73725490199999999" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="245 miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO6-Iy-1id">
+                    <rect key="frame" x="100" y="41" width="212" height="28"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                    <color key="textColor" red="0.23921568630000001" green="0.73725490199999999" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.74117647060000003" green="0.94901960780000005" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="LfC-J5-9Is" firstAttribute="top" secondItem="K7v-9n-SII" secondAttribute="top" constant="8" id="1X8-uV-TWz"/>
+                <constraint firstAttribute="trailing" secondItem="LfC-J5-9Is" secondAttribute="trailing" constant="8" id="1jW-ys-I78"/>
+                <constraint firstAttribute="trailing" secondItem="hO6-Iy-1id" secondAttribute="trailing" constant="8" id="2FK-Hu-m4x"/>
+                <constraint firstItem="LfC-J5-9Is" firstAttribute="top" secondItem="K7v-9n-SII" secondAttribute="top" constant="8" id="43X-NF-Cz9"/>
+                <constraint firstItem="5YH-Aj-JUZ" firstAttribute="top" secondItem="LfC-J5-9Is" secondAttribute="bottom" constant="6" id="AQt-aA-Uao"/>
+                <constraint firstItem="5KN-1N-43F" firstAttribute="top" secondItem="hO6-Iy-1id" secondAttribute="bottom" constant="6" id="IPH-31-JCX"/>
+                <constraint firstAttribute="trailing" secondItem="5KN-1N-43F" secondAttribute="trailing" id="JT2-NM-NNa"/>
+                <constraint firstItem="hO6-Iy-1id" firstAttribute="leading" secondItem="5YH-Aj-JUZ" secondAttribute="trailing" constant="5" id="KLX-SX-eo5"/>
+                <constraint firstAttribute="trailing" secondItem="LfC-J5-9Is" secondAttribute="trailing" constant="8" id="OZY-9Z-IcY"/>
+                <constraint firstItem="LfC-J5-9Is" firstAttribute="leading" secondItem="K7v-9n-SII" secondAttribute="leading" constant="15" id="Qhy-82-DsV"/>
+                <constraint firstItem="LfC-J5-9Is" firstAttribute="leading" secondItem="K7v-9n-SII" secondAttribute="leading" constant="15" id="Zeh-1s-2v5"/>
+                <constraint firstItem="5KN-1N-43F" firstAttribute="leading" secondItem="K7v-9n-SII" secondAttribute="leading" id="eSe-b6-xFO"/>
+                <constraint firstAttribute="bottom" secondItem="5KN-1N-43F" secondAttribute="bottom" id="gdW-Sn-Vy3"/>
+                <constraint firstItem="hO6-Iy-1id" firstAttribute="top" secondItem="LfC-J5-9Is" secondAttribute="bottom" constant="6" id="pEQ-Wf-kBg"/>
+                <constraint firstItem="5KN-1N-43F" firstAttribute="top" secondItem="5YH-Aj-JUZ" secondAttribute="bottom" constant="6" id="pP1-Uo-bq4"/>
+                <constraint firstItem="5YH-Aj-JUZ" firstAttribute="leading" secondItem="K7v-9n-SII" secondAttribute="leading" constant="15" id="uuT-jc-n3G"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="43X-NF-Cz9"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="resultTitleLabel" destination="5YH-Aj-JUZ" id="Pzk-QJ-EtW"/>
+                <outlet property="resultValueLabel" destination="hO6-Iy-1id" id="zlo-MY-2pL"/>
+                <outlet property="subtitleLabel" destination="C5T-HT-4xY" id="bdO-yP-CCU"/>
+                <outlet property="subtitleWrapper" destination="5KN-1N-43F" id="ln2-Ij-50O"/>
+                <outlet property="titleLabel" destination="LfC-J5-9Is" id="dpO-Mm-RlD"/>
+            </connections>
+            <point key="canvasLocation" x="311" y="294"/>
+        </view>
     </objects>
 </document>

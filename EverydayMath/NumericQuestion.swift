@@ -50,7 +50,7 @@ class NumericQuestion: Question {
     }    
 }
 
-class NumericQuestionConfiguration: QuestionConfiguration {
+class NumericQuestionConfiguration: QuestionConfiguration, SimpleResultConfiguration {
     let fromValue: Float
     let fromUnit: String
     let toValue: Float
@@ -76,5 +76,9 @@ class NumericQuestionConfiguration: QuestionConfiguration {
         self.maxCorrectValue = self.toValue + self.tolerance
         
         super.init(unboxer: unboxer)        
+    }
+    
+    func to() -> (value: Float, unit: String) {
+        return (toValue, toUnit)
     }
 }

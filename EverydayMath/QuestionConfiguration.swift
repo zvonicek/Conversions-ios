@@ -9,6 +9,11 @@
 import Foundation
 import Unbox
 
+typealias SimpleResult = (value: Float, unit: String)
+protocol SimpleResultConfiguration {
+    func to() -> SimpleResult
+}
+
 class QuestionConfiguration: Unboxable {
     var questionId: Int
     var fastTime: NSTimeInterval

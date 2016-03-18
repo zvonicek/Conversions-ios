@@ -37,7 +37,7 @@ class ScaleQuestion: Question {
     }
 }
 
-class ScaleQuestionConfiguration: QuestionConfiguration {
+class ScaleQuestionConfiguration: QuestionConfiguration, SimpleResultConfiguration {
     var question: String
     var scaleMin: Float
     var scaleMax: Float
@@ -54,5 +54,9 @@ class ScaleQuestionConfiguration: QuestionConfiguration {
         toUnit = unboxer.unbox("toUnit")
         
         super.init(unboxer: unboxer)
+    }
+    
+    func to() -> (value: Float, unit: String) {
+        return (correctValue, toUnit)
     }
 }
