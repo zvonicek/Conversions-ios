@@ -29,6 +29,8 @@
 		D08F52401BF1394A000F840B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F523F1BF1394A000F840B /* HeaderView.swift */; };
 		D08F52421BF13971000F840B /* GameListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F52411BF13971000F840B /* GameListCollectionViewCell.swift */; };
 		D08F52441BF15ED2000F840B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F52431BF15ED2000F840B /* Extensions.swift */; };
+		D093C7A61C9C188B00E6CA57 /* TaskRunResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093C7A51C9C188B00E6CA57 /* TaskRunResult.swift */; };
+		D093C7A81C9C18B900E6CA57 /* QuestionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093C7A71C9C18B900E6CA57 /* QuestionResult.swift */; };
 		D0986D3E1C9C104900E7D9D9 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0986D3D1C9C104900E7D9D9 /* NumberFormatter.swift */; };
 		D09EE9FC1C42A04D00B4FB31 /* CurrencyDragQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09EE9FB1C42A04D00B4FB31 /* CurrencyDragQuestionView.swift */; };
 		D09EE9FE1C42A05800B4FB31 /* CurrencyDragQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09EE9FD1C42A05800B4FB31 /* CurrencyDragQuestionView.xib */; };
@@ -110,6 +112,8 @@
 		D08F523F1BF1394A000F840B /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		D08F52411BF13971000F840B /* GameListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListCollectionViewCell.swift; sourceTree = "<group>"; };
 		D08F52431BF15ED2000F840B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D093C7A51C9C188B00E6CA57 /* TaskRunResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRunResult.swift; sourceTree = "<group>"; };
+		D093C7A71C9C18B900E6CA57 /* QuestionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionResult.swift; sourceTree = "<group>"; };
 		D0986D3D1C9C104900E7D9D9 /* NumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		D09EE9FB1C42A04D00B4FB31 /* CurrencyDragQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyDragQuestionView.swift; sourceTree = "<group>"; };
 		D09EE9FD1C42A05800B4FB31 /* CurrencyDragQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyDragQuestionView.xib; sourceTree = "<group>"; };
@@ -289,8 +293,10 @@
 			children = (
 				D0C0CC291C0CDAFA00D93B83 /* Configuration */,
 				D08F523B1BF1368D000F840B /* TaskRun.swift */,
-				D0C900FF1BEE8B9800A15F32 /* Question.swift */,
 				D02CE8861C4C5A6E0088E90A /* TaskRunLog.swift */,
+				D093C7A51C9C188B00E6CA57 /* TaskRunResult.swift */,
+				D0C900FF1BEE8B9800A15F32 /* Question.swift */,
+				D093C7A71C9C18B900E6CA57 /* QuestionResult.swift */,
 				A717F5B1396AE33225462317 /* Task.swift */,
 			);
 			name = Models;
@@ -525,6 +531,7 @@
 				D0C0CC141C0B4ED300D93B83 /* TaskOverViewController.swift in Sources */,
 				D08F52421BF13971000F840B /* GameListCollectionViewCell.swift in Sources */,
 				D021D9C91C8995980077FDBB /* AlamoPromise.swift in Sources */,
+				D093C7A61C9C188B00E6CA57 /* TaskRunResult.swift in Sources */,
 				D0C901041BEF7E0500A15F32 /* TaskViewController.swift in Sources */,
 				D0E2E0A11C27478B005E5B06 /* SortQuestionCollectionViewCell.swift in Sources */,
 				D0C901061BEF80E200A15F32 /* TaskListViewController.swift in Sources */,
@@ -536,6 +543,7 @@
 				D0C0CC261C0CDAE800D93B83 /* NumericQuestion.swift in Sources */,
 				D041FDAC1C8B26E800056D2D /* AboutViewController.swift in Sources */,
 				D0C901081BEF815800A15F32 /* LoadingViewController.swift in Sources */,
+				D093C7A81C9C18B900E6CA57 /* QuestionResult.swift in Sources */,
 				D02CE8871C4C5A6E0088E90A /* TaskRunLog.swift in Sources */,
 				D08F52401BF1394A000F840B /* HeaderView.swift in Sources */,
 				D0E2E09F1C2744B3005E5B06 /* SortQuestion.swift in Sources */,
