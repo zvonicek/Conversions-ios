@@ -23,7 +23,8 @@ enum LabelPosition {
     var labelPadding: CGFloat = 10.0
     var drawOuterSideToEdge = false
     
-    /// Right border padding to prevent trailing label overflow
+    /// border paddings to prevent trailing label overflow
+    var leftBorderPadding: CGFloat = 0.0
     var rightBorderPadding: CGFloat = 0.0
     
     private var contentRect: CGRect = CGRectZero
@@ -55,9 +56,9 @@ enum LabelPosition {
         }
         
         if labelPosition == .Bottom {
-            contentRect = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(0, 10, labelSize.height + labelPadding, 10 + rightBorderPadding))
+            contentRect = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(0, 10 + leftBorderPadding, labelSize.height + labelPadding, 10 + rightBorderPadding))
         } else {
-            contentRect = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(labelSize.height + labelPadding, 10, 0, 10 + rightBorderPadding))
+            contentRect = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(labelSize.height + labelPadding, 10 + leftBorderPadding, 0, 10 + rightBorderPadding))
         }
     }
     
@@ -122,8 +123,10 @@ enum LabelPosition {
     }
     
     override func drawRect(rect: CGRect) {
-        let startValue = Int(minValue * 100)
-        let endValue = Int(maxValue * 100)
+        let factor = maxValue-minValue < 1000 ? Float(100.0) : Float(1.0)
+        
+        let startValue = Int(minValue * CGFloat(factor))
+        let endValue = Int(maxValue * CGFloat(factor))
         let intervalSize = endValue - startValue
         
         let labelPositions = self.labelPositions(contentRect, labelWidth: labelSize.width, range: intervalSize)
@@ -149,7 +152,7 @@ enum LabelPosition {
                 CGContextStrokePath(context)
 
                 if labelPositions(index: i) {
-                    let number = String(format: "%g", Float(i) / 100.0)
+                    let number = String(format: "%g", Float(i) / factor)
                     drawLabel(contentRect, xPosition: xPosition, label: number, font: point.font)
                 }
             }

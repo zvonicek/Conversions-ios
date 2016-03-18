@@ -20,6 +20,11 @@ class ScaleQuestionView: UIView, TrackingScaleControlDelegate {
             self.scaleControl.maxValue = CGFloat(question.configuration.scaleMax)
             self.scaleControl.correctValue = CGFloat(question.configuration.correctValue)
             self.scaleControl.correctTolerance = CGFloat(question.configuration.correctTolerance)
+            
+            let trailingLabel = String(format: "%g", question.configuration.scaleMax)
+            self.scaleControl.rightBorderPadding = CGFloat(max(0, (trailingLabel.characters.count - 2) * 5))
+            let leadingLabel = String(format: "%g", question.configuration.scaleMin)
+            self.scaleControl.leftBorderPadding = CGFloat(max(0, (leadingLabel.characters.count - 2) * 5))
         }
     }
     
