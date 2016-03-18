@@ -39,6 +39,7 @@ class ClosedEndedQuestion: Question {
 
 class ClosedEndedQuestionConfiguration: QuestionConfiguration {
     let question: String
+    let image: UIImage?
     let answers: [ClosedEndedQuestionAnswerConfiguration]
     
     func correctAnswers() -> [ClosedEndedQuestionAnswerConfiguration] {
@@ -48,6 +49,7 @@ class ClosedEndedQuestionConfiguration: QuestionConfiguration {
     required init(unboxer: Unboxer) {
         question = unboxer.unbox("question")
         answers = unboxer.unbox("answers")
+        image = nil
         
         super.init(unboxer: unboxer)        
     }

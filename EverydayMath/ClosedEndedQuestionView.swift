@@ -13,6 +13,9 @@ import OALayoutAnchor
 class ClosedEndedQuestionView: UIView {
     @IBOutlet var topSpace: NSLayoutConstraint!
     @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var buttonsContainer: UIView!
+    @IBOutlet var imageContainerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var imageView: UIImageView!
     
     var answerButtons = [ClosedEndedButton]()
 
@@ -21,8 +24,9 @@ class ClosedEndedQuestionView: UIView {
     var stackView = TZStackView() {
         didSet {
             stackView.axis = .Vertical
+            stackView.distribution = .Fill
             stackView.alignment = .Center
-            stackView.spacing = 15
+            stackView.spacing = UIScreen.mainScreen().bounds.size.height == 480 ? 5 : 15
         }
     }
     
@@ -30,31 +34,40 @@ class ClosedEndedQuestionView: UIView {
         didSet {
             questionLabel.text = question.configuration.question
             
-            var buttons = [UIView()]
+            if let image = question.configuration.image {
+                imageView.image = image
+                imageContainerHeightConstraint.constant = 90
+            } else {
+                imageContainerHeightConstraint.constant = 0
+            }
+            
+            var stackViews =  [UIView]()
             answerButtons = [ClosedEndedButton]()
             
             for answerCfg in question.configuration.answers {
+                let height = UIScreen.mainScreen().bounds.size.height == 480 ? CGFloat(44) : CGFloat(50)
+                
                 let button = ClosedEndedButton(answerCfg: answerCfg)
                 button.translatesAutoresizingMaskIntoConstraints = false
                 button.addTarget(self, action: "answerSelected:", forControlEvents: UIControlEvents.TouchUpInside)
                 button.oa_widthAnchor.constraintEqualToConstant(CGRectGetWidth(self.frame) - 80).oa_active = true
-                button.oa_heightAnchor.constraintEqualToConstant(50).oa_active = true
-                buttons.append(button)
+                button.oa_heightAnchor.constraintEqualToConstant(height).oa_active = true
+                stackViews.append(button)
                 answerButtons.append(button)
             }
             
-            stackView = TZStackView(arrangedSubviews: buttons)            
+            stackView = TZStackView(arrangedSubviews: stackViews)            
             stackView.translatesAutoresizingMaskIntoConstraints = false
             
-            self.addSubview(stackView)
+            buttonsContainer.addSubview(stackView)
             let views: [String:AnyObject] = [
                 "questionLabel": questionLabel,
                 "stackView": stackView
             ]
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[stackView]|",
+            buttonsContainer.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[stackView]|",
                 options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-            self.addConstraint(NSLayoutConstraint(item: stackView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: questionLabel, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 5.0))
-            self.addConstraint(NSLayoutConstraint(item: stackView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: -120.0))
+            buttonsContainer.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[stackView]|",
+                options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         }
     }
     

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -23,22 +23,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="841-nT-GLe">
                     <rect key="frame" x="0.0" y="101" width="320" height="160"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Deb-K6-IOV">
-                            <rect key="frame" x="65" y="120" width="90" height="40"/>
-                            <color key="backgroundColor" white="0.91056924197408884" alpha="0.582763671875" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="50g-Nt-Wyb"/>
-                                <constraint firstAttribute="height" constant="40" id="iag-An-gxa"/>
-                                <constraint firstAttribute="width" constant="90" id="obw-gF-T8Z"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="50g-Nt-Wyb"/>
-                                </mask>
-                            </variation>
-                        </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is approximately" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTc-d0-495">
                             <rect key="frame" x="102" y="40" width="116" height="20"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
@@ -73,6 +57,23 @@
                                 </mask>
                             </variation>
                         </label>
+                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Deb-K6-IOV">
+                            <rect key="frame" x="67" y="120" width="90" height="40"/>
+                            <color key="backgroundColor" white="0.91056924197408884" alpha="0.582763671875" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="50g-Nt-Wyb"/>
+                                <constraint firstAttribute="height" constant="40" id="iag-An-gxa"/>
+                                <constraint firstAttribute="width" constant="90" id="obw-gF-T8Z"/>
+                            </constraints>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="50g-Nt-Wyb"/>
+                                </mask>
+                            </variation>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -186,6 +187,7 @@
                                 <constraint firstAttribute="height" constant="40" id="mWn-2L-UM7"/>
                                 <constraint firstAttribute="height" constant="30" id="yUh-9J-UsT"/>
                             </constraints>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <textInputTraits key="textInputTraits"/>
                             <variation key="default">
