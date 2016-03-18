@@ -223,6 +223,7 @@
                                     <constraint firstAttribute="width" constant="265" id="Lpo-9K-f0x"/>
                                     <constraint firstAttribute="height" constant="50" id="Q7N-We-FeO"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="3Jj-Vo-GaI" kind="show" id="yTL-ce-kAb"/>
@@ -518,7 +519,10 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="keC-0W-Jdh"/>
                                     <constraint firstAttribute="width" constant="120" id="yQW-LL-6lb"/>
                                 </constraints>
-                                <state key="normal" title="Continue"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.31764705879999999" green="0.72549019609999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="EcW-jr-v2h"/>
@@ -532,7 +536,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well done." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fjz-ge-p9g">
                                 <rect key="frame" x="20" y="242" width="560" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -558,8 +562,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="dce-mO-BTj"/>
                                 <exclude reference="kaF-xV-qvk"/>
+                                <exclude reference="dce-mO-BTj"/>
                             </mask>
                         </variation>
                     </view>
