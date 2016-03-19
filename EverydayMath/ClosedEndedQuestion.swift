@@ -37,7 +37,7 @@ class ClosedEndedQuestion: Question {
     }    
 }
 
-class ClosedEndedQuestionConfiguration: QuestionConfiguration, ImageQuestionConfiguration {
+class ClosedEndedQuestionConfiguration: QuestionConfiguration, ImageQuestionConfiguration, SimpleResultConfiguration {
     let question: String
     var image: UIImage?
     let imagePath: String?    
@@ -45,6 +45,11 @@ class ClosedEndedQuestionConfiguration: QuestionConfiguration, ImageQuestionConf
     
     func correctAnswers() -> [ClosedEndedQuestionAnswerConfiguration] {
         return answers.filter { $0.correct }
+    }
+    
+    func to() -> SimpleResult {
+        let answer = correctAnswers().map { $0.answer }.joinWithSeparator(", ")
+        return ("Correct answer is", answer)
     }
     
     required init(unboxer: Unboxer) {

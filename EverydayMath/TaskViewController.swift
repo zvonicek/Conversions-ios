@@ -147,10 +147,9 @@ extension TaskViewController: TaskRunDelegate {
     }
     
     func taskRun(taskRun: TaskRun, questionCompleted question: Question, index: Int, result: QuestionResult) {
-        var simpleResult: String?
+        var simpleResult: SimpleResult?
         if let config = question.config() as? SimpleResultConfiguration {
-            let res = config.to()
-            simpleResult = String(format: "%@ %@", NSNumberFormatter.formatter.stringFromNumber(res.value)!, res.unit)
+            simpleResult = config.to()
         }
         
         resultView = ResultView.instanceFromNib(simpleResult != nil)

@@ -56,7 +56,7 @@ class ScaleQuestionConfiguration: QuestionConfiguration, SimpleResultConfigurati
         super.init(unboxer: unboxer)
     }
     
-    func to() -> (value: Float, unit: String) {
-        return (correctValue, toUnit)
+    func to() -> SimpleResult {
+        return (nil, String(format: "%@ %@", NSNumberFormatter.formatter.stringFromNumber(correctValue)!, toUnit))
     }
 }

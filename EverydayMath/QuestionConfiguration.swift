@@ -14,10 +14,10 @@ protocol ImageQuestionConfiguration: class {
     var image: UIImage? { get set }
 }
 
-typealias SimpleResult = (value: Float, unit: String)
+typealias SimpleResult = (title: String?, value: String)
 protocol SimpleResultConfiguration {
     func to() -> SimpleResult
-}
+} 
 
 class QuestionConfiguration: Unboxable {
     var questionId: Int

@@ -78,7 +78,7 @@ class NumericQuestionConfiguration: QuestionConfiguration, SimpleResultConfigura
         super.init(unboxer: unboxer)        
     }
     
-    func to() -> (value: Float, unit: String) {
-        return (toValue, toUnit)
+    func to() -> SimpleResult {
+        return (nil, String(format: "%@ %@", NSNumberFormatter.formatter.stringFromNumber(toValue)!, toUnit))
     }
 }
