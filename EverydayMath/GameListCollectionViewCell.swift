@@ -13,6 +13,12 @@ class TaskListCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     var task: Task?
     
+    override func awakeFromNib() {
+        self.layer.borderWidth = 1.5
+        self.layer.cornerRadius = 4.0
+        self.layer.borderColor = UIColor(red: 133/255.0, green: 219/255.0, blue: 130/255.0, alpha: 1.0).CGColor
+    }
+    
     func configureForTask(game: Task) {
         self.label.text = game.name
         self.task = game

@@ -38,6 +38,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="SKT-CT-Fme"/>
                                 </connections>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to practise?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDx-05-2fB">
+                                <rect key="frame" x="158" y="86" width="285" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gq1-jy-5Lb">
                                 <rect key="frame" x="0.0" y="134" width="600" height="466"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -80,7 +86,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.72608123978758166" green="0.94839920343137252" blue="0.36146854575163395" alpha="0.45798561789772729" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.52839945874183014" green="0.90449218749999816" blue="0.58083001429738557" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="8OF-3y-gae" firstAttribute="top" secondItem="5ik-4N-bPX" secondAttribute="bottom" id="0OU-ek-YfU"/>
                                             <constraint firstItem="tmQ-gW-cSF" firstAttribute="centerX" secondItem="HdB-nf-hqp" secondAttribute="centerX" id="228-yl-rvq"/>
@@ -119,12 +125,6 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="iXG-Pw-Dx7"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to practise?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDx-05-2fB">
-                                <rect key="frame" x="158" y="86" width="285" height="26"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="NzE-Ur-rzJ" secondAttribute="trailing" id="73T-EE-b2J"/>
@@ -216,19 +216,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2NS-KS-k6a">
-                                <rect key="frame" x="168" y="530" width="265" height="50"/>
-                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="265" id="Lpo-9K-f0x"/>
-                                    <constraint firstAttribute="height" constant="50" id="Q7N-We-FeO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="3Jj-Vo-GaI" kind="show" id="yTL-ce-kAb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hk2-ST-hzK">
                                 <rect key="frame" x="10" y="24" width="32" height="32"/>
                                 <constraints>
@@ -257,6 +244,24 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2NS-KS-k6a">
+                                <rect key="frame" x="168" y="530" width="265" height="50"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="Lpo-9K-f0x"/>
+                                    <constraint firstAttribute="height" constant="50" id="Q7N-We-FeO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="3Jj-Vo-GaI" kind="show" id="yTL-ce-kAb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -523,6 +528,11 @@
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" red="0.31764705879999999" green="0.72549019609999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="EcW-jr-v2h"/>
