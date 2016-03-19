@@ -37,7 +37,7 @@ class APIClient {
                     throw Error.errorWithCode(1, failureReason: "JSON deserialization failed")
                 }
             }).then({ configuration in
-                let numQuestions = configuration.questions.flatMap({ $0 as? NumericQuestionConfiguration}).filter({ $0.imagePath != nil})
+                let numQuestions = configuration.questions.flatMap({ $0 as? ImageQuestionConfiguration }).filter({ $0.imagePath != nil})
                 
                 var imagePromises = [Promise<Void>]()
                 for numQuestion in numQuestions {

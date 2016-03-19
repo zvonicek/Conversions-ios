@@ -9,6 +9,11 @@
 import Foundation
 import Unbox
 
+protocol ImageQuestionConfiguration: class {
+    var imagePath: String? { get }
+    var image: UIImage? { get set }
+}
+
 typealias SimpleResult = (value: Float, unit: String)
 protocol SimpleResultConfiguration {
     func to() -> SimpleResult

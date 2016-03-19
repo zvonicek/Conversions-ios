@@ -37,9 +37,10 @@ class ClosedEndedQuestion: Question {
     }    
 }
 
-class ClosedEndedQuestionConfiguration: QuestionConfiguration {
+class ClosedEndedQuestionConfiguration: QuestionConfiguration, ImageQuestionConfiguration {
     let question: String
-    let image: UIImage?
+    var image: UIImage?
+    let imagePath: String?    
     let answers: [ClosedEndedQuestionAnswerConfiguration]
     
     func correctAnswers() -> [ClosedEndedQuestionAnswerConfiguration] {
@@ -49,7 +50,7 @@ class ClosedEndedQuestionConfiguration: QuestionConfiguration {
     required init(unboxer: Unboxer) {
         question = unboxer.unbox("question")
         answers = unboxer.unbox("answers")
-        image = nil
+        imagePath = unboxer.unbox("imagePath")
         
         super.init(unboxer: unboxer)        
     }
