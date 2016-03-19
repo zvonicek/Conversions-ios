@@ -13,11 +13,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pde-WB-bRi">
-                    <rect key="frame" x="8" y="79" width="359" height="29"/>
+                    <rect key="frame" x="8" y="69" width="359" height="27"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="29" id="THE-Ta-wDb"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
@@ -92,8 +92,8 @@
                 <constraint firstItem="QQ4-ZM-x9d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="bg7-qW-PTS"/>
                 <constraint firstItem="H0Q-IK-udL" firstAttribute="top" secondItem="1LF-lb-Rp5" secondAttribute="bottom" id="fU1-wP-3bC"/>
                 <constraint firstAttribute="bottom" secondItem="zAC-rb-1y4" secondAttribute="bottom" constant="100" id="gcO-Cf-7Ii"/>
-                <constraint firstItem="pde-WB-bRi" firstAttribute="top" secondItem="QQ4-ZM-x9d" secondAttribute="bottom" constant="50" id="jUd-l8-dkx"/>
-                <constraint firstItem="zg6-wJ-xgE" firstAttribute="top" secondItem="pde-WB-bRi" secondAttribute="bottom" constant="8" id="kZB-jF-vjG"/>
+                <constraint firstItem="pde-WB-bRi" firstAttribute="top" secondItem="QQ4-ZM-x9d" secondAttribute="bottom" constant="40" id="jUd-l8-dkx"/>
+                <constraint firstItem="zg6-wJ-xgE" firstAttribute="top" secondItem="pde-WB-bRi" secondAttribute="bottom" constant="20" id="kZB-jF-vjG"/>
                 <constraint firstItem="zAC-rb-1y4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mwk-Qh-c8D"/>
                 <constraint firstAttribute="trailing" secondItem="QQ4-ZM-x9d" secondAttribute="trailing" constant="8" id="mxd-OK-GcB"/>
                 <constraint firstItem="pde-WB-bRi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="pXM-oZ-Zt0"/>
@@ -105,6 +105,7 @@
             <connections>
                 <outlet property="buttonsContainer" destination="H0Q-IK-udL" id="7BI-Km-ZQ3"/>
                 <outlet property="imageContainerHeightConstraint" destination="37D-Vv-60E" id="07t-F6-l3c"/>
+                <outlet property="imageSpace" destination="kZB-jF-vjG" id="6Cd-F5-Sje"/>
                 <outlet property="imageView" destination="ckw-ye-B0f" id="BWU-9U-07G"/>
                 <outlet property="questionLabel" destination="pde-WB-bRi" id="wLV-lc-2bq"/>
                 <outlet property="topSpace" destination="jUd-l8-dkx" id="Ji4-bp-qLJ"/>

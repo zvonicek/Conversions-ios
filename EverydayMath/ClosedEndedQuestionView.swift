@@ -15,6 +15,7 @@ class ClosedEndedQuestionView: UIView {
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var buttonsContainer: UIView!
     @IBOutlet var imageContainerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var imageSpace: NSLayoutConstraint!
     @IBOutlet var imageView: UIImageView!
     
     var answerButtons = [ClosedEndedButton]()
@@ -88,6 +89,9 @@ class ClosedEndedQuestionView: UIView {
     override func awakeFromNib() {
         if UIScreen.mainScreen().bounds.size.height == 480 {
             topSpace.constant = 10
+        }
+        if UIScreen.mainScreen().bounds.size.width == 320 {
+            imageSpace.constant = 5
         }
     }
     
