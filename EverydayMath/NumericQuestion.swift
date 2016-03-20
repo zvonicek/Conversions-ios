@@ -42,7 +42,7 @@ class NumericQuestion: Question {
     }
     
     func answerLogForAnswer(answer: String) -> AnswerLog {
-        return ["answer": String(answer), "correctAnswer": String(configuration.toValue), "tolerance": String(configuration.tolerance)]
+        return ["answer": answer, "correctAnswer": configuration.toValue, "tolerance": configuration.tolerance]
     }
     
     func identifier() -> String {

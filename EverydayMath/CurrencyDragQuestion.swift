@@ -37,7 +37,7 @@ class CurrencyDragQuestion: Question {
     }
     
     func answerLogForAnswer(answer: Float, notes: [String]) -> AnswerLog {
-        return ["answer": String(answer), "notes": notes, "correctAnswer": configuration.toValue, "tolerance": configuration.tolerance]
+        return ["answer": answer, "notes": notes, "correctAnswer": configuration.toValue, "tolerance": configuration.tolerance]
     }
     
     func identifier() -> String {

@@ -29,7 +29,7 @@ class ScaleQuestion: Question {
     }
     
     func answerLogForAnswer(answer: Float) -> AnswerLog {
-        return ["answer": String(answer), "correctAnswer": String(configuration.correctValue), "tolerance": String(configuration.correctTolerance)]
+        return ["answer": answer, "correctAnswer": configuration.correctValue, "tolerance": configuration.correctTolerance]
     }
     
     func identifier() -> String {
