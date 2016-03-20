@@ -112,7 +112,7 @@ class TaskRun: QuestionDelegate {
             var speed: QuestionResultSpeed
             if self.config.showSpeedFeedback {
                 switch timeSpend {
-                case 0...question.config().fastTime:
+                case 0...question.config().targetTime:
                     speed = .Fast
                 default:
                     speed = .Slow

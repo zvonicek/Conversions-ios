@@ -21,14 +21,12 @@ protocol SimpleResultConfiguration {
 
 class QuestionConfiguration: Unboxable {
     var questionId: Int
-    var fastTime: NSTimeInterval
-    var neutralTime: NSTimeInterval
+    var targetTime: NSTimeInterval
     
     required init(unboxer: Unboxer) {
         questionId = unboxer.unbox("id")
-        fastTime = unboxer.unbox("fastTime")
-        neutralTime = unboxer.unbox("neutralTime")
-    }    
+        targetTime = unboxer.unbox("targetTime")
+    }
 }
 
 enum QuestionConfigurationType: String {
