@@ -110,9 +110,9 @@ class TaskRun: QuestionDelegate {
         var result: QuestionResult
         if let accuracy = accuracy where correct {
             var speed: QuestionResultSpeed
-            if self.config.showSpeedFeedback {
+            if let targetTime = question.config().targetTime where self.config.showSpeedFeedback {
                 switch timeSpend {
-                case 0...question.config().targetTime:
+                case 0...targetTime:
                     speed = .Fast
                 default:
                     speed = .Slow

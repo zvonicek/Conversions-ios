@@ -21,7 +21,7 @@ protocol SimpleResultConfiguration {
 
 class QuestionConfiguration: Unboxable {
     var questionId: Int
-    var targetTime: NSTimeInterval
+    var targetTime: NSTimeInterval?
     
     required init(unboxer: Unboxer) {
         questionId = unboxer.unbox("id")
