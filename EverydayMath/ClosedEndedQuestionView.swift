@@ -50,7 +50,7 @@ class ClosedEndedQuestionView: UIView {
                 
                 let button = ClosedEndedButton(answerCfg: answerCfg)
                 button.translatesAutoresizingMaskIntoConstraints = false
-                button.addTarget(self, action: "answerSelected:", forControlEvents: UIControlEvents.TouchUpInside)
+                button.addTarget(self, action: #selector(ClosedEndedQuestionView.answerSelected(_:)), forControlEvents: UIControlEvents.TouchUpInside)
                 button.oa_widthAnchor.constraintEqualToConstant(CGRectGetWidth(self.frame) - 80).oa_active = true
                 button.oa_heightAnchor.constraintEqualToConstant(height).oa_active = true
                 stackViews.append(button)

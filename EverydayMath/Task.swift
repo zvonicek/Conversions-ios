@@ -74,7 +74,9 @@ class TaskFactory {
         Task(identifier: "currency_czk", name: "CZK", category: .Currency, image: UIImage(named: "ic_currency")!),
     ]
     static var tasksByCategory: [TaskCategory: [Task]] = {
-        return  TaskFactory.tasks.reduce([:]) { (var dict, var task: Task) -> Dictionary<TaskCategory, Array<Task>> in
+        return  TaskFactory.tasks.reduce([:]) { (dict, task: Task) -> Dictionary<TaskCategory, Array<Task>> in
+            var dict = dict
+            
             if var it = dict[task.category] {
                 it.append(task)
                 dict[task.category] = it
@@ -86,7 +88,9 @@ class TaskFactory {
         }
     }()
     static var categories: [TaskCategory] = {
-        return TaskFactory.tasks.reduce([], combine: { (var arr: [TaskCategory], var task: Task) -> [TaskCategory] in
+        return TaskFactory.tasks.reduce([], combine: { (arr: [TaskCategory], task: Task) -> [TaskCategory] in
+            var arr = arr
+            
             if !arr.contains(task.category) {
                 arr.append(task.category)
             }

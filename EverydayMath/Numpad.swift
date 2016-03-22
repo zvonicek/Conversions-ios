@@ -82,7 +82,7 @@ class NumpadView: UIView {
     
     func initialize() {
         for button in numberButtons {
-            button.addTarget(self, action: "didTapOnButton:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: #selector(NumpadView.didTapOnButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             self.addSubview(button)
         }
     }

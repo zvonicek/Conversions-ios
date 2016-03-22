@@ -11,7 +11,7 @@ import SEDraggable
 
 class NoteDraggable: SEDraggable {
     var config: CurrencyDragQuestionConfigurationNote!
-    lazy var tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap")
+    lazy var tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(NoteDraggable.handleTap))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,7 +57,7 @@ class CurrencyDragQuestionView: UIView {
                     draggable.tag = index
                     addDraggableToFrom(draggable)
                 }
-                index++
+                index += 1
             }
         }
     }

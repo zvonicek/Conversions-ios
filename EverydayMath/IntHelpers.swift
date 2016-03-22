@@ -25,7 +25,7 @@ extension Int {
         
         var counter = 0
         while number % 10 == 0 {
-            counter++
+            counter += 1
             number /= 10
         }
         

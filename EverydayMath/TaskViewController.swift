@@ -19,7 +19,7 @@ class TaskViewController: UIViewController {
     
     lazy var dimView: UIView = {
         let view = UIView()
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: "continueGame")
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TaskViewController.continueGame))
         view.addGestureRecognizer(gestureRecognizer)
         return view
     }()
@@ -171,7 +171,7 @@ extension TaskViewController: TaskRunDelegate {
         resultView.setFailureWithMessage(NSLocalizedString("Try it again with hint", comment: "Try it again with hint"), subtitle: NSLocalizedString("Tap to try it again", comment: "Tap to try it again"), result: nil)
         resultView.finalResult = false
         showResultView {
-            self.performSelector("continueGame", withObject: nil, afterDelay: 0.8)
+            self.performSelector(#selector(TaskViewController.continueGame), withObject: nil, afterDelay: 0.8)
         }
     }
     
