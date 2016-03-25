@@ -155,6 +155,14 @@ class TaskViewController: UIViewController {
         }
     }
     
+    func getResultView(showResult: Bool) -> ResultView {
+        let view = ResultView.instanceFromNib(showResult)
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TaskViewController.continueGame))
+        view.addGestureRecognizer(gestureRecognizer)
+        
+        return view
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destionation = segue.destinationViewController as? TaskCompletedViewController, let taskRun = sender as? TaskRun where segue.identifier == "completedSegue" {
             destionation.taskRun = taskRun
@@ -176,7 +184,7 @@ extension TaskViewController: TaskRunDelegate {
             simpleResult = config.to()
         }
         
-        resultView = ResultView.instanceFromNib(simpleResult != nil)
+        resultView = getResultView(simpleResult != nil)
         
         if result.correct() {
             resultView.setSuccessWithMessage(result.message(), result: simpleResult)
@@ -191,7 +199,7 @@ extension TaskViewController: TaskRunDelegate {
     }
     
     func taskRun(taskRun: TaskRun, questionGaveSecondTry task: Question, index: Int) {
-        resultView = ResultView.instanceFromNib(false)
+        resultView = getResultView(false)
         resultView.setFailureWithMessage(NSLocalizedString("Try it again with hint", comment: "Try it again with hint"), subtitle: NSLocalizedString("Tap to try it again", comment: "Tap to try it again"), result: nil)
         resultView.finalResult = false
         showResultView {
