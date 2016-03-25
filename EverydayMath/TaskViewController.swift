@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 class TaskViewController: UIViewController {
     var taskRun: TaskRun?
@@ -62,6 +63,9 @@ class TaskViewController: UIViewController {
             topBar.progressView.components = taskRun.questions.count
         }
         taskRun?.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TaskViewController.applicationDidEnterBackground), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TaskViewController.applicationWillEnterForeground), name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -77,11 +81,30 @@ class TaskViewController: UIViewController {
         pauseView.frame = self.view.frame
     }
     
+    func applicationDidEnterBackground() {
+        if let taskRun = taskRun {
+            taskRun.pause()
+            
+            if !taskRun.finished {
+                let task = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler({})
+                taskRun.log.aborted = true
+                APIClient.uploadTaskRunLog(taskRun.log).then {
+                    UIApplication.sharedApplication().endBackgroundTask(task)
+                }
+            }
+        }
+    }
+    
+    func applicationWillEnterForeground() {
+        taskRun?.resume()
+    }
+    
     @IBAction func pauseGame() {
         self.pauseView.alpha = 0.0
         self.view.addSubview(self.pauseView)
         UIView.animateWithDuration(0.2) { () -> Void in
             self.pauseView.alpha = 1.0
+            self.taskRun?.pause()
         }
     }
     
@@ -90,6 +113,7 @@ class TaskViewController: UIViewController {
             self.pauseView.alpha = 0.0
             }) { _ -> Void in
                 self.pauseView.removeFromSuperview()
+                self.taskRun?.resume()
         }
     }
     

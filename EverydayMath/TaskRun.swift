@@ -27,6 +27,9 @@ class TaskRun: QuestionDelegate {
     var currentQuestionPresentationDate: NSDate?
     var currentQuestionSecondTry = false
     
+    var pausedDate: NSDate?
+    var pausedDuration = NSTimeInterval(0)
+    
     var delegate: TaskRunDelegate?
     
     var running = false
@@ -52,9 +55,14 @@ class TaskRun: QuestionDelegate {
     
     func pause() {
         running = false
+        pausedDate = NSDate()
     }
     
     func resume() {
+        if let pausedDate = self.pausedDate {
+            pausedDuration += NSDate().timeIntervalSinceDate(pausedDate)
+        }
+        
         running = true
     }
     
@@ -71,6 +79,7 @@ class TaskRun: QuestionDelegate {
             currentQuestionIndex = index
             currentQuestionPresentationDate = NSDate()
             currentQuestionSecondTry = false
+            pausedDuration = NSTimeInterval(0)
         } else {
             finishTaskRun()
         }
@@ -105,7 +114,8 @@ class TaskRun: QuestionDelegate {
             return
         }
         
-        let timeSpend = NSDate().timeIntervalSinceDate(currentQuestionPresentationDate)
+        let timeSpend = NSDate().timeIntervalSinceDate(currentQuestionPresentationDate) - pausedDuration
+        print(timeSpend)
         
         var result: QuestionResult
         if let accuracy = accuracy where correct {
