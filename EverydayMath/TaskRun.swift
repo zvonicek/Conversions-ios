@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 // MARK: TaskRun protocols
 protocol TaskRunDelegate {
@@ -29,6 +30,8 @@ class TaskRun: QuestionDelegate {
     
     var pausedDate: NSDate?
     var pausedDuration = NSTimeInterval(0)
+    
+    var logUploadPromise: Promise<Void>?
     
     var delegate: TaskRunDelegate?
     
@@ -86,19 +89,19 @@ class TaskRun: QuestionDelegate {
     }
     
     private func abortTaskRun() {
+        self.log.aborted = true
+        logUploadPromise = APIClient.uploadTaskRunLog(self.log)
+        
         finished = true
         delegate?.taskRunAborted(self)
-        
-        self.log.aborted = true
-        APIClient.uploadTaskRunLog(self.log)
     }
     
-    private func finishTaskRun() {
+    func finishTaskRun() {
+        self.log.aborted = false
+        logUploadPromise = APIClient.uploadTaskRunLog(self.log)
+        
         finished = true
         delegate?.taskRunCompleted(self)
-        
-        self.log.aborted = false
-        APIClient.uploadTaskRunLog(self.log)
     }
     
     // MARK: TaskDelegate

@@ -251,7 +251,7 @@
                                     <constraint firstAttribute="width" constant="265" id="Lpo-9K-f0x"/>
                                     <constraint firstAttribute="height" constant="50" id="Q7N-We-FeO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -528,17 +528,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGG-VS-Ki2">
-                                <rect key="frame" x="185" y="530" width="230" height="50"/>
+                                <rect key="frame" x="168" y="530" width="265" height="50"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8LT-XS-Ge7"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="EcW-jr-v2h"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="keC-0W-Jdh"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="265" id="keC-0W-Jdh"/>
                                     <constraint firstAttribute="width" constant="120" id="yQW-LL-6lb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Continue">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Play again">
                                     <color key="titleColor" red="0.31764705879999999" green="0.72549019609999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -552,14 +555,27 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="close" destination="SGw-ad-Bh0" eventType="touchUpInside" id="3aF-9W-bt8"/>
-                                    <action selector="dismiss" destination="sa7-j2-TI0" eventType="touchUpInside" id="g5h-EL-uLG"/>
+                                    <action selector="playAgain" destination="sa7-j2-TI0" eventType="touchUpInside" id="tVh-uZ-Fyt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfO-HT-bJG">
+                                <rect key="frame" x="10" y="24" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="DxX-gd-hA4"/>
+                                    <constraint firstAttribute="height" constant="32" id="wcS-Kz-bes"/>
+                                </constraints>
+                                <color key="tintColor" red="0.54901960780000003" green="0.82352941180000006" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="ic_cross_black"/>
+                                <connections>
+                                    <action selector="dismiss" destination="sa7-j2-TI0" eventType="touchUpInside" id="88T-uy-abm"/>
+                                    <action selector="pauseGame" destination="3Jj-Vo-GaI" eventType="touchUpInside" id="HTz-W6-rOY"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.47450980390000003" green="0.78039215689999997" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oGG-VS-Ki2" firstAttribute="centerX" secondItem="GFH-p6-6eh" secondAttribute="centerX" id="5le-lC-XB2"/>
+                            <constraint firstItem="rfO-HT-bJG" firstAttribute="top" secondItem="GFH-p6-6eh" secondAttribute="topMargin" constant="24" id="6CY-fn-gEb"/>
                             <constraint firstItem="c6Y-bU-nJV" firstAttribute="leading" secondItem="GFH-p6-6eh" secondAttribute="leadingMargin" id="8SN-GH-z4k"/>
                             <constraint firstItem="Fjz-ge-p9g" firstAttribute="leading" secondItem="GFH-p6-6eh" secondAttribute="leadingMargin" id="GDT-aP-V4x"/>
                             <constraint firstItem="Mvb-Sh-kCk" firstAttribute="top" secondItem="oGG-VS-Ki2" secondAttribute="bottom" constant="20" id="H9P-54-aPc"/>
@@ -567,17 +583,21 @@
                             <constraint firstItem="c6Y-bU-nJV" firstAttribute="centerX" secondItem="GFH-p6-6eh" secondAttribute="centerX" id="dce-mO-BTj"/>
                             <constraint firstItem="Fjz-ge-p9g" firstAttribute="centerX" secondItem="GFH-p6-6eh" secondAttribute="centerX" id="kaF-xV-qvk"/>
                             <constraint firstItem="c6Y-bU-nJV" firstAttribute="top" secondItem="Fjz-ge-p9g" secondAttribute="bottom" constant="8" id="pzF-PV-Jj8"/>
+                            <constraint firstItem="rfO-HT-bJG" firstAttribute="leading" secondItem="GFH-p6-6eh" secondAttribute="leading" constant="10" id="sVP-qx-59Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fjz-ge-p9g" secondAttribute="trailing" id="tlm-5i-cud"/>
+                            <constraint firstItem="rfO-HT-bJG" firstAttribute="top" secondItem="7dC-8d-1m6" secondAttribute="bottom" constant="2" id="xdr-Dw-bTE"/>
                             <constraint firstItem="c6Y-bU-nJV" firstAttribute="trailing" secondItem="GFH-p6-6eh" secondAttribute="trailingMargin" id="yTl-tw-Ty4"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="xdr-Dw-bTE"/>
                                 <exclude reference="kaF-xV-qvk"/>
                                 <exclude reference="dce-mO-BTj"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="playAgainButton" destination="oGG-VS-Ki2" id="WGI-3K-zW9"/>
                         <outlet property="subtitleLabel" destination="c6Y-bU-nJV" id="AtB-cM-rX7"/>
                         <outlet property="titleLabel" destination="Fjz-ge-p9g" id="h0V-lM-V0m"/>
                     </connections>
@@ -646,6 +666,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_cross_black" width="13" height="13"/>
         <image name="ic_cross_white" width="13" height="13"/>
         <image name="ic_mass" width="85" height="85"/>
     </resources>

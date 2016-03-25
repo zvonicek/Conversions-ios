@@ -10,9 +10,19 @@ import UIKit
 import PromiseKit
 
 class TaskViewController: UIViewController {
-    var taskRun: TaskRun?
+    var taskRun: TaskRun? {
+        didSet {
+            topBar?.progressView.components = taskRun!.questions.count
+            taskRun!.delegate = self
+            
+            if let currentQuestionView = currentQuestionView {
+                currentQuestionView.removeFromSuperview()
+                self.currentQuestionView = nil
+            }
+        }
+    }
     
-    @IBOutlet var topBar: TaskHeaderView!
+    @IBOutlet var topBar: TaskHeaderView?
     @IBOutlet var taskView: UIView!
     @IBOutlet var pauseView: UIView!
     
@@ -59,10 +69,7 @@ class TaskViewController: UIViewController {
         dimView.backgroundColor = UIColor(white: 0.0, alpha: 0.2)
         dimView.alpha = 0.0
         
-        if let taskRun = taskRun {
-            topBar.progressView.components = taskRun.questions.count
-        }
-        taskRun?.delegate = self
+        topBar!.progressView.components = taskRun!.questions.count
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TaskViewController.applicationDidEnterBackground), name: UIApplicationDidEnterBackgroundNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TaskViewController.applicationWillEnterForeground), name: UIApplicationWillEnterForegroundNotification, object: nil)
@@ -73,7 +80,7 @@ class TaskViewController: UIViewController {
             taskRun.start()
         }
     }
-    
+        
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -194,7 +201,7 @@ extension TaskViewController: TaskRunDelegate {
         resultView.finalResult = true
         
         showResultView {
-            self.topBar.progressView.updateStateForComponent(index, state: result.progressViewState())
+            self.topBar!.progressView.updateStateForComponent(index, state: result.progressViewState())
         }
     }
     

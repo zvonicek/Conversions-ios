@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 class TaskCompletedViewController: UIViewController {
 
@@ -14,6 +15,7 @@ class TaskCompletedViewController: UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
+    @IBOutlet var playAgainButton: UIButton!
     
     override func viewDidLoad() {
         if let taskRun = taskRun {
@@ -21,6 +23,27 @@ class TaskCompletedViewController: UIViewController {
             let message = result.message()
             titleLabel.text = message.title
             subtitleLabel.text = message.subtitle
+        }
+        
+    }
+    
+    @IBAction func playAgain() {
+        playAgainButton.setTitle("Loading", forState: UIControlState.Normal)
+        playAgainButton.enabled = false
+        
+        firstly {
+            return self.taskRun!.logUploadPromise ?? Promise()
+        }.then {
+            return APIClient.getConfigurationForTask(self.taskRun!.task)
+        }.then { taskConfiguration -> Void in
+            let presenting = self.presentingViewController as! TaskViewController
+            try presenting.taskRun = self.taskRun!.task.run(taskConfiguration)
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }.error { error in
+            let alert = UIAlertController.alertControllerWithError(error as NSError, handler: { action -> Void in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     

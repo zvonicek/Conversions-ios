@@ -44,7 +44,7 @@ class ProgressView: UIView {
             states = [ProgressViewState](count: components, repeatedValue: .Empty)
         }
     }
-    var states: [ProgressViewState] = [.Incorrect, .CorrectA, .CorrectB, .CorrectC, .CorrectB, .CorrectA, .Incorrect, .CorrectB, .Empty, .Empty]
+    var states: [ProgressViewState] = []
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -60,7 +60,7 @@ class ProgressView: UIView {
     
     func initialize() {
         self.backgroundColor = UIColor.clearColor()
-    }
+    }    
     
     func updateStateForComponent(index: Int, state: ProgressViewState) {
         states[index] = state
