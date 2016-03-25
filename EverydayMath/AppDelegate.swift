@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import HockeySDK
+import Flurry_iOS_SDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // HockeySDK initialization
+        BITHockeyManager.sharedHockeyManager().configureWithIdentifier("683cde887313447f9a381507ffc5e8de")
+        BITHockeyManager.sharedHockeyManager().crashManager.crashManagerStatus = BITCrashManagerStatus.AutoSend
+        BITHockeyManager.sharedHockeyManager().startManager()
+        
+        // Flurry initialization
+        Flurry.startSession("7N6Y6CGYNWXVXHPBKFMH");
+        
         return true
     }
 
