@@ -13,5 +13,8 @@ pod 'Unbox', '~> 1.3'
 pod 'Alamofire', '~> 3.2'
 pod 'PromiseKit', '~> 3.0'
 
+pod 'Flurry-iOS-SDK', '~> 7.5'
+pod 'HockeySDK', '~> 3.8', :subspecs => ['CrashOnlyLib']
+
 end
 

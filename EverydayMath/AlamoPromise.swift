@@ -31,7 +31,7 @@ extension Alamofire.Request {
     func promiseImage() -> Promise<UIImage?> {
         return Promise { resolve, reject in
             self.validate()
-                .responseData({ response in
+                .responseData(completionHandler: { response in
                     switch response.result {
                     case .Success(let data):
                         resolve(UIImage(data: data))
