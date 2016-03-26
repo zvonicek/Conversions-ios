@@ -21,19 +21,13 @@
                     <rect key="frame" x="8" y="176" width="304" height="110"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="110" id="hrX-JH-dR1"/>
-                        <constraint firstAttribute="width" constant="304" id="lBJ-Qe-pQ6"/>
+                        <constraint firstAttribute="height" constant="110" id="hrX-JH-dR1">
+                            <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="304" id="lBJ-Qe-pQ6">
+                            <variation key="heightClass=regular-widthClass=regular" constant="450"/>
+                        </constraint>
                     </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJs-dG-4Ro" customClass="SEDraggableLocation">
-                    <rect key="frame" x="8" y="294" width="304" height="208"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="304" id="o4X-Ye-3sG"/>
-                    </constraints>
-                    <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
-                        <rect key="frame" x="132" y="274" width="304" height="0.0"/>
-                    </variation>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7v-wb-ywI">
                     <rect key="frame" x="35" y="510" width="250" height="50"/>
@@ -61,7 +55,7 @@
                             <exclude reference="du7-Zv-B7U"/>
                         </mask>
                     </variation>
-                    <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                    <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                         <rect key="frame" x="84" y="282" width="400" height="60"/>
                     </variation>
                     <connections>
@@ -86,6 +80,38 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJs-dG-4Ro">
+                    <rect key="frame" x="8" y="294" width="304" height="208"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQX-Vm-omE" customClass="SEDraggableLocation">
+                            <rect key="frame" x="0.0" y="0.0" width="304" height="200"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="xH8-rG-eTH">
+                                    <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                                </constraint>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="vQX-Vm-omE" firstAttribute="leading" secondItem="PJs-dG-4Ro" secondAttribute="leading" id="1DE-oa-UFD"/>
+                        <constraint firstAttribute="bottom" secondItem="vQX-Vm-omE" secondAttribute="bottom" priority="750" id="NIQ-UV-uiY"/>
+                        <constraint firstItem="vQX-Vm-omE" firstAttribute="top" secondItem="PJs-dG-4Ro" secondAttribute="top" id="ey9-cB-Avg"/>
+                        <constraint firstAttribute="width" constant="304" id="o4X-Ye-3sG">
+                            <variation key="heightClass=regular-widthClass=regular" constant="450"/>
+                        </constraint>
+                        <constraint firstAttribute="trailing" secondItem="vQX-Vm-omE" secondAttribute="trailing" id="tJg-jo-TZF"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="NIQ-UV-uiY"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                        <rect key="frame" x="132" y="274" width="304" height="0.0"/>
+                    </variation>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.36862745099999999" green="0.39607843139999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -125,7 +151,7 @@
                 </mask>
             </variation>
             <connections>
-                <outlet property="fromDragView" destination="PJs-dG-4Ro" id="5ZH-fi-q5A"/>
+                <outlet property="fromDragView" destination="vQX-Vm-omE" id="TNe-8i-hjT"/>
                 <outlet property="fromValueLabel" destination="yXZ-6w-ZP4" id="KNs-lv-hJL"/>
                 <outlet property="taskVerticalSpace" destination="qSk-IY-De3" id="nds-3v-VRc"/>
                 <outlet property="toDragView" destination="0hZ-aJ-Kn4" id="ZAQ-y6-SXv"/>
