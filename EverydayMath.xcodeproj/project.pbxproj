@@ -43,7 +43,6 @@
 		D0A477411C45CA6600649EB3 /* NumericHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A477401C45CA6600649EB3 /* NumericHintView.swift */; };
 		D0A4774C1C46DCCA00649EB3 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A4774B1C46DCCA00649EB3 /* CustomColors.swift */; };
 		D0B138991BFE8EFB00BEA9C7 /* GameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B138981BFE8EFB00BEA9C7 /* GameHeaderView.swift */; };
-		D0C0CC141C0B4ED300D93B83 /* TaskOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0CC131C0B4ED300D93B83 /* TaskOverViewController.swift */; };
 		D0C0CC161C0B541400D93B83 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0CC151C0B541400D93B83 /* GradientView.swift */; };
 		D0C0CC181C0B992B00D93B83 /* ClosedEndedQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0CC171C0B992B00D93B83 /* ClosedEndedQuestionView.swift */; };
 		D0C0CC1A1C0B993500D93B83 /* ClosedEndedQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C0CC191C0B993500D93B83 /* ClosedEndedQuestionView.xib */; };
@@ -125,7 +124,6 @@
 		D0A477401C45CA6600649EB3 /* NumericHintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericHintView.swift; sourceTree = "<group>"; };
 		D0A4774B1C46DCCA00649EB3 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		D0B138981BFE8EFB00BEA9C7 /* GameHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHeaderView.swift; sourceTree = "<group>"; };
-		D0C0CC131C0B4ED300D93B83 /* TaskOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskOverViewController.swift; sourceTree = "<group>"; };
 		D0C0CC151C0B541400D93B83 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D0C0CC171C0B992B00D93B83 /* ClosedEndedQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedEndedQuestionView.swift; sourceTree = "<group>"; };
 		D0C0CC191C0B993500D93B83 /* ClosedEndedQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClosedEndedQuestionView.xib; sourceTree = "<group>"; };
@@ -326,7 +324,6 @@
 				D0C901031BEF7E0500A15F32 /* TaskViewController.swift */,
 				D0C901051BEF80E200A15F32 /* TaskListViewController.swift */,
 				D0C901071BEF815800A15F32 /* LoadingViewController.swift */,
-				D0C0CC131C0B4ED300D93B83 /* TaskOverViewController.swift */,
 				D0A10E271C0FB15C007F0D91 /* TaskCompletedViewController.swift */,
 				D041FDAB1C8B26E800056D2D /* AboutViewController.swift */,
 			);
@@ -414,6 +411,7 @@
 				TargetAttributes = {
 					D0C900DD1BEDFE3400A15F32 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 5VWB99DS38;
 					};
 				};
 			};
@@ -524,7 +522,6 @@
 				D013F4E11C16423900DF8769 /* ScaleQuestion.swift in Sources */,
 				D08F523C1BF1368D000F840B /* TaskRun.swift in Sources */,
 				D013F4DF1C163B7400DF8769 /* ScaleQuestionView.swift in Sources */,
-				D0C0CC141C0B4ED300D93B83 /* TaskOverViewController.swift in Sources */,
 				D08F52421BF13971000F840B /* GameListCollectionViewCell.swift in Sources */,
 				D021D9C91C8995980077FDBB /* AlamoPromise.swift in Sources */,
 				D093C7A61C9C188B00E6CA57 /* TaskRunResult.swift in Sources */,
@@ -675,6 +672,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -684,8 +683,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.petrzvonicek.conversions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "EverydayMath/EverydayMath-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -695,6 +696,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -704,7 +707,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.petrzvonicek.conversions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "EverydayMath/EverydayMath-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

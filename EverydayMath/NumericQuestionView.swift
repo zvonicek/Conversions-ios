@@ -116,6 +116,7 @@ class NumericQuestionView: UIView, NumpadViewDelegate {
     
     private func showHintView(view: UIView) {
         view.translatesAutoresizingMaskIntoConstraints = true
+        view.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         self.addSubview(view)
         view.frame = CGRectMake(0, -view.frame.size.height, self.frame.width, view.frame.size.height)
         UIView.animateWithDuration(0.4, delay: 1.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -31,13 +31,20 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="304" id="o4X-Ye-3sG"/>
                     </constraints>
+                    <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                        <rect key="frame" x="132" y="274" width="304" height="0.0"/>
+                    </variation>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7v-wb-ywI">
                     <rect key="frame" x="35" y="510" width="250" height="50"/>
                     <color key="backgroundColor" red="1" green="0.74117647060000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="250" id="43U-pK-yxp"/>
-                        <constraint firstAttribute="height" constant="50" id="P1E-FW-Okz"/>
+                        <constraint firstAttribute="width" constant="250" id="43U-pK-yxp">
+                            <variation key="heightClass=regular-widthClass=regular" constant="400"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="50" id="P1E-FW-Okz">
+                            <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                        </constraint>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="du7-Zv-B7U"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -53,6 +60,9 @@
                         <mask key="constraints">
                             <exclude reference="du7-Zv-B7U"/>
                         </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                        <rect key="frame" x="84" y="282" width="400" height="60"/>
                     </variation>
                     <connections>
                         <action selector="verify" destination="iN0-l3-epB" eventType="touchUpInside" id="25Q-SZ-2rF"/>

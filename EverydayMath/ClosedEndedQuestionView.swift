@@ -46,13 +46,9 @@ class ClosedEndedQuestionView: UIView {
             answerButtons = [ClosedEndedButton]()
             
             for answerCfg in question.configuration.answers {
-                let height = UIScreen.mainScreen().bounds.size.height == 480 ? CGFloat(44) : CGFloat(50)
-                
                 let button = ClosedEndedButton(answerCfg: answerCfg)
                 button.translatesAutoresizingMaskIntoConstraints = false
                 button.addTarget(self, action: #selector(ClosedEndedQuestionView.answerSelected(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-                button.oa_widthAnchor.constraintEqualToConstant(CGRectGetWidth(self.frame) - 80).oa_active = true
-                button.oa_heightAnchor.constraintEqualToConstant(height).oa_active = true
                 stackViews.append(button)
                 answerButtons.append(button)
             }
@@ -82,7 +78,14 @@ class ClosedEndedQuestionView: UIView {
         super.layoutSubviews()
         
         for button in answerButtons {
-            button.oa_widthAnchor.constraintEqualToConstant(CGRectGetWidth(self.frame) - 80).oa_active = true
+            if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.Regular && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Regular {
+                button.oa_heightAnchor.constraintEqualToConstant(60).oa_active = true
+                button.oa_widthAnchor.constraintEqualToConstant(450).oa_active = true
+            } else {
+                let height = UIScreen.mainScreen().bounds.size.height == 480 ? CGFloat(44) : CGFloat(50)
+                button.oa_heightAnchor.constraintEqualToConstant(height).oa_active = true
+                button.oa_widthAnchor.constraintEqualToConstant(CGRectGetWidth(self.frame) - 80).oa_active = true
+            }
         }
     }
     

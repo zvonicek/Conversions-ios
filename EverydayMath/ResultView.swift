@@ -17,12 +17,18 @@ class ResultView: UIView {
     var finalResult = true
     
     class func instanceFromNib(showResult: Bool) -> ResultView {
+        let view: ResultView
         if showResult {
-            return UINib(nibName: "ResultView", bundle: nil).instantiateWithOwner(nil, options: nil)[1] as! ResultView
+            view = UINib(nibName: "ResultView", bundle: nil).instantiateWithOwner(nil, options: nil)[1] as! ResultView
         } else {
-            return UINib(nibName: "ResultView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! ResultView
+            view =  UINib(nibName: "ResultView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! ResultView
         }
-    }
+        
+        view.translatesAutoresizingMaskIntoConstraints = true
+        view.autoresizingMask = [UIViewAutoresizing.FlexibleTopMargin, UIViewAutoresizing.FlexibleWidth]
+        
+        return view
+    }        
     
     func setSuccessWithMessage(message: String, result: SimpleResult?) {
         self.backgroundColor = UIColor(red: 189/255.0, green: 242/255.0, blue: 149/255.0, alpha: 1.0)

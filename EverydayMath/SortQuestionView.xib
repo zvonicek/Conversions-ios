@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,8 +21,12 @@
                     <rect key="frame" x="35" y="422" width="250" height="50"/>
                     <color key="backgroundColor" red="1" green="0.74117647058823533" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="250" id="FRO-pC-CES"/>
-                        <constraint firstAttribute="height" constant="50" id="uVN-oT-zGp"/>
+                        <constraint firstAttribute="width" constant="250" id="FRO-pC-CES">
+                            <variation key="heightClass=regular-widthClass=regular" constant="400"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="50" id="uVN-oT-zGp">
+                            <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                        </constraint>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Check">
@@ -40,6 +44,11 @@
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="FE4-oa-LO8">
                     <rect key="frame" x="0.0" y="69" width="320" height="345"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="400" id="PLA-t5-KZb">
+                            <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                        </constraint>
+                    </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="plG-13-ZvZ" customClass="DraggableCollectionViewFlowLayout">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="50" height="30"/>
@@ -49,6 +58,16 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="draggable" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="PLA-t5-KZb"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="PLA-t5-KZb"/>
+                        </mask>
+                    </variation>
                     <connections>
                         <outlet property="dataSource" destination="Xv3-E6-d0d" id="cFn-9o-jTg"/>
                         <outlet property="delegate" destination="Xv3-E6-d0d" id="4kP-bN-CPw"/>
@@ -66,12 +85,26 @@
                 <constraint firstAttribute="bottom" secondItem="bld-rf-DWx" secondAttribute="bottom" constant="8" id="NyA-2e-ZAe"/>
                 <constraint firstItem="WS8-r7-egh" firstAttribute="leading" secondItem="Xv3-E6-d0d" secondAttribute="leading" constant="8" id="VX1-Hu-2qk"/>
                 <constraint firstAttribute="trailing" secondItem="FE4-oa-LO8" secondAttribute="trailing" id="q7G-H3-Qn9"/>
+                <constraint firstItem="FE4-oa-LO8" firstAttribute="centerX" secondItem="Xv3-E6-d0d" secondAttribute="centerX" id="zkE-z1-oc8"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="zkE-z1-oc8"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="constraints">
+                    <exclude reference="7gt-up-ZB9"/>
+                    <exclude reference="q7G-H3-Qn9"/>
+                    <include reference="zkE-z1-oc8"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="collectionView" destination="FE4-oa-LO8" id="hal-wY-d9t"/>
                 <outlet property="taskLabel" destination="WS8-r7-egh" id="6uW-GY-MNQ"/>
             </connections>
+            <point key="canvasLocation" x="227" y="301"/>
         </view>
     </objects>
 </document>
