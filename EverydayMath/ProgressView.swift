@@ -42,6 +42,7 @@ class ProgressView: UIView {
     var components: Int = 10 {
         didSet {
             states = [ProgressViewState](count: components, repeatedValue: .Empty)
+            setNeedsDisplay()
         }
     }
     var states: [ProgressViewState] = []

@@ -81,6 +81,10 @@ class NumericQuestionView: UIView, NumpadViewDelegate {
         }, completion: { _ -> Void in
             self.delegate?.questionCompleted(self.question, correct: true, accuracy: self.question.isPrecise(number) ? .Precise : .Imprecise, answer: self.question.answerLogForAnswer(NSNumberFormatter.formatter.stringFromNumber(number)!))
         })
+        
+        UIView.transitionWithView(self.toValueTextField, duration: 0.9, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+            self.toValueTextField.textColor = UIColor.blackColor()
+            }, completion: nil)
     }
     
     private func handleFailure() {
