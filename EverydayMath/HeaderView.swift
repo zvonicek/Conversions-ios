@@ -22,12 +22,17 @@ class HeaderView: UICollectionReusableView {
         
         self.backgroundColor = UIColor(red: 102/255.0, green: 194/255.0, blue: 73/255.0, alpha: 1.0)
         self.addSubview(label)
-        self.addTopBorderWithColor(UIColor.whiteColor(), width: 1.0)
-        self.addBottomBorderWithColor(UIColor.whiteColor(), width: 1.0)
     }
     
     func configure(category: TaskCategory) {
         self.label.text = category.description().uppercaseString
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.addTopBorderWithColor(UIColor.whiteColor(), width: 1.0)
+        self.addBottomBorderWithColor(UIColor.whiteColor(), width: 1.0)
     }
     
     required init?(coder aDecoder: NSCoder) {

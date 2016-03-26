@@ -36,10 +36,9 @@ class NumericQuestionView: UIView, NumpadViewDelegate {
         
         if UIScreen.mainScreen().bounds.size.height == 480 {
             numpad.oa_heightAnchor.constraintEqualToConstant(180).oa_active = true
-//            middleView.oa_heightAnchor.constraintEqualToConstant(80).oa_active = true
         }
     }
-    
+        
     func numpadDidTapOnButton(button: NumpadButton) {
         switch button.type {
         case .Numeric(let value):
@@ -118,5 +117,5 @@ class NumericQuestionView: UIView, NumpadViewDelegate {
         UIView.animateWithDuration(0.4, delay: 1.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
             view.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)
             }, completion: nil)
-    }
+    }    
 }

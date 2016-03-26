@@ -331,10 +331,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="6RW-Pf-slE"/>
                                     <constraint firstItem="vGT-1W-cKM" firstAttribute="leading" secondItem="PeN-4t-Rv4" secondAttribute="leading" constant="10" id="Iuu-4N-HfV"/>
-                                    <constraint firstItem="vGT-1W-cKM" firstAttribute="top" secondItem="PeN-4t-Rv4" secondAttribute="top" constant="20" id="MM5-CZ-gFD"/>
                                     <constraint firstItem="VVU-cR-ci0" firstAttribute="top" secondItem="PeN-4t-Rv4" secondAttribute="top" constant="20" id="Mkb-IS-T9v"/>
                                     <constraint firstItem="vGT-1W-cKM" firstAttribute="leading" secondItem="PeN-4t-Rv4" secondAttribute="leadingMargin" constant="2" id="aMT-gM-Gyi"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="VVU-cR-ci0" secondAttribute="trailing" constant="42" id="kRe-Vw-esE"/>
+                                    <constraint firstItem="vGT-1W-cKM" firstAttribute="centerY" secondItem="VVU-cR-ci0" secondAttribute="centerY" id="vf1-HK-ETw"/>
                                     <constraint firstItem="VVU-cR-ci0" firstAttribute="leading" secondItem="vGT-1W-cKM" secondAttribute="trailing" constant="8" id="xFS-CS-bCd"/>
                                 </constraints>
                                 <variation key="default">
@@ -354,6 +354,7 @@
                             </constraint>
                             <constraint firstItem="mJm-L0-jI6" firstAttribute="top" secondItem="pZF-P8-5RZ" secondAttribute="bottom" id="46N-yP-YYW"/>
                             <constraint firstItem="pZF-P8-5RZ" firstAttribute="leading" secondItem="Tnb-ll-4yc" secondAttribute="leading" id="AEE-8F-6L0">
+                                <variation key="heightClass=regular" constant="100"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
                             <constraint firstItem="PeN-4t-Rv4" firstAttribute="top" secondItem="Tnb-ll-4yc" secondAttribute="top" id="BgU-Vf-TCl"/>
@@ -362,6 +363,7 @@
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="PeN-4t-Rv4" secondAttribute="trailing" id="FoV-P9-WTu"/>
                             <constraint firstAttribute="trailing" secondItem="pZF-P8-5RZ" secondAttribute="trailing" id="PLz-69-b7d">
+                                <variation key="heightClass=regular" constant="100"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
                             <constraint firstItem="pZF-P8-5RZ" firstAttribute="leading" secondItem="Tnb-ll-4yc" secondAttribute="leading" id="VZn-ej-yTa"/>
@@ -373,7 +375,9 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="pZF-P8-5RZ" secondAttribute="trailing" id="gpp-Uo-G85"/>
-                            <constraint firstItem="PeN-4t-Rv4" firstAttribute="top" secondItem="Tnb-ll-4yc" secondAttribute="top" id="rKU-jO-ksn"/>
+                            <constraint firstItem="PeN-4t-Rv4" firstAttribute="top" secondItem="Tnb-ll-4yc" secondAttribute="top" id="rKU-jO-ksn">
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
                             <constraint firstItem="PeN-4t-Rv4" firstAttribute="top" secondItem="Tnb-ll-4yc" secondAttribute="top" id="w9T-cI-0Fl"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -484,10 +488,26 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="DCV-H2-s9V" firstAttribute="leading" secondItem="JBa-Eb-gfc" secondAttribute="leading" constant="150" id="FXe-dS-0kY"/>
                                     <constraint firstItem="DCV-H2-s9V" firstAttribute="centerY" secondItem="JBa-Eb-gfc" secondAttribute="centerY" id="ISu-Du-OOb"/>
+                                    <constraint firstAttribute="trailing" secondItem="DCV-H2-s9V" secondAttribute="trailing" constant="150" id="awn-42-AO1"/>
                                     <constraint firstAttribute="trailing" secondItem="DCV-H2-s9V" secondAttribute="trailing" id="cDP-c9-eXE"/>
                                     <constraint firstItem="DCV-H2-s9V" firstAttribute="leading" secondItem="JBa-Eb-gfc" secondAttribute="leading" id="pzs-xh-61p"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FXe-dS-0kY"/>
+                                        <exclude reference="awn-42-AO1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="FXe-dS-0kY"/>
+                                        <include reference="awn-42-AO1"/>
+                                        <exclude reference="cDP-c9-eXE"/>
+                                        <exclude reference="pzs-xh-61p"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <blurEffect style="light"/>
                         </visualEffectView>

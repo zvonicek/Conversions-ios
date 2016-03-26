@@ -60,6 +60,7 @@ class ProgressView: UIView {
     
     func initialize() {
         self.backgroundColor = UIColor.clearColor()
+        self.contentMode = UIViewContentMode.Redraw
     }    
     
     func updateStateForComponent(index: Int, state: ProgressViewState) {

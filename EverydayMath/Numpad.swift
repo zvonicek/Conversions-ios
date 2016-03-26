@@ -81,6 +81,8 @@ class NumpadView: UIView {
     }
     
     func initialize() {
+        self.contentMode = UIViewContentMode.Redraw
+        
         for button in numberButtons {
             button.addTarget(self, action: #selector(NumpadView.didTapOnButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             self.addSubview(button)
@@ -138,39 +140,5 @@ class NumpadView: UIView {
             CGContextDrawLinearGradient (context, horizontalGradient, CGPointMake(0, 0), CGPointMake(rect.size.width, 0), CGGradientDrawingOptions(rawValue: 0))
             CGContextRestoreGState(context);
         }
-        
-//        // 1
-//        var currentContext = UIGraphicsGetCurrentContext()
-//        
-//        // 2
-//        CGContextSaveGState(currentContext);
-//        
-//        // 3
-//        var colorSpace = CGColorSpaceCreateDeviceRGB()
-//        
-//        // 4
-//        var startColor = UIColor(white: 1.0, alpha: 1.0)
-//        var startColorComponents = CGColorGetComponents(startColor.CGColor)
-//        var endColor = UIColor(white: 1.0, alpha: 0.0);
-//        var endColorComponents = CGColorGetComponents(endColor.CGColor)
-//        
-//        // 5
-//        var colorComponents:[CGFloat] = [1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0]
-//        
-//        // 6
-//        var locations:[CGFloat] = [0.0, 1.0]
-//        
-//        // 7
-//        var gradient = CGGradientCreateWithColorComponents(colorSpace,&colorComponents,&locations,2)
-//        
-//        var startPoint = CGPointMake(0, 10)
-//        var endPoint = CGPointMake(320, 10)
-//        
-//        // 8
-//        CGContextDrawLinearGradient(currentContext,gradient,startPoint,endPoint, CGGradientDrawingOptions(rawValue: 0))
-//        
-//        // 9
-//        CGContextRestoreGState(currentContext);
-    }
-    
+    }    
 }

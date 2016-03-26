@@ -43,6 +43,7 @@ enum LabelPosition {
     
     func initialize() {
         self.backgroundColor = UIColor.clearColor()
+        self.contentMode = UIViewContentMode.Redraw
     }
     
     override func layoutSubviews() {
