@@ -10,6 +10,14 @@ import UIKit
 
 class AboutViewController: UIViewController, UINavigationBarDelegate {
 
+    override func viewDidLoad() {
+        
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
         return UIBarPosition.TopAttached
     }
