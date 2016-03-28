@@ -38,10 +38,12 @@ class LoadingViewController: UIViewController {
     }
     
     func configurationLoaded(config: TaskConfiguration) {
-        startButton.setTitle("Play", forState: UIControlState.Normal)
-        startButton.enabled = true
-        
-        self.config = config
+        if config.questions.count > 0 {
+            startButton.setTitle("Play", forState: UIControlState.Normal)
+            startButton.enabled = true
+            
+            self.config = config
+        }
     }
     
     @IBAction func dismiss() {
