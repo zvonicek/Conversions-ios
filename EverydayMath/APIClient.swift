@@ -26,6 +26,7 @@ class APIClient {
         }
         
         let language = NSLocale.preferredLanguages().first ?? ""
+        let isMetric = NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem) as! Bool
         let versionNumber = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
         
         return Alamofire.request(.GET, self.baseUrl + "/api/start", parameters: ["task": task.identifier, "user": user, "language":language, "metric": isMetric, "version": versionNumber], encoding: ParameterEncoding.URL)
@@ -49,7 +50,9 @@ class APIClient {
                 
                 return when(imagePromises).then({ a in
                     return configuration
-                })
+                }).recover { err in
+                    return configuration
+                }
             })
     }
     
