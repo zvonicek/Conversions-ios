@@ -28,9 +28,7 @@ class ConversionsUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testScreen1() {
-        let app = XCUIApplication()
-        
+    func testScreen1() {        
         snapshot("01MainScreen")
     }
     
