@@ -105,11 +105,10 @@ class ClosedEndedQuestionView: UIView {
         if !question.configuration.correctAnswers().contains(sender.answerCfg) {
             // selected answer is not correct
             correct = false
-            
-            let correctButtons = answerButtons.filter { $0.answerCfg.correct }
-            if let correctButton = correctButtons.first {
-                markButton(correctButton)
-            }
+        }
+        
+        for button in answerButtons {
+            markButton(button)
         }
         
         delegate?.questionCompleted(question, correct: correct, accuracy: .NonApplicable, answer: self.question.answerLogForAnswer(sender.answerCfg.answer))
