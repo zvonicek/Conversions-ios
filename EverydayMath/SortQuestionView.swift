@@ -16,7 +16,6 @@ class SortQuestionView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
     
     var rows = [SortQuestionItem]()
     var result: [Bool]?
-    var hintVisibleRows = [SortQuestionItem]()
     var question: SortQuestion! {
         didSet {
             taskLabel.text = question.configuration.question
@@ -78,7 +77,11 @@ class SortQuestionView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
                 // reorder rows
                 self.rows = correctQuestions
                 self.collectionView.updateSection(0, withChangeSet: indexChanges)
-                }, completion: nil)
+            }) { _ in
+                // show explanation labels
+                let cells = self.collectionView.visibleCells() as! [SortQuestionCollectionViewCell]
+                let _ = cells.map({ $0.showExplanation() })
+            }
         }
     }
     
@@ -113,8 +116,7 @@ class SortQuestionView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let item = rows[indexPath.row]
-        return CGSizeMake(CGRectGetWidth(self.collectionView.frame) - 80, hintVisibleRows.contains(item) ? 90 : 60)
+        return CGSizeMake(CGRectGetWidth(self.collectionView.frame) - 80, 60)
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
@@ -134,22 +136,7 @@ class SortQuestionView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
     // MARK - UICollectionViewDataSource_Draggable
     
     func collectionView(collectionView: UICollectionView, canMoveItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if result == nil {
-            return true
-        }
-        
-        let item = rows[indexPath.row]
-        if let index = hintVisibleRows.indexOf(item) {
-            hintVisibleRows.removeAtIndex(index)
-        } else {
-            hintVisibleRows.append(item)
-        }
-        
-        self.collectionView.performBatchUpdates({ () -> Void in
-            self.collectionView.reloadItemsAtIndexPaths([indexPath])
-        }, completion: nil)
-        
-        return false
+        return true
     }
     
     func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {

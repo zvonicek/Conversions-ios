@@ -12,6 +12,11 @@ class SortQuestionCollectionViewCell: UICollectionViewCell {
     @IBOutlet var label: UILabel!
     @IBOutlet var hintLabel: UILabel!
     
+    @IBOutlet var labelTopConstraint: NSLayoutConstraint!
+    @IBOutlet var hintLabelTopConstraint: NSLayoutConstraint!
+    
+    var item: SortQuestionItem?
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -26,7 +31,22 @@ class SortQuestionCollectionViewCell: UICollectionViewCell {
     }
     
     func configureForItem(item: SortQuestionItem) {
+        self.item = item
+        
         self.label.text = item.title
-        self.hintLabel.text = item.errorExplanation
+        if let explanation = item.errorExplanation {
+            self.hintLabel.text = "= \(explanation)"
+        }
+    }
+    
+    func showExplanation() {
+        if let item = self.item where item.errorExplanation != nil {
+            self.labelTopConstraint.constant = 8
+            self.hintLabelTopConstraint.constant = 28
+            
+            UIView.animateWithDuration(0.3) {
+                self.layoutIfNeeded()
+            }
+        }
     }
 }

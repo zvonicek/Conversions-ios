@@ -28,7 +28,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 kg = 1,000 grams" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yY-nB-pgn">
                     <rect key="frame" x="0.0" y="60" width="372" height="30"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="s4c-E0-eAL"/>
                     </constraints>
@@ -41,7 +41,7 @@
             <constraints>
                 <constraint firstItem="Wiz-cu-1Gn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="17" id="50T-gV-dLB"/>
                 <constraint firstItem="8yY-nB-pgn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YeP-E2-CCa"/>
-                <constraint firstItem="8yY-nB-pgn" firstAttribute="top" secondItem="Wiz-cu-1Gn" secondAttribute="bottom" constant="19" id="qs8-h9-dR4"/>
+                <constraint firstItem="8yY-nB-pgn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="dY3-xJ-j2V"/>
                 <constraint firstAttribute="trailing" secondItem="Wiz-cu-1Gn" secondAttribute="trailing" constant="8" id="wzf-Lo-Dqt"/>
                 <constraint firstAttribute="trailing" secondItem="8yY-nB-pgn" secondAttribute="trailing" id="zPh-8f-qYZ"/>
                 <constraint firstItem="Wiz-cu-1Gn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="19" id="zwU-Na-vcg"/>
@@ -49,9 +49,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="hintLabel" destination="8yY-nB-pgn" id="ibB-Jg-qb5"/>
+                <outlet property="hintLabelTopConstraint" destination="dY3-xJ-j2V" id="otX-ER-v1o"/>
                 <outlet property="label" destination="Wiz-cu-1Gn" id="fHI-4a-m9J"/>
+                <outlet property="labelTopConstraint" destination="zwU-Na-vcg" id="Bol-Zi-K96"/>
             </connections>
-            <point key="canvasLocation" x="168" y="-28.5"/>
+            <point key="canvasLocation" x="214" y="30.5"/>
         </view>
     </objects>
 </document>
