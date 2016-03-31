@@ -19,7 +19,7 @@ class TaskCompletedViewController: UIViewController {
     
     override func viewDidLoad() {
         if let taskRun = taskRun {
-            let result = TaskRunResult.createFromRunLog(taskRun.log.questionResults)
+            let result = TaskRunResult.createFromRunLog(taskRun.log)
             let message = result.message()
             titleLabel.text = message.title
             subtitleLabel.text = message.subtitle

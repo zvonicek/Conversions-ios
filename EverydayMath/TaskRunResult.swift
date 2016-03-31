@@ -12,15 +12,10 @@ typealias taskCompletedMessage = (title: String, subtitle: String)
 enum TaskRunResult {
     case Result(incorrectRatio: Float, slowRatio: Float, impreciseRatio: Float, preciseRatio: Float)
     
-    static func createFromRunLog(runLog: [QuestionRunLog]) -> TaskRunResult {
-        let correctQuestions = runLog.filter { $0.result.correct() }
+    static func createFromRunLog(runLog: TaskRunLog) -> TaskRunResult {
+        let summary = runLog.taskRunSummary()
         
-        let incorrectRatio = 1 - (Float(correctQuestions.count) / Float(runLog.count))
-        let slowRatio = Float(correctQuestions.filter { if case .Correct(_, .Slow) = $0.result { return true } else { return false }}.count) / Float(correctQuestions.count)
-        let impreciseRatio = Float(correctQuestions.filter { if case .Correct(.Imprecise, _) = $0.result { return true } else { return false }}.count) / Float(correctQuestions.count)
-        let preciseRatio = Float(correctQuestions.filter { if case .Correct(.Precise, _) = $0.result { return true } else { return false }}.count) / Float(correctQuestions.count)
-        
-        return .Result(incorrectRatio: incorrectRatio, slowRatio: slowRatio, impreciseRatio: impreciseRatio, preciseRatio: preciseRatio)
+        return .Result(incorrectRatio: summary.incorrectRatio, slowRatio: summary.slowRatio, impreciseRatio: summary.impreciseRatio, preciseRatio: summary.preciseRatio)
     }
     
     func message() -> taskCompletedMessage {
