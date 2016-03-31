@@ -40,9 +40,13 @@ class NumericQuestionView: UIView, NumpadViewDelegate {
     }
         
     func numpadDidTapOnButton(button: NumpadButton) {
+        let NUMPAD_MAX_LENGTH = 6
+        
         switch button.type {
         case .Numeric(let value):
-            toValueTextField.text = (toValueTextField.text ?? "") + "\(value)"
+            if toValueTextField.text?.characters.count < NUMPAD_MAX_LENGTH {
+                toValueTextField.text = (toValueTextField.text ?? "") + "\(value)"
+            }
         case .Enter:
             let floatValue = (toValueTextField.text ?? "" as NSString).floatValue
             verifyResult(floatValue)
