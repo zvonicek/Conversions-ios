@@ -25,7 +25,7 @@ class ClosedEndedButton: UIButton {
         }
         
         hintLabel.textAlignment = NSTextAlignment.Center
-        hintLabel.textColor = UIColor.whiteColor()
+        hintLabel.textColor = UIColor.darkGrayColor()
         self.addSubview(hintLabel)
         
         self.setTitle(answerCfg.answer, forState: UIControlState.Normal)
