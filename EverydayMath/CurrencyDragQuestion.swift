@@ -59,7 +59,7 @@ struct CurrencyDragQuestionConfigurationNote: Unboxable {
     }
 }
 
-class CurrencyDragQuestionConfiguration: QuestionConfiguration, SimpleResultConfiguration {
+class CurrencyDragQuestionConfiguration: QuestionConfiguration, SimpleResultConfiguration, HintQuestionConfiguration {
     let fromValue: Float
     let fromCurrency: String
     let toValue: Float

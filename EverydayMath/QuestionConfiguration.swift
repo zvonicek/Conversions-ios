@@ -14,6 +14,10 @@ protocol ImageQuestionConfiguration: class {
     var image: UIImage? { get set }
 }
 
+protocol HintQuestionConfiguration: class {
+    var hint: HintConfiguration? { get }
+}
+
 typealias SimpleResult = (title: String?, value: String)
 protocol SimpleResultConfiguration {
     func to() -> SimpleResult

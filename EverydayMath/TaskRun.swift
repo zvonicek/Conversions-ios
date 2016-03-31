@@ -106,7 +106,7 @@ class TaskRun: QuestionDelegate {
     
     // MARK: TaskDelegate
     
-    func questionCompleted(question: Question, correct: Bool, accuracy: QuestionResultAccuracy?, answer: [String: AnyObject]) {
+    func questionCompleted(question: Question, correct: Bool, accuracy: QuestionResultAccuracy?, var answer: [String: AnyObject]) {
         guard let index = questions.indexOf(question) else {
             assertionFailure("task was not found")
             return
@@ -137,6 +137,10 @@ class TaskRun: QuestionDelegate {
             result = QuestionResult.Correct(accuracy, speed)
         } else {
             result = QuestionResult.Incorrect
+        }
+        
+        if let config = question.config() as? HintQuestionConfiguration where currentQuestionSecondTry {
+            answer["hintType"] = config.hint?.description()
         }
         
         let taskLog = QuestionRunLog(questionId: question.config().questionId, result: result, time: timeSpend, hintShown: currentQuestionSecondTry, answer: answer)

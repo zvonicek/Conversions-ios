@@ -50,7 +50,7 @@ class NumericQuestion: Question {
     }    
 }
 
-class NumericQuestionConfiguration: QuestionConfiguration, SimpleResultConfiguration, ImageQuestionConfiguration {
+class NumericQuestionConfiguration: QuestionConfiguration, SimpleResultConfiguration, ImageQuestionConfiguration, HintQuestionConfiguration {
     let fromValue: Float
     let fromUnit: String
     let toValue: Float

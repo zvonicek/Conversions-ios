@@ -12,6 +12,7 @@ import Unbox
 protocol HintConfiguration: Unboxable {
     init(unboxer: Unboxer)
     func getHintView() -> UIView
+    func description() -> String
 }
 
 enum HintType: String {
@@ -67,6 +68,10 @@ struct ScaleHintConfiguration: HintConfiguration {
         view.configure(topMin: topMin, topMax: topMax, topUnit: topUnit, bottomMin: bottomMin, bottomMax: bottomMax, bottomUnit: bottomUnit)                
         return view
     }
+    
+    func description() -> String {
+        return "scale"
+    }
 }
 
 struct TextHintConfiguration: HintConfiguration {
@@ -84,5 +89,9 @@ struct TextHintConfiguration: HintConfiguration {
         let view = NumericHintView.instanceFromNib()
         view.label.text = text
         return view
+    }
+    
+    func description() -> String {
+        return "text"
     }
 }
