@@ -45,12 +45,16 @@ class TaskRunLog {
     func taskRunSummary() -> TaskRunSummary {
         let correctQuestions = self.questionResults.filter { $0.result.correct() }
 
-        let incorrectRatio = 1 - (Float(correctQuestions.count) / Float(self.questionResults.count))
-        let slowRatio = Float(correctQuestions.filter { if case .Correct(_, .Slow) = $0.result { return true } else { return false }}.count) / Float(correctQuestions.count)
-        let impreciseRatio = Float(correctQuestions.filter { if case .Correct(.Imprecise, _) = $0.result { return true } else { return false }}.count) / Float(correctQuestions.count)
-        let preciseRatio = Float(correctQuestions.filter { if case .Correct(.Precise, _) = $0.result { return true } else { return false }}.count) / Float(correctQuestions.count)
-        
-        return (incorrectRatio, slowRatio, impreciseRatio, preciseRatio)
+        if correctQuestions.count == 0 {
+            return (1, 0, 0, 0)
+        } else {
+            let incorrectRatio = 1 - (Float(correctQuestions.count) / Float(self.questionResults.count))
+            let slowRatio = Float(correctQuestions.filter { if case .Correct(_, .Slow) = $0.result { return true } else { return false }}.count) / Float(correctQuestions.count)
+            let impreciseRatio = Float(correctQuestions.filter { if case .Correct(.Imprecise, _) = $0.result { return true } else { return false }}.count) / Float(correctQuestions.count)
+            let preciseRatio = Float(correctQuestions.filter { if case .Correct(.Precise, _) = $0.result { return true } else { return false }}.count) / Float(correctQuestions.count)
+            
+            return (incorrectRatio, slowRatio, impreciseRatio, preciseRatio)
+        }
     }
     
     func serialize() -> [String: AnyObject] {
