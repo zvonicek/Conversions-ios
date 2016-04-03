@@ -106,7 +106,7 @@ class TaskRun: QuestionDelegate {
     
     // MARK: TaskDelegate
     
-    func questionCompleted(question: Question, correct: Bool, accuracy: QuestionResultAccuracy?, var answer: [String: AnyObject]) {
+    func questionCompleted(question: Question, correct: Bool, accuracy: QuestionResultAccuracy?, answer: [String: AnyObject]) {
         guard let index = questions.indexOf(question) else {
             assertionFailure("task was not found")
             return
@@ -118,7 +118,6 @@ class TaskRun: QuestionDelegate {
         }
         
         let timeSpend = NSDate().timeIntervalSinceDate(currentQuestionPresentationDate) - pausedDuration
-        print(timeSpend)
         
         var result: QuestionResult
         if let accuracy = accuracy where correct {
@@ -139,6 +138,7 @@ class TaskRun: QuestionDelegate {
             result = QuestionResult.Incorrect
         }
         
+        var answer = answer
         if let config = question.config() as? HintQuestionConfiguration where currentQuestionSecondTry {
             answer["hintType"] = config.hint?.description()
         }
