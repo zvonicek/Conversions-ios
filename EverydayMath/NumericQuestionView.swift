@@ -112,7 +112,7 @@ class NumericQuestionView: UIView, NumpadViewDelegate {
             self.toValueTextField.backgroundColor = UIColor.errorColor()
             self.toValueTextField.backgroundColor = color
             }, completion: { _ -> Void in
-                self.toValueTextField.text = NSNumberFormatter.formatter.stringFromNumber(self.question.configuration.toValue)!
+                self.toValueTextField.text = NSNumberFormatter.integerFormatter.stringFromNumber(self.question.configuration.toValue)!
         })
         
         self.delegate?.questionCompleted(self.question, correct: false, accuracy: nil, answer: self.question.answerLogForAnswer(NSNumberFormatter.formatter.stringFromNumber(number)!))

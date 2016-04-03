@@ -16,4 +16,13 @@ extension NSNumberFormatter {
         formatter.maximumFractionDigits = 3
         return formatter
     }()
+    
+    @nonobjc public static let integerFormatter: NSNumberFormatter = {
+        let formatter = NSNumberFormatter()
+        formatter.minimumIntegerDigits = 1
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 0
+        return formatter
+    }()
+    
 }
