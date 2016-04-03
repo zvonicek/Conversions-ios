@@ -55,7 +55,7 @@ class Task {
 
 class TaskFactory {
     static let tasks: [Task] = [
-//        Task(identifier: "test", name: "Imperial", category: .Length, image: UIImage(named: "ic_length")!),
+//        Task(identifier: "test", name: "TEST", category: .Length, image: UIImage(named: "ic_length")!),
         
         Task(identifier: "length_i", name: "Imperial", category: .Length, image: UIImage(named: "ic_length")!),
         Task(identifier: "length_m", name: "Metric", category: .Length, image: UIImage(named: "ic_length")!),
