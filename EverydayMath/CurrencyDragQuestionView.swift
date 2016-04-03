@@ -38,6 +38,7 @@ class NoteDraggable: SEDraggable {
 
 class CurrencyDragQuestionView: UIView {
     @IBOutlet var taskVerticalSpace: NSLayoutConstraint!
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var fromValueLabel: UILabel!
     @IBOutlet var toDragView: SEDraggableLocation!
     @IBOutlet var fromDragView: SEDraggableLocation!
@@ -47,6 +48,7 @@ class CurrencyDragQuestionView: UIView {
     
     var question: CurrencyDragQuestion! {
         didSet {
+            titleLabel.text = String(format: NSLocalizedString("Drag the notes to estimate the conversion of %@ to %@", comment: "Drag task title"), question.configuration.fromCurrency, question.configuration.toCurrency)
             fromValueLabel.text = String(format: "%@ %@", NSNumberFormatter.formatter.stringFromNumber(question.configuration.fromValue)!, question.configuration.fromCurrency)
             var index = 0
             for note in question.configuration.availableNotes {

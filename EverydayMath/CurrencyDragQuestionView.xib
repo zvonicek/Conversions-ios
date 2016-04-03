@@ -154,6 +154,7 @@
                 <outlet property="fromDragView" destination="vQX-Vm-omE" id="TNe-8i-hjT"/>
                 <outlet property="fromValueLabel" destination="yXZ-6w-ZP4" id="KNs-lv-hJL"/>
                 <outlet property="taskVerticalSpace" destination="qSk-IY-De3" id="nds-3v-VRc"/>
+                <outlet property="titleLabel" destination="8rB-ed-dsu" id="dYV-Ci-aff"/>
                 <outlet property="toDragView" destination="0hZ-aJ-Kn4" id="ZAQ-y6-SXv"/>
             </connections>
             <point key="canvasLocation" x="434" y="350"/>
