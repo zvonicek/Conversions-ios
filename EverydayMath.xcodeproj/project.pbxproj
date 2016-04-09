@@ -162,6 +162,7 @@
 		D0C901051BEF80E200A15F32 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		D0C901071BEF815800A15F32 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		D0C901091BEF8B6300A15F32 /* EverydayMath-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EverydayMath-Bridging-Header.h"; sourceTree = "<group>"; };
+		D0DEE7D61CB96156008966CF /* TaskResultPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TaskResultPlayground.playground; sourceTree = "<group>"; };
 		D0E2E08B1C272D5A005E5B06 /* SortQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortQuestionView.swift; sourceTree = "<group>"; };
 		D0E2E08F1C272D8C005E5B06 /* SortQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortQuestionView.xib; sourceTree = "<group>"; };
 		D0E2E09E1C2744B3005E5B06 /* SortQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortQuestion.swift; sourceTree = "<group>"; };
@@ -315,6 +316,7 @@
 				D0E34F2F1C32D2B300E7AB97 /* ObjcExtensions.h */,
 				D0E34F301C32D2B300E7AB97 /* ObjcExtensions.m */,
 				D08F52431BF15ED2000F840B /* Extensions.swift */,
+				D0DEE7D61CB96156008966CF /* TaskResultPlayground.playground */,
 			);
 			path = EverydayMath;
 			sourceTree = "<group>";
@@ -768,6 +770,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "9a5ff954-a0af-4fde-9747-db999fe3e473";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -815,7 +818,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.petrzvonicek.conversions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "9a5ff954-a0af-4fde-9747-db999fe3e473";
 				SWIFT_OBJC_BRIDGING_HEADER = "EverydayMath/EverydayMath-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
