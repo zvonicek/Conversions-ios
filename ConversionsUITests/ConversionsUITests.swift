@@ -34,9 +34,9 @@ class ConversionsUITests: XCTestCase {
     
     func testScreen2() {
         let app = XCUIApplication()
-        NSThread.sleepForTimeInterval(0.1)
+        NSThread.sleepForTimeInterval(0.5)
         app.collectionViews.childrenMatchingType(.Cell).elementBoundByIndex(0).tap()
-        NSThread.sleepForTimeInterval(1.0)
+        NSThread.sleepForTimeInterval(2.0)
         app.buttons["Play"].tap()
         NSThread.sleepForTimeInterval(0.1)
         app.buttons["1 yard"].tap()
@@ -46,15 +46,15 @@ class ConversionsUITests: XCTestCase {
 
     func testScreen3() {
         let app = XCUIApplication()
-        NSThread.sleepForTimeInterval(0.1)
+        NSThread.sleepForTimeInterval(0.5)
         app.collectionViews.childrenMatchingType(.Cell).elementBoundByIndex(0).tap()
-        NSThread.sleepForTimeInterval(1.0)
+        NSThread.sleepForTimeInterval(2.0)
         app.buttons["Play"].tap()
         NSThread.sleepForTimeInterval(0.1)
         app.buttons["1 yard"].tap()
         let element = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).elementBoundByIndex(2).childrenMatchingType(.Other).element
         element.tap()
-        app.buttons["10 inch"].tap()
+        app.buttons["10 inches"].tap()
         element.tap()
         app.buttons["Check"].tap()
         element.tap()
@@ -68,15 +68,15 @@ class ConversionsUITests: XCTestCase {
 
     func testScreen4() {
         let app = XCUIApplication()
-        NSThread.sleepForTimeInterval(0.1)
+        NSThread.sleepForTimeInterval(0.5)
         app.collectionViews.childrenMatchingType(.Cell).elementBoundByIndex(0).tap()
-        NSThread.sleepForTimeInterval(1.0)
+        NSThread.sleepForTimeInterval(2.0)
         app.buttons["Play"].tap()
         NSThread.sleepForTimeInterval(0.1)
         app.buttons["1 yard"].tap()
         let element = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).elementBoundByIndex(2).childrenMatchingType(.Other).element
         element.tap()
-        app.buttons["10 inch"].tap()
+        app.buttons["10 inches"].tap()
         element.tap()
         app.buttons["Check"].tap()
         element.tap()
