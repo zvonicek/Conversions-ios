@@ -22,12 +22,14 @@ enum TaskRunResult {
         print(self)
         
         switch self {
-        case .Result(_, 0...0.5, 0.5...1, _):
-            return ("Fast, but unprecise", "Great speed, try to work on your precision")
+        case .Result(_, 0...0.4, 0.65...1, _):
+            return ("Fast, but imprecise", "Great speed, try to work on your precision")
+        case .Result(0...0.5, 0.5...1, _, _):
+            return ("Great", "Next time try to focus on your speed")
         case .Result(0...0.3, 0...0.3, _, _):
-            return ("Perfect", "Great speed and corectness")
+            return ("Outstanding", "Great speed and correctness")
         case .Result(0.1...0.4, _, _, _):
-            return ("Good job", "You did well")
+            return ("Good job", "You did really well")
         case .Result(0.7...1, _, _, _):
             return ("Don't give up", "Try it again")
         case .Result(0, _, _, _):
