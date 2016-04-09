@@ -149,7 +149,10 @@ class TaskViewController: UIViewController {
     func showResultView(completionHandler: (Void -> Void)?) {
         self.view.addSubview(dimView)
         
-        resultView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame), self.view.frame.size.width, CGRectGetHeight(resultView.frame))
+        let isPad = self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.Regular && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Regular
+        let height = isPad ? 150 : CGRectGetHeight(resultView.frame)
+        
+        resultView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame), self.view.frame.size.width, height)
         self.view.addSubview(resultView)
         
         UIView.animateWithDuration(0.3, animations: { () -> Void in
