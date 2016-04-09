@@ -89,7 +89,7 @@ class ClosedEndedQuestionView: UIView {
         }
     }
     
-    override func awakeFromNib() {
+    override func didMoveToSuperview() {
         if UIScreen.mainScreen().bounds.size.height == 480 {
             topSpace.constant = 10
         }

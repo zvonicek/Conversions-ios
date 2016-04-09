@@ -25,6 +25,9 @@
                             <exclude reference="THE-Ta-wDb"/>
                         </mask>
                     </variation>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                    </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select correct answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQ4-ZM-x9d">
                     <rect key="frame" x="8" y="8" width="359" height="21"/>
@@ -92,7 +95,9 @@
                 <constraint firstItem="QQ4-ZM-x9d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="bg7-qW-PTS"/>
                 <constraint firstItem="H0Q-IK-udL" firstAttribute="top" secondItem="1LF-lb-Rp5" secondAttribute="bottom" id="fU1-wP-3bC"/>
                 <constraint firstAttribute="bottom" secondItem="zAC-rb-1y4" secondAttribute="bottom" constant="100" id="gcO-Cf-7Ii"/>
-                <constraint firstItem="pde-WB-bRi" firstAttribute="top" secondItem="QQ4-ZM-x9d" secondAttribute="bottom" constant="40" id="jUd-l8-dkx"/>
+                <constraint firstItem="pde-WB-bRi" firstAttribute="top" secondItem="QQ4-ZM-x9d" secondAttribute="bottom" constant="40" id="jUd-l8-dkx">
+                    <variation key="heightClass=regular-widthClass=regular" constant="70"/>
+                </constraint>
                 <constraint firstItem="zg6-wJ-xgE" firstAttribute="top" secondItem="pde-WB-bRi" secondAttribute="bottom" constant="20" id="kZB-jF-vjG"/>
                 <constraint firstItem="zAC-rb-1y4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mwk-Qh-c8D"/>
                 <constraint firstAttribute="trailing" secondItem="QQ4-ZM-x9d" secondAttribute="trailing" constant="8" id="mxd-OK-GcB"/>

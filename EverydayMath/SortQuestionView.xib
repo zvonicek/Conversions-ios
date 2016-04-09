@@ -76,7 +76,9 @@
             </subviews>
             <color key="backgroundColor" red="0.36862745099999999" green="0.39607843139999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="FE4-oa-LO8" firstAttribute="top" secondItem="WS8-r7-egh" secondAttribute="bottom" constant="25" id="3PG-sx-Wkf"/>
+                <constraint firstItem="FE4-oa-LO8" firstAttribute="top" secondItem="WS8-r7-egh" secondAttribute="bottom" constant="25" id="3PG-sx-Wkf">
+                    <variation key="heightClass=regular-widthClass=regular" constant="55"/>
+                </constraint>
                 <constraint firstItem="bld-rf-DWx" firstAttribute="centerX" secondItem="Xv3-E6-d0d" secondAttribute="centerX" id="666-WK-NAT"/>
                 <constraint firstItem="FE4-oa-LO8" firstAttribute="leading" secondItem="Xv3-E6-d0d" secondAttribute="leading" id="7gt-up-ZB9"/>
                 <constraint firstItem="WS8-r7-egh" firstAttribute="top" secondItem="Xv3-E6-d0d" secondAttribute="top" constant="23" id="DuS-rv-cDn"/>

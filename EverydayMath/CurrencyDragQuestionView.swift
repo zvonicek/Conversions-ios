@@ -44,7 +44,14 @@ class CurrencyDragQuestionView: UIView {
     @IBOutlet var fromDragView: SEDraggableLocation!
     var hintView: UIView?
 
-    let toDragViewNotesLimit = 8
+    lazy var toDragViewNotesLimit: Int = {
+        if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.Regular && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Regular {
+            return 10;
+        } else {
+            // limit of 8 notes on iPhone because of smaller screen
+            return 8;
+        }
+    }()
     
     var question: CurrencyDragQuestion! {
         didSet {
@@ -85,7 +92,9 @@ class CurrencyDragQuestionView: UIView {
         toDragView.layer.borderColor = UIColor.whiteColor().CGColor
         toDragView.layer.borderWidth = 1.0
         toDragView.layer.cornerRadius = 3.0
-        
+    }
+
+    override func didMoveToSuperview() {
         if UIScreen.mainScreen().bounds.size.height == 480 {
             taskVerticalSpace.constant = 5
         }
