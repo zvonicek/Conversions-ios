@@ -37,13 +37,13 @@ enum QuestionResult {
         case .Incorrect:
             return ["Oh, no!", "Maybe next time", "Bad luck", "That's not correct"].randomItem()
         case .Correct(.Imprecise, .Fast), .Correct(.NonApplicable, .Fast):
-            return ["That was really fast", "Great speed", "You're really fast"].randomItem()
+            return ["That was really quick", "Great speed", "You're really quick"].randomItem()
         case .Correct(.Imprecise, .Slow), .Correct(.NonApplicable, .Slow), .Correct(.Imprecise, .NonApplicable), .Correct(.NonApplicable, .NonApplicable):
             return ["Good effort", "Fair enough", "Keep it up"].randomItem()
         case .Correct(.Precise, .Fast):
             return ["Quick and correct!", "Wow, quick and correct", "Quick and precise", "Great time and precision!"].randomItem()
         case .Correct(.Precise, .Slow):
-            return ["Correct, try to be faster", "Correct, but not so fast"].randomItem()
+            return ["Correct, try to be quicker", "Correct, but not so quick"].randomItem()
         case .Correct(.Precise, .NonApplicable):
             return ["Precise!", "That's correct", "Great precision", "That's it", "Keep it up", "That's right", "Excellent"].randomItem()
         }
