@@ -236,8 +236,8 @@
                                     <action selector="pauseGame" destination="3Jj-Vo-GaI" eventType="touchUpInside" id="Vtd-eW-386"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAh-NB-vN1">
-                                <rect key="frame" x="260" y="279" width="83" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mass" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAh-NB-vN1">
+                                <rect key="frame" x="20" y="179" width="560" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -274,6 +274,8 @@
                             <constraint firstItem="2NS-KS-k6a" firstAttribute="centerX" secondItem="dhm-hv-Q7G" secondAttribute="centerX" id="299-Bf-lxX"/>
                             <constraint firstItem="XAh-NB-vN1" firstAttribute="centerY" secondItem="dhm-hv-Q7G" secondAttribute="centerY" constant="-100" id="7px-vF-Uhg"/>
                             <constraint firstItem="hk2-ST-hzK" firstAttribute="top" secondItem="dhm-hv-Q7G" secondAttribute="top" constant="24" id="SdR-yX-XH0"/>
+                            <constraint firstItem="XAh-NB-vN1" firstAttribute="trailing" secondItem="dhm-hv-Q7G" secondAttribute="trailingMargin" id="Wbn-fA-Cm1"/>
+                            <constraint firstItem="XAh-NB-vN1" firstAttribute="leading" secondItem="dhm-hv-Q7G" secondAttribute="leadingMargin" id="bz9-mz-W0q"/>
                             <constraint firstItem="XAh-NB-vN1" firstAttribute="centerX" secondItem="dhm-hv-Q7G" secondAttribute="centerX" id="eSn-HH-9nh"/>
                             <constraint firstItem="5Qj-Hc-kEx" firstAttribute="top" secondItem="2NS-KS-k6a" secondAttribute="bottom" constant="20" id="nui-nu-Su5"/>
                         </constraints>
@@ -285,6 +287,11 @@
                                 <color key="value" red="0.36862745098039218" green="0.396078431372549" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="eSn-HH-9nh"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="nameLabel" destination="XAh-NB-vN1" id="r7l-K5-6PP"/>

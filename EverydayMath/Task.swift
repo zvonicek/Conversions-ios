@@ -55,7 +55,7 @@ class Task {
 
 class TaskFactory {
     static let tasks: [Task] = [
-//        Task(identifier: "test", name: "TEST", category: .Length, image: UIImage(named: "ic_length")!),
+        Task(identifier: "test", name: "TEST", category: .Length, image: UIImage(named: "ic_length")!),
         
         Task(identifier: "length_i", name: "Imperial", category: .Length, image: UIImage(named: "ic_length")!),
         Task(identifier: "length_m", name: "Metric", category: .Length, image: UIImage(named: "ic_length")!),
@@ -67,7 +67,7 @@ class TaskFactory {
         
         Task(identifier: "area_c", name: "Combined", category: .Area, image: UIImage(named: "ic_area")!),
         
-        Task(identifier: "temperature_c", name: "ºC / ºF", category: .Temperature, image: UIImage(named: "ic_temperature")!),
+        Task(identifier: "temperature_c", name: "ºC\u{00a0}/\u{00a0}ºF", category: .Temperature, image: UIImage(named: "ic_temperature")!),
 
         Task(identifier: "currency_eur", name: "EUR", category: .Currency, image: UIImage(named: "ic_currency")!),
         Task(identifier: "currency_usd", name: "USD", category: .Currency, image: UIImage(named: "ic_currency")!),
