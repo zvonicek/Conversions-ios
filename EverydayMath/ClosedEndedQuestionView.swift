@@ -77,6 +77,13 @@ class ClosedEndedQuestionView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        if UIScreen.mainScreen().bounds.size.height == 480 {
+            topSpace.constant = 10
+        }
+        if UIScreen.mainScreen().bounds.size.width == 320 {
+            imageSpace.constant = 5
+        }
+        
         for button in answerButtons {
             if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.Regular && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Regular {
                 button.oa_heightAnchor.constraintEqualToConstant(60).oa_active = true
@@ -86,15 +93,6 @@ class ClosedEndedQuestionView: UIView {
                 button.oa_heightAnchor.constraintEqualToConstant(height).oa_active = true
                 button.oa_widthAnchor.constraintEqualToConstant(CGRectGetWidth(self.frame) - 80).oa_active = true
             }
-        }
-    }
-    
-    override func didMoveToSuperview() {
-        if UIScreen.mainScreen().bounds.size.height == 480 {
-            topSpace.constant = 10
-        }
-        if UIScreen.mainScreen().bounds.size.width == 320 {
-            imageSpace.constant = 5
         }
     }
     
