@@ -13,8 +13,8 @@ import Unbox
 
 class APIClient {
     
-//    static let baseUrl = "http://localhost:5000"
-    static let baseUrl = "http://math.hoover.petrzvonicek.cz"
+    static let baseUrl = "http://localhost:5000"
+//    static let baseUrl = "http://math.hoover.petrzvonicek.cz"
     
     static func getConfigurationForTask(task: Task) -> Promise<TaskConfiguration> {
         let user: String
