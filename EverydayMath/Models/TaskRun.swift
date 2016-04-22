@@ -9,7 +9,6 @@
 import Foundation
 import PromiseKit
 
-// MARK: TaskRun protocols
 protocol TaskRunDelegate {
     func taskRun(taskRun: TaskRun, showQuestion question: Question, index: Int)
     func taskRun(taskRun: TaskRun, questionCompleted question: Question, index: Int, result: QuestionResult)
@@ -20,7 +19,7 @@ protocol TaskRunDelegate {
 
 class TaskRun: QuestionDelegate {
     let task: Task
-    let config: TaskConfiguration
+    let config: TaskRunConfiguration
     let questions: [Question]
     let log: TaskRunLog
     
@@ -44,7 +43,7 @@ class TaskRun: QuestionDelegate {
         }
     }
     
-    init(task: Task, config: TaskConfiguration) {
+    init(task: Task, config: TaskRunConfiguration) {
         self.task = task
         self.config = config
         self.questions = config.questions.flatMap(QuestionFactory.questionForConfiguration)

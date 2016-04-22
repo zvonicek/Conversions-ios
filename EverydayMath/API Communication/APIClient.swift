@@ -15,7 +15,7 @@ class APIClient {
     
     static let baseUrl = "http://localhost:5000"
     
-    static func getConfigurationForTask(task: Task) -> Promise<TaskConfiguration> {
+    static func getConfigurationForTask(task: Task) -> Promise<TaskRunConfiguration> {
         let user: String
         if let storedUser = NSUserDefaults.standardUserDefaults().objectForKey("user") as? String {
             user = storedUser
@@ -30,14 +30,15 @@ class APIClient {
         
         return Alamofire.request(.GET, self.baseUrl + "/api/start", parameters: ["task": task.identifier, "user": user, "language":language, "metric": isMetric, "version": versionNumber], encoding: ParameterEncoding.URL)
             .promiseUnboxableJSON()
-            .then({ dictionary -> TaskConfiguration in
+            .then({ dictionary -> TaskRunConfiguration in
                 do {
-                    let config: TaskConfiguration = try UnboxOrThrow(dictionary)
+                    let config: TaskRunConfiguration = try UnboxOrThrow(dictionary)
                     return config
                 } catch {
                     throw Error.errorWithCode(1, failureReason: "JSON deserialization failed")
                 }
             }).then({ configuration in
+                // gather ImageQuestions to load images 
                 let numQuestions = configuration.questions.flatMap({ $0 as? ImageQuestionConfiguration }).filter({ $0.imagePath != nil})
                 
                 var imagePromises = [Promise<Void>]()

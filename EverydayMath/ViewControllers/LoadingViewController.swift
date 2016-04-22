@@ -14,7 +14,7 @@ class LoadingViewController: UIViewController {
     @IBOutlet var startButton: UIButton!
     
     var task: Task?
-    var config: TaskConfiguration?
+    var config: TaskRunConfiguration?
     
     override func viewDidLoad() {
         assert(task != nil)
@@ -37,7 +37,7 @@ class LoadingViewController: UIViewController {
         return UIStatusBarStyle.LightContent
     }
     
-    func configurationLoaded(config: TaskConfiguration) {
+    func configurationLoaded(config: TaskRunConfiguration) {
         if config.questions.count > 0 {
             startButton.setTitle("Play", forState: UIControlState.Normal)
             startButton.enabled = true

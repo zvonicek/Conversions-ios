@@ -38,7 +38,6 @@ class Task {
     var name: String
     var image: UIImage
     var category: TaskCategory
-    var taskConfiguration: TaskConfiguration?
 
     init(identifier: String, name: String, category: TaskCategory, image: UIImage) {
         self.identifier = identifier
@@ -47,7 +46,7 @@ class Task {
         self.image = image
     }
 
-    func run(configuration: TaskConfiguration) throws -> TaskRun {
+    func run(configuration: TaskRunConfiguration) throws -> TaskRun {
         return TaskRun(task: self, config: configuration)
     }
 }
@@ -55,7 +54,7 @@ class Task {
 
 class TaskFactory {
     static let tasks: [Task] = [
-//        Task(identifier: "test", name: "TEST", category: .Length, image: UIImage(named: "ic_length")!),
+        Task(identifier: "test", name: "TEST", category: .Length, image: UIImage(named: "ic_length")!),
         
         Task(identifier: "length_i", name: "Imperial", category: .Length, image: UIImage(named: "ic_length")!),
         Task(identifier: "length_m", name: "Metric", category: .Length, image: UIImage(named: "ic_length")!),

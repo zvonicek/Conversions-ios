@@ -1,5 +1,5 @@
 //
-//  TaskConfiguration.swift
+//  TaskRunConfiguration.swift
 //  EverydayMath
 //
 //  Created by Petr Zvoníček on 02.03.16.
@@ -9,7 +9,7 @@
 import Foundation
 import Unbox
 
-struct TaskConfiguration: Unboxable {
+struct TaskRunConfiguration: Unboxable {
     var taskRunId: Int
     var showSpeedFeedback: Bool
     var questions: [QuestionConfiguration]
