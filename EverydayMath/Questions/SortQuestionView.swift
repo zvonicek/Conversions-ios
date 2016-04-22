@@ -10,7 +10,7 @@ import UIKit
 import DraggableCollectionView
 import LMArrayChangeSets
 
-class SortQuestionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource_Draggable {
+class SortQuestionView: UIView {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var taskLabel: UILabel!
     
@@ -84,9 +84,9 @@ class SortQuestionView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
             }
         }
     }
-    
-    // MARK - UICollectionViewDataSource
-    
+}
+
+extension SortQuestionView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -132,9 +132,9 @@ class SortQuestionView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         
         return self.collectionView(collectionView, viewForSupplementaryElementOfKind: kind, atIndexPath: indexPath)        
     }
-    
-    // MARK - UICollectionViewDataSource_Draggable
-    
+}
+
+extension SortQuestionView: UICollectionViewDataSource_Draggable {
     func collectionView(collectionView: UICollectionView, canMoveItemAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }

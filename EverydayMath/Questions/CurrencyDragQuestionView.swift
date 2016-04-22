@@ -99,20 +99,7 @@ class CurrencyDragQuestionView: UIView {
             taskVerticalSpace.constant = 5
         }
     }
-    
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        
-//        if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.Regular && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Regular {
-//            for noteView in self.fromDragView.containedObjects {
-//                var noteView = noteView as! UIView
-//                var frame = noteView.frame
-//                frame.size = CGSizeMake(noteView.frame.size.width * 1.5, noteView.frame.size.height * 1.5)
-//                noteView.frame = frame
-//            }
-//        }
-//    }
-    
+        
     func configureDraggableLocation(draggableLocation: SEDraggableLocation) {
         draggableLocation.objectWidth = 65
         draggableLocation.objectHeight = 40

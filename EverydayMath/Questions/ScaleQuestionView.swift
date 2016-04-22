@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScaleQuestionView: UIView, TrackingScaleControlDelegate {
+class ScaleQuestionView: UIView {
     
     var delegate: QuestionDelegate?
     var question: ScaleQuestion! {
@@ -40,8 +40,9 @@ class ScaleQuestionView: UIView, TrackingScaleControlDelegate {
         resultView.alpha = 0.0
     }
     
-    // MARK: TrackingScaleControlDelegate
-    
+}
+
+extension ScaleQuestionView: TrackingScaleControlDelegate {    
     func scaleControlDidAnswer(value: CGFloat) {
         let isCorrect = Float(value) > question.configuration.correctValue - question.configuration.correctTolerance && Float(value) < question.configuration.correctValue + question.configuration.correctTolerance
         let isPrecise = Float(value) > question.configuration.correctValue - question.configuration.correctTolerance / 2 && Float(value) < question.configuration.correctValue + question.configuration.correctTolerance / 2
