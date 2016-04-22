@@ -1,9 +1,9 @@
 PODS:
-  - Alamofire (3.3.0)
+  - Alamofire (3.3.1)
   - DraggableCollectionView (0.1)
-  - Flurry-iOS-SDK (7.5.2):
-    - Flurry-iOS-SDK/FlurrySDK (= 7.5.2)
-  - Flurry-iOS-SDK/FlurrySDK (7.5.2)
+  - Flurry-iOS-SDK (7.6.0):
+    - Flurry-iOS-SDK/FlurrySDK (= 7.6.0)
+  - Flurry-iOS-SDK/FlurrySDK (7.6.0)
   - FSQCollectionViewAlignedLayout (1.1.1)
   - HockeySDK/CrashOnlyLib (3.8.6)
   - LMArrayChangeSets (0.1.3)
@@ -15,17 +15,17 @@ PODS:
     - OMGHTTPURLRQ/FormURLEncode
     - OMGHTTPURLRQ/UserAgent
   - OMGHTTPURLRQ/UserAgent (3.1.1)
-  - PromiseKit (3.0.3):
-    - PromiseKit/Foundation (= 3.0.3)
-    - PromiseKit/QuartzCore (= 3.0.3)
-    - PromiseKit/UIKit (= 3.0.3)
-  - PromiseKit/CorePromise (3.0.3)
-  - PromiseKit/Foundation (3.0.3):
+  - PromiseKit (3.1.1):
+    - PromiseKit/Foundation (= 3.1.1)
+    - PromiseKit/QuartzCore (= 3.1.1)
+    - PromiseKit/UIKit (= 3.1.1)
+  - PromiseKit/CorePromise (3.1.1)
+  - PromiseKit/Foundation (3.1.1):
     - OMGHTTPURLRQ (~> 3.1.0)
     - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (3.0.3):
+  - PromiseKit/QuartzCore (3.1.1):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (3.0.3):
+  - PromiseKit/UIKit (3.1.1):
     - PromiseKit/CorePromise
   - SEDraggable (1.0.0)
   - TZStackView (1.1.2)
@@ -59,15 +59,15 @@ CHECKOUT OPTIONS:
     :git: https://github.com/zvonicek/iOS-DragAndDrop.git
 
 SPEC CHECKSUMS:
-  Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   DraggableCollectionView: b6d1a6239f263577869ab2bf868af82b2dfc056a
-  Flurry-iOS-SDK: 8c87c4eab6008184ad9f63afabd79ec0d109c82e
+  Flurry-iOS-SDK: 9822fe709195f0e3ae3e52c785eee9ff651ff648
   FSQCollectionViewAlignedLayout: 122006b230bf5635ae159f1ad1eaa9b5ef11391e
   HockeySDK: ab68303eec6680f6b539de65d747742dd276e934
   LMArrayChangeSets: 141a8321bdaba14a03fc5520bc869f2cfc7ed273
   OALayoutAnchor: 27a15a06ebfd3bc07de527f6cd4a5a714c47226d
   OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
-  PromiseKit: 00ec2a219bf5ad2833f95977698e921932b8dfd3
+  PromiseKit: 4e8127c22a9b29d1b44958ab2ec762ea6115cbfb
   SEDraggable: aacb2e95742fb51760dfdbe372fb9e3e19ab666b
   TZStackView: 19aeaa414fb653f4be9b80a73f4f0c66e33bf033
   Unbox: 34a7f7a978553a2b57f226251c70ada170fbb16b
