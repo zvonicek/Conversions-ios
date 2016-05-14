@@ -17,7 +17,7 @@ protocol TaskRunDelegate {
     func taskRunAborted(taskRun: TaskRun)
 }
 
-class TaskRun: QuestionDelegate {
+class TaskRun {
     let task: Task
     let config: TaskRunConfiguration
     let questions: [Question]
@@ -102,9 +102,9 @@ class TaskRun: QuestionDelegate {
         finished = true
         delegate?.taskRunCompleted(self)
     }
-    
-    // MARK: TaskDelegate
-    
+}
+
+extension TaskRun: QuestionDelegate {
     func questionCompleted(question: Question, correct: Bool, accuracy: QuestionResultAccuracy?, answer: [String: AnyObject]) {
         guard let index = questions.indexOf(question) else {
             assertionFailure("task was not found")

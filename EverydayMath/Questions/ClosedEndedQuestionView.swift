@@ -53,6 +53,7 @@ class ClosedEndedQuestionView: UIView {
                 answerButtons.append(button)
             }
             
+            // Use TZStackView instead of UIStackView to provide backwards compatibility for iOS 8 
             stackView = TZStackView(arrangedSubviews: stackViews)            
             stackView.translatesAutoresizingMaskIntoConstraints = false
             
