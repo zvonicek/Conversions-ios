@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -25,7 +25,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="barTintColor" red="0.5490196078431373" green="0.82352941176470584" blue="0.36470588235294116" alpha="0.46115944602272729" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="Conversions" id="M5J-yX-yeF"/>
+                                    <navigationItem title="Conversions" id="M5J-yX-yeF">
+                                        <barButtonItem key="rightBarButtonItem" title="About" id="eAF-ah-G5Q">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="aes-94-bSZ" kind="presentation" id="xZU-Pq-cdE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="SKT-CT-Fme"/>
@@ -181,12 +188,53 @@
                                     <outlet property="delegate" destination="aes-94-bSZ" id="wMi-gW-K58"/>
                                 </connections>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hO-8d-Lql">
+                                <rect key="frame" x="300" y="234" width="1" height="288"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="4Oz-oB-irl"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f3I-Jr-yPj">
+                                <rect key="frame" x="20" y="84" width="560" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                </variation>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="al_logo" translatesAutoresizingMaskIntoConstraints="NO" id="y7W-0o-mqR">
+                                <rect key="frame" x="239" y="530" width="122" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Iar-BN-07S"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Iar-BN-07S"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AnC-RC-njh" firstAttribute="top" secondItem="KLB-gV-o2j" secondAttribute="bottom" id="6Xg-sm-lzU"/>
+                            <constraint firstItem="3hO-8d-Lql" firstAttribute="top" secondItem="f3I-Jr-yPj" secondAttribute="bottom" id="7di-73-mHG"/>
                             <constraint firstAttribute="trailing" secondItem="AnC-RC-njh" secondAttribute="trailing" id="9P7-YP-cVa"/>
+                            <constraint firstItem="y7W-0o-mqR" firstAttribute="centerX" secondItem="ANX-1P-ghT" secondAttribute="centerX" id="CSH-vk-57B"/>
                             <constraint firstItem="AnC-RC-njh" firstAttribute="leading" secondItem="ANX-1P-ghT" secondAttribute="leading" id="FCO-PK-ckI"/>
+                            <constraint firstAttribute="trailing" secondItem="f3I-Jr-yPj" secondAttribute="trailing" constant="20" id="Kux-pp-Wft"/>
+                            <constraint firstItem="y7W-0o-mqR" firstAttribute="top" secondItem="3hO-8d-Lql" secondAttribute="bottom" constant="8" id="RgN-r2-SQ0"/>
+                            <constraint firstItem="3hO-8d-Lql" firstAttribute="centerX" secondItem="ANX-1P-ghT" secondAttribute="centerX" id="VVh-wO-Rwb"/>
+                            <constraint firstItem="f3I-Jr-yPj" firstAttribute="top" secondItem="AnC-RC-njh" secondAttribute="bottom" constant="20" id="luy-AO-qqC">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="rGv-wU-MJP" firstAttribute="top" secondItem="y7W-0o-mqR" secondAttribute="bottom" constant="20" id="pFj-6c-AZK"/>
+                            <constraint firstItem="f3I-Jr-yPj" firstAttribute="leading" secondItem="ANX-1P-ghT" secondAttribute="leading" constant="20" id="sJR-Ao-BPz"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="fromColor">
@@ -197,6 +245,9 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="f3I-Jr-yPj" id="XiX-B5-cis"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpK-Fd-F73" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -657,6 +708,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="al_logo" width="122" height="50"/>
         <image name="ic_cross_black" width="13" height="13"/>
         <image name="ic_cross_white" width="13" height="13"/>
         <image name="ic_mass" width="85" height="85"/>
