@@ -35,7 +35,8 @@ class APIClient {
                     let config: TaskRunConfiguration = try UnboxOrThrow(dictionary)
                     return config
                 } catch {
-                    throw Error.errorWithCode(1, failureReason: "JSON deserialization failed")
+                    let userInfo: Dictionary<NSObject, AnyObject> = [NSLocalizedFailureReasonErrorKey: "JSON deserialization failed"]
+                    throw NSError(domain: Error.Domain, code: Error.Code.JSONSerializationFailed.rawValue, userInfo: userInfo)
                 }
             }).then({ configuration in
                 // gather ImageQuestions to load images 

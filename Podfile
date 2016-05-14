@@ -9,7 +9,7 @@ pod 'LMArrayChangeSets', '~> 0.1'
 pod 'FSQCollectionViewAlignedLayout', '~> 1.1'
 pod 'SEDraggable', :git => 'https://github.com/zvonicek/iOS-DragAndDrop.git'
 pod "OALayoutAnchor"
-pod 'Unbox', '~> 1.3'
+pod 'Unbox', '1.4'
 pod 'Alamofire', '~> 3.2'
 pod 'PromiseKit', '~> 3.0'
 

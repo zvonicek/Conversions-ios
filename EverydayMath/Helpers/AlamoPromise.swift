@@ -22,7 +22,8 @@ extension Alamofire.Request {
                     case .Failure(let error):
                         reject(error)
                     default:
-                        reject(Error.errorWithCode(1, failureReason: "JSON deserialization failed"))
+                        let userInfo: Dictionary<NSObject, AnyObject> = [NSLocalizedFailureReasonErrorKey: "JSON deserialization failed"]
+                        reject(NSError(domain: Error.Domain, code: Error.Code.JSONSerializationFailed.rawValue, userInfo: userInfo))
                     }
             }
         }
