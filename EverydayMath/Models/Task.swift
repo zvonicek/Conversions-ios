@@ -46,7 +46,7 @@ class Task {
         self.image = image
     }
 
-    func run(configuration: TaskRunConfiguration) throws -> TaskRun {
+    func run(configuration: TaskRunConfiguration) -> TaskRun {
         return TaskRun(task: self, config: configuration)
     }
 }

@@ -52,10 +52,7 @@ class LoadingViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destination = segue.destinationViewController as? TaskViewController, task = task, config = config {
-            do {
-                try destination.taskRun = task.run(config)
-            } catch {                
-            }
+            destination.taskRun = task.run(config)
         }
     }
     

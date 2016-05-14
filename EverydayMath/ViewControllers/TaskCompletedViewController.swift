@@ -36,9 +36,12 @@ class TaskCompletedViewController: UIViewController {
         }.then {
             return APIClient.getConfigurationForTask(self.taskRun!.task)
         }.then { taskConfiguration -> Void in
-            let presenting = self.presentingViewController as! TaskViewController
-            try presenting.taskRun = self.taskRun!.task.run(taskConfiguration)
-            self.dismissViewControllerAnimated(true, completion: nil)
+            if let presenting = self.presentingViewController as? TaskViewController, task = self.taskRun?.task {
+                presenting.taskRun = task.run(taskConfiguration)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                self.dismiss()
+            }
         }.error { error in
             let alert = UIAlertController.alertControllerWithError(error as NSError, handler: { action -> Void in
                 self.dismissViewControllerAnimated(true, completion: nil)
