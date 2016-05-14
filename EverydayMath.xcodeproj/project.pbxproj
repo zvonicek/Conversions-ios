@@ -55,7 +55,6 @@
 		D0C900E21BEDFE3400A15F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C900E11BEDFE3400A15F32 /* AppDelegate.swift */; };
 		D0C900E71BEDFE3400A15F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0C900E51BEDFE3400A15F32 /* Main.storyboard */; };
 		D0C900E91BEDFE3400A15F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0C900E81BEDFE3400A15F32 /* Assets.xcassets */; };
-		D0C900EC1BEDFE3400A15F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0C900EA1BEDFE3400A15F32 /* LaunchScreen.storyboard */; };
 		D0C900F61BEE4E4900A15F32 /* Numpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C900F51BEE4E4900A15F32 /* Numpad.swift */; };
 		D0C900F81BEE7CA900A15F32 /* NumericQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C900F71BEE7CA900A15F32 /* NumericQuestionView.xib */; };
 		D0C900FE1BEE8B7B00A15F32 /* QuestionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C900FD1BEE8B7B00A15F32 /* QuestionConfiguration.swift */; };
@@ -151,7 +150,6 @@
 		D0C900E11BEDFE3400A15F32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0C900E61BEDFE3400A15F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0C900E81BEDFE3400A15F32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D0C900EB1BEDFE3400A15F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0C900ED1BEDFE3400A15F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0C900F51BEE4E4900A15F32 /* Numpad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Numpad.swift; path = ../Numpad.swift; sourceTree = "<group>"; };
 		D0C900F71BEE7CA900A15F32 /* NumericQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumericQuestionView.xib; sourceTree = "<group>"; };
@@ -312,7 +310,6 @@
 				D0C901091BEF8B6300A15F32 /* EverydayMath-Bridging-Header.h */,
 				D08F52431BF15ED2000F840B /* Extensions.swift */,
 				D0C900ED1BEDFE3400A15F32 /* Info.plist */,
-				D0C900EA1BEDFE3400A15F32 /* LaunchScreen.storyboard */,
 				D0C900E51BEDFE3400A15F32 /* Main.storyboard */,
 				D0E34F2F1C32D2B300E7AB97 /* ObjcExtensions.h */,
 				D0E34F301C32D2B300E7AB97 /* ObjcExtensions.m */,
@@ -499,7 +496,6 @@
 			files = (
 				D013F4DD1C163B6600DF8769 /* ScaleQuestionView.xib in Resources */,
 				D0E2E0A31C275D6B005E5B06 /* SortQuestionCollectionViewCell.xib in Resources */,
-				D0C900EC1BEDFE3400A15F32 /* LaunchScreen.storyboard in Resources */,
 				D0C900F81BEE7CA900A15F32 /* NumericQuestionView.xib in Resources */,
 				D0C0CC1A1C0B993500D93B83 /* ClosedEndedQuestionView.xib in Resources */,
 				D0C900E91BEDFE3400A15F32 /* Assets.xcassets in Resources */,
@@ -649,15 +645,6 @@
 			path = .;
 			sourceTree = "<group>";
 		};
-		D0C900EA1BEDFE3400A15F32 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D0C900EB1BEDFE3400A15F32 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -776,13 +763,11 @@
 			baseConfigurationReference = 1B3CD3569EEE8140EF83F4EF /* Pods-EverydayMath.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = EverydayMath/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -800,13 +785,11 @@
 			baseConfigurationReference = 8680052E1FDE95CBAD941208 /* Pods-EverydayMath.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = EverydayMath/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
