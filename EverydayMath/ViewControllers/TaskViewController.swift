@@ -27,6 +27,7 @@ class TaskViewController: UIViewController {
     @IBOutlet var pauseView: UIView!
     
     var resultView: ResultView!
+    var loadingInProgress = false
     
     lazy var dimView: UIView = {
         let view = UIView()
@@ -51,9 +52,11 @@ class TaskViewController: UIViewController {
                         currentQuestionView.frame = CGRectOffset(currentQuestionView.frame, -currentQuestionView.frame.size.width, 0)
                     }, completion: { (val: Bool) -> Void in
                         currentQuestionView.removeFromSuperview()
+                        self.loadingInProgress = false
                     })
                 } else {
                     questionView.frame = taskView.bounds
+                    self.loadingInProgress = false
                 }
             }
         }
@@ -139,7 +142,7 @@ class TaskViewController: UIViewController {
             self.resultView.removeFromSuperview()
             self.dimView.removeFromSuperview()
             
-            if let taskRun = self.taskRun where self.resultView.finalResult {
+            if let taskRun = self.taskRun where self.resultView.finalResult && !self.loadingInProgress {
                 taskRun.nextQuestion()
             }
         }
@@ -184,6 +187,7 @@ extension TaskViewController: TaskRunDelegate {
     // MARK: GameRunDelegate methods
 
     func taskRun(taskRun: TaskRun, showQuestion question: Question, index: Int) {
+        self.loadingInProgress = true
         currentQuestionView = question.getView()
         print("show view")
     }
@@ -219,6 +223,7 @@ extension TaskViewController: TaskRunDelegate {
     
     func taskRunCompleted(taskRun: TaskRun) {
         print("game completed")
+        self.loadingInProgress = true        
         performSegueWithIdentifier("completedSegue", sender: taskRun)
     }
     
