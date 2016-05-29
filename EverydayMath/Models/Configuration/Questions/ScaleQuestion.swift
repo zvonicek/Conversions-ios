@@ -9,6 +9,7 @@
 import Foundation
 import Unbox
 
+/// Scale question initialized with a specific conifugration
 class ScaleQuestion: Question {
     var delegate: QuestionDelegate?
     let configuration: ScaleQuestionConfiguration
@@ -37,6 +38,7 @@ class ScaleQuestion: Question {
     }
 }
 
+/// Configuration of the scale question
 class ScaleQuestionConfiguration: QuestionConfiguration, SimpleResultConfiguration {
     var question: String
     var scaleMin: Float

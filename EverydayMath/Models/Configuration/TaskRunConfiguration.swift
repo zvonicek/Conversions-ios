@@ -9,6 +9,7 @@
 import Foundation
 import Unbox
 
+/// Holds configuration of the task run received from the backend
 struct TaskRunConfiguration: Unboxable {
     var taskRunId: Int
     var showSpeedFeedback: Bool

@@ -9,6 +9,7 @@
 import Foundation
 import Unbox
 
+/// Currency Drag question initialized with a specific conifugration
 class CurrencyDragQuestion: Question {
     var delegate: QuestionDelegate?
     let configuration: CurrencyDragQuestionConfiguration
@@ -28,10 +29,24 @@ class CurrencyDragQuestion: Question {
         return view
     }
     
+    /**
+     Verifies if the given answer is considered as correct (including tolerance interval)
+     
+     - parameter value: answer to be verified
+     
+     - returns: true if answer is correct, else false
+     */    
     func verifyResult(notesSum: Float) -> Bool {
         return (abs(notesSum - self.configuration.toValue) < self.configuration.tolerance)
     }
     
+    /**
+     Checks if the given answer is considered as precise
+     
+     - parameter value: answer to be checked
+     
+     - returns: true if answer is precise, else false
+     */    
     func isPrecise(notesSum: Float) -> Bool {
         return (abs(notesSum - self.configuration.toValue) < self.configuration.tolerance / 2)
     }
@@ -45,6 +60,7 @@ class CurrencyDragQuestion: Question {
     }
 }
 
+/// Configuration of a note of a closed ended question
 struct CurrencyDragQuestionConfigurationNote: Unboxable {
     let value: Float
     let currency: String
@@ -59,6 +75,7 @@ struct CurrencyDragQuestionConfigurationNote: Unboxable {
     }
 }
 
+/// Configuration of the currency drag question
 class CurrencyDragQuestionConfiguration: QuestionConfiguration, SimpleResultConfiguration, HintQuestionConfiguration {
     let fromValue: Float
     let fromCurrency: String

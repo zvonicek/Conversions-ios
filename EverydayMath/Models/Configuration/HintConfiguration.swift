@@ -9,12 +9,14 @@
 import Foundation
 import Unbox
 
+/// Implemented by specific hint types configurations
 protocol HintConfiguration: Unboxable {
     init(unboxer: Unboxer)
     func getHintView() -> UIView
     func description() -> String
 }
 
+/// Defines hint types
 enum HintType: String {
     case Scale = "hintScale"
     case Text = "hintText"
@@ -45,6 +47,7 @@ extension Unboxer {
 
 // MARK: hints
 
+/// Configuration of a scale hint
 struct ScaleHintConfiguration: HintConfiguration {
     var topUnit: String
     var topMin: Float
@@ -74,6 +77,7 @@ struct ScaleHintConfiguration: HintConfiguration {
     }
 }
 
+/// Configuration of a text hint
 struct TextHintConfiguration: HintConfiguration {
     var text: String
     

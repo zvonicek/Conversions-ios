@@ -9,6 +9,7 @@
 import UIKit
 import Unbox
 
+/// Sort question initialized with a specific conifugration
 class SortQuestion: Question {
     var delegate: QuestionDelegate?
     let configuration: SortQuestionConfiguration
@@ -37,6 +38,7 @@ class SortQuestion: Question {
     }
 }
 
+/// Configuration of the sort question
 class SortQuestionConfiguration: QuestionConfiguration {
     let question: String
     let topDescription: String
@@ -61,6 +63,7 @@ class SortQuestionConfiguration: QuestionConfiguration {
     }
 }
 
+/// Configuration of an item of the sort question
 class SortQuestionItem: Unboxable {
     let title: String
     let correctPosition: Int

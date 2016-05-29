@@ -9,6 +9,7 @@
 import Foundation
 import PromiseKit
 
+/// Delegate to inform a view controller about task run progress
 protocol TaskRunDelegate {
     func taskRun(taskRun: TaskRun, showQuestion question: Question, index: Int)
     func taskRun(taskRun: TaskRun, questionCompleted question: Question, index: Int, result: QuestionResult)
@@ -17,25 +18,26 @@ protocol TaskRunDelegate {
     func taskRunAborted(taskRun: TaskRun)
 }
 
+/// TaskRun class manages the whole practice run including navigation between questions 
 class TaskRun {
     let task: Task
     let config: TaskRunConfiguration
     let questions: [Question]
     let log: TaskRunLog
     
-    var currentQuestionIndex: Int?
-    var currentQuestionPresentationDate: NSDate?
-    var currentQuestionSecondTry = false
+    private var currentQuestionIndex: Int?
+    private var currentQuestionPresentationDate: NSDate?
+    private var currentQuestionSecondTry = false
     
-    var pausedDate: NSDate?
-    var pausedDuration = NSTimeInterval(0)
+    private var pausedDate: NSDate?
+    private var pausedDuration = NSTimeInterval(0)
     
-    var logUploadPromise: Promise<Void>?
+    private(set) var logUploadPromise: Promise<Void>?
     
     var delegate: TaskRunDelegate?
     
-    var running = false
-    var finished = false {
+    private var running = false
+    private(set) var finished = false {
         didSet(value) {
             if value {
                 running = false
@@ -50,16 +52,25 @@ class TaskRun {
         self.log = TaskRunLog(taskRunId: config.taskRunId)
     }
     
+    /**
+     Start the practice of this task run
+     */
     func start() {
         running = true
         nextQuestion()
     }
     
+    /**
+     Pause the practice
+     */
     func pause() {
         running = false
         pausedDate = NSDate()
     }
     
+    /**
+     Resume form the paused state
+     */
     func resume() {
         if let pausedDate = self.pausedDate {
             pausedDuration += NSDate().timeIntervalSinceDate(pausedDate)
@@ -68,10 +79,16 @@ class TaskRun {
         running = true
     }
     
+    /**
+     Manually abort the practice
+     */
     func abort() {
         abortTaskRun()
     }
     
+    /**
+     Go to the next question
+     */
     func nextQuestion() {
         let index = currentQuestionIndex != nil ? currentQuestionIndex! + 1 : 0
         
@@ -95,7 +112,7 @@ class TaskRun {
         delegate?.taskRunAborted(self)
     }
     
-    func finishTaskRun() {
+    private func finishTaskRun() {
         self.log.aborted = false
         logUploadPromise = APIClient.uploadTaskRunLog(self.log)
         
@@ -116,8 +133,10 @@ extension TaskRun: QuestionDelegate {
             return
         }
         
+        // compute the time spend on the question
         let timeSpend = NSDate().timeIntervalSinceDate(currentQuestionPresentationDate) - pausedDuration
         
+        // gather the question result
         var result: QuestionResult
         if let accuracy = accuracy where correct {
             var speed: QuestionResultSpeed
@@ -142,6 +161,7 @@ extension TaskRun: QuestionDelegate {
             answer["hintType"] = config.hint?.description()
         }
         
+        // create the question log
         let taskLog = QuestionRunLog(questionId: question.config().questionId, result: result, time: timeSpend, hintShown: currentQuestionSecondTry, answer: answer)
         log.appendQuestionLog(taskLog)
 

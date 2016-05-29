@@ -16,6 +16,7 @@ enum QuestionResultSpeed {
     case Fast, Slow, NonApplicable
 }
 
+/// Result of the answered question to be shown in the app
 enum QuestionResult {
     case Incorrect, Correct(QuestionResultAccuracy, QuestionResultSpeed)
     

@@ -9,6 +9,7 @@
 import Foundation
 import Unbox
 
+/// Closed Ended question initialized with a specific conifugration
 class ClosedEndedQuestion: Question {
     var delegate: QuestionDelegate?
     let configuration: ClosedEndedQuestionConfiguration
@@ -37,6 +38,7 @@ class ClosedEndedQuestion: Question {
     }    
 }
 
+/// Configuration of the closed ended question
 class ClosedEndedQuestionConfiguration: QuestionConfiguration, ImageQuestionConfiguration, SimpleResultConfiguration {
     let question: String
     var image: UIImage?
@@ -61,6 +63,7 @@ class ClosedEndedQuestionConfiguration: QuestionConfiguration, ImageQuestionConf
     }
 }
 
+/// Configuration of the answer of a closed ended question
 struct ClosedEndedQuestionAnswerConfiguration: Equatable, Unboxable {
     let answer: String
     let explanation: String?

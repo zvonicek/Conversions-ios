@@ -11,6 +11,7 @@ import Foundation
 typealias AnswerLog = [String: AnyObject]
 typealias TaskRunSummary = (incorrectRatio: Float, slowRatio: Float, impreciseRatio: Float, preciseRatio: Float)
 
+/// Log with information about answered question
 struct QuestionRunLog {
     var questionId: Int
     var result: QuestionResult
@@ -29,6 +30,7 @@ struct QuestionRunLog {
     }
 }
 
+/// Log with information about task run
 class TaskRunLog {
     var taskRunId: Int
     var questionResults = [QuestionRunLog]()

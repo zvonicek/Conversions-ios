@@ -33,6 +33,7 @@ enum TaskCategory {
     }
 }
 
+/// Representation of a task
 class Task {
     var identifier: String
     var name: String
@@ -46,15 +47,22 @@ class Task {
         self.image = image
     }
 
+    /**
+     Returns TaskRun for the task and provided configuration
+     
+     - parameter configuration: configuration to be run
+     
+     - returns: taskRun instance with for specified configuration
+     */
     func run(configuration: TaskRunConfiguration) -> TaskRun {
         return TaskRun(task: self, config: configuration)
     }
 }
 
-
+/// Accessory class to all available tasks
 class TaskFactory {
     static let tasks: [Task] = [
-        Task(identifier: "test", name: "TEST", category: .Length, image: UIImage(named: "ic_length")!),
+        //Task(identifier: "test", name: "TEST", category: .Length, image: UIImage(named: "ic_length")!),
         
         Task(identifier: "length_i", name: "Imperial", category: .Length, image: UIImage(named: "ic_length")!),
         Task(identifier: "length_m", name: "Metric", category: .Length, image: UIImage(named: "ic_length")!),

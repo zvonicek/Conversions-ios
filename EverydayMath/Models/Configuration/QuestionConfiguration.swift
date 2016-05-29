@@ -9,20 +9,24 @@
 import Foundation
 import Unbox
 
+/// Implemented by question configurations allowing an image to be shown
 protocol ImageQuestionConfiguration: class {
     var imagePath: String? { get }
     var image: UIImage? { get set }
 }
 
+/// Implemented by question configurations allowing a hint to be shown
 protocol HintQuestionConfiguration: class {
     var hint: HintConfiguration? { get }
 }
 
 typealias SimpleResult = (title: String?, value: String)
+/// Implemented by question configurations that makes it possible to summarize its result into "title" and "value"
 protocol SimpleResultConfiguration {
     func to() -> SimpleResult
 } 
 
+/// Holds configuration of the question received from the backend
 class QuestionConfiguration: Unboxable {
     var questionId: Int
     var targetTime: NSTimeInterval?
@@ -33,6 +37,7 @@ class QuestionConfiguration: Unboxable {
     }
 }
 
+/// Types of the question configurations received from the backend
 enum QuestionConfigurationType: String {
     case CloseEnded = "questionCloseEnded"
     case Numeric = "questionNumeric"

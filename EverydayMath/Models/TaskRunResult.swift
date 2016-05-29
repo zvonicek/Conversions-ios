@@ -9,6 +9,8 @@
 import Foundation
 
 typealias taskCompletedMessage = (title: String, subtitle: String)
+
+/// Resut of the finished task run to be shown in the app
 enum TaskRunResult {
     case Result(incorrectRatio: Float, slowRatio: Float, impreciseRatio: Float, preciseRatio: Float)
     
@@ -18,9 +20,7 @@ enum TaskRunResult {
         return .Result(incorrectRatio: summary.incorrectRatio, slowRatio: summary.slowRatio, impreciseRatio: summary.impreciseRatio, preciseRatio: summary.preciseRatio)
     }
     
-    func message() -> taskCompletedMessage {
-        print(self)
-        
+    func message() -> taskCompletedMessage {        
         switch self {
         case .Result(_, 0...0.4, 0.65...1, _):
             return ("Fast, but imprecise", "Great speed, try to work on your precision")

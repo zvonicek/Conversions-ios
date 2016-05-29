@@ -9,6 +9,7 @@
 import Foundation
 import Unbox
 
+/// Numeric question initialized with a specific conifugration
 class NumericQuestion: Question {
     var delegate: QuestionDelegate?
     let configuration: NumericQuestionConfiguration
@@ -28,6 +29,13 @@ class NumericQuestion: Question {
         return view
     }
     
+    /**
+     Verifies if the given answer is considered as correct (including tolerance interval)
+     
+     - parameter value: answer to be verified
+     
+     - returns: true if answer is correct, else false
+     */
     func verifyResult(value: Float) -> Bool {
         // 'if case' cannot be rewritten to one-line bool expression :-(
         if case configuration.minCorrectValue ... configuration.maxCorrectValue = value {
@@ -37,6 +45,13 @@ class NumericQuestion: Question {
         }
     }
     
+    /**
+     Checks if the given answer is considered as precise
+     
+     - parameter value: answer to be checked
+     
+     - returns: true if answer is precise, else false
+     */
     func isPrecise(value: Float) -> Bool {
         return value  == configuration.toValue || value == floorf(configuration.toValue) || value == ceilf(configuration.toValue)
     }
@@ -50,6 +65,7 @@ class NumericQuestion: Question {
     }    
 }
 
+/// Configuration of the numeric question
 class NumericQuestionConfiguration: QuestionConfiguration, SimpleResultConfiguration, ImageQuestionConfiguration, HintQuestionConfiguration {
     let fromValue: Float
     let fromUnit: String
