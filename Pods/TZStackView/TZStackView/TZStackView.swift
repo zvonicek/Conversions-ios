@@ -116,7 +116,7 @@ public class TZStackView: UIView {
             if let _ = view.layer.animationKeys() {
                 UIView.setAnimationDelegate(self)
                 animationDidStopQueueEntries.insert(TZAnimationDidStopQueueEntry(view: view, hidden: hidden), atIndex: 0)
-                UIView.setAnimationDidStopSelector("hiddenAnimationStopped")
+                UIView.setAnimationDidStopSelector(#selector(TZStackView.hiddenAnimationStopped))
             } else {
                 didFinishSettingHiddenValue(view, hidden: hidden)
             }
@@ -245,7 +245,7 @@ public class TZStackView: UIView {
                         views.append(addSpacerView())
                     }
                     views.append(arrangedSubview)
-                    index++
+                    index += 1
                 }
                 if spacerViews.count == 0 {
                     addSpacerView()
@@ -317,10 +317,10 @@ public class TZStackView: UIView {
 
             if layoutMarginsRelativeArrangement {
                 if spacerViews.count > 0 {
-                    stackViewConstraints.append(constraint(item: self, attribute: .BottomMargin, toItem: spacerViews[0]))
-                    stackViewConstraints.append(constraint(item: self, attribute: .LeftMargin, toItem: spacerViews[0]))
-                    stackViewConstraints.append(constraint(item: self, attribute: .RightMargin, toItem: spacerViews[0]))
-                    stackViewConstraints.append(constraint(item: self, attribute: .TopMargin, toItem: spacerViews[0]))
+                    stackViewConstraints.append(constraint(item: self, attribute: .BottomMargin, toItem: spacerViews[0], attribute: .Bottom))
+                    stackViewConstraints.append(constraint(item: self, attribute: .LeftMargin, toItem: spacerViews[0], attribute: .Left))
+                    stackViewConstraints.append(constraint(item: self, attribute: .RightMargin, toItem: spacerViews[0], attribute: .Right))
+                    stackViewConstraints.append(constraint(item: self, attribute: .TopMargin, toItem: spacerViews[0], attribute: .Top))
                 }
             }
             addConstraints(stackViewConstraints)
@@ -398,7 +398,7 @@ public class TZStackView: UIView {
             case .Vertical:
                 totalSize += arrangedSubview.intrinsicContentSize().height
             }
-            totalCount++
+            totalCount += 1
         }
         totalSize += (CGFloat(totalCount - 1) * spacing)
         
@@ -406,7 +406,7 @@ public class TZStackView: UIView {
         let countDownPriority = (views.filter({!self.isHidden($0)}).count > 1)
         for arrangedSubview in views {
             if countDownPriority {
-                priority--
+                priority -= 1
             }
             
             if isHidden(arrangedSubview) {
@@ -582,7 +582,7 @@ public class TZStackView: UIView {
                     firstView = view
                 }
                 if countDownPriority {
-                    currentPriority--
+                    currentPriority -= 1
                 }
             }
         }
